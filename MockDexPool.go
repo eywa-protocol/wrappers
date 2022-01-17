@@ -26,11 +26,25 @@ var (
 	_ = event.NewSubscription
 )
 
+// SolanaSerializeSolanaAccountMeta is an auto generated low-level Go binding around an user-defined struct.
+type SolanaSerializeSolanaAccountMeta struct {
+	Pubkey     [32]byte
+	IsSigner   bool
+	IsWritable bool
+}
+
+// SolanaSerializeSolanaStandaloneInstruction is an auto generated low-level Go binding around an user-defined struct.
+type SolanaSerializeSolanaStandaloneInstruction struct {
+	ProgramId [32]byte
+	Accounts  []SolanaSerializeSolanaAccountMeta
+	Data      []byte
+}
+
 // MockDexPoolABI is the input ABI used to generate the binding from.
-const MockDexPoolABI = "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_bridge\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"data\",\"type\":\"uint256\"}],\"name\":\"RequestReceived\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"reqId\",\"type\":\"bytes32\"}],\"name\":\"RequestSent\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"bridge\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_testData\",\"type\":\"uint256\"}],\"name\":\"receiveRequestTest\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"testData_\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"secondPartPool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"oppBridge\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"name\":\"sendRequestTestV2\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"testData\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]"
+const MockDexPoolABI = "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_bridge\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"data\",\"type\":\"uint256\"}],\"name\":\"RequestReceived\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"reqId\",\"type\":\"bytes32\"}],\"name\":\"RequestSent\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"SOLANA_CHAIN_ID\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"SOLANA_RENT\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"SOLANA_SYSTEM_PROGRAM\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"SOLANA_TOKEN_PROGRAM\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"bridge\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_testData\",\"type\":\"uint256\"}],\"name\":\"receiveRequestTest\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"testData_\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"secondPartPool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"oppBridge\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"name\":\"sendRequestTestV2\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"programId_\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"testData_\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"secondPartPool\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"oppBridge\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"name\":\"sendTestRequestToSolana\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"programId\",\"type\":\"bytes32\"},{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"pubkey\",\"type\":\"bytes32\"},{\"internalType\":\"bool\",\"name\":\"isSigner\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"isWritable\",\"type\":\"bool\"}],\"internalType\":\"structSolanaSerialize.SolanaAccountMeta[]\",\"name\":\"accounts\",\"type\":\"tuple[]\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"structSolanaSerialize.SolanaStandaloneInstruction\",\"name\":\"ix\",\"type\":\"tuple\"}],\"name\":\"serializeSolanaStandaloneInstruction\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"testData\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]"
 
 // MockDexPoolBin is the compiled bytecode used for deploying new contracts.
-var MockDexPoolBin = "0x60806040526000805534801561001457600080fd5b5060405161069538038061069583398101604081905261003391610058565b600180546001600160a01b0319166001600160a01b0392909216919091179055610086565b600060208284031215610069578081fd5b81516001600160a01b038116811461007f578182fd5b9392505050565b610600806100956000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c8063016cbd5114610051578063e78cea921461006f578063f16f710314610084578063f9ee520e14610099575b600080fd5b6100596100ac565b60405161006691906104b7565b60405180910390f35b6100776100b2565b60405161006691906104a3565b61009761009236600461043b565b6100c1565b005b6100976100a7366004610453565b610134565b60005481565b6001546001600160a01b031681565b6001546001600160a01b031633146100f45760405162461bcd60e51b81526004016100eb90610578565b60405180910390fd5b60008190556040517f3e656638c321b7f315f9cd0ebbfbbb108d6d8fbad72ae54b16a2c1ac2dc1de0e906101299083906104b7565b60405180910390a150565b6001600160a01b03831661015a5760405162461bcd60e51b81526004016100eb906105a5565b600154604051632d0335ab60e01b81526000916001600160a01b031690632d0335ab9061018b9033906004016104a3565b60206040518083038186803b1580156101a357600080fd5b505afa1580156101b7573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101db9190610423565b604080518082018252601b81527f7265636569766552657175657374546573742875696e74323536290000000000602090910152519091506000907ff16f710300ade8663e80c8937af0bceb0204f46c88990d0957b94e12b18138de906102469088906024016104b7565b60408051601f198184030181529181526020820180516001600160e01b03166001600160e01b031990941693909317909252600154915163379a90cb60e11b81529092506000916001600160a01b0390811691636f352196916102b991898216918991908c169033908a906004016104c0565b60206040518083038186803b1580156102d157600080fd5b505afa1580156102e5573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103099190610423565b60015460405163329ef45f60e01b81529192506000916001600160a01b039091169063329ef45f9061034b9086908b908b908b90899033908d906004016104e3565b602060405180830381600087803b15801561036557600080fd5b505af1158015610379573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061039d91906103fc565b90507f1131472297a800fee664d1d89cfa8f7676ff07189ecc53f80bbb5f4969099db8826040516103ce91906104b7565b60405180910390a15050505050505050565b80356001600160a01b03811681146103f757600080fd5b919050565b60006020828403121561040d578081fd5b8151801515811461041c578182fd5b9392505050565b600060208284031215610434578081fd5b5051919050565b60006020828403121561044c578081fd5b5035919050565b60008060008060808587031215610468578283fd5b84359350610478602086016103e0565b9250610486604086016103e0565b9396929550929360600135925050565b6001600160a01b03169052565b6001600160a01b0391909116815260200190565b90815260200190565b948552602085019390935260408401919091526060830152608082015260a00190565b600060e0825288518060e0840152815b81811015610511576020818c018101516101008684010152016104f3565b81811115610523578261010083860101525b50601f01601f191682016101000190506105406020830189610496565b61054d6040830188610496565b85606083015284608083015261056660a0830185610496565b8260c083015298975050505050505050565b6020808252601390820152724f4e4c59204345525441494e2042524944474560681b604082015260600190565b6020808252600b908201526a424144204144445245535360a81b60408201526060019056fea26469706673582212201f31d0ba3c7fa72812080629072655578240ef4f7b70d10aa0b56dc8bf7ffc9b64736f6c63430008000033"
+var MockDexPoolBin = "0x60806040526000805534801561001457600080fd5b50604051610fa9380380610fa983398101604081905261003391610058565b600180546001600160a01b0319166001600160a01b0392909216919091179055610088565b60006020828403121561006a57600080fd5b81516001600160a01b038116811461008157600080fd5b9392505050565b610f12806100976000396000f3fe608060405234801561001057600080fd5b506004361061009e5760003560e01c806366f5f17f1161006657806366f5f17f14610119578063e78cea921461012e578063edff2c8214610159578063f16f710314610180578063f9ee520e1461019357600080fd5b8063016cbd51146100a3578063067bd07a146100bf5780632ab8c8b0146100ca5780632b1106e3146100ea57806352dd22ee14610111575b600080fd5b6100ac60005481565b6040519081526020015b60405180910390f35b6100ac631de44e3d81565b6100dd6100d8366004610ac1565b6101a6565b6040516100b69190610c5d565b6100ac7f06a7d517192c5c51218cc94c3d4af17f58daee089ba1fd44e3dbd98a0000000081565b6100ac600081565b61012c610127366004610c77565b610397565b005b600154610141906001600160a01b031681565b6040516001600160a01b0390911681526020016100b6565b6100ac7f06ddf6e1d765a193d9cbe146ceeb79ac1cb485ed5f5b37913a8cf5857eff00a981565b61012c61018e366004610cb2565b6106d7565b61012c6101a1366004610ce7565b610767565b60208082015151604051606092600883811c62ff00ff1663ff00ff009490911b9390931692909217601081811c91901b17916000916101fa9184910160e09190911b6001600160e01b031916815260040190565b6040516020818303038152906040529050606060005b8560200151518110156102f8578560200151818151811061023357610233610d2b565b6020026020010151600001518660200151828151811061025557610255610d2b565b6020026020010151602001518760200151838151811061027757610277610d2b565b6020026020010151604001516040516020016102b09392919092835290151560f890811b6020840152901515901b602182015260220190565b604051602081830303815290604052915082826040516020016102d4929190610d41565b604051602081830303815290604052925080806102f090610d70565b915050610210565b50845160405161030c918491602001610d99565b60408051601f198184030181528282529087015151600881811c62ff00ff1663ff00ff009290911b9190911617601081811c91901b17945092506103569083908590602001610dbb565b604051602081830303815290604052915081856040015160405160200161037e929190610d41565b60408051601f1981840301815291905295945050505050565b600154604051632d0335ab60e01b81523360048201526000916001600160a01b031690632d0335ab90602401602060405180830381865afa1580156103e0573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104049190610ded565b604080518082018252601b81527f7265636569766552657175657374546573742875696e74323536290000000000602091820152815160248082018a90528351808303820181526044928301855280840180516001600160e01b031663f16f710360e01b179052600154855163379a90cb60e11b8152600481018b90529283018990529282018a905233606483015260848201869052935194955092936000936001600160a01b0390921692636f3521969260a480820193918290030181865afa1580156104d6573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104fa9190610ded565b6040805160028082526060820190925291925060009190816020015b60408051606081018252600080825260208083018290529282015282526000199092019101816105165790505090506040518060600160405280888152602001600015158152602001600115158152508160008151811061057957610579610d2b565b6020026020010181905250604051806060016040528087815260200160001515815260200160011515815250816001815181106105b8576105b8610d2b565b6020026020010181905250600160009054906101000a90046001600160a01b03166001600160a01b031663c02ae95661062960405180606001604052808d8152602001858152602001876040516020016106129190610e06565b6040516020818303038152906040528152506101a6565b8989631de44e3d87338b6040518863ffffffff1660e01b81526004016106559796959493929190610e22565b6020604051808303816000875af1158015610674573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106989190610e6f565b506040518281527f1131472297a800fee664d1d89cfa8f7676ff07189ecc53f80bbb5f4969099db89060200160405180910390a1505050505050505050565b6001546001600160a01b0316331461072c5760405162461bcd60e51b81526020600482015260136024820152724f4e4c59204345525441494e2042524944474560681b60448201526064015b60405180910390fd5b60008190556040518181527f3e656638c321b7f315f9cd0ebbfbbb108d6d8fbad72ae54b16a2c1ac2dc1de0e9060200160405180910390a150565b6001600160a01b0383166107ab5760405162461bcd60e51b815260206004820152600b60248201526a424144204144445245535360a81b6044820152606401610723565b600154604051632d0335ab60e01b81523360048201526000916001600160a01b031690632d0335ab90602401602060405180830381865afa1580156107f4573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108189190610ded565b604080518082018252601b81527f7265636569766552657175657374546573742875696e74323536290000000000602091820152815160248082018a90528351808303820181526044928301855280840180516001600160e01b031663f16f710360e01b179052600154855163379a90cb60e11b81526001600160a01b038b811660048301529381018a90528b841694810194909452336064850152608484018790529451959650946000949190911692636f3521969260a480820193918290030181865afa1580156108ef573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109139190610ded565b60015460405163329ef45f60e01b81529192506001600160a01b03169063329ef45f906109509085908a908a908a90889033908c90600401610e8c565b6020604051808303816000875af115801561096f573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109939190610e6f565b506040518181527f1131472297a800fee664d1d89cfa8f7676ff07189ecc53f80bbb5f4969099db89060200160405180910390a150505050505050565b634e487b7160e01b600052604160045260246000fd5b6040516060810167ffffffffffffffff81118282101715610a0957610a096109d0565b60405290565b604051601f8201601f1916810167ffffffffffffffff81118282101715610a3857610a386109d0565b604052919050565b8015158114610a4e57600080fd5b50565b600082601f830112610a6257600080fd5b813567ffffffffffffffff811115610a7c57610a7c6109d0565b610a8f601f8201601f1916602001610a0f565b818152846020838601011115610aa457600080fd5b816020850160208301376000918101602001919091529392505050565b60006020808385031215610ad457600080fd5b823567ffffffffffffffff80821115610aec57600080fd5b81850191506060808388031215610b0257600080fd5b610b0a6109e6565b833581528484013583811115610b1f57600080fd5b8401601f81018913610b3057600080fd5b803584811115610b4257610b426109d0565b610b50878260051b01610a0f565b8181529084028201870190878101908b831115610b6c57600080fd5b928801925b82841015610bc85785848d031215610b895760008081fd5b610b916109e6565b8435815289850135610ba281610a40565b818b0152604085810135610bb581610a40565b9082015282529285019290880190610b71565b8089860152505050506040840135945082851115610be557600080fd5b610bf188868601610a51565b6040820152979650505050505050565b60005b83811015610c1c578181015183820152602001610c04565b83811115610c2b576000848401525b50505050565b60008151808452610c49816020860160208601610c01565b601f01601f19169290920160200192915050565b602081526000610c706020830184610c31565b9392505050565b600080600080600060a08688031215610c8f57600080fd5b505083359560208501359550604085013594606081013594506080013592509050565b600060208284031215610cc457600080fd5b5035919050565b80356001600160a01b0381168114610ce257600080fd5b919050565b60008060008060808587031215610cfd57600080fd5b84359350610d0d60208601610ccb565b9250610d1b60408601610ccb565b9396929550929360600135925050565b634e487b7160e01b600052603260045260246000fd5b60008351610d53818460208801610c01565b835190830190610d67818360208801610c01565b01949350505050565b6000600019821415610d9257634e487b7160e01b600052601160045260246000fd5b5060010190565b60008351610dab818460208801610c01565b9190910191825250602001919050565b60008351610dcd818460208801610c01565b60e09390931b6001600160e01b0319169190920190815260040192915050565b600060208284031215610dff57600080fd5b5051919050565b60008251610e18818460208701610c01565b9190910192915050565b60e081526000610e3560e083018a610c31565b6020830198909852506040810195909552606085019390935260808401919091526001600160a01b031660a083015260c090910152919050565b600060208284031215610e8157600080fd5b8151610c7081610a40565b60e081526000610e9f60e083018a610c31565b6001600160a01b0398891660208401529688166040830152506060810194909452608084019290925290931660a082015260c0019190915291905056fea264697066735822122090076f5ad9e51415f446602ef66dbf70bb029870d720c417b727d6d9cff3706364736f6c634300080a0033"
 
 // DeployMockDexPool deploys a new Ethereum contract, binding an instance of MockDexPool to it.
 func DeployMockDexPool(auth *bind.TransactOpts, backend bind.ContractBackend, _bridge common.Address) (common.Address, *types.Transaction, *MockDexPool, error) {
@@ -188,6 +202,130 @@ func (_MockDexPool *MockDexPoolTransactorRaw) Transact(opts *bind.TransactOpts, 
 	return _MockDexPool.Contract.contract.Transact(opts, method, params...)
 }
 
+// SOLANACHAINID is a free data retrieval call binding the contract method 0x067bd07a.
+//
+// Solidity: function SOLANA_CHAIN_ID() view returns(uint256)
+func (_MockDexPool *MockDexPoolCaller) SOLANACHAINID(opts *bind.CallOpts) (*big.Int, error) {
+	var out []interface{}
+	err := _MockDexPool.contract.Call(opts, &out, "SOLANA_CHAIN_ID")
+
+	if err != nil {
+		return *new(*big.Int), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
+
+	return out0, err
+
+}
+
+// SOLANACHAINID is a free data retrieval call binding the contract method 0x067bd07a.
+//
+// Solidity: function SOLANA_CHAIN_ID() view returns(uint256)
+func (_MockDexPool *MockDexPoolSession) SOLANACHAINID() (*big.Int, error) {
+	return _MockDexPool.Contract.SOLANACHAINID(&_MockDexPool.CallOpts)
+}
+
+// SOLANACHAINID is a free data retrieval call binding the contract method 0x067bd07a.
+//
+// Solidity: function SOLANA_CHAIN_ID() view returns(uint256)
+func (_MockDexPool *MockDexPoolCallerSession) SOLANACHAINID() (*big.Int, error) {
+	return _MockDexPool.Contract.SOLANACHAINID(&_MockDexPool.CallOpts)
+}
+
+// SOLANARENT is a free data retrieval call binding the contract method 0x2b1106e3.
+//
+// Solidity: function SOLANA_RENT() view returns(bytes32)
+func (_MockDexPool *MockDexPoolCaller) SOLANARENT(opts *bind.CallOpts) ([32]byte, error) {
+	var out []interface{}
+	err := _MockDexPool.contract.Call(opts, &out, "SOLANA_RENT")
+
+	if err != nil {
+		return *new([32]byte), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([32]byte)).(*[32]byte)
+
+	return out0, err
+
+}
+
+// SOLANARENT is a free data retrieval call binding the contract method 0x2b1106e3.
+//
+// Solidity: function SOLANA_RENT() view returns(bytes32)
+func (_MockDexPool *MockDexPoolSession) SOLANARENT() ([32]byte, error) {
+	return _MockDexPool.Contract.SOLANARENT(&_MockDexPool.CallOpts)
+}
+
+// SOLANARENT is a free data retrieval call binding the contract method 0x2b1106e3.
+//
+// Solidity: function SOLANA_RENT() view returns(bytes32)
+func (_MockDexPool *MockDexPoolCallerSession) SOLANARENT() ([32]byte, error) {
+	return _MockDexPool.Contract.SOLANARENT(&_MockDexPool.CallOpts)
+}
+
+// SOLANASYSTEMPROGRAM is a free data retrieval call binding the contract method 0x52dd22ee.
+//
+// Solidity: function SOLANA_SYSTEM_PROGRAM() view returns(bytes32)
+func (_MockDexPool *MockDexPoolCaller) SOLANASYSTEMPROGRAM(opts *bind.CallOpts) ([32]byte, error) {
+	var out []interface{}
+	err := _MockDexPool.contract.Call(opts, &out, "SOLANA_SYSTEM_PROGRAM")
+
+	if err != nil {
+		return *new([32]byte), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([32]byte)).(*[32]byte)
+
+	return out0, err
+
+}
+
+// SOLANASYSTEMPROGRAM is a free data retrieval call binding the contract method 0x52dd22ee.
+//
+// Solidity: function SOLANA_SYSTEM_PROGRAM() view returns(bytes32)
+func (_MockDexPool *MockDexPoolSession) SOLANASYSTEMPROGRAM() ([32]byte, error) {
+	return _MockDexPool.Contract.SOLANASYSTEMPROGRAM(&_MockDexPool.CallOpts)
+}
+
+// SOLANASYSTEMPROGRAM is a free data retrieval call binding the contract method 0x52dd22ee.
+//
+// Solidity: function SOLANA_SYSTEM_PROGRAM() view returns(bytes32)
+func (_MockDexPool *MockDexPoolCallerSession) SOLANASYSTEMPROGRAM() ([32]byte, error) {
+	return _MockDexPool.Contract.SOLANASYSTEMPROGRAM(&_MockDexPool.CallOpts)
+}
+
+// SOLANATOKENPROGRAM is a free data retrieval call binding the contract method 0xedff2c82.
+//
+// Solidity: function SOLANA_TOKEN_PROGRAM() view returns(bytes32)
+func (_MockDexPool *MockDexPoolCaller) SOLANATOKENPROGRAM(opts *bind.CallOpts) ([32]byte, error) {
+	var out []interface{}
+	err := _MockDexPool.contract.Call(opts, &out, "SOLANA_TOKEN_PROGRAM")
+
+	if err != nil {
+		return *new([32]byte), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([32]byte)).(*[32]byte)
+
+	return out0, err
+
+}
+
+// SOLANATOKENPROGRAM is a free data retrieval call binding the contract method 0xedff2c82.
+//
+// Solidity: function SOLANA_TOKEN_PROGRAM() view returns(bytes32)
+func (_MockDexPool *MockDexPoolSession) SOLANATOKENPROGRAM() ([32]byte, error) {
+	return _MockDexPool.Contract.SOLANATOKENPROGRAM(&_MockDexPool.CallOpts)
+}
+
+// SOLANATOKENPROGRAM is a free data retrieval call binding the contract method 0xedff2c82.
+//
+// Solidity: function SOLANA_TOKEN_PROGRAM() view returns(bytes32)
+func (_MockDexPool *MockDexPoolCallerSession) SOLANATOKENPROGRAM() ([32]byte, error) {
+	return _MockDexPool.Contract.SOLANATOKENPROGRAM(&_MockDexPool.CallOpts)
+}
+
 // Bridge is a free data retrieval call binding the contract method 0xe78cea92.
 //
 // Solidity: function bridge() view returns(address)
@@ -217,6 +355,37 @@ func (_MockDexPool *MockDexPoolSession) Bridge() (common.Address, error) {
 // Solidity: function bridge() view returns(address)
 func (_MockDexPool *MockDexPoolCallerSession) Bridge() (common.Address, error) {
 	return _MockDexPool.Contract.Bridge(&_MockDexPool.CallOpts)
+}
+
+// SerializeSolanaStandaloneInstruction is a free data retrieval call binding the contract method 0x2ab8c8b0.
+//
+// Solidity: function serializeSolanaStandaloneInstruction((bytes32,(bytes32,bool,bool)[],bytes) ix) pure returns(bytes)
+func (_MockDexPool *MockDexPoolCaller) SerializeSolanaStandaloneInstruction(opts *bind.CallOpts, ix SolanaSerializeSolanaStandaloneInstruction) ([]byte, error) {
+	var out []interface{}
+	err := _MockDexPool.contract.Call(opts, &out, "serializeSolanaStandaloneInstruction", ix)
+
+	if err != nil {
+		return *new([]byte), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([]byte)).(*[]byte)
+
+	return out0, err
+
+}
+
+// SerializeSolanaStandaloneInstruction is a free data retrieval call binding the contract method 0x2ab8c8b0.
+//
+// Solidity: function serializeSolanaStandaloneInstruction((bytes32,(bytes32,bool,bool)[],bytes) ix) pure returns(bytes)
+func (_MockDexPool *MockDexPoolSession) SerializeSolanaStandaloneInstruction(ix SolanaSerializeSolanaStandaloneInstruction) ([]byte, error) {
+	return _MockDexPool.Contract.SerializeSolanaStandaloneInstruction(&_MockDexPool.CallOpts, ix)
+}
+
+// SerializeSolanaStandaloneInstruction is a free data retrieval call binding the contract method 0x2ab8c8b0.
+//
+// Solidity: function serializeSolanaStandaloneInstruction((bytes32,(bytes32,bool,bool)[],bytes) ix) pure returns(bytes)
+func (_MockDexPool *MockDexPoolCallerSession) SerializeSolanaStandaloneInstruction(ix SolanaSerializeSolanaStandaloneInstruction) ([]byte, error) {
+	return _MockDexPool.Contract.SerializeSolanaStandaloneInstruction(&_MockDexPool.CallOpts, ix)
 }
 
 // TestData is a free data retrieval call binding the contract method 0x016cbd51.
@@ -290,6 +459,27 @@ func (_MockDexPool *MockDexPoolSession) SendRequestTestV2(testData_ *big.Int, se
 // Solidity: function sendRequestTestV2(uint256 testData_, address secondPartPool, address oppBridge, uint256 chainId) returns()
 func (_MockDexPool *MockDexPoolTransactorSession) SendRequestTestV2(testData_ *big.Int, secondPartPool common.Address, oppBridge common.Address, chainId *big.Int) (*types.Transaction, error) {
 	return _MockDexPool.Contract.SendRequestTestV2(&_MockDexPool.TransactOpts, testData_, secondPartPool, oppBridge, chainId)
+}
+
+// SendTestRequestToSolana is a paid mutator transaction binding the contract method 0x66f5f17f.
+//
+// Solidity: function sendTestRequestToSolana(bytes32 programId_, uint256 testData_, bytes32 secondPartPool, bytes32 oppBridge, uint256 chainId) returns()
+func (_MockDexPool *MockDexPoolTransactor) SendTestRequestToSolana(opts *bind.TransactOpts, programId_ [32]byte, testData_ *big.Int, secondPartPool [32]byte, oppBridge [32]byte, chainId *big.Int) (*types.Transaction, error) {
+	return _MockDexPool.contract.Transact(opts, "sendTestRequestToSolana", programId_, testData_, secondPartPool, oppBridge, chainId)
+}
+
+// SendTestRequestToSolana is a paid mutator transaction binding the contract method 0x66f5f17f.
+//
+// Solidity: function sendTestRequestToSolana(bytes32 programId_, uint256 testData_, bytes32 secondPartPool, bytes32 oppBridge, uint256 chainId) returns()
+func (_MockDexPool *MockDexPoolSession) SendTestRequestToSolana(programId_ [32]byte, testData_ *big.Int, secondPartPool [32]byte, oppBridge [32]byte, chainId *big.Int) (*types.Transaction, error) {
+	return _MockDexPool.Contract.SendTestRequestToSolana(&_MockDexPool.TransactOpts, programId_, testData_, secondPartPool, oppBridge, chainId)
+}
+
+// SendTestRequestToSolana is a paid mutator transaction binding the contract method 0x66f5f17f.
+//
+// Solidity: function sendTestRequestToSolana(bytes32 programId_, uint256 testData_, bytes32 secondPartPool, bytes32 oppBridge, uint256 chainId) returns()
+func (_MockDexPool *MockDexPoolTransactorSession) SendTestRequestToSolana(programId_ [32]byte, testData_ *big.Int, secondPartPool [32]byte, oppBridge [32]byte, chainId *big.Int) (*types.Transaction, error) {
+	return _MockDexPool.Contract.SendTestRequestToSolana(&_MockDexPool.TransactOpts, programId_, testData_, secondPartPool, oppBridge, chainId)
 }
 
 // MockDexPoolRequestReceivedIterator is returned from FilterRequestReceived and is used to iterate over the raw logs and unpacked data for RequestReceived events raised by the MockDexPool contract.

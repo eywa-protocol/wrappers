@@ -77,25 +77,21 @@ func GsnBridgeAddContractBind(
 
 	__typedDataSignature, _, err := gsn.NewSignature(__typedData, __signer)
 	if err != nil {
-
 		return
 	}
 
 	__domainSeparatorHash, err := gsn.NewDomainSeparatorHash(__typedData)
 	if err != nil {
-
 		return
 	}
 
 	__genericParams, err := __forwarder.GENERICPARAMS(&bind.CallOpts{})
 	if err != nil {
-
 		return
 	}
 
 	__reqTypeHash, err := gsn.NewRequestTypeHash(__genericParams)
 	if err != nil {
-
 		return
 	}
 
@@ -161,25 +157,21 @@ func GsnBridgeDaoTransferOwnership(
 
 	__typedDataSignature, _, err := gsn.NewSignature(__typedData, __signer)
 	if err != nil {
-
 		return
 	}
 
 	__domainSeparatorHash, err := gsn.NewDomainSeparatorHash(__typedData)
 	if err != nil {
-
 		return
 	}
 
 	__genericParams, err := __forwarder.GENERICPARAMS(&bind.CallOpts{})
 	if err != nil {
-
 		return
 	}
 
 	__reqTypeHash, err := gsn.NewRequestTypeHash(__genericParams)
 	if err != nil {
-
 		return
 	}
 
@@ -245,25 +237,21 @@ func GsnBridgeDaoUpdateEpochRequest(
 
 	__typedDataSignature, _, err := gsn.NewSignature(__typedData, __signer)
 	if err != nil {
-
 		return
 	}
 
 	__domainSeparatorHash, err := gsn.NewDomainSeparatorHash(__typedData)
 	if err != nil {
-
 		return
 	}
 
 	__genericParams, err := __forwarder.GENERICPARAMS(&bind.CallOpts{})
 	if err != nil {
-
 		return
 	}
 
 	__reqTypeHash, err := gsn.NewRequestTypeHash(__genericParams)
 	if err != nil {
-
 		return
 	}
 
@@ -329,25 +317,21 @@ func GsnBridgeInitialize(
 
 	__typedDataSignature, _, err := gsn.NewSignature(__typedData, __signer)
 	if err != nil {
-
 		return
 	}
 
 	__domainSeparatorHash, err := gsn.NewDomainSeparatorHash(__typedData)
 	if err != nil {
-
 		return
 	}
 
 	__genericParams, err := __forwarder.GENERICPARAMS(&bind.CallOpts{})
 	if err != nil {
-
 		return
 	}
 
 	__reqTypeHash, err := gsn.NewRequestTypeHash(__genericParams)
 	if err != nil {
-
 		return
 	}
 
@@ -413,25 +397,21 @@ func GsnBridgeReceiveRequestV2(
 
 	__typedDataSignature, _, err := gsn.NewSignature(__typedData, __signer)
 	if err != nil {
-
 		return
 	}
 
 	__domainSeparatorHash, err := gsn.NewDomainSeparatorHash(__typedData)
 	if err != nil {
-
 		return
 	}
 
 	__genericParams, err := __forwarder.GENERICPARAMS(&bind.CallOpts{})
 	if err != nil {
-
 		return
 	}
 
 	__reqTypeHash, err := gsn.NewRequestTypeHash(__genericParams)
 	if err != nil {
-
 		return
 	}
 
@@ -497,25 +477,21 @@ func GsnBridgeTransmitRequestV2(
 
 	__typedDataSignature, _, err := gsn.NewSignature(__typedData, __signer)
 	if err != nil {
-
 		return
 	}
 
 	__domainSeparatorHash, err := gsn.NewDomainSeparatorHash(__typedData)
 	if err != nil {
-
 		return
 	}
 
 	__genericParams, err := __forwarder.GENERICPARAMS(&bind.CallOpts{})
 	if err != nil {
-
 		return
 	}
 
 	__reqTypeHash, err := gsn.NewRequestTypeHash(__genericParams)
 	if err != nil {
-
 		return
 	}
 
@@ -581,25 +557,21 @@ func GsnBridgeTransmitRequestV2Solana(
 
 	__typedDataSignature, _, err := gsn.NewSignature(__typedData, __signer)
 	if err != nil {
-
 		return
 	}
 
 	__domainSeparatorHash, err := gsn.NewDomainSeparatorHash(__typedData)
 	if err != nil {
-
 		return
 	}
 
 	__genericParams, err := __forwarder.GENERICPARAMS(&bind.CallOpts{})
 	if err != nil {
-
 		return
 	}
 
 	__reqTypeHash, err := gsn.NewRequestTypeHash(__genericParams)
 	if err != nil {
-
 		return
 	}
 
@@ -665,25 +637,21 @@ func GsnBridgeUpdateEpoch(
 
 	__typedDataSignature, _, err := gsn.NewSignature(__typedData, __signer)
 	if err != nil {
-
 		return
 	}
 
 	__domainSeparatorHash, err := gsn.NewDomainSeparatorHash(__typedData)
 	if err != nil {
-
 		return
 	}
 
 	__genericParams, err := __forwarder.GENERICPARAMS(&bind.CallOpts{})
 	if err != nil {
-
 		return
 	}
 
 	__reqTypeHash, err := gsn.NewRequestTypeHash(__genericParams)
 	if err != nil {
-
 		return
 	}
 

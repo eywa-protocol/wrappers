@@ -1,7 +1,7 @@
 // Code generated - DO NOT EDIT.
 // This file is a generated binding and any manual changes will be lost.
 
-package gsn
+package bridge
 
 import (
 	"crypto/ecdsa"
@@ -14,11 +14,12 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/eywa-protocol/wrappers"
+	"github.com/eywa-protocol/wrappers/gsn"
 	"github.com/sirupsen/logrus"
 )
 
 func GsnBridgeAddContractBind(
-	__gsnCaller GsnCaller,
+	__gsnCaller gsn.GsnCaller,
 	__chainId *big.Int,
 	__signer *ecdsa.PrivateKey,
 	__contractAddress common.Address, from [32]byte, oppositeBridge [32]byte, to [32]byte) (txHash common.Hash, err error) {
@@ -65,7 +66,7 @@ func GsnBridgeAddContractBind(
 		Data:  __fRequest,
 	}
 
-	__typedData, err := NewForwardRequestTypedData(
+	__typedData, err := gsn.NewForwardRequestTypedData(
 		__req,
 		__forwarderAddress.String(),
 		wrappers.BridgeABI,
@@ -74,13 +75,13 @@ func GsnBridgeAddContractBind(
 		return
 	}
 
-	__typedDataSignature, _, err := NewSignature(__typedData, __signer)
+	__typedDataSignature, _, err := gsn.NewSignature(__typedData, __signer)
 	if err != nil {
 
 		return
 	}
 
-	__domainSeparatorHash, err := NewDomainSeparatorHash(__typedData)
+	__domainSeparatorHash, err := gsn.NewDomainSeparatorHash(__typedData)
 	if err != nil {
 
 		return
@@ -92,7 +93,7 @@ func GsnBridgeAddContractBind(
 		return
 	}
 
-	__reqTypeHash, err := NewRequestTypeHash(__genericParams)
+	__reqTypeHash, err := gsn.NewRequestTypeHash(__genericParams)
 	if err != nil {
 
 		return
@@ -102,7 +103,7 @@ func GsnBridgeAddContractBind(
 }
 
 func GsnBridgeDaoTransferOwnership(
-	__gsnCaller GsnCaller,
+	__gsnCaller gsn.GsnCaller,
 	__chainId *big.Int,
 	__signer *ecdsa.PrivateKey,
 	__contractAddress common.Address, newDao common.Address) (txHash common.Hash, err error) {
@@ -149,7 +150,7 @@ func GsnBridgeDaoTransferOwnership(
 		Data:  __fRequest,
 	}
 
-	__typedData, err := NewForwardRequestTypedData(
+	__typedData, err := gsn.NewForwardRequestTypedData(
 		__req,
 		__forwarderAddress.String(),
 		wrappers.BridgeABI,
@@ -158,13 +159,13 @@ func GsnBridgeDaoTransferOwnership(
 		return
 	}
 
-	__typedDataSignature, _, err := NewSignature(__typedData, __signer)
+	__typedDataSignature, _, err := gsn.NewSignature(__typedData, __signer)
 	if err != nil {
 
 		return
 	}
 
-	__domainSeparatorHash, err := NewDomainSeparatorHash(__typedData)
+	__domainSeparatorHash, err := gsn.NewDomainSeparatorHash(__typedData)
 	if err != nil {
 
 		return
@@ -176,7 +177,7 @@ func GsnBridgeDaoTransferOwnership(
 		return
 	}
 
-	__reqTypeHash, err := NewRequestTypeHash(__genericParams)
+	__reqTypeHash, err := gsn.NewRequestTypeHash(__genericParams)
 	if err != nil {
 
 		return
@@ -186,7 +187,7 @@ func GsnBridgeDaoTransferOwnership(
 }
 
 func GsnBridgeDaoUpdateEpochRequest(
-	__gsnCaller GsnCaller,
+	__gsnCaller gsn.GsnCaller,
 	__chainId *big.Int,
 	__signer *ecdsa.PrivateKey,
 	__contractAddress common.Address, resetEpoch bool) (txHash common.Hash, err error) {
@@ -233,7 +234,7 @@ func GsnBridgeDaoUpdateEpochRequest(
 		Data:  __fRequest,
 	}
 
-	__typedData, err := NewForwardRequestTypedData(
+	__typedData, err := gsn.NewForwardRequestTypedData(
 		__req,
 		__forwarderAddress.String(),
 		wrappers.BridgeABI,
@@ -242,13 +243,13 @@ func GsnBridgeDaoUpdateEpochRequest(
 		return
 	}
 
-	__typedDataSignature, _, err := NewSignature(__typedData, __signer)
+	__typedDataSignature, _, err := gsn.NewSignature(__typedData, __signer)
 	if err != nil {
 
 		return
 	}
 
-	__domainSeparatorHash, err := NewDomainSeparatorHash(__typedData)
+	__domainSeparatorHash, err := gsn.NewDomainSeparatorHash(__typedData)
 	if err != nil {
 
 		return
@@ -260,7 +261,7 @@ func GsnBridgeDaoUpdateEpochRequest(
 		return
 	}
 
-	__reqTypeHash, err := NewRequestTypeHash(__genericParams)
+	__reqTypeHash, err := gsn.NewRequestTypeHash(__genericParams)
 	if err != nil {
 
 		return
@@ -270,7 +271,7 @@ func GsnBridgeDaoUpdateEpochRequest(
 }
 
 func GsnBridgeInitialize(
-	__gsnCaller GsnCaller,
+	__gsnCaller gsn.GsnCaller,
 	__chainId *big.Int,
 	__signer *ecdsa.PrivateKey,
 	__contractAddress common.Address, forwarder common.Address) (txHash common.Hash, err error) {
@@ -317,7 +318,7 @@ func GsnBridgeInitialize(
 		Data:  __fRequest,
 	}
 
-	__typedData, err := NewForwardRequestTypedData(
+	__typedData, err := gsn.NewForwardRequestTypedData(
 		__req,
 		__forwarderAddress.String(),
 		wrappers.BridgeABI,
@@ -326,13 +327,13 @@ func GsnBridgeInitialize(
 		return
 	}
 
-	__typedDataSignature, _, err := NewSignature(__typedData, __signer)
+	__typedDataSignature, _, err := gsn.NewSignature(__typedData, __signer)
 	if err != nil {
 
 		return
 	}
 
-	__domainSeparatorHash, err := NewDomainSeparatorHash(__typedData)
+	__domainSeparatorHash, err := gsn.NewDomainSeparatorHash(__typedData)
 	if err != nil {
 
 		return
@@ -344,7 +345,7 @@ func GsnBridgeInitialize(
 		return
 	}
 
-	__reqTypeHash, err := NewRequestTypeHash(__genericParams)
+	__reqTypeHash, err := gsn.NewRequestTypeHash(__genericParams)
 	if err != nil {
 
 		return
@@ -354,7 +355,7 @@ func GsnBridgeInitialize(
 }
 
 func GsnBridgeReceiveRequestV2(
-	__gsnCaller GsnCaller,
+	__gsnCaller gsn.GsnCaller,
 	__chainId *big.Int,
 	__signer *ecdsa.PrivateKey,
 	__contractAddress common.Address, _reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (txHash common.Hash, err error) {
@@ -401,7 +402,7 @@ func GsnBridgeReceiveRequestV2(
 		Data:  __fRequest,
 	}
 
-	__typedData, err := NewForwardRequestTypedData(
+	__typedData, err := gsn.NewForwardRequestTypedData(
 		__req,
 		__forwarderAddress.String(),
 		wrappers.BridgeABI,
@@ -410,13 +411,13 @@ func GsnBridgeReceiveRequestV2(
 		return
 	}
 
-	__typedDataSignature, _, err := NewSignature(__typedData, __signer)
+	__typedDataSignature, _, err := gsn.NewSignature(__typedData, __signer)
 	if err != nil {
 
 		return
 	}
 
-	__domainSeparatorHash, err := NewDomainSeparatorHash(__typedData)
+	__domainSeparatorHash, err := gsn.NewDomainSeparatorHash(__typedData)
 	if err != nil {
 
 		return
@@ -428,7 +429,7 @@ func GsnBridgeReceiveRequestV2(
 		return
 	}
 
-	__reqTypeHash, err := NewRequestTypeHash(__genericParams)
+	__reqTypeHash, err := gsn.NewRequestTypeHash(__genericParams)
 	if err != nil {
 
 		return
@@ -438,7 +439,7 @@ func GsnBridgeReceiveRequestV2(
 }
 
 func GsnBridgeTransmitRequestV2(
-	__gsnCaller GsnCaller,
+	__gsnCaller gsn.GsnCaller,
 	__chainId *big.Int,
 	__signer *ecdsa.PrivateKey,
 	__contractAddress common.Address, _selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (txHash common.Hash, err error) {
@@ -485,7 +486,7 @@ func GsnBridgeTransmitRequestV2(
 		Data:  __fRequest,
 	}
 
-	__typedData, err := NewForwardRequestTypedData(
+	__typedData, err := gsn.NewForwardRequestTypedData(
 		__req,
 		__forwarderAddress.String(),
 		wrappers.BridgeABI,
@@ -494,13 +495,13 @@ func GsnBridgeTransmitRequestV2(
 		return
 	}
 
-	__typedDataSignature, _, err := NewSignature(__typedData, __signer)
+	__typedDataSignature, _, err := gsn.NewSignature(__typedData, __signer)
 	if err != nil {
 
 		return
 	}
 
-	__domainSeparatorHash, err := NewDomainSeparatorHash(__typedData)
+	__domainSeparatorHash, err := gsn.NewDomainSeparatorHash(__typedData)
 	if err != nil {
 
 		return
@@ -512,7 +513,7 @@ func GsnBridgeTransmitRequestV2(
 		return
 	}
 
-	__reqTypeHash, err := NewRequestTypeHash(__genericParams)
+	__reqTypeHash, err := gsn.NewRequestTypeHash(__genericParams)
 	if err != nil {
 
 		return
@@ -522,7 +523,7 @@ func GsnBridgeTransmitRequestV2(
 }
 
 func GsnBridgeTransmitRequestV2Solana(
-	__gsnCaller GsnCaller,
+	__gsnCaller gsn.GsnCaller,
 	__chainId *big.Int,
 	__signer *ecdsa.PrivateKey,
 	__contractAddress common.Address, _selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (txHash common.Hash, err error) {
@@ -569,7 +570,7 @@ func GsnBridgeTransmitRequestV2Solana(
 		Data:  __fRequest,
 	}
 
-	__typedData, err := NewForwardRequestTypedData(
+	__typedData, err := gsn.NewForwardRequestTypedData(
 		__req,
 		__forwarderAddress.String(),
 		wrappers.BridgeABI,
@@ -578,13 +579,13 @@ func GsnBridgeTransmitRequestV2Solana(
 		return
 	}
 
-	__typedDataSignature, _, err := NewSignature(__typedData, __signer)
+	__typedDataSignature, _, err := gsn.NewSignature(__typedData, __signer)
 	if err != nil {
 
 		return
 	}
 
-	__domainSeparatorHash, err := NewDomainSeparatorHash(__typedData)
+	__domainSeparatorHash, err := gsn.NewDomainSeparatorHash(__typedData)
 	if err != nil {
 
 		return
@@ -596,7 +597,7 @@ func GsnBridgeTransmitRequestV2Solana(
 		return
 	}
 
-	__reqTypeHash, err := NewRequestTypeHash(__genericParams)
+	__reqTypeHash, err := gsn.NewRequestTypeHash(__genericParams)
 	if err != nil {
 
 		return
@@ -606,7 +607,7 @@ func GsnBridgeTransmitRequestV2Solana(
 }
 
 func GsnBridgeUpdateEpoch(
-	__gsnCaller GsnCaller,
+	__gsnCaller gsn.GsnCaller,
 	__chainId *big.Int,
 	__signer *ecdsa.PrivateKey,
 	__contractAddress common.Address, _newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (txHash common.Hash, err error) {
@@ -653,7 +654,7 @@ func GsnBridgeUpdateEpoch(
 		Data:  __fRequest,
 	}
 
-	__typedData, err := NewForwardRequestTypedData(
+	__typedData, err := gsn.NewForwardRequestTypedData(
 		__req,
 		__forwarderAddress.String(),
 		wrappers.BridgeABI,
@@ -662,13 +663,13 @@ func GsnBridgeUpdateEpoch(
 		return
 	}
 
-	__typedDataSignature, _, err := NewSignature(__typedData, __signer)
+	__typedDataSignature, _, err := gsn.NewSignature(__typedData, __signer)
 	if err != nil {
 
 		return
 	}
 
-	__domainSeparatorHash, err := NewDomainSeparatorHash(__typedData)
+	__domainSeparatorHash, err := gsn.NewDomainSeparatorHash(__typedData)
 	if err != nil {
 
 		return
@@ -680,7 +681,7 @@ func GsnBridgeUpdateEpoch(
 		return
 	}
 
-	__reqTypeHash, err := NewRequestTypeHash(__genericParams)
+	__reqTypeHash, err := gsn.NewRequestTypeHash(__genericParams)
 	if err != nil {
 
 		return

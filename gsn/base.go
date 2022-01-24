@@ -9,6 +9,7 @@ import (
 	"strings"
 
 	"github.com/ethereum/go-ethereum/accounts/abi"
+	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/crypto"
@@ -25,6 +26,13 @@ var (
 	ErrStringTooLong = errors.New("string to long")
 	ErrHexTooShort   = errors.New("hex string is shorter than bytes32")
 )
+
+type CallOpts struct {
+	GsnCaller       GsnCaller
+	ChainId         *big.Int
+	Signer          *ecdsa.PrivateKey
+	ContractAddress common.Address
+}
 
 type GsnCaller interface {
 	GetForwarder(chainId *big.Int) (*wrappers.Forwarder, error)
@@ -165,4 +173,73 @@ func SignTypedData(key ecdsa.PrivateKey, addr common.MixedcaseAddress, typedData
 	}
 	signature[64] += 27
 	return signature, req.Hash, nil
+}
+
+func BridgeExecutor(gsnParams CallOpts, abiSrc, methodName string, args ...interface{}) (txHash common.Hash, err error) {
+	__contractABI, err := abi.JSON(strings.NewReader(abiSrc))
+	if err != nil {
+		return common.Hash{}, fmt.Errorf("could not parse ABI: %w", err)
+	}
+
+	__fRequest, err := __contractABI.Pack(methodName, args...)
+	if err != nil {
+		return
+	}
+
+	__forwarder, err := gsnParams.GsnCaller.GetForwarder(gsnParams.ChainId)
+	if err != nil {
+		return
+	}
+
+	__forwarderAddress, err := gsnParams.GsnCaller.GetForwarderAddress(gsnParams.ChainId)
+	if err != nil {
+		return
+	}
+
+	__signerAddress := crypto.PubkeyToAddress(gsnParams.Signer.PublicKey)
+
+	__nonce, err := __forwarder.GetNonce(&bind.CallOpts{}, __signerAddress)
+	if err != nil {
+		return
+	}
+
+	__req := &wrappers.IForwarderForwardRequest{
+		From:  __signerAddress,
+		To:    gsnParams.ContractAddress,
+		Value: big.NewInt(0),
+		Gas:   big.NewInt(1e6),
+		Nonce: __nonce,
+		Data:  __fRequest,
+	}
+
+	__typedData, err := NewForwardRequestTypedData(
+		__req,
+		__forwarderAddress.String(),
+		abiSrc,
+		methodName, args...)
+	if err != nil {
+		return
+	}
+
+	__typedDataSignature, _, err := NewSignature(__typedData, gsnParams.Signer)
+	if err != nil {
+		return
+	}
+
+	__domainSeparatorHash, err := NewDomainSeparatorHash(__typedData)
+	if err != nil {
+		return
+	}
+
+	__genericParams, err := __forwarder.GENERICPARAMS(&bind.CallOpts{})
+	if err != nil {
+		return
+	}
+
+	__reqTypeHash, err := NewRequestTypeHash(__genericParams)
+	if err != nil {
+		return
+	}
+
+	return gsnParams.GsnCaller.Execute(gsnParams.ChainId, *__req, __domainSeparatorHash, __reqTypeHash, nil, __typedDataSignature)
 }

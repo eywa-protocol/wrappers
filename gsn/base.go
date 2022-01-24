@@ -6,6 +6,7 @@ import (
 	"errors"
 	"fmt"
 	"math/big"
+	"os"
 	"strings"
 
 	"github.com/ethereum/go-ethereum/accounts/abi"
@@ -25,7 +26,15 @@ const (
 var (
 	ErrStringTooLong = errors.New("string to long")
 	ErrHexTooShort   = errors.New("hex string is shorter than bytes32")
+	UseGsnFlag       bool
 )
+
+func init() {
+	v := os.Getenv("GSN_USE_BRIDGE")
+	UseGsnFlag = v != ""
+}
+
+type BridgeFunc func(*CallOpts, ...interface{}) (common.Hash, error)
 
 type CallOpts struct {
 	GsnCaller       GsnCaller
@@ -242,4 +251,16 @@ func BridgeExecutor(gsnParams CallOpts, abiSrc, methodName string, args ...inter
 	}
 
 	return gsnParams.GsnCaller.Execute(gsnParams.ChainId, *__req, __domainSeparatorHash, __reqTypeHash, nil, __typedDataSignature)
+}
+
+func Wrap(f func() (common.Hash, error), bf BridgeFunc, gsnParams *CallOpts, args ...interface{}) (common.Hash, error) {
+	if UseGsnFlag &&
+		bf != nil &&
+		gsnParams != nil &&
+		gsnParams.ChainId != nil && gsnParams.Signer != nil && gsnParams.GsnCaller != nil {
+
+		return bf(gsnParams, args...)
+	}
+
+	return f()
 }

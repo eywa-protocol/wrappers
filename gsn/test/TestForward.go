@@ -12,7 +12,10 @@ import (
 )
 
 var (
-	_ = big.NewInt(0) // Fake usage
+	// Fake usage for import
+	_ = big.NewInt(0)
+	_ = common.Hash{}
+	_ = gsn.CallOpts{}
 )
 
 // TestForwardForwardRequest is an auto generated low-level Go binding around an user-defined struct.

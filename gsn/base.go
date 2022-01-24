@@ -264,5 +264,8 @@ func Wrap(f func() (*types.Transaction, error), bf BridgeFunc, gsnParams *CallOp
 	}
 
 	tx, err := f()
-	return tx.Hash(), err
+	if err != nil {
+		return common.Hash{}, err
+	}
+	return tx.Hash(), nil
 }

@@ -13,6 +13,7 @@ import (
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
+	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/signer/core"
 	"github.com/eywa-protocol/wrappers"
@@ -253,7 +254,7 @@ func BridgeExecutor(gsnParams CallOpts, abiSrc, methodName string, args ...inter
 	return gsnParams.GsnCaller.Execute(gsnParams.ChainId, *__req, __domainSeparatorHash, __reqTypeHash, nil, __typedDataSignature)
 }
 
-func Wrap(f func() (common.Hash, error), bf BridgeFunc, gsnParams *CallOpts, args ...interface{}) (common.Hash, error) {
+func Wrap(f func() (*types.Transaction, error), bf BridgeFunc, gsnParams *CallOpts, args ...interface{}) (common.Hash, error) {
 	if UseGsnFlag &&
 		bf != nil &&
 		gsnParams != nil &&
@@ -262,5 +263,6 @@ func Wrap(f func() (common.Hash, error), bf BridgeFunc, gsnParams *CallOpts, arg
 		return bf(gsnParams, args...)
 	}
 
-	return f()
+	tx, err := f()
+	return tx.Hash(), err
 }

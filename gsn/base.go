@@ -184,7 +184,7 @@ func SignTypedData(key ecdsa.PrivateKey, addr common.MixedcaseAddress, typedData
 	return signature, req.Hash, nil
 }
 
-func BridgeExecutor(gsnParams *CallOpts, abiSrc, methodName string, args ...interface{}) (txHash common.Hash, err error) {
+func Executor(gsnParams *CallOpts, abiSrc, methodName string, args ...interface{}) (txHash common.Hash, err error) {
 	__contractABI, err := abi.JSON(strings.NewReader(abiSrc))
 	if err != nil {
 		return common.Hash{}, fmt.Errorf("could not parse ABI: %w", err)

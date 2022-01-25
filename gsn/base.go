@@ -13,7 +13,6 @@ import (
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/signer/core"
 	"github.com/eywa-protocol/wrappers"
@@ -254,18 +253,13 @@ func BridgeExecutor(gsnParams *CallOpts, abiSrc, methodName string, args ...inte
 	return gsnParams.GsnCaller.Execute(gsnParams.ChainId, *__req, __domainSeparatorHash, __reqTypeHash, nil, __typedDataSignature)
 }
 
-func Wrap(f func() (*types.Transaction, error), bf BridgeFunc, gsnParams *CallOpts, args ...interface{}) (common.Hash, error) {
-	if UseGsnFlag &&
-		bf != nil &&
-		gsnParams != nil &&
-		gsnParams.ChainId != nil && gsnParams.Signer != nil && gsnParams.GsnCaller != nil {
-
-		return bf(gsnParams, args...)
+func Wrap(directCall func() (common.Hash, error), gsnCall func() (common.Hash, error)) (common.Hash, error) {
+	if UseGsnFlag && gsnCall != nil {
+		return gsnCall()
+	}
+	if directCall == nil {
+		return common.Hash{}, errors.New("directCall method absent")
 	}
 
-	tx, err := f()
-	if err != nil {
-		return common.Hash{}, err
-	}
-	return tx.Hash(), nil
+	return directCall()
 }

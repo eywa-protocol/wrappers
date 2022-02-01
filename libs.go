@@ -261,3 +261,65 @@ func GsnWrap(directCall func() (common.Hash, error), gsnCall func() (common.Hash
 
 	return directCall()
 }
+
+// Contract structs
+
+// IForwarderForwardRequest is an auto generated low-level Go binding around an user-defined struct.
+type IForwarderForwardRequest struct {
+	From  common.Address
+	To    common.Address
+	Value *big.Int
+	Gas   *big.Int
+	Nonce *big.Int
+	Data  []byte
+}
+
+// NodeRegistryNode is an auto generated low-level Go binding around an user-defined struct.
+type NodeRegistryNode struct {
+	Owner     common.Address
+	Pool      common.Address
+	HostId    string
+	BlsPubKey []byte
+	NodeId    *big.Int
+}
+
+// PortalPermitData is an auto generated low-level Go binding around an user-defined struct.
+type PortalPermitData struct {
+	V          uint8
+	R          [32]byte
+	S          [32]byte
+	Deadline   *big.Int
+	ApproveMax bool
+}
+
+// PortalSynthParams is an auto generated low-level Go binding around an user-defined struct.
+type PortalSynthParams struct {
+	Chain2address  common.Address
+	ReceiveSide    common.Address
+	OppositeBridge common.Address
+	ChainID        *big.Int
+}
+
+// SolanaSerializeSolanaAccountMeta is an auto generated low-level Go binding around an user-defined struct.
+type SolanaSerializeSolanaAccountMeta struct {
+	Pubkey     [32]byte
+	IsSigner   bool
+	IsWritable bool
+}
+
+// SolanaSerializeSolanaStandaloneInstruction is an auto generated low-level Go binding around an user-defined struct.
+type SolanaSerializeSolanaStandaloneInstruction struct {
+	ProgramId [32]byte
+	Accounts  []SolanaSerializeSolanaAccountMeta
+	Data      []byte
+}
+
+// TestForwardForwardRequest is an auto generated low-level Go binding around an user-defined struct.
+type TestForwardForwardRequest struct {
+	From  common.Address
+	To    common.Address
+	Value *big.Int
+	Gas   *big.Int
+	Nonce *big.Int
+	Data  []byte
+}

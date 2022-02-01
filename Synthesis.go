@@ -1,7 +1,7 @@
 // Code generated - DO NOT EDIT.
 // This file is a generated binding and any manual changes will be lost.
 
-package synthesis
+package wrappers
 
 import (
 	"errors"
@@ -27,20 +27,6 @@ var (
 	_ = types.BloomLookup
 	_ = event.NewSubscription
 )
-
-// SolanaSerializeSolanaAccountMeta is an auto generated low-level Go binding around an user-defined struct.
-type SolanaSerializeSolanaAccountMeta struct {
-	Pubkey     [32]byte
-	IsSigner   bool
-	IsWritable bool
-}
-
-// SolanaSerializeSolanaStandaloneInstruction is an auto generated low-level Go binding around an user-defined struct.
-type SolanaSerializeSolanaStandaloneInstruction struct {
-	ProgramId [32]byte
-	Accounts  []SolanaSerializeSolanaAccountMeta
-	Data      []byte
-}
 
 // SynthesisMetaData contains all meta data concerning the Synthesis contract.
 var SynthesisMetaData = &bind.MetaData{

@@ -1,7 +1,7 @@
 // Code generated - DO NOT EDIT.
 // This file is a generated binding and any manual changes will be lost.
 
-package portal
+package wrappers
 
 import (
 	"errors"
@@ -27,37 +27,6 @@ var (
 	_ = types.BloomLookup
 	_ = event.NewSubscription
 )
-
-// PortalPermitData is an auto generated low-level Go binding around an user-defined struct.
-type PortalPermitData struct {
-	V          uint8
-	R          [32]byte
-	S          [32]byte
-	Deadline   *big.Int
-	ApproveMax bool
-}
-
-// PortalSynthParams is an auto generated low-level Go binding around an user-defined struct.
-type PortalSynthParams struct {
-	Chain2address  common.Address
-	ReceiveSide    common.Address
-	OppositeBridge common.Address
-	ChainID        *big.Int
-}
-
-// SolanaSerializeSolanaAccountMeta is an auto generated low-level Go binding around an user-defined struct.
-type SolanaSerializeSolanaAccountMeta struct {
-	Pubkey     [32]byte
-	IsSigner   bool
-	IsWritable bool
-}
-
-// SolanaSerializeSolanaStandaloneInstruction is an auto generated low-level Go binding around an user-defined struct.
-type SolanaSerializeSolanaStandaloneInstruction struct {
-	ProgramId [32]byte
-	Accounts  []SolanaSerializeSolanaAccountMeta
-	Data      []byte
-}
 
 // PortalMetaData contains all meta data concerning the Portal contract.
 var PortalMetaData = &bind.MetaData{

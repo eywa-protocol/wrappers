@@ -490,6 +490,7 @@ func (_MockDexPool *MockDexPoolCallerSession) TestData() (*big.Int, error) {
 // Solidity: function receiveRequestTest(uint256 _testData, bytes32 _reqId) returns()
 func (_MockDexPool *MockDexPoolTransactor) ReceiveRequestTest(opts *bind.TransactOpts, _testData *big.Int, _reqId [32]byte) (common.Hash, error) {
 	return GsnWrap(
+		_MockDexPool.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _MockDexPool.contract.Transact(opts, "receiveRequestTest", _testData, _reqId)
 			if tx != nil {
@@ -522,6 +523,7 @@ func (_MockDexPool *MockDexPoolTransactorSession) ReceiveRequestTest(_testData *
 // Solidity: function sendRequestTestV2(uint256 testData_, address secondPartPool, address oppBridge, uint256 chainId) returns()
 func (_MockDexPool *MockDexPoolTransactor) SendRequestTestV2(opts *bind.TransactOpts, testData_ *big.Int, secondPartPool common.Address, oppBridge common.Address, chainId *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_MockDexPool.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _MockDexPool.contract.Transact(opts, "sendRequestTestV2", testData_, secondPartPool, oppBridge, chainId)
 			if tx != nil {
@@ -554,6 +556,7 @@ func (_MockDexPool *MockDexPoolTransactorSession) SendRequestTestV2(testData_ *b
 // Solidity: function sendTestRequestToSolana(bytes32 programId_, uint256 testData_, bytes32 secondPartPool, bytes32 oppBridge, uint256 chainId) returns()
 func (_MockDexPool *MockDexPoolTransactor) SendTestRequestToSolana(opts *bind.TransactOpts, programId_ [32]byte, testData_ *big.Int, secondPartPool [32]byte, oppBridge [32]byte, chainId *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_MockDexPool.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _MockDexPool.contract.Transact(opts, "sendTestRequestToSolana", programId_, testData_, secondPartPool, oppBridge, chainId)
 			if tx != nil {

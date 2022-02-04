@@ -189,6 +189,7 @@ func (_IERC20 *IERC20TransactorRaw) Transact(opts *bind.TransactOpts, method str
 // Solidity: function name() returns(string)
 func (_IERC20 *IERC20Transactor) Name(opts *bind.TransactOpts) (common.Hash, error) {
 	return GsnWrap(
+		_IERC20.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _IERC20.contract.Transact(opts, "name")
 			if tx != nil {
@@ -221,6 +222,7 @@ func (_IERC20 *IERC20TransactorSession) Name() (common.Hash, error) {
 // Solidity: function permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s) returns()
 func (_IERC20 *IERC20Transactor) Permit(opts *bind.TransactOpts, owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
 	return GsnWrap(
+		_IERC20.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _IERC20.contract.Transact(opts, "permit", owner, spender, value, deadline, v, r, s)
 			if tx != nil {
@@ -253,6 +255,7 @@ func (_IERC20 *IERC20TransactorSession) Permit(owner common.Address, spender com
 // Solidity: function symbol() returns(string)
 func (_IERC20 *IERC20Transactor) Symbol(opts *bind.TransactOpts) (common.Hash, error) {
 	return GsnWrap(
+		_IERC20.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _IERC20.contract.Transact(opts, "symbol")
 			if tx != nil {

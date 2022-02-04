@@ -866,6 +866,7 @@ func (_Synthesis *SynthesisCallerSession) VersionRecipient() (string, error) {
 // Solidity: function burnSyntheticToken(address _stoken, uint256 _amount, address _chain2address, address _receiveSide, address _oppositeBridge, uint256 _chainID) returns(bytes32 txID)
 func (_Synthesis *SynthesisTransactor) BurnSyntheticToken(opts *bind.TransactOpts, _stoken common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_Synthesis.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _Synthesis.contract.Transact(opts, "burnSyntheticToken", _stoken, _amount, _chain2address, _receiveSide, _oppositeBridge, _chainID)
 			if tx != nil {
@@ -898,6 +899,7 @@ func (_Synthesis *SynthesisTransactorSession) BurnSyntheticToken(_stoken common.
 // Solidity: function burnSyntheticTokenToSolana(address _stoken, bytes32[] _pubkeys, uint256 _amount, uint256 _chainId) returns(bytes32 txID)
 func (_Synthesis *SynthesisTransactor) BurnSyntheticTokenToSolana(opts *bind.TransactOpts, _stoken common.Address, _pubkeys [][32]byte, _amount *big.Int, _chainId *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_Synthesis.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _Synthesis.contract.Transact(opts, "burnSyntheticTokenToSolana", _stoken, _pubkeys, _amount, _chainId)
 			if tx != nil {
@@ -930,6 +932,7 @@ func (_Synthesis *SynthesisTransactorSession) BurnSyntheticTokenToSolana(_stoken
 // Solidity: function burnSyntheticToken_transit(address _stoken, uint256 _amount, address _chain2address, address _receiveSide, address _oppositeBridge, uint256 _chainID, bytes _out) returns(bytes32 txID)
 func (_Synthesis *SynthesisTransactor) BurnSyntheticTokenTransit(opts *bind.TransactOpts, _stoken common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int, _out []byte) (common.Hash, error) {
 	return GsnWrap(
+		_Synthesis.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _Synthesis.contract.Transact(opts, "burnSyntheticToken_transit", _stoken, _amount, _chain2address, _receiveSide, _oppositeBridge, _chainID, _out)
 			if tx != nil {
@@ -962,6 +965,7 @@ func (_Synthesis *SynthesisTransactorSession) BurnSyntheticTokenTransit(_stoken 
 // Solidity: function changeBridge(address _bridge) returns()
 func (_Synthesis *SynthesisTransactor) ChangeBridge(opts *bind.TransactOpts, _bridge common.Address) (common.Hash, error) {
 	return GsnWrap(
+		_Synthesis.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _Synthesis.contract.Transact(opts, "changeBridge", _bridge)
 			if tx != nil {
@@ -994,6 +998,7 @@ func (_Synthesis *SynthesisTransactorSession) ChangeBridge(_bridge common.Addres
 // Solidity: function createRepresentation(bytes32 _rtoken, string _name, string _symbol) returns()
 func (_Synthesis *SynthesisTransactor) CreateRepresentation(opts *bind.TransactOpts, _rtoken [32]byte, _name string, _symbol string) (common.Hash, error) {
 	return GsnWrap(
+		_Synthesis.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _Synthesis.contract.Transact(opts, "createRepresentation", _rtoken, _name, _symbol)
 			if tx != nil {
@@ -1026,6 +1031,7 @@ func (_Synthesis *SynthesisTransactorSession) CreateRepresentation(_rtoken [32]b
 // Solidity: function emergencyUnburn(bytes32 _txID) returns()
 func (_Synthesis *SynthesisTransactor) EmergencyUnburn(opts *bind.TransactOpts, _txID [32]byte) (common.Hash, error) {
 	return GsnWrap(
+		_Synthesis.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _Synthesis.contract.Transact(opts, "emergencyUnburn", _txID)
 			if tx != nil {
@@ -1058,6 +1064,7 @@ func (_Synthesis *SynthesisTransactorSession) EmergencyUnburn(_txID [32]byte) (c
 // Solidity: function emergencyUnsyntesizeRequest(bytes32 _txID, address _receiveSide, address _oppositeBridge, uint256 _chainID) returns()
 func (_Synthesis *SynthesisTransactor) EmergencyUnsyntesizeRequest(opts *bind.TransactOpts, _txID [32]byte, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_Synthesis.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _Synthesis.contract.Transact(opts, "emergencyUnsyntesizeRequest", _txID, _receiveSide, _oppositeBridge, _chainID)
 			if tx != nil {
@@ -1090,6 +1097,7 @@ func (_Synthesis *SynthesisTransactorSession) EmergencyUnsyntesizeRequest(_txID 
 // Solidity: function emergencyUnsyntesizeRequestToSolana(bytes32[] _pubkeys, bytes1 _bumpSynthesizeRequest, uint256 _chainId) returns()
 func (_Synthesis *SynthesisTransactor) EmergencyUnsyntesizeRequestToSolana(opts *bind.TransactOpts, _pubkeys [][32]byte, _bumpSynthesizeRequest [1]byte, _chainId *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_Synthesis.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _Synthesis.contract.Transact(opts, "emergencyUnsyntesizeRequestToSolana", _pubkeys, _bumpSynthesizeRequest, _chainId)
 			if tx != nil {
@@ -1122,6 +1130,7 @@ func (_Synthesis *SynthesisTransactorSession) EmergencyUnsyntesizeRequestToSolan
 // Solidity: function initializeFunc(address _bridge, address _trustedForwarder) returns()
 func (_Synthesis *SynthesisTransactor) InitializeFunc(opts *bind.TransactOpts, _bridge common.Address, _trustedForwarder common.Address) (common.Hash, error) {
 	return GsnWrap(
+		_Synthesis.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _Synthesis.contract.Transact(opts, "initializeFunc", _bridge, _trustedForwarder)
 			if tx != nil {
@@ -1154,6 +1163,7 @@ func (_Synthesis *SynthesisTransactorSession) InitializeFunc(_bridge common.Addr
 // Solidity: function mintSyntheticToken(bytes32 _txID, address _tokenReal, uint256 _amount, address _to) returns()
 func (_Synthesis *SynthesisTransactor) MintSyntheticToken(opts *bind.TransactOpts, _txID [32]byte, _tokenReal common.Address, _amount *big.Int, _to common.Address) (common.Hash, error) {
 	return GsnWrap(
+		_Synthesis.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _Synthesis.contract.Transact(opts, "mintSyntheticToken", _txID, _tokenReal, _amount, _to)
 			if tx != nil {
@@ -1186,6 +1196,7 @@ func (_Synthesis *SynthesisTransactorSession) MintSyntheticToken(_txID [32]byte,
 // Solidity: function mintSyntheticTokenToSolana(bytes32 _txID, bytes32 _tokenReal, uint256 _amount, address _to) returns()
 func (_Synthesis *SynthesisTransactor) MintSyntheticTokenToSolana(opts *bind.TransactOpts, _txID [32]byte, _tokenReal [32]byte, _amount *big.Int, _to common.Address) (common.Hash, error) {
 	return GsnWrap(
+		_Synthesis.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _Synthesis.contract.Transact(opts, "mintSyntheticTokenToSolana", _txID, _tokenReal, _amount, _to)
 			if tx != nil {
@@ -1218,6 +1229,7 @@ func (_Synthesis *SynthesisTransactorSession) MintSyntheticTokenToSolana(_txID [
 // Solidity: function renounceOwnership() returns()
 func (_Synthesis *SynthesisTransactor) RenounceOwnership(opts *bind.TransactOpts) (common.Hash, error) {
 	return GsnWrap(
+		_Synthesis.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _Synthesis.contract.Transact(opts, "renounceOwnership")
 			if tx != nil {
@@ -1250,6 +1262,7 @@ func (_Synthesis *SynthesisTransactorSession) RenounceOwnership() (common.Hash, 
 // Solidity: function setProxyCurve(address _proxy) returns()
 func (_Synthesis *SynthesisTransactor) SetProxyCurve(opts *bind.TransactOpts, _proxy common.Address) (common.Hash, error) {
 	return GsnWrap(
+		_Synthesis.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _Synthesis.contract.Transact(opts, "setProxyCurve", _proxy)
 			if tx != nil {
@@ -1282,6 +1295,7 @@ func (_Synthesis *SynthesisTransactorSession) SetProxyCurve(_proxy common.Addres
 // Solidity: function setTrustedForwarder(address _forwarder) returns()
 func (_Synthesis *SynthesisTransactor) SetTrustedForwarder(opts *bind.TransactOpts, _forwarder common.Address) (common.Hash, error) {
 	return GsnWrap(
+		_Synthesis.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _Synthesis.contract.Transact(opts, "setTrustedForwarder", _forwarder)
 			if tx != nil {
@@ -1314,6 +1328,7 @@ func (_Synthesis *SynthesisTransactorSession) SetTrustedForwarder(_forwarder com
 // Solidity: function transferOwnership(address newOwner) returns()
 func (_Synthesis *SynthesisTransactor) TransferOwnership(opts *bind.TransactOpts, newOwner common.Address) (common.Hash, error) {
 	return GsnWrap(
+		_Synthesis.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _Synthesis.contract.Transact(opts, "transferOwnership", newOwner)
 			if tx != nil {

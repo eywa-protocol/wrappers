@@ -395,6 +395,7 @@ func (_Forwarder *ForwarderCallerSession) Verify(req IForwarderForwardRequest, d
 // Solidity: function execute((address,address,uint256,uint256,uint256,bytes) req, bytes32 domainSeparator, bytes32 requestTypeHash, bytes suffixData, bytes sig) payable returns(bool success, bytes ret)
 func (_Forwarder *ForwarderTransactor) Execute(opts *bind.TransactOpts, req IForwarderForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (common.Hash, error) {
 	return GsnWrap(
+		_Forwarder.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _Forwarder.contract.Transact(opts, "execute", req, domainSeparator, requestTypeHash, suffixData, sig)
 			if tx != nil {
@@ -427,6 +428,7 @@ func (_Forwarder *ForwarderTransactorSession) Execute(req IForwarderForwardReque
 // Solidity: function execute2((address,address,uint256,uint256,uint256,bytes) req) payable returns(bool, bytes)
 func (_Forwarder *ForwarderTransactor) Execute2(opts *bind.TransactOpts, req IForwarderForwardRequest) (common.Hash, error) {
 	return GsnWrap(
+		_Forwarder.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _Forwarder.contract.Transact(opts, "execute2", req)
 			if tx != nil {
@@ -459,6 +461,7 @@ func (_Forwarder *ForwarderTransactorSession) Execute2(req IForwarderForwardRequ
 // Solidity: function executeAssemblyForwarderRequest((address,address,uint256,uint256,uint256,bytes) req) returns(bool, bytes)
 func (_Forwarder *ForwarderTransactor) ExecuteAssemblyForwarderRequest(opts *bind.TransactOpts, req IForwarderForwardRequest) (common.Hash, error) {
 	return GsnWrap(
+		_Forwarder.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _Forwarder.contract.Transact(opts, "executeAssemblyForwarderRequest", req)
 			if tx != nil {
@@ -491,6 +494,7 @@ func (_Forwarder *ForwarderTransactorSession) ExecuteAssemblyForwarderRequest(re
 // Solidity: function registerRequestType(string typeName, string typeSuffix) returns()
 func (_Forwarder *ForwarderTransactor) RegisterRequestType(opts *bind.TransactOpts, typeName string, typeSuffix string) (common.Hash, error) {
 	return GsnWrap(
+		_Forwarder.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _Forwarder.contract.Transact(opts, "registerRequestType", typeName, typeSuffix)
 			if tx != nil {

@@ -397,6 +397,7 @@ func (_TestForward *TestForwardCallerSession) VersionRecipient() (string, error)
 // Solidity: function foo(uint256 _val, string _str) returns()
 func (_TestForward *TestForwardTransactor) Foo(opts *bind.TransactOpts, _val *big.Int, _str string) (common.Hash, error) {
 	return GsnWrap(
+		_TestForward.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _TestForward.contract.Transact(opts, "foo", _val, _str)
 			if tx != nil {
@@ -429,6 +430,7 @@ func (_TestForward *TestForwardTransactorSession) Foo(_val *big.Int, _str string
 // Solidity: function testExecute((address,address,uint256,uint256,uint256,bytes) req, bytes32 domainSeparator, bytes32 requestTypeHash, bytes suffixData, bytes sig) payable returns(bool success, string ret)
 func (_TestForward *TestForwardTransactor) TestExecute(opts *bind.TransactOpts, req TestForwardForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (common.Hash, error) {
 	return GsnWrap(
+		_TestForward.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _TestForward.contract.Transact(opts, "testExecute", req, domainSeparator, requestTypeHash, suffixData, sig)
 			if tx != nil {

@@ -335,6 +335,7 @@ func (_TestTarget *TestTargetCallerSession) TestUint() (*big.Int, error) {
 // Solidity: function setTestAddress(address _address) returns(address)
 func (_TestTarget *TestTargetTransactor) SetTestAddress(opts *bind.TransactOpts, _address common.Address) (common.Hash, error) {
 	return GsnWrap(
+		_TestTarget.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _TestTarget.contract.Transact(opts, "setTestAddress", _address)
 			if tx != nil {
@@ -367,6 +368,7 @@ func (_TestTarget *TestTargetTransactorSession) SetTestAddress(_address common.A
 // Solidity: function setTestBytes(bytes _inputBytes) returns()
 func (_TestTarget *TestTargetTransactor) SetTestBytes(opts *bind.TransactOpts, _inputBytes []byte) (common.Hash, error) {
 	return GsnWrap(
+		_TestTarget.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _TestTarget.contract.Transact(opts, "setTestBytes", _inputBytes)
 			if tx != nil {
@@ -399,6 +401,7 @@ func (_TestTarget *TestTargetTransactorSession) SetTestBytes(_inputBytes []byte)
 // Solidity: function setTestString(string _inputString) returns()
 func (_TestTarget *TestTargetTransactor) SetTestString(opts *bind.TransactOpts, _inputString string) (common.Hash, error) {
 	return GsnWrap(
+		_TestTarget.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _TestTarget.contract.Transact(opts, "setTestString", _inputString)
 			if tx != nil {
@@ -431,6 +434,7 @@ func (_TestTarget *TestTargetTransactorSession) SetTestString(_inputString strin
 // Solidity: function setTestUint(uint256 _testUint) returns(uint256)
 func (_TestTarget *TestTargetTransactor) SetTestUint(opts *bind.TransactOpts, _testUint *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_TestTarget.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _TestTarget.contract.Transact(opts, "setTestUint", _testUint)
 			if tx != nil {

@@ -437,6 +437,7 @@ func (_ERC20Permit *ERC20PermitCallerSession) TotalSupply() (*big.Int, error) {
 // Solidity: function approve(address spender, uint256 amount) returns(bool)
 func (_ERC20Permit *ERC20PermitTransactor) Approve(opts *bind.TransactOpts, spender common.Address, amount *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_ERC20Permit.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _ERC20Permit.contract.Transact(opts, "approve", spender, amount)
 			if tx != nil {
@@ -469,6 +470,7 @@ func (_ERC20Permit *ERC20PermitTransactorSession) Approve(spender common.Address
 // Solidity: function decreaseAllowance(address spender, uint256 subtractedValue) returns(bool)
 func (_ERC20Permit *ERC20PermitTransactor) DecreaseAllowance(opts *bind.TransactOpts, spender common.Address, subtractedValue *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_ERC20Permit.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _ERC20Permit.contract.Transact(opts, "decreaseAllowance", spender, subtractedValue)
 			if tx != nil {
@@ -501,6 +503,7 @@ func (_ERC20Permit *ERC20PermitTransactorSession) DecreaseAllowance(spender comm
 // Solidity: function increaseAllowance(address spender, uint256 addedValue) returns(bool)
 func (_ERC20Permit *ERC20PermitTransactor) IncreaseAllowance(opts *bind.TransactOpts, spender common.Address, addedValue *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_ERC20Permit.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _ERC20Permit.contract.Transact(opts, "increaseAllowance", spender, addedValue)
 			if tx != nil {
@@ -533,6 +536,7 @@ func (_ERC20Permit *ERC20PermitTransactorSession) IncreaseAllowance(spender comm
 // Solidity: function permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s) returns()
 func (_ERC20Permit *ERC20PermitTransactor) Permit(opts *bind.TransactOpts, owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
 	return GsnWrap(
+		_ERC20Permit.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _ERC20Permit.contract.Transact(opts, "permit", owner, spender, value, deadline, v, r, s)
 			if tx != nil {
@@ -565,6 +569,7 @@ func (_ERC20Permit *ERC20PermitTransactorSession) Permit(owner common.Address, s
 // Solidity: function transfer(address recipient, uint256 amount) returns(bool)
 func (_ERC20Permit *ERC20PermitTransactor) Transfer(opts *bind.TransactOpts, recipient common.Address, amount *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_ERC20Permit.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _ERC20Permit.contract.Transact(opts, "transfer", recipient, amount)
 			if tx != nil {
@@ -597,6 +602,7 @@ func (_ERC20Permit *ERC20PermitTransactorSession) Transfer(recipient common.Addr
 // Solidity: function transferFrom(address sender, address recipient, uint256 amount) returns(bool)
 func (_ERC20Permit *ERC20PermitTransactor) TransferFrom(opts *bind.TransactOpts, sender common.Address, recipient common.Address, amount *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_ERC20Permit.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _ERC20Permit.contract.Transact(opts, "transferFrom", sender, recipient, amount)
 			if tx != nil {

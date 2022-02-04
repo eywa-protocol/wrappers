@@ -459,6 +459,7 @@ func (_TestTokenPermit *TestTokenPermitCallerSession) TotalSupply() (*big.Int, e
 // Solidity: function approve(address spender, uint256 amount) returns(bool)
 func (_TestTokenPermit *TestTokenPermitTransactor) Approve(opts *bind.TransactOpts, spender common.Address, amount *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_TestTokenPermit.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _TestTokenPermit.contract.Transact(opts, "approve", spender, amount)
 			if tx != nil {
@@ -491,6 +492,7 @@ func (_TestTokenPermit *TestTokenPermitTransactorSession) Approve(spender common
 // Solidity: function burn(address account, uint256 amount) returns()
 func (_TestTokenPermit *TestTokenPermitTransactor) Burn(opts *bind.TransactOpts, account common.Address, amount *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_TestTokenPermit.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _TestTokenPermit.contract.Transact(opts, "burn", account, amount)
 			if tx != nil {
@@ -523,6 +525,7 @@ func (_TestTokenPermit *TestTokenPermitTransactorSession) Burn(account common.Ad
 // Solidity: function burnWithAllowanceDecrease(address account, address spender, uint256 amount) returns()
 func (_TestTokenPermit *TestTokenPermitTransactor) BurnWithAllowanceDecrease(opts *bind.TransactOpts, account common.Address, spender common.Address, amount *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_TestTokenPermit.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _TestTokenPermit.contract.Transact(opts, "burnWithAllowanceDecrease", account, spender, amount)
 			if tx != nil {
@@ -555,6 +558,7 @@ func (_TestTokenPermit *TestTokenPermitTransactorSession) BurnWithAllowanceDecre
 // Solidity: function decreaseAllowance(address spender, uint256 subtractedValue) returns(bool)
 func (_TestTokenPermit *TestTokenPermitTransactor) DecreaseAllowance(opts *bind.TransactOpts, spender common.Address, subtractedValue *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_TestTokenPermit.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _TestTokenPermit.contract.Transact(opts, "decreaseAllowance", spender, subtractedValue)
 			if tx != nil {
@@ -587,6 +591,7 @@ func (_TestTokenPermit *TestTokenPermitTransactorSession) DecreaseAllowance(spen
 // Solidity: function increaseAllowance(address spender, uint256 addedValue) returns(bool)
 func (_TestTokenPermit *TestTokenPermitTransactor) IncreaseAllowance(opts *bind.TransactOpts, spender common.Address, addedValue *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_TestTokenPermit.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _TestTokenPermit.contract.Transact(opts, "increaseAllowance", spender, addedValue)
 			if tx != nil {
@@ -619,6 +624,7 @@ func (_TestTokenPermit *TestTokenPermitTransactorSession) IncreaseAllowance(spen
 // Solidity: function mint(address account, uint256 amount) returns()
 func (_TestTokenPermit *TestTokenPermitTransactor) Mint(opts *bind.TransactOpts, account common.Address, amount *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_TestTokenPermit.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _TestTokenPermit.contract.Transact(opts, "mint", account, amount)
 			if tx != nil {
@@ -651,6 +657,7 @@ func (_TestTokenPermit *TestTokenPermitTransactorSession) Mint(account common.Ad
 // Solidity: function mintWithAllowance(address account, address spender, uint256 amount) returns()
 func (_TestTokenPermit *TestTokenPermitTransactor) MintWithAllowance(opts *bind.TransactOpts, account common.Address, spender common.Address, amount *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_TestTokenPermit.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _TestTokenPermit.contract.Transact(opts, "mintWithAllowance", account, spender, amount)
 			if tx != nil {
@@ -683,6 +690,7 @@ func (_TestTokenPermit *TestTokenPermitTransactorSession) MintWithAllowance(acco
 // Solidity: function permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s) returns()
 func (_TestTokenPermit *TestTokenPermitTransactor) Permit(opts *bind.TransactOpts, owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
 	return GsnWrap(
+		_TestTokenPermit.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _TestTokenPermit.contract.Transact(opts, "permit", owner, spender, value, deadline, v, r, s)
 			if tx != nil {
@@ -715,6 +723,7 @@ func (_TestTokenPermit *TestTokenPermitTransactorSession) Permit(owner common.Ad
 // Solidity: function transfer(address recipient, uint256 amount) returns(bool)
 func (_TestTokenPermit *TestTokenPermitTransactor) Transfer(opts *bind.TransactOpts, recipient common.Address, amount *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_TestTokenPermit.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _TestTokenPermit.contract.Transact(opts, "transfer", recipient, amount)
 			if tx != nil {
@@ -747,6 +756,7 @@ func (_TestTokenPermit *TestTokenPermitTransactorSession) Transfer(recipient com
 // Solidity: function transferFrom(address sender, address recipient, uint256 amount) returns(bool)
 func (_TestTokenPermit *TestTokenPermitTransactor) TransferFrom(opts *bind.TransactOpts, sender common.Address, recipient common.Address, amount *big.Int) (common.Hash, error) {
 	return GsnWrap(
+		_TestTokenPermit.gsn,
 		func() (common.Hash, error) {
 			tx, errIn := _TestTokenPermit.contract.Transact(opts, "transferFrom", sender, recipient, amount)
 			if tx != nil {

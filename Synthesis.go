@@ -943,7 +943,7 @@ func (_Synthesis *SynthesisTransactor) BurnSyntheticToken(opts *bind.TransactOpt
 
 	return tx.Hash(), err
 }
-func (_Synthesis *SynthesisTransactor) BurnSyntheticTokenGsn(opts *bind.TransactOpts, _stoken common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int) (common.Hash, error) {
+func (_Synthesis *SynthesisTransactor) BurnSyntheticTokenOverGsn(opts *bind.TransactOpts, _stoken common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int) (common.Hash, error) {
 	return GsnExecutor(_Synthesis.gsn, SynthesisMetaData.ABI, "burnSyntheticToken", _stoken, _amount, _chain2address, _receiveSide, _oppositeBridge, _chainID)
 }
 
@@ -979,7 +979,7 @@ func (_Synthesis *SynthesisTransactor) BurnSyntheticTokenToSolana(opts *bind.Tra
 
 	return tx.Hash(), err
 }
-func (_Synthesis *SynthesisTransactor) BurnSyntheticTokenToSolanaGsn(opts *bind.TransactOpts, _stoken common.Address, _pubkeys [][32]byte, _amount *big.Int, _chainId *big.Int) (common.Hash, error) {
+func (_Synthesis *SynthesisTransactor) BurnSyntheticTokenToSolanaOverGsn(opts *bind.TransactOpts, _stoken common.Address, _pubkeys [][32]byte, _amount *big.Int, _chainId *big.Int) (common.Hash, error) {
 	return GsnExecutor(_Synthesis.gsn, SynthesisMetaData.ABI, "burnSyntheticTokenToSolana", _stoken, _pubkeys, _amount, _chainId)
 }
 
@@ -1015,7 +1015,7 @@ func (_Synthesis *SynthesisTransactor) BurnSyntheticTokenTransit(opts *bind.Tran
 
 	return tx.Hash(), err
 }
-func (_Synthesis *SynthesisTransactor) BurnSyntheticTokenTransitGsn(opts *bind.TransactOpts, _stoken common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int, _out []byte) (common.Hash, error) {
+func (_Synthesis *SynthesisTransactor) BurnSyntheticTokenTransitOverGsn(opts *bind.TransactOpts, _stoken common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int, _out []byte) (common.Hash, error) {
 	return GsnExecutor(_Synthesis.gsn, SynthesisMetaData.ABI, "burnSyntheticToken_transit", _stoken, _amount, _chain2address, _receiveSide, _oppositeBridge, _chainID, _out)
 }
 
@@ -1051,7 +1051,7 @@ func (_Synthesis *SynthesisTransactor) ChangeBridge(opts *bind.TransactOpts, _br
 
 	return tx.Hash(), err
 }
-func (_Synthesis *SynthesisTransactor) ChangeBridgeGsn(opts *bind.TransactOpts, _bridge common.Address) (common.Hash, error) {
+func (_Synthesis *SynthesisTransactor) ChangeBridgeOverGsn(opts *bind.TransactOpts, _bridge common.Address) (common.Hash, error) {
 	return GsnExecutor(_Synthesis.gsn, SynthesisMetaData.ABI, "changeBridge", _bridge)
 }
 
@@ -1087,7 +1087,7 @@ func (_Synthesis *SynthesisTransactor) CreateRepresentation(opts *bind.TransactO
 
 	return tx.Hash(), err
 }
-func (_Synthesis *SynthesisTransactor) CreateRepresentationGsn(opts *bind.TransactOpts, _rtoken [32]byte, _name string, _symbol string) (common.Hash, error) {
+func (_Synthesis *SynthesisTransactor) CreateRepresentationOverGsn(opts *bind.TransactOpts, _rtoken [32]byte, _name string, _symbol string) (common.Hash, error) {
 	return GsnExecutor(_Synthesis.gsn, SynthesisMetaData.ABI, "createRepresentation", _rtoken, _name, _symbol)
 }
 
@@ -1123,7 +1123,7 @@ func (_Synthesis *SynthesisTransactor) EmergencyUnburn(opts *bind.TransactOpts, 
 
 	return tx.Hash(), err
 }
-func (_Synthesis *SynthesisTransactor) EmergencyUnburnGsn(opts *bind.TransactOpts, _txID [32]byte) (common.Hash, error) {
+func (_Synthesis *SynthesisTransactor) EmergencyUnburnOverGsn(opts *bind.TransactOpts, _txID [32]byte) (common.Hash, error) {
 	return GsnExecutor(_Synthesis.gsn, SynthesisMetaData.ABI, "emergencyUnburn", _txID)
 }
 
@@ -1159,7 +1159,7 @@ func (_Synthesis *SynthesisTransactor) EmergencyUnsyntesizeRequest(opts *bind.Tr
 
 	return tx.Hash(), err
 }
-func (_Synthesis *SynthesisTransactor) EmergencyUnsyntesizeRequestGsn(opts *bind.TransactOpts, _txID [32]byte, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int) (common.Hash, error) {
+func (_Synthesis *SynthesisTransactor) EmergencyUnsyntesizeRequestOverGsn(opts *bind.TransactOpts, _txID [32]byte, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int) (common.Hash, error) {
 	return GsnExecutor(_Synthesis.gsn, SynthesisMetaData.ABI, "emergencyUnsyntesizeRequest", _txID, _receiveSide, _oppositeBridge, _chainID)
 }
 
@@ -1195,7 +1195,7 @@ func (_Synthesis *SynthesisTransactor) EmergencyUnsyntesizeRequestToSolana(opts 
 
 	return tx.Hash(), err
 }
-func (_Synthesis *SynthesisTransactor) EmergencyUnsyntesizeRequestToSolanaGsn(opts *bind.TransactOpts, _pubkeys [][32]byte, _bumpSynthesizeRequest [1]byte, _chainId *big.Int) (common.Hash, error) {
+func (_Synthesis *SynthesisTransactor) EmergencyUnsyntesizeRequestToSolanaOverGsn(opts *bind.TransactOpts, _pubkeys [][32]byte, _bumpSynthesizeRequest [1]byte, _chainId *big.Int) (common.Hash, error) {
 	return GsnExecutor(_Synthesis.gsn, SynthesisMetaData.ABI, "emergencyUnsyntesizeRequestToSolana", _pubkeys, _bumpSynthesizeRequest, _chainId)
 }
 
@@ -1231,7 +1231,7 @@ func (_Synthesis *SynthesisTransactor) InitializeFunc(opts *bind.TransactOpts, _
 
 	return tx.Hash(), err
 }
-func (_Synthesis *SynthesisTransactor) InitializeFuncGsn(opts *bind.TransactOpts, _bridge common.Address, _trustedForwarder common.Address) (common.Hash, error) {
+func (_Synthesis *SynthesisTransactor) InitializeFuncOverGsn(opts *bind.TransactOpts, _bridge common.Address, _trustedForwarder common.Address) (common.Hash, error) {
 	return GsnExecutor(_Synthesis.gsn, SynthesisMetaData.ABI, "initializeFunc", _bridge, _trustedForwarder)
 }
 
@@ -1267,7 +1267,7 @@ func (_Synthesis *SynthesisTransactor) MintSyntheticToken(opts *bind.TransactOpt
 
 	return tx.Hash(), err
 }
-func (_Synthesis *SynthesisTransactor) MintSyntheticTokenGsn(opts *bind.TransactOpts, _txID [32]byte, _tokenReal common.Address, _amount *big.Int, _to common.Address) (common.Hash, error) {
+func (_Synthesis *SynthesisTransactor) MintSyntheticTokenOverGsn(opts *bind.TransactOpts, _txID [32]byte, _tokenReal common.Address, _amount *big.Int, _to common.Address) (common.Hash, error) {
 	return GsnExecutor(_Synthesis.gsn, SynthesisMetaData.ABI, "mintSyntheticToken", _txID, _tokenReal, _amount, _to)
 }
 
@@ -1303,7 +1303,7 @@ func (_Synthesis *SynthesisTransactor) MintSyntheticTokenToSolana(opts *bind.Tra
 
 	return tx.Hash(), err
 }
-func (_Synthesis *SynthesisTransactor) MintSyntheticTokenToSolanaGsn(opts *bind.TransactOpts, _txID [32]byte, _tokenReal [32]byte, _amount *big.Int, _to common.Address) (common.Hash, error) {
+func (_Synthesis *SynthesisTransactor) MintSyntheticTokenToSolanaOverGsn(opts *bind.TransactOpts, _txID [32]byte, _tokenReal [32]byte, _amount *big.Int, _to common.Address) (common.Hash, error) {
 	return GsnExecutor(_Synthesis.gsn, SynthesisMetaData.ABI, "mintSyntheticTokenToSolana", _txID, _tokenReal, _amount, _to)
 }
 
@@ -1339,7 +1339,7 @@ func (_Synthesis *SynthesisTransactor) RenounceOwnership(opts *bind.TransactOpts
 
 	return tx.Hash(), err
 }
-func (_Synthesis *SynthesisTransactor) RenounceOwnershipGsn(opts *bind.TransactOpts) (common.Hash, error) {
+func (_Synthesis *SynthesisTransactor) RenounceOwnershipOverGsn(opts *bind.TransactOpts) (common.Hash, error) {
 	return GsnExecutor(_Synthesis.gsn, SynthesisMetaData.ABI, "renounceOwnership")
 }
 
@@ -1375,7 +1375,7 @@ func (_Synthesis *SynthesisTransactor) SetProxyCurve(opts *bind.TransactOpts, _p
 
 	return tx.Hash(), err
 }
-func (_Synthesis *SynthesisTransactor) SetProxyCurveGsn(opts *bind.TransactOpts, _proxy common.Address) (common.Hash, error) {
+func (_Synthesis *SynthesisTransactor) SetProxyCurveOverGsn(opts *bind.TransactOpts, _proxy common.Address) (common.Hash, error) {
 	return GsnExecutor(_Synthesis.gsn, SynthesisMetaData.ABI, "setProxyCurve", _proxy)
 }
 
@@ -1411,7 +1411,7 @@ func (_Synthesis *SynthesisTransactor) SetTrustedForwarder(opts *bind.TransactOp
 
 	return tx.Hash(), err
 }
-func (_Synthesis *SynthesisTransactor) SetTrustedForwarderGsn(opts *bind.TransactOpts, _forwarder common.Address) (common.Hash, error) {
+func (_Synthesis *SynthesisTransactor) SetTrustedForwarderOverGsn(opts *bind.TransactOpts, _forwarder common.Address) (common.Hash, error) {
 	return GsnExecutor(_Synthesis.gsn, SynthesisMetaData.ABI, "setTrustedForwarder", _forwarder)
 }
 
@@ -1447,7 +1447,7 @@ func (_Synthesis *SynthesisTransactor) TransferOwnership(opts *bind.TransactOpts
 
 	return tx.Hash(), err
 }
-func (_Synthesis *SynthesisTransactor) TransferOwnershipGsn(opts *bind.TransactOpts, newOwner common.Address) (common.Hash, error) {
+func (_Synthesis *SynthesisTransactor) TransferOwnershipOverGsn(opts *bind.TransactOpts, newOwner common.Address) (common.Hash, error) {
 	return GsnExecutor(_Synthesis.gsn, SynthesisMetaData.ABI, "transferOwnership", newOwner)
 }
 

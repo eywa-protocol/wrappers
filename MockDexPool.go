@@ -536,7 +536,7 @@ func (_MockDexPool *MockDexPoolTransactor) ReceiveRequestTest(opts *bind.Transac
 
 	return tx.Hash(), err
 }
-func (_MockDexPool *MockDexPoolTransactor) ReceiveRequestTestGsn(opts *bind.TransactOpts, _testData *big.Int, _reqId [32]byte) (common.Hash, error) {
+func (_MockDexPool *MockDexPoolTransactor) ReceiveRequestTestOverGsn(opts *bind.TransactOpts, _testData *big.Int, _reqId [32]byte) (common.Hash, error) {
 	return GsnExecutor(_MockDexPool.gsn, MockDexPoolMetaData.ABI, "receiveRequestTest", _testData, _reqId)
 }
 
@@ -572,7 +572,7 @@ func (_MockDexPool *MockDexPoolTransactor) SendRequestTestV2(opts *bind.Transact
 
 	return tx.Hash(), err
 }
-func (_MockDexPool *MockDexPoolTransactor) SendRequestTestV2Gsn(opts *bind.TransactOpts, testData_ *big.Int, secondPartPool common.Address, oppBridge common.Address, chainId *big.Int) (common.Hash, error) {
+func (_MockDexPool *MockDexPoolTransactor) SendRequestTestV2OverGsn(opts *bind.TransactOpts, testData_ *big.Int, secondPartPool common.Address, oppBridge common.Address, chainId *big.Int) (common.Hash, error) {
 	return GsnExecutor(_MockDexPool.gsn, MockDexPoolMetaData.ABI, "sendRequestTestV2", testData_, secondPartPool, oppBridge, chainId)
 }
 
@@ -608,7 +608,7 @@ func (_MockDexPool *MockDexPoolTransactor) SendTestRequestToSolana(opts *bind.Tr
 
 	return tx.Hash(), err
 }
-func (_MockDexPool *MockDexPoolTransactor) SendTestRequestToSolanaGsn(opts *bind.TransactOpts, testStubPID_ [32]byte, solBridgePID_ [32]byte, dataAcc_ [32]byte, bridgePDASigner_ [32]byte, testData_ *big.Int, chainId *big.Int) (common.Hash, error) {
+func (_MockDexPool *MockDexPoolTransactor) SendTestRequestToSolanaOverGsn(opts *bind.TransactOpts, testStubPID_ [32]byte, solBridgePID_ [32]byte, dataAcc_ [32]byte, bridgePDASigner_ [32]byte, testData_ *big.Int, chainId *big.Int) (common.Hash, error) {
 	return GsnExecutor(_MockDexPool.gsn, MockDexPoolMetaData.ABI, "sendTestRequestToSolana", testStubPID_, solBridgePID_, dataAcc_, bridgePDASigner_, testData_, chainId)
 }
 

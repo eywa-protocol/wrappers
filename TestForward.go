@@ -412,7 +412,7 @@ func (_TestForward *TestForwardTransactor) Foo(opts *bind.TransactOpts, _val *bi
 
 	return tx.Hash(), err
 }
-func (_TestForward *TestForwardTransactor) FooGsn(opts *bind.TransactOpts, _val *big.Int, _str string) (common.Hash, error) {
+func (_TestForward *TestForwardTransactor) FooOverGsn(opts *bind.TransactOpts, _val *big.Int, _str string) (common.Hash, error) {
 	return GsnExecutor(_TestForward.gsn, TestForwardMetaData.ABI, "foo", _val, _str)
 }
 
@@ -448,7 +448,7 @@ func (_TestForward *TestForwardTransactor) TestExecute(opts *bind.TransactOpts, 
 
 	return tx.Hash(), err
 }
-func (_TestForward *TestForwardTransactor) TestExecuteGsn(opts *bind.TransactOpts, req TestForwardForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (common.Hash, error) {
+func (_TestForward *TestForwardTransactor) TestExecuteOverGsn(opts *bind.TransactOpts, req TestForwardForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (common.Hash, error) {
 	return GsnExecutor(_TestForward.gsn, TestForwardMetaData.ABI, "testExecute", req, domainSeparator, requestTypeHash, suffixData, sig)
 }
 

@@ -631,7 +631,7 @@ func (_Bridge *BridgeTransactor) AddContractBind(opts *bind.TransactOpts, from [
 
 	return tx.Hash(), err
 }
-func (_Bridge *BridgeTransactor) AddContractBindGsn(opts *bind.TransactOpts, from [32]byte, oppositeBridge [32]byte, to [32]byte) (common.Hash, error) {
+func (_Bridge *BridgeTransactor) AddContractBindOverGsn(opts *bind.TransactOpts, from [32]byte, oppositeBridge [32]byte, to [32]byte) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "addContractBind", from, oppositeBridge, to)
 }
 
@@ -667,7 +667,7 @@ func (_Bridge *BridgeTransactor) DaoTransferOwnership(opts *bind.TransactOpts, n
 
 	return tx.Hash(), err
 }
-func (_Bridge *BridgeTransactor) DaoTransferOwnershipGsn(opts *bind.TransactOpts, newDao common.Address) (common.Hash, error) {
+func (_Bridge *BridgeTransactor) DaoTransferOwnershipOverGsn(opts *bind.TransactOpts, newDao common.Address) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "daoTransferOwnership", newDao)
 }
 
@@ -703,7 +703,7 @@ func (_Bridge *BridgeTransactor) DaoUpdateEpochRequest(opts *bind.TransactOpts, 
 
 	return tx.Hash(), err
 }
-func (_Bridge *BridgeTransactor) DaoUpdateEpochRequestGsn(opts *bind.TransactOpts, resetEpoch bool) (common.Hash, error) {
+func (_Bridge *BridgeTransactor) DaoUpdateEpochRequestOverGsn(opts *bind.TransactOpts, resetEpoch bool) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "daoUpdateEpochRequest", resetEpoch)
 }
 
@@ -739,7 +739,7 @@ func (_Bridge *BridgeTransactor) Initialize(opts *bind.TransactOpts, forwarder c
 
 	return tx.Hash(), err
 }
-func (_Bridge *BridgeTransactor) InitializeGsn(opts *bind.TransactOpts, forwarder common.Address) (common.Hash, error) {
+func (_Bridge *BridgeTransactor) InitializeOverGsn(opts *bind.TransactOpts, forwarder common.Address) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "initialize", forwarder)
 }
 
@@ -775,7 +775,7 @@ func (_Bridge *BridgeTransactor) ReceiveRequestV2(opts *bind.TransactOpts, _reqI
 
 	return tx.Hash(), err
 }
-func (_Bridge *BridgeTransactor) ReceiveRequestV2Gsn(opts *bind.TransactOpts, _reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (common.Hash, error) {
+func (_Bridge *BridgeTransactor) ReceiveRequestV2OverGsn(opts *bind.TransactOpts, _reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "receiveRequestV2", _reqId, _sel, _receiveSide, _bridgeFrom, _votersPubKey, _votersSignature, _votersMask)
 }
 
@@ -811,7 +811,7 @@ func (_Bridge *BridgeTransactor) RenounceOwnership(opts *bind.TransactOpts) (com
 
 	return tx.Hash(), err
 }
-func (_Bridge *BridgeTransactor) RenounceOwnershipGsn(opts *bind.TransactOpts) (common.Hash, error) {
+func (_Bridge *BridgeTransactor) RenounceOwnershipOverGsn(opts *bind.TransactOpts) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "renounceOwnership")
 }
 
@@ -847,7 +847,7 @@ func (_Bridge *BridgeTransactor) SetTrustedForwarder(opts *bind.TransactOpts, _f
 
 	return tx.Hash(), err
 }
-func (_Bridge *BridgeTransactor) SetTrustedForwarderGsn(opts *bind.TransactOpts, _forwarder common.Address) (common.Hash, error) {
+func (_Bridge *BridgeTransactor) SetTrustedForwarderOverGsn(opts *bind.TransactOpts, _forwarder common.Address) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "setTrustedForwarder", _forwarder)
 }
 
@@ -883,7 +883,7 @@ func (_Bridge *BridgeTransactor) TransferOwnership(opts *bind.TransactOpts, newO
 
 	return tx.Hash(), err
 }
-func (_Bridge *BridgeTransactor) TransferOwnershipGsn(opts *bind.TransactOpts, newOwner common.Address) (common.Hash, error) {
+func (_Bridge *BridgeTransactor) TransferOwnershipOverGsn(opts *bind.TransactOpts, newOwner common.Address) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "transferOwnership", newOwner)
 }
 
@@ -919,7 +919,7 @@ func (_Bridge *BridgeTransactor) TransmitRequestV2(opts *bind.TransactOpts, _sel
 
 	return tx.Hash(), err
 }
-func (_Bridge *BridgeTransactor) TransmitRequestV2Gsn(opts *bind.TransactOpts, _selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
+func (_Bridge *BridgeTransactor) TransmitRequestV2OverGsn(opts *bind.TransactOpts, _selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "transmitRequestV2", _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
 }
 
@@ -955,7 +955,7 @@ func (_Bridge *BridgeTransactor) TransmitRequestV2ToSolana(opts *bind.TransactOp
 
 	return tx.Hash(), err
 }
-func (_Bridge *BridgeTransactor) TransmitRequestV2ToSolanaGsn(opts *bind.TransactOpts, _selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
+func (_Bridge *BridgeTransactor) TransmitRequestV2ToSolanaOverGsn(opts *bind.TransactOpts, _selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "transmitRequestV2ToSolana", _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
 }
 
@@ -991,7 +991,7 @@ func (_Bridge *BridgeTransactor) UpdateEpoch(opts *bind.TransactOpts, _newKey []
 
 	return tx.Hash(), err
 }
-func (_Bridge *BridgeTransactor) UpdateEpochGsn(opts *bind.TransactOpts, _newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (common.Hash, error) {
+func (_Bridge *BridgeTransactor) UpdateEpochOverGsn(opts *bind.TransactOpts, _newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "updateEpoch", _newKey, _votersPubKey, _votersSignature, _votersMask, _newEpochParticipantsNum, _newEpochNum)
 }
 

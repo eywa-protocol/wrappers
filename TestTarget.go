@@ -350,7 +350,7 @@ func (_TestTarget *TestTargetTransactor) SetTestAddress(opts *bind.TransactOpts,
 
 	return tx.Hash(), err
 }
-func (_TestTarget *TestTargetTransactor) SetTestAddressGsn(opts *bind.TransactOpts, _address common.Address) (common.Hash, error) {
+func (_TestTarget *TestTargetTransactor) SetTestAddressOverGsn(opts *bind.TransactOpts, _address common.Address) (common.Hash, error) {
 	return GsnExecutor(_TestTarget.gsn, TestTargetMetaData.ABI, "setTestAddress", _address)
 }
 
@@ -386,7 +386,7 @@ func (_TestTarget *TestTargetTransactor) SetTestBytes(opts *bind.TransactOpts, _
 
 	return tx.Hash(), err
 }
-func (_TestTarget *TestTargetTransactor) SetTestBytesGsn(opts *bind.TransactOpts, _inputBytes []byte) (common.Hash, error) {
+func (_TestTarget *TestTargetTransactor) SetTestBytesOverGsn(opts *bind.TransactOpts, _inputBytes []byte) (common.Hash, error) {
 	return GsnExecutor(_TestTarget.gsn, TestTargetMetaData.ABI, "setTestBytes", _inputBytes)
 }
 
@@ -422,7 +422,7 @@ func (_TestTarget *TestTargetTransactor) SetTestString(opts *bind.TransactOpts, 
 
 	return tx.Hash(), err
 }
-func (_TestTarget *TestTargetTransactor) SetTestStringGsn(opts *bind.TransactOpts, _inputString string) (common.Hash, error) {
+func (_TestTarget *TestTargetTransactor) SetTestStringOverGsn(opts *bind.TransactOpts, _inputString string) (common.Hash, error) {
 	return GsnExecutor(_TestTarget.gsn, TestTargetMetaData.ABI, "setTestString", _inputString)
 }
 
@@ -458,7 +458,7 @@ func (_TestTarget *TestTargetTransactor) SetTestUint(opts *bind.TransactOpts, _t
 
 	return tx.Hash(), err
 }
-func (_TestTarget *TestTargetTransactor) SetTestUintGsn(opts *bind.TransactOpts, _testUint *big.Int) (common.Hash, error) {
+func (_TestTarget *TestTargetTransactor) SetTestUintOverGsn(opts *bind.TransactOpts, _testUint *big.Int) (common.Hash, error) {
 	return GsnExecutor(_TestTarget.gsn, TestTargetMetaData.ABI, "setTestUint", _testUint)
 }
 

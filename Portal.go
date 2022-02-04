@@ -875,7 +875,7 @@ func (_Portal *PortalTransactor) ApproveRepresentationRequest(opts *bind.Transac
 
 	return tx.Hash(), err
 }
-func (_Portal *PortalTransactor) ApproveRepresentationRequestGsn(opts *bind.TransactOpts, _rtoken common.Address) (common.Hash, error) {
+func (_Portal *PortalTransactor) ApproveRepresentationRequestOverGsn(opts *bind.TransactOpts, _rtoken common.Address) (common.Hash, error) {
 	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "approveRepresentationRequest", _rtoken)
 }
 
@@ -911,7 +911,7 @@ func (_Portal *PortalTransactor) ChangeBridge(opts *bind.TransactOpts, _bridge c
 
 	return tx.Hash(), err
 }
-func (_Portal *PortalTransactor) ChangeBridgeGsn(opts *bind.TransactOpts, _bridge common.Address) (common.Hash, error) {
+func (_Portal *PortalTransactor) ChangeBridgeOverGsn(opts *bind.TransactOpts, _bridge common.Address) (common.Hash, error) {
 	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "changeBridge", _bridge)
 }
 
@@ -947,7 +947,7 @@ func (_Portal *PortalTransactor) CreateRepresentationRequest(opts *bind.Transact
 
 	return tx.Hash(), err
 }
-func (_Portal *PortalTransactor) CreateRepresentationRequestGsn(opts *bind.TransactOpts, _rtoken common.Address) (common.Hash, error) {
+func (_Portal *PortalTransactor) CreateRepresentationRequestOverGsn(opts *bind.TransactOpts, _rtoken common.Address) (common.Hash, error) {
 	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "createRepresentationRequest", _rtoken)
 }
 
@@ -983,7 +983,7 @@ func (_Portal *PortalTransactor) EmergencyUnburnRequest(opts *bind.TransactOpts,
 
 	return tx.Hash(), err
 }
-func (_Portal *PortalTransactor) EmergencyUnburnRequestGsn(opts *bind.TransactOpts, _txID [32]byte, _receiveSide common.Address, _oppositeBridge common.Address, _chainId *big.Int) (common.Hash, error) {
+func (_Portal *PortalTransactor) EmergencyUnburnRequestOverGsn(opts *bind.TransactOpts, _txID [32]byte, _receiveSide common.Address, _oppositeBridge common.Address, _chainId *big.Int) (common.Hash, error) {
 	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "emergencyUnburnRequest", _txID, _receiveSide, _oppositeBridge, _chainId)
 }
 
@@ -1019,7 +1019,7 @@ func (_Portal *PortalTransactor) EmergencyUnburnRequestToSolana(opts *bind.Trans
 
 	return tx.Hash(), err
 }
-func (_Portal *PortalTransactor) EmergencyUnburnRequestToSolanaGsn(opts *bind.TransactOpts, _txID [32]byte, _pubkeys [][32]byte, _chainId *big.Int) (common.Hash, error) {
+func (_Portal *PortalTransactor) EmergencyUnburnRequestToSolanaOverGsn(opts *bind.TransactOpts, _txID [32]byte, _pubkeys [][32]byte, _chainId *big.Int) (common.Hash, error) {
 	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "emergencyUnburnRequestToSolana", _txID, _pubkeys, _chainId)
 }
 
@@ -1055,7 +1055,7 @@ func (_Portal *PortalTransactor) EmergencyUnsynthesize(opts *bind.TransactOpts, 
 
 	return tx.Hash(), err
 }
-func (_Portal *PortalTransactor) EmergencyUnsynthesizeGsn(opts *bind.TransactOpts, _txID [32]byte) (common.Hash, error) {
+func (_Portal *PortalTransactor) EmergencyUnsynthesizeOverGsn(opts *bind.TransactOpts, _txID [32]byte) (common.Hash, error) {
 	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "emergencyUnsynthesize", _txID)
 }
 
@@ -1091,7 +1091,7 @@ func (_Portal *PortalTransactor) InitializeFunc(opts *bind.TransactOpts, _bridge
 
 	return tx.Hash(), err
 }
-func (_Portal *PortalTransactor) InitializeFuncGsn(opts *bind.TransactOpts, _bridge common.Address, _trustedForwarder common.Address) (common.Hash, error) {
+func (_Portal *PortalTransactor) InitializeFuncOverGsn(opts *bind.TransactOpts, _bridge common.Address, _trustedForwarder common.Address) (common.Hash, error) {
 	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "initializeFunc", _bridge, _trustedForwarder)
 }
 
@@ -1127,7 +1127,7 @@ func (_Portal *PortalTransactor) RenounceOwnership(opts *bind.TransactOpts) (com
 
 	return tx.Hash(), err
 }
-func (_Portal *PortalTransactor) RenounceOwnershipGsn(opts *bind.TransactOpts) (common.Hash, error) {
+func (_Portal *PortalTransactor) RenounceOwnershipOverGsn(opts *bind.TransactOpts) (common.Hash, error) {
 	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "renounceOwnership")
 }
 
@@ -1163,7 +1163,7 @@ func (_Portal *PortalTransactor) SetProxyCurve(opts *bind.TransactOpts, _proxy c
 
 	return tx.Hash(), err
 }
-func (_Portal *PortalTransactor) SetProxyCurveGsn(opts *bind.TransactOpts, _proxy common.Address) (common.Hash, error) {
+func (_Portal *PortalTransactor) SetProxyCurveOverGsn(opts *bind.TransactOpts, _proxy common.Address) (common.Hash, error) {
 	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "setProxyCurve", _proxy)
 }
 
@@ -1199,7 +1199,7 @@ func (_Portal *PortalTransactor) SetTrustedForwarder(opts *bind.TransactOpts, _f
 
 	return tx.Hash(), err
 }
-func (_Portal *PortalTransactor) SetTrustedForwarderGsn(opts *bind.TransactOpts, _forwarder common.Address) (common.Hash, error) {
+func (_Portal *PortalTransactor) SetTrustedForwarderOverGsn(opts *bind.TransactOpts, _forwarder common.Address) (common.Hash, error) {
 	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "setTrustedForwarder", _forwarder)
 }
 
@@ -1235,7 +1235,7 @@ func (_Portal *PortalTransactor) Synthesize(opts *bind.TransactOpts, _token comm
 
 	return tx.Hash(), err
 }
-func (_Portal *PortalTransactor) SynthesizeGsn(opts *bind.TransactOpts, _token common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int) (common.Hash, error) {
+func (_Portal *PortalTransactor) SynthesizeOverGsn(opts *bind.TransactOpts, _token common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int) (common.Hash, error) {
 	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "synthesize", _token, _amount, _chain2address, _receiveSide, _oppositeBridge, _chainID)
 }
 
@@ -1271,7 +1271,7 @@ func (_Portal *PortalTransactor) SynthesizeToSolana(opts *bind.TransactOpts, _to
 
 	return tx.Hash(), err
 }
-func (_Portal *PortalTransactor) SynthesizeToSolanaGsn(opts *bind.TransactOpts, _token common.Address, _amount *big.Int, _pubkeys [][32]byte, _txStateBump [1]byte, _chainId *big.Int) (common.Hash, error) {
+func (_Portal *PortalTransactor) SynthesizeToSolanaOverGsn(opts *bind.TransactOpts, _token common.Address, _amount *big.Int, _pubkeys [][32]byte, _txStateBump [1]byte, _chainId *big.Int) (common.Hash, error) {
 	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "synthesizeToSolana", _token, _amount, _pubkeys, _txStateBump, _chainId)
 }
 
@@ -1307,7 +1307,7 @@ func (_Portal *PortalTransactor) SynthesizeWithPermit(opts *bind.TransactOpts, _
 
 	return tx.Hash(), err
 }
-func (_Portal *PortalTransactor) SynthesizeWithPermitGsn(opts *bind.TransactOpts, _approvalData []byte, _token common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int) (common.Hash, error) {
+func (_Portal *PortalTransactor) SynthesizeWithPermitOverGsn(opts *bind.TransactOpts, _approvalData []byte, _token common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int) (common.Hash, error) {
 	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "synthesizeWithPermit", _approvalData, _token, _amount, _chain2address, _receiveSide, _oppositeBridge, _chainID)
 }
 
@@ -1343,7 +1343,7 @@ func (_Portal *PortalTransactor) SynthesizeBatchTransit(opts *bind.TransactOpts,
 
 	return tx.Hash(), err
 }
-func (_Portal *PortalTransactor) SynthesizeBatchTransitGsn(opts *bind.TransactOpts, _tokens []common.Address, _amounts []*big.Int, _synth_params PortalSynthParams, _selector [4]byte, _transit_data []byte, _permit_data []PortalPermitData) (common.Hash, error) {
+func (_Portal *PortalTransactor) SynthesizeBatchTransitOverGsn(opts *bind.TransactOpts, _tokens []common.Address, _amounts []*big.Int, _synth_params PortalSynthParams, _selector [4]byte, _transit_data []byte, _permit_data []PortalPermitData) (common.Hash, error) {
 	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "synthesize_batch_transit", _tokens, _amounts, _synth_params, _selector, _transit_data, _permit_data)
 }
 
@@ -1379,7 +1379,7 @@ func (_Portal *PortalTransactor) SynthesizeTransit(opts *bind.TransactOpts, _tok
 
 	return tx.Hash(), err
 }
-func (_Portal *PortalTransactor) SynthesizeTransitGsn(opts *bind.TransactOpts, _token common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int, _out []byte) (common.Hash, error) {
+func (_Portal *PortalTransactor) SynthesizeTransitOverGsn(opts *bind.TransactOpts, _token common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int, _out []byte) (common.Hash, error) {
 	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "synthesize_transit", _token, _amount, _chain2address, _receiveSide, _oppositeBridge, _chainID, _out)
 }
 
@@ -1415,7 +1415,7 @@ func (_Portal *PortalTransactor) TransferOwnership(opts *bind.TransactOpts, newO
 
 	return tx.Hash(), err
 }
-func (_Portal *PortalTransactor) TransferOwnershipGsn(opts *bind.TransactOpts, newOwner common.Address) (common.Hash, error) {
+func (_Portal *PortalTransactor) TransferOwnershipOverGsn(opts *bind.TransactOpts, newOwner common.Address) (common.Hash, error) {
 	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "transferOwnership", newOwner)
 }
 
@@ -1451,7 +1451,7 @@ func (_Portal *PortalTransactor) Unsynthesize(opts *bind.TransactOpts, _txID [32
 
 	return tx.Hash(), err
 }
-func (_Portal *PortalTransactor) UnsynthesizeGsn(opts *bind.TransactOpts, _txID [32]byte, _token common.Address, _amount *big.Int, _to common.Address) (common.Hash, error) {
+func (_Portal *PortalTransactor) UnsynthesizeOverGsn(opts *bind.TransactOpts, _txID [32]byte, _token common.Address, _amount *big.Int, _to common.Address) (common.Hash, error) {
 	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "unsynthesize", _txID, _token, _amount, _to)
 }
 

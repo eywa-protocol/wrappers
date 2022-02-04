@@ -410,7 +410,7 @@ func (_Forwarder *ForwarderTransactor) Execute(opts *bind.TransactOpts, req IFor
 
 	return tx.Hash(), err
 }
-func (_Forwarder *ForwarderTransactor) ExecuteGsn(opts *bind.TransactOpts, req IForwarderForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (common.Hash, error) {
+func (_Forwarder *ForwarderTransactor) ExecuteOverGsn(opts *bind.TransactOpts, req IForwarderForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (common.Hash, error) {
 	return GsnExecutor(_Forwarder.gsn, ForwarderMetaData.ABI, "execute", req, domainSeparator, requestTypeHash, suffixData, sig)
 }
 
@@ -446,7 +446,7 @@ func (_Forwarder *ForwarderTransactor) Execute2(opts *bind.TransactOpts, req IFo
 
 	return tx.Hash(), err
 }
-func (_Forwarder *ForwarderTransactor) Execute2Gsn(opts *bind.TransactOpts, req IForwarderForwardRequest) (common.Hash, error) {
+func (_Forwarder *ForwarderTransactor) Execute2OverGsn(opts *bind.TransactOpts, req IForwarderForwardRequest) (common.Hash, error) {
 	return GsnExecutor(_Forwarder.gsn, ForwarderMetaData.ABI, "execute2", req)
 }
 
@@ -482,7 +482,7 @@ func (_Forwarder *ForwarderTransactor) ExecuteAssemblyForwarderRequest(opts *bin
 
 	return tx.Hash(), err
 }
-func (_Forwarder *ForwarderTransactor) ExecuteAssemblyForwarderRequestGsn(opts *bind.TransactOpts, req IForwarderForwardRequest) (common.Hash, error) {
+func (_Forwarder *ForwarderTransactor) ExecuteAssemblyForwarderRequestOverGsn(opts *bind.TransactOpts, req IForwarderForwardRequest) (common.Hash, error) {
 	return GsnExecutor(_Forwarder.gsn, ForwarderMetaData.ABI, "executeAssemblyForwarderRequest", req)
 }
 
@@ -518,7 +518,7 @@ func (_Forwarder *ForwarderTransactor) RegisterRequestType(opts *bind.TransactOp
 
 	return tx.Hash(), err
 }
-func (_Forwarder *ForwarderTransactor) RegisterRequestTypeGsn(opts *bind.TransactOpts, typeName string, typeSuffix string) (common.Hash, error) {
+func (_Forwarder *ForwarderTransactor) RegisterRequestTypeOverGsn(opts *bind.TransactOpts, typeName string, typeSuffix string) (common.Hash, error) {
 	return GsnExecutor(_Forwarder.gsn, ForwarderMetaData.ABI, "registerRequestType", typeName, typeSuffix)
 }
 

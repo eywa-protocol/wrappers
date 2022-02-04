@@ -760,7 +760,7 @@ func (_RelayerPool *RelayerPoolTransactor) Deposit(opts *bind.TransactOpts, _amo
 
 	return tx.Hash(), err
 }
-func (_RelayerPool *RelayerPoolTransactor) DepositGsn(opts *bind.TransactOpts, _amount *big.Int) (common.Hash, error) {
+func (_RelayerPool *RelayerPoolTransactor) DepositOverGsn(opts *bind.TransactOpts, _amount *big.Int) (common.Hash, error) {
 	return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "deposit", _amount)
 }
 
@@ -796,7 +796,7 @@ func (_RelayerPool *RelayerPoolTransactor) HarvestMyReward(opts *bind.TransactOp
 
 	return tx.Hash(), err
 }
-func (_RelayerPool *RelayerPoolTransactor) HarvestMyRewardGsn(opts *bind.TransactOpts) (common.Hash, error) {
+func (_RelayerPool *RelayerPoolTransactor) HarvestMyRewardOverGsn(opts *bind.TransactOpts) (common.Hash, error) {
 	return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "harvestMyReward")
 }
 
@@ -832,7 +832,7 @@ func (_RelayerPool *RelayerPoolTransactor) HarvestPoolReward(opts *bind.Transact
 
 	return tx.Hash(), err
 }
-func (_RelayerPool *RelayerPoolTransactor) HarvestPoolRewardGsn(opts *bind.TransactOpts) (common.Hash, error) {
+func (_RelayerPool *RelayerPoolTransactor) HarvestPoolRewardOverGsn(opts *bind.TransactOpts) (common.Hash, error) {
 	return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "harvestPoolReward")
 }
 
@@ -868,7 +868,7 @@ func (_RelayerPool *RelayerPoolTransactor) SetEmissionAnnualRateNumerator(opts *
 
 	return tx.Hash(), err
 }
-func (_RelayerPool *RelayerPoolTransactor) SetEmissionAnnualRateNumeratorGsn(opts *bind.TransactOpts, _value *big.Int) (common.Hash, error) {
+func (_RelayerPool *RelayerPoolTransactor) SetEmissionAnnualRateNumeratorOverGsn(opts *bind.TransactOpts, _value *big.Int) (common.Hash, error) {
 	return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "setEmissionAnnualRateNumerator", _value)
 }
 
@@ -904,7 +904,7 @@ func (_RelayerPool *RelayerPoolTransactor) SetRelayerFeeNumerator(opts *bind.Tra
 
 	return tx.Hash(), err
 }
-func (_RelayerPool *RelayerPoolTransactor) SetRelayerFeeNumeratorGsn(opts *bind.TransactOpts, _value *big.Int) (common.Hash, error) {
+func (_RelayerPool *RelayerPoolTransactor) SetRelayerFeeNumeratorOverGsn(opts *bind.TransactOpts, _value *big.Int) (common.Hash, error) {
 	return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "setRelayerFeeNumerator", _value)
 }
 
@@ -940,7 +940,7 @@ func (_RelayerPool *RelayerPoolTransactor) Withdraw(opts *bind.TransactOpts, _de
 
 	return tx.Hash(), err
 }
-func (_RelayerPool *RelayerPoolTransactor) WithdrawGsn(opts *bind.TransactOpts, _depositId *big.Int, _amount *big.Int) (common.Hash, error) {
+func (_RelayerPool *RelayerPoolTransactor) WithdrawOverGsn(opts *bind.TransactOpts, _depositId *big.Int, _amount *big.Int) (common.Hash, error) {
 	return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "withdraw", _depositId, _amount)
 }
 

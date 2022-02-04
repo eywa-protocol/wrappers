@@ -987,6 +987,7 @@ func (_NodeRegistry *NodeRegistryCallerSession) VersionRecipient() (string, erro
 //
 // Solidity: function addContractBind(bytes32 from, bytes32 oppositeBridge, bytes32 to) returns()
 func (_NodeRegistry *NodeRegistryTransactor) AddContractBind(opts *bind.TransactOpts, from [32]byte, oppositeBridge [32]byte, to [32]byte) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "AddContractBind")
 	return GsnWrap(
 		_NodeRegistry.gsn,
 		func() (common.Hash, error) {
@@ -1020,6 +1021,7 @@ func (_NodeRegistry *NodeRegistryTransactorSession) AddContractBind(from [32]byt
 //
 // Solidity: function createRelayer((address,address,string,bytes,uint256) _node, uint256 _deadline, uint8 _v, bytes32 _r, bytes32 _s) returns()
 func (_NodeRegistry *NodeRegistryTransactor) CreateRelayer(opts *bind.TransactOpts, _node NodeRegistryNode, _deadline *big.Int, _v uint8, _r [32]byte, _s [32]byte) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "CreateRelayer")
 	return GsnWrap(
 		_NodeRegistry.gsn,
 		func() (common.Hash, error) {
@@ -1053,6 +1055,7 @@ func (_NodeRegistry *NodeRegistryTransactorSession) CreateRelayer(_node NodeRegi
 //
 // Solidity: function daoTransferOwnership(address newDao) returns()
 func (_NodeRegistry *NodeRegistryTransactor) DaoTransferOwnership(opts *bind.TransactOpts, newDao common.Address) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "DaoTransferOwnership")
 	return GsnWrap(
 		_NodeRegistry.gsn,
 		func() (common.Hash, error) {
@@ -1086,6 +1089,7 @@ func (_NodeRegistry *NodeRegistryTransactorSession) DaoTransferOwnership(newDao 
 //
 // Solidity: function daoUpdateEpochRequest(bool resetEpoch) returns()
 func (_NodeRegistry *NodeRegistryTransactor) DaoUpdateEpochRequest(opts *bind.TransactOpts, resetEpoch bool) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "DaoUpdateEpochRequest")
 	return GsnWrap(
 		_NodeRegistry.gsn,
 		func() (common.Hash, error) {
@@ -1119,6 +1123,7 @@ func (_NodeRegistry *NodeRegistryTransactorSession) DaoUpdateEpochRequest(resetE
 //
 // Solidity: function initialize(address forwarder) returns()
 func (_NodeRegistry *NodeRegistryTransactor) Initialize(opts *bind.TransactOpts, forwarder common.Address) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "Initialize")
 	return GsnWrap(
 		_NodeRegistry.gsn,
 		func() (common.Hash, error) {
@@ -1152,6 +1157,7 @@ func (_NodeRegistry *NodeRegistryTransactorSession) Initialize(forwarder common.
 //
 // Solidity: function initialize2(address _EYWA, address _forwarder) returns()
 func (_NodeRegistry *NodeRegistryTransactor) Initialize2(opts *bind.TransactOpts, _EYWA common.Address, _forwarder common.Address) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "Initialize2")
 	return GsnWrap(
 		_NodeRegistry.gsn,
 		func() (common.Hash, error) {
@@ -1185,6 +1191,7 @@ func (_NodeRegistry *NodeRegistryTransactorSession) Initialize2(_EYWA common.Add
 //
 // Solidity: function receiveRequestV2(bytes32 _reqId, bytes _sel, address _receiveSide, bytes32 _bridgeFrom, bytes _votersPubKey, bytes _votersSignature, uint256 _votersMask) returns()
 func (_NodeRegistry *NodeRegistryTransactor) ReceiveRequestV2(opts *bind.TransactOpts, _reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "ReceiveRequestV2")
 	return GsnWrap(
 		_NodeRegistry.gsn,
 		func() (common.Hash, error) {
@@ -1218,6 +1225,7 @@ func (_NodeRegistry *NodeRegistryTransactorSession) ReceiveRequestV2(_reqId [32]
 //
 // Solidity: function renounceOwnership() returns()
 func (_NodeRegistry *NodeRegistryTransactor) RenounceOwnership(opts *bind.TransactOpts) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "RenounceOwnership")
 	return GsnWrap(
 		_NodeRegistry.gsn,
 		func() (common.Hash, error) {
@@ -1251,6 +1259,7 @@ func (_NodeRegistry *NodeRegistryTransactorSession) RenounceOwnership() (common.
 //
 // Solidity: function setTrustedForwarder(address _forwarder) returns()
 func (_NodeRegistry *NodeRegistryTransactor) SetTrustedForwarder(opts *bind.TransactOpts, _forwarder common.Address) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "SetTrustedForwarder")
 	return GsnWrap(
 		_NodeRegistry.gsn,
 		func() (common.Hash, error) {
@@ -1284,6 +1293,7 @@ func (_NodeRegistry *NodeRegistryTransactorSession) SetTrustedForwarder(_forward
 //
 // Solidity: function transferOwnership(address newOwner) returns()
 func (_NodeRegistry *NodeRegistryTransactor) TransferOwnership(opts *bind.TransactOpts, newOwner common.Address) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "TransferOwnership")
 	return GsnWrap(
 		_NodeRegistry.gsn,
 		func() (common.Hash, error) {
@@ -1317,6 +1327,7 @@ func (_NodeRegistry *NodeRegistryTransactorSession) TransferOwnership(newOwner c
 //
 // Solidity: function transmitRequestV2(bytes _selector, address receiveSide, address oppositeBridge, uint256 chainId, bytes32 requestId, address sender, uint256 nonce) returns(bool)
 func (_NodeRegistry *NodeRegistryTransactor) TransmitRequestV2(opts *bind.TransactOpts, _selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "TransmitRequestV2")
 	return GsnWrap(
 		_NodeRegistry.gsn,
 		func() (common.Hash, error) {
@@ -1350,6 +1361,7 @@ func (_NodeRegistry *NodeRegistryTransactorSession) TransmitRequestV2(_selector 
 //
 // Solidity: function transmitRequestV2ToSolana(bytes _selector, bytes32 receiveSide, bytes32 oppositeBridge, uint256 chainId, bytes32 requestId, address sender, uint256 nonce) returns(bool)
 func (_NodeRegistry *NodeRegistryTransactor) TransmitRequestV2ToSolana(opts *bind.TransactOpts, _selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "TransmitRequestV2ToSolana")
 	return GsnWrap(
 		_NodeRegistry.gsn,
 		func() (common.Hash, error) {
@@ -1383,6 +1395,7 @@ func (_NodeRegistry *NodeRegistryTransactorSession) TransmitRequestV2ToSolana(_s
 //
 // Solidity: function updateEpoch(bytes _newKey, bytes _votersPubKey, bytes _votersSignature, uint256 _votersMask, uint8 _newEpochParticipantsNum, uint32 _newEpochNum) returns()
 func (_NodeRegistry *NodeRegistryTransactor) UpdateEpoch(opts *bind.TransactOpts, _newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "UpdateEpoch")
 	return GsnWrap(
 		_NodeRegistry.gsn,
 		func() (common.Hash, error) {

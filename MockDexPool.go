@@ -520,6 +520,7 @@ func (_MockDexPool *MockDexPoolCallerSession) TestData() (*big.Int, error) {
 //
 // Solidity: function receiveRequestTest(uint256 _testData, bytes32 _reqId) returns()
 func (_MockDexPool *MockDexPoolTransactor) ReceiveRequestTest(opts *bind.TransactOpts, _testData *big.Int, _reqId [32]byte) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "ReceiveRequestTest")
 	return GsnWrap(
 		_MockDexPool.gsn,
 		func() (common.Hash, error) {
@@ -553,6 +554,7 @@ func (_MockDexPool *MockDexPoolTransactorSession) ReceiveRequestTest(_testData *
 //
 // Solidity: function sendRequestTestV2(uint256 testData_, address secondPartPool, address oppBridge, uint256 chainId) returns()
 func (_MockDexPool *MockDexPoolTransactor) SendRequestTestV2(opts *bind.TransactOpts, testData_ *big.Int, secondPartPool common.Address, oppBridge common.Address, chainId *big.Int) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "SendRequestTestV2")
 	return GsnWrap(
 		_MockDexPool.gsn,
 		func() (common.Hash, error) {
@@ -586,6 +588,7 @@ func (_MockDexPool *MockDexPoolTransactorSession) SendRequestTestV2(testData_ *b
 //
 // Solidity: function sendTestRequestToSolana(bytes32 testStubPID_, bytes32 solBridgePID_, bytes32 dataAcc_, bytes32 bridgePDASigner_, uint256 testData_, uint256 chainId) returns()
 func (_MockDexPool *MockDexPoolTransactor) SendTestRequestToSolana(opts *bind.TransactOpts, testStubPID_ [32]byte, solBridgePID_ [32]byte, dataAcc_ [32]byte, bridgePDASigner_ [32]byte, testData_ *big.Int, chainId *big.Int) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "SendTestRequestToSolana")
 	return GsnWrap(
 		_MockDexPool.gsn,
 		func() (common.Hash, error) {

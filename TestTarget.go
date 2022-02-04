@@ -334,6 +334,7 @@ func (_TestTarget *TestTargetCallerSession) TestUint() (*big.Int, error) {
 //
 // Solidity: function setTestAddress(address _address) returns(address)
 func (_TestTarget *TestTargetTransactor) SetTestAddress(opts *bind.TransactOpts, _address common.Address) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "SetTestAddress")
 	return GsnWrap(
 		_TestTarget.gsn,
 		func() (common.Hash, error) {
@@ -367,6 +368,7 @@ func (_TestTarget *TestTargetTransactorSession) SetTestAddress(_address common.A
 //
 // Solidity: function setTestBytes(bytes _inputBytes) returns()
 func (_TestTarget *TestTargetTransactor) SetTestBytes(opts *bind.TransactOpts, _inputBytes []byte) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "SetTestBytes")
 	return GsnWrap(
 		_TestTarget.gsn,
 		func() (common.Hash, error) {
@@ -400,6 +402,7 @@ func (_TestTarget *TestTargetTransactorSession) SetTestBytes(_inputBytes []byte)
 //
 // Solidity: function setTestString(string _inputString) returns()
 func (_TestTarget *TestTargetTransactor) SetTestString(opts *bind.TransactOpts, _inputString string) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "SetTestString")
 	return GsnWrap(
 		_TestTarget.gsn,
 		func() (common.Hash, error) {
@@ -433,6 +436,7 @@ func (_TestTarget *TestTargetTransactorSession) SetTestString(_inputString strin
 //
 // Solidity: function setTestUint(uint256 _testUint) returns(uint256)
 func (_TestTarget *TestTargetTransactor) SetTestUint(opts *bind.TransactOpts, _testUint *big.Int) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "SetTestUint")
 	return GsnWrap(
 		_TestTarget.gsn,
 		func() (common.Hash, error) {

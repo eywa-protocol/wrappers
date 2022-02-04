@@ -615,6 +615,7 @@ func (_Bridge *BridgeCallerSession) VersionRecipient() (string, error) {
 //
 // Solidity: function addContractBind(bytes32 from, bytes32 oppositeBridge, bytes32 to) returns()
 func (_Bridge *BridgeTransactor) AddContractBind(opts *bind.TransactOpts, from [32]byte, oppositeBridge [32]byte, to [32]byte) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "AddContractBind")
 	return GsnWrap(
 		_Bridge.gsn,
 		func() (common.Hash, error) {
@@ -648,6 +649,7 @@ func (_Bridge *BridgeTransactorSession) AddContractBind(from [32]byte, oppositeB
 //
 // Solidity: function daoTransferOwnership(address newDao) returns()
 func (_Bridge *BridgeTransactor) DaoTransferOwnership(opts *bind.TransactOpts, newDao common.Address) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "DaoTransferOwnership")
 	return GsnWrap(
 		_Bridge.gsn,
 		func() (common.Hash, error) {
@@ -681,6 +683,7 @@ func (_Bridge *BridgeTransactorSession) DaoTransferOwnership(newDao common.Addre
 //
 // Solidity: function daoUpdateEpochRequest(bool resetEpoch) returns()
 func (_Bridge *BridgeTransactor) DaoUpdateEpochRequest(opts *bind.TransactOpts, resetEpoch bool) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "DaoUpdateEpochRequest")
 	return GsnWrap(
 		_Bridge.gsn,
 		func() (common.Hash, error) {
@@ -714,6 +717,7 @@ func (_Bridge *BridgeTransactorSession) DaoUpdateEpochRequest(resetEpoch bool) (
 //
 // Solidity: function initialize(address forwarder) returns()
 func (_Bridge *BridgeTransactor) Initialize(opts *bind.TransactOpts, forwarder common.Address) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "Initialize")
 	return GsnWrap(
 		_Bridge.gsn,
 		func() (common.Hash, error) {
@@ -747,6 +751,7 @@ func (_Bridge *BridgeTransactorSession) Initialize(forwarder common.Address) (co
 //
 // Solidity: function receiveRequestV2(bytes32 _reqId, bytes _sel, address _receiveSide, bytes32 _bridgeFrom, bytes _votersPubKey, bytes _votersSignature, uint256 _votersMask) returns()
 func (_Bridge *BridgeTransactor) ReceiveRequestV2(opts *bind.TransactOpts, _reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "ReceiveRequestV2")
 	return GsnWrap(
 		_Bridge.gsn,
 		func() (common.Hash, error) {
@@ -780,6 +785,7 @@ func (_Bridge *BridgeTransactorSession) ReceiveRequestV2(_reqId [32]byte, _sel [
 //
 // Solidity: function renounceOwnership() returns()
 func (_Bridge *BridgeTransactor) RenounceOwnership(opts *bind.TransactOpts) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "RenounceOwnership")
 	return GsnWrap(
 		_Bridge.gsn,
 		func() (common.Hash, error) {
@@ -813,6 +819,7 @@ func (_Bridge *BridgeTransactorSession) RenounceOwnership() (common.Hash, error)
 //
 // Solidity: function setTrustedForwarder(address _forwarder) returns()
 func (_Bridge *BridgeTransactor) SetTrustedForwarder(opts *bind.TransactOpts, _forwarder common.Address) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "SetTrustedForwarder")
 	return GsnWrap(
 		_Bridge.gsn,
 		func() (common.Hash, error) {
@@ -846,6 +853,7 @@ func (_Bridge *BridgeTransactorSession) SetTrustedForwarder(_forwarder common.Ad
 //
 // Solidity: function transferOwnership(address newOwner) returns()
 func (_Bridge *BridgeTransactor) TransferOwnership(opts *bind.TransactOpts, newOwner common.Address) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "TransferOwnership")
 	return GsnWrap(
 		_Bridge.gsn,
 		func() (common.Hash, error) {
@@ -879,6 +887,7 @@ func (_Bridge *BridgeTransactorSession) TransferOwnership(newOwner common.Addres
 //
 // Solidity: function transmitRequestV2(bytes _selector, address receiveSide, address oppositeBridge, uint256 chainId, bytes32 requestId, address sender, uint256 nonce) returns(bool)
 func (_Bridge *BridgeTransactor) TransmitRequestV2(opts *bind.TransactOpts, _selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "TransmitRequestV2")
 	return GsnWrap(
 		_Bridge.gsn,
 		func() (common.Hash, error) {
@@ -912,6 +921,7 @@ func (_Bridge *BridgeTransactorSession) TransmitRequestV2(_selector []byte, rece
 //
 // Solidity: function transmitRequestV2ToSolana(bytes _selector, bytes32 receiveSide, bytes32 oppositeBridge, uint256 chainId, bytes32 requestId, address sender, uint256 nonce) returns(bool)
 func (_Bridge *BridgeTransactor) TransmitRequestV2ToSolana(opts *bind.TransactOpts, _selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "TransmitRequestV2ToSolana")
 	return GsnWrap(
 		_Bridge.gsn,
 		func() (common.Hash, error) {
@@ -945,6 +955,7 @@ func (_Bridge *BridgeTransactorSession) TransmitRequestV2ToSolana(_selector []by
 //
 // Solidity: function updateEpoch(bytes _newKey, bytes _votersPubKey, bytes _votersSignature, uint256 _votersMask, uint8 _newEpochParticipantsNum, uint32 _newEpochNum) returns()
 func (_Bridge *BridgeTransactor) UpdateEpoch(opts *bind.TransactOpts, _newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "UpdateEpoch")
 	return GsnWrap(
 		_Bridge.gsn,
 		func() (common.Hash, error) {

@@ -744,6 +744,7 @@ func (_RelayerPool *RelayerPoolCallerSession) Vault() (common.Address, error) {
 //
 // Solidity: function deposit(uint256 _amount) returns()
 func (_RelayerPool *RelayerPoolTransactor) Deposit(opts *bind.TransactOpts, _amount *big.Int) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "Deposit")
 	return GsnWrap(
 		_RelayerPool.gsn,
 		func() (common.Hash, error) {
@@ -777,6 +778,7 @@ func (_RelayerPool *RelayerPoolTransactorSession) Deposit(_amount *big.Int) (com
 //
 // Solidity: function harvestMyReward() returns()
 func (_RelayerPool *RelayerPoolTransactor) HarvestMyReward(opts *bind.TransactOpts) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "HarvestMyReward")
 	return GsnWrap(
 		_RelayerPool.gsn,
 		func() (common.Hash, error) {
@@ -810,6 +812,7 @@ func (_RelayerPool *RelayerPoolTransactorSession) HarvestMyReward() (common.Hash
 //
 // Solidity: function harvestPoolReward() returns()
 func (_RelayerPool *RelayerPoolTransactor) HarvestPoolReward(opts *bind.TransactOpts) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "HarvestPoolReward")
 	return GsnWrap(
 		_RelayerPool.gsn,
 		func() (common.Hash, error) {
@@ -843,6 +846,7 @@ func (_RelayerPool *RelayerPoolTransactorSession) HarvestPoolReward() (common.Ha
 //
 // Solidity: function setEmissionAnnualRateNumerator(uint256 _value) returns()
 func (_RelayerPool *RelayerPoolTransactor) SetEmissionAnnualRateNumerator(opts *bind.TransactOpts, _value *big.Int) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "SetEmissionAnnualRateNumerator")
 	return GsnWrap(
 		_RelayerPool.gsn,
 		func() (common.Hash, error) {
@@ -876,6 +880,7 @@ func (_RelayerPool *RelayerPoolTransactorSession) SetEmissionAnnualRateNumerator
 //
 // Solidity: function setRelayerFeeNumerator(uint256 _value) returns()
 func (_RelayerPool *RelayerPoolTransactor) SetRelayerFeeNumerator(opts *bind.TransactOpts, _value *big.Int) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "SetRelayerFeeNumerator")
 	return GsnWrap(
 		_RelayerPool.gsn,
 		func() (common.Hash, error) {
@@ -909,6 +914,7 @@ func (_RelayerPool *RelayerPoolTransactorSession) SetRelayerFeeNumerator(_value 
 //
 // Solidity: function withdraw(uint256 _depositId, uint256 _amount) returns()
 func (_RelayerPool *RelayerPoolTransactor) Withdraw(opts *bind.TransactOpts, _depositId *big.Int, _amount *big.Int) (common.Hash, error) {
+	fmt.Printf("DBG: Wrapper run method = %s\n", "Withdraw")
 	return GsnWrap(
 		_RelayerPool.gsn,
 		func() (common.Hash, error) {

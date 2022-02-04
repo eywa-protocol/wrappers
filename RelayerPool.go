@@ -760,6 +760,9 @@ func (_RelayerPool *RelayerPoolTransactor) Deposit(opts *bind.TransactOpts, _amo
 
 	return tx.Hash(), err
 }
+func (_RelayerPool *RelayerPoolTransactor) DepositGsn(opts *bind.TransactOpts, _amount *big.Int) (common.Hash, error) {
+	return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "deposit", _amount)
+}
 
 // Deposit is a paid mutator transaction binding the contract method 0xb6b55f25.
 //
@@ -792,6 +795,9 @@ func (_RelayerPool *RelayerPoolTransactor) HarvestMyReward(opts *bind.TransactOp
 	}
 
 	return tx.Hash(), err
+}
+func (_RelayerPool *RelayerPoolTransactor) HarvestMyRewardGsn(opts *bind.TransactOpts) (common.Hash, error) {
+	return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "harvestMyReward")
 }
 
 // HarvestMyReward is a paid mutator transaction binding the contract method 0x8363deb6.
@@ -826,6 +832,9 @@ func (_RelayerPool *RelayerPoolTransactor) HarvestPoolReward(opts *bind.Transact
 
 	return tx.Hash(), err
 }
+func (_RelayerPool *RelayerPoolTransactor) HarvestPoolRewardGsn(opts *bind.TransactOpts) (common.Hash, error) {
+	return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "harvestPoolReward")
+}
 
 // HarvestPoolReward is a paid mutator transaction binding the contract method 0x8be9d5bf.
 //
@@ -858,6 +867,9 @@ func (_RelayerPool *RelayerPoolTransactor) SetEmissionAnnualRateNumerator(opts *
 	}
 
 	return tx.Hash(), err
+}
+func (_RelayerPool *RelayerPoolTransactor) SetEmissionAnnualRateNumeratorGsn(opts *bind.TransactOpts, _value *big.Int) (common.Hash, error) {
+	return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "setEmissionAnnualRateNumerator", _value)
 }
 
 // SetEmissionAnnualRateNumerator is a paid mutator transaction binding the contract method 0xec51364e.
@@ -892,6 +904,9 @@ func (_RelayerPool *RelayerPoolTransactor) SetRelayerFeeNumerator(opts *bind.Tra
 
 	return tx.Hash(), err
 }
+func (_RelayerPool *RelayerPoolTransactor) SetRelayerFeeNumeratorGsn(opts *bind.TransactOpts, _value *big.Int) (common.Hash, error) {
+	return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "setRelayerFeeNumerator", _value)
+}
 
 // SetRelayerFeeNumerator is a paid mutator transaction binding the contract method 0x959ccfcb.
 //
@@ -924,6 +939,9 @@ func (_RelayerPool *RelayerPoolTransactor) Withdraw(opts *bind.TransactOpts, _de
 	}
 
 	return tx.Hash(), err
+}
+func (_RelayerPool *RelayerPoolTransactor) WithdrawGsn(opts *bind.TransactOpts, _depositId *big.Int, _amount *big.Int) (common.Hash, error) {
+	return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "withdraw", _depositId, _amount)
 }
 
 // Withdraw is a paid mutator transaction binding the contract method 0x441a3e70.

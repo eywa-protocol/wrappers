@@ -452,6 +452,9 @@ func (_ERC20Permit *ERC20PermitTransactor) Approve(opts *bind.TransactOpts, spen
 
 	return tx.Hash(), err
 }
+func (_ERC20Permit *ERC20PermitTransactor) ApproveGsn(opts *bind.TransactOpts, spender common.Address, amount *big.Int) (common.Hash, error) {
+	return GsnExecutor(_ERC20Permit.gsn, ERC20PermitMetaData.ABI, "approve", spender, amount)
+}
 
 // Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 //
@@ -484,6 +487,9 @@ func (_ERC20Permit *ERC20PermitTransactor) DecreaseAllowance(opts *bind.Transact
 	}
 
 	return tx.Hash(), err
+}
+func (_ERC20Permit *ERC20PermitTransactor) DecreaseAllowanceGsn(opts *bind.TransactOpts, spender common.Address, subtractedValue *big.Int) (common.Hash, error) {
+	return GsnExecutor(_ERC20Permit.gsn, ERC20PermitMetaData.ABI, "decreaseAllowance", spender, subtractedValue)
 }
 
 // DecreaseAllowance is a paid mutator transaction binding the contract method 0xa457c2d7.
@@ -518,6 +524,9 @@ func (_ERC20Permit *ERC20PermitTransactor) IncreaseAllowance(opts *bind.Transact
 
 	return tx.Hash(), err
 }
+func (_ERC20Permit *ERC20PermitTransactor) IncreaseAllowanceGsn(opts *bind.TransactOpts, spender common.Address, addedValue *big.Int) (common.Hash, error) {
+	return GsnExecutor(_ERC20Permit.gsn, ERC20PermitMetaData.ABI, "increaseAllowance", spender, addedValue)
+}
 
 // IncreaseAllowance is a paid mutator transaction binding the contract method 0x39509351.
 //
@@ -550,6 +559,9 @@ func (_ERC20Permit *ERC20PermitTransactor) Permit(opts *bind.TransactOpts, owner
 	}
 
 	return tx.Hash(), err
+}
+func (_ERC20Permit *ERC20PermitTransactor) PermitGsn(opts *bind.TransactOpts, owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
+	return GsnExecutor(_ERC20Permit.gsn, ERC20PermitMetaData.ABI, "permit", owner, spender, value, deadline, v, r, s)
 }
 
 // Permit is a paid mutator transaction binding the contract method 0xd505accf.
@@ -584,6 +596,9 @@ func (_ERC20Permit *ERC20PermitTransactor) Transfer(opts *bind.TransactOpts, rec
 
 	return tx.Hash(), err
 }
+func (_ERC20Permit *ERC20PermitTransactor) TransferGsn(opts *bind.TransactOpts, recipient common.Address, amount *big.Int) (common.Hash, error) {
+	return GsnExecutor(_ERC20Permit.gsn, ERC20PermitMetaData.ABI, "transfer", recipient, amount)
+}
 
 // Transfer is a paid mutator transaction binding the contract method 0xa9059cbb.
 //
@@ -616,6 +631,9 @@ func (_ERC20Permit *ERC20PermitTransactor) TransferFrom(opts *bind.TransactOpts,
 	}
 
 	return tx.Hash(), err
+}
+func (_ERC20Permit *ERC20PermitTransactor) TransferFromGsn(opts *bind.TransactOpts, sender common.Address, recipient common.Address, amount *big.Int) (common.Hash, error) {
+	return GsnExecutor(_ERC20Permit.gsn, ERC20PermitMetaData.ABI, "transferFrom", sender, recipient, amount)
 }
 
 // TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.

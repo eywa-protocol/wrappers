@@ -474,6 +474,9 @@ func (_TestTokenPermit *TestTokenPermitTransactor) Approve(opts *bind.TransactOp
 
 	return tx.Hash(), err
 }
+func (_TestTokenPermit *TestTokenPermitTransactor) ApproveGsn(opts *bind.TransactOpts, spender common.Address, amount *big.Int) (common.Hash, error) {
+	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "approve", spender, amount)
+}
 
 // Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 //
@@ -506,6 +509,9 @@ func (_TestTokenPermit *TestTokenPermitTransactor) Burn(opts *bind.TransactOpts,
 	}
 
 	return tx.Hash(), err
+}
+func (_TestTokenPermit *TestTokenPermitTransactor) BurnGsn(opts *bind.TransactOpts, account common.Address, amount *big.Int) (common.Hash, error) {
+	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "burn", account, amount)
 }
 
 // Burn is a paid mutator transaction binding the contract method 0x9dc29fac.
@@ -540,6 +546,9 @@ func (_TestTokenPermit *TestTokenPermitTransactor) BurnWithAllowanceDecrease(opt
 
 	return tx.Hash(), err
 }
+func (_TestTokenPermit *TestTokenPermitTransactor) BurnWithAllowanceDecreaseGsn(opts *bind.TransactOpts, account common.Address, spender common.Address, amount *big.Int) (common.Hash, error) {
+	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "burnWithAllowanceDecrease", account, spender, amount)
+}
 
 // BurnWithAllowanceDecrease is a paid mutator transaction binding the contract method 0xa918adf5.
 //
@@ -572,6 +581,9 @@ func (_TestTokenPermit *TestTokenPermitTransactor) DecreaseAllowance(opts *bind.
 	}
 
 	return tx.Hash(), err
+}
+func (_TestTokenPermit *TestTokenPermitTransactor) DecreaseAllowanceGsn(opts *bind.TransactOpts, spender common.Address, subtractedValue *big.Int) (common.Hash, error) {
+	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "decreaseAllowance", spender, subtractedValue)
 }
 
 // DecreaseAllowance is a paid mutator transaction binding the contract method 0xa457c2d7.
@@ -606,6 +618,9 @@ func (_TestTokenPermit *TestTokenPermitTransactor) IncreaseAllowance(opts *bind.
 
 	return tx.Hash(), err
 }
+func (_TestTokenPermit *TestTokenPermitTransactor) IncreaseAllowanceGsn(opts *bind.TransactOpts, spender common.Address, addedValue *big.Int) (common.Hash, error) {
+	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "increaseAllowance", spender, addedValue)
+}
 
 // IncreaseAllowance is a paid mutator transaction binding the contract method 0x39509351.
 //
@@ -638,6 +653,9 @@ func (_TestTokenPermit *TestTokenPermitTransactor) Mint(opts *bind.TransactOpts,
 	}
 
 	return tx.Hash(), err
+}
+func (_TestTokenPermit *TestTokenPermitTransactor) MintGsn(opts *bind.TransactOpts, account common.Address, amount *big.Int) (common.Hash, error) {
+	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "mint", account, amount)
 }
 
 // Mint is a paid mutator transaction binding the contract method 0x40c10f19.
@@ -672,6 +690,9 @@ func (_TestTokenPermit *TestTokenPermitTransactor) MintWithAllowance(opts *bind.
 
 	return tx.Hash(), err
 }
+func (_TestTokenPermit *TestTokenPermitTransactor) MintWithAllowanceGsn(opts *bind.TransactOpts, account common.Address, spender common.Address, amount *big.Int) (common.Hash, error) {
+	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "mintWithAllowance", account, spender, amount)
+}
 
 // MintWithAllowance is a paid mutator transaction binding the contract method 0x9be4e7b2.
 //
@@ -704,6 +725,9 @@ func (_TestTokenPermit *TestTokenPermitTransactor) Permit(opts *bind.TransactOpt
 	}
 
 	return tx.Hash(), err
+}
+func (_TestTokenPermit *TestTokenPermitTransactor) PermitGsn(opts *bind.TransactOpts, owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
+	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "permit", owner, spender, value, deadline, v, r, s)
 }
 
 // Permit is a paid mutator transaction binding the contract method 0xd505accf.
@@ -738,6 +762,9 @@ func (_TestTokenPermit *TestTokenPermitTransactor) Transfer(opts *bind.TransactO
 
 	return tx.Hash(), err
 }
+func (_TestTokenPermit *TestTokenPermitTransactor) TransferGsn(opts *bind.TransactOpts, recipient common.Address, amount *big.Int) (common.Hash, error) {
+	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "transfer", recipient, amount)
+}
 
 // Transfer is a paid mutator transaction binding the contract method 0xa9059cbb.
 //
@@ -770,6 +797,9 @@ func (_TestTokenPermit *TestTokenPermitTransactor) TransferFrom(opts *bind.Trans
 	}
 
 	return tx.Hash(), err
+}
+func (_TestTokenPermit *TestTokenPermitTransactor) TransferFromGsn(opts *bind.TransactOpts, sender common.Address, recipient common.Address, amount *big.Int) (common.Hash, error) {
+	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "transferFrom", sender, recipient, amount)
 }
 
 // TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.

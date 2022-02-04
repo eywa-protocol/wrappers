@@ -410,6 +410,9 @@ func (_Forwarder *ForwarderTransactor) Execute(opts *bind.TransactOpts, req IFor
 
 	return tx.Hash(), err
 }
+func (_Forwarder *ForwarderTransactor) ExecuteGsn(opts *bind.TransactOpts, req IForwarderForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (common.Hash, error) {
+	return GsnExecutor(_Forwarder.gsn, ForwarderMetaData.ABI, "execute", req, domainSeparator, requestTypeHash, suffixData, sig)
+}
 
 // Execute is a paid mutator transaction binding the contract method 0xcdf5735a.
 //
@@ -442,6 +445,9 @@ func (_Forwarder *ForwarderTransactor) Execute2(opts *bind.TransactOpts, req IFo
 	}
 
 	return tx.Hash(), err
+}
+func (_Forwarder *ForwarderTransactor) Execute2Gsn(opts *bind.TransactOpts, req IForwarderForwardRequest) (common.Hash, error) {
+	return GsnExecutor(_Forwarder.gsn, ForwarderMetaData.ABI, "execute2", req)
 }
 
 // Execute2 is a paid mutator transaction binding the contract method 0xf2662545.
@@ -476,6 +482,9 @@ func (_Forwarder *ForwarderTransactor) ExecuteAssemblyForwarderRequest(opts *bin
 
 	return tx.Hash(), err
 }
+func (_Forwarder *ForwarderTransactor) ExecuteAssemblyForwarderRequestGsn(opts *bind.TransactOpts, req IForwarderForwardRequest) (common.Hash, error) {
+	return GsnExecutor(_Forwarder.gsn, ForwarderMetaData.ABI, "executeAssemblyForwarderRequest", req)
+}
 
 // ExecuteAssemblyForwarderRequest is a paid mutator transaction binding the contract method 0x6a66a1e2.
 //
@@ -508,6 +517,9 @@ func (_Forwarder *ForwarderTransactor) RegisterRequestType(opts *bind.TransactOp
 	}
 
 	return tx.Hash(), err
+}
+func (_Forwarder *ForwarderTransactor) RegisterRequestTypeGsn(opts *bind.TransactOpts, typeName string, typeSuffix string) (common.Hash, error) {
+	return GsnExecutor(_Forwarder.gsn, ForwarderMetaData.ABI, "registerRequestType", typeName, typeSuffix)
 }
 
 // RegisterRequestType is a paid mutator transaction binding the contract method 0xd9210be5.

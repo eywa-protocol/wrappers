@@ -1003,6 +1003,9 @@ func (_NodeRegistry *NodeRegistryTransactor) AddContractBind(opts *bind.Transact
 
 	return tx.Hash(), err
 }
+func (_NodeRegistry *NodeRegistryTransactor) AddContractBindGsn(opts *bind.TransactOpts, from [32]byte, oppositeBridge [32]byte, to [32]byte) (common.Hash, error) {
+	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "addContractBind", from, oppositeBridge, to)
+}
 
 // AddContractBind is a paid mutator transaction binding the contract method 0xe27ad9a5.
 //
@@ -1035,6 +1038,9 @@ func (_NodeRegistry *NodeRegistryTransactor) CreateRelayer(opts *bind.TransactOp
 	}
 
 	return tx.Hash(), err
+}
+func (_NodeRegistry *NodeRegistryTransactor) CreateRelayerGsn(opts *bind.TransactOpts, _node NodeRegistryNode, _deadline *big.Int, _v uint8, _r [32]byte, _s [32]byte) (common.Hash, error) {
+	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "createRelayer", _node, _deadline, _v, _r, _s)
 }
 
 // CreateRelayer is a paid mutator transaction binding the contract method 0xcf9f47d8.
@@ -1069,6 +1075,9 @@ func (_NodeRegistry *NodeRegistryTransactor) DaoTransferOwnership(opts *bind.Tra
 
 	return tx.Hash(), err
 }
+func (_NodeRegistry *NodeRegistryTransactor) DaoTransferOwnershipGsn(opts *bind.TransactOpts, newDao common.Address) (common.Hash, error) {
+	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "daoTransferOwnership", newDao)
+}
 
 // DaoTransferOwnership is a paid mutator transaction binding the contract method 0xf2a0c8c0.
 //
@@ -1101,6 +1110,9 @@ func (_NodeRegistry *NodeRegistryTransactor) DaoUpdateEpochRequest(opts *bind.Tr
 	}
 
 	return tx.Hash(), err
+}
+func (_NodeRegistry *NodeRegistryTransactor) DaoUpdateEpochRequestGsn(opts *bind.TransactOpts, resetEpoch bool) (common.Hash, error) {
+	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "daoUpdateEpochRequest", resetEpoch)
 }
 
 // DaoUpdateEpochRequest is a paid mutator transaction binding the contract method 0x46dec6cb.
@@ -1135,6 +1147,9 @@ func (_NodeRegistry *NodeRegistryTransactor) Initialize(opts *bind.TransactOpts,
 
 	return tx.Hash(), err
 }
+func (_NodeRegistry *NodeRegistryTransactor) InitializeGsn(opts *bind.TransactOpts, forwarder common.Address) (common.Hash, error) {
+	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "initialize", forwarder)
+}
 
 // Initialize is a paid mutator transaction binding the contract method 0xc4d66de8.
 //
@@ -1167,6 +1182,9 @@ func (_NodeRegistry *NodeRegistryTransactor) Initialize2(opts *bind.TransactOpts
 	}
 
 	return tx.Hash(), err
+}
+func (_NodeRegistry *NodeRegistryTransactor) Initialize2Gsn(opts *bind.TransactOpts, _EYWA common.Address, _forwarder common.Address) (common.Hash, error) {
+	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "initialize2", _EYWA, _forwarder)
 }
 
 // Initialize2 is a paid mutator transaction binding the contract method 0x9434b989.
@@ -1201,6 +1219,9 @@ func (_NodeRegistry *NodeRegistryTransactor) ReceiveRequestV2(opts *bind.Transac
 
 	return tx.Hash(), err
 }
+func (_NodeRegistry *NodeRegistryTransactor) ReceiveRequestV2Gsn(opts *bind.TransactOpts, _reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (common.Hash, error) {
+	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "receiveRequestV2", _reqId, _sel, _receiveSide, _bridgeFrom, _votersPubKey, _votersSignature, _votersMask)
+}
 
 // ReceiveRequestV2 is a paid mutator transaction binding the contract method 0xf3635fca.
 //
@@ -1233,6 +1254,9 @@ func (_NodeRegistry *NodeRegistryTransactor) RenounceOwnership(opts *bind.Transa
 	}
 
 	return tx.Hash(), err
+}
+func (_NodeRegistry *NodeRegistryTransactor) RenounceOwnershipGsn(opts *bind.TransactOpts) (common.Hash, error) {
+	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "renounceOwnership")
 }
 
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
@@ -1267,6 +1291,9 @@ func (_NodeRegistry *NodeRegistryTransactor) SetTrustedForwarder(opts *bind.Tran
 
 	return tx.Hash(), err
 }
+func (_NodeRegistry *NodeRegistryTransactor) SetTrustedForwarderGsn(opts *bind.TransactOpts, _forwarder common.Address) (common.Hash, error) {
+	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "setTrustedForwarder", _forwarder)
+}
 
 // SetTrustedForwarder is a paid mutator transaction binding the contract method 0xda742228.
 //
@@ -1299,6 +1326,9 @@ func (_NodeRegistry *NodeRegistryTransactor) TransferOwnership(opts *bind.Transa
 	}
 
 	return tx.Hash(), err
+}
+func (_NodeRegistry *NodeRegistryTransactor) TransferOwnershipGsn(opts *bind.TransactOpts, newOwner common.Address) (common.Hash, error) {
+	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "transferOwnership", newOwner)
 }
 
 // TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
@@ -1333,6 +1363,9 @@ func (_NodeRegistry *NodeRegistryTransactor) TransmitRequestV2(opts *bind.Transa
 
 	return tx.Hash(), err
 }
+func (_NodeRegistry *NodeRegistryTransactor) TransmitRequestV2Gsn(opts *bind.TransactOpts, _selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
+	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "transmitRequestV2", _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
+}
 
 // TransmitRequestV2 is a paid mutator transaction binding the contract method 0x329ef45f.
 //
@@ -1366,6 +1399,9 @@ func (_NodeRegistry *NodeRegistryTransactor) TransmitRequestV2ToSolana(opts *bin
 
 	return tx.Hash(), err
 }
+func (_NodeRegistry *NodeRegistryTransactor) TransmitRequestV2ToSolanaGsn(opts *bind.TransactOpts, _selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
+	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "transmitRequestV2ToSolana", _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
+}
 
 // TransmitRequestV2ToSolana is a paid mutator transaction binding the contract method 0x31b433f9.
 //
@@ -1398,6 +1434,9 @@ func (_NodeRegistry *NodeRegistryTransactor) UpdateEpoch(opts *bind.TransactOpts
 	}
 
 	return tx.Hash(), err
+}
+func (_NodeRegistry *NodeRegistryTransactor) UpdateEpochGsn(opts *bind.TransactOpts, _newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (common.Hash, error) {
+	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "updateEpoch", _newKey, _votersPubKey, _votersSignature, _votersMask, _newEpochParticipantsNum, _newEpochNum)
 }
 
 // UpdateEpoch is a paid mutator transaction binding the contract method 0xbd4a5e90.

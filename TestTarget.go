@@ -350,6 +350,9 @@ func (_TestTarget *TestTargetTransactor) SetTestAddress(opts *bind.TransactOpts,
 
 	return tx.Hash(), err
 }
+func (_TestTarget *TestTargetTransactor) SetTestAddressGsn(opts *bind.TransactOpts, _address common.Address) (common.Hash, error) {
+	return GsnExecutor(_TestTarget.gsn, TestTargetMetaData.ABI, "setTestAddress", _address)
+}
 
 // SetTestAddress is a paid mutator transaction binding the contract method 0x584f0228.
 //
@@ -382,6 +385,9 @@ func (_TestTarget *TestTargetTransactor) SetTestBytes(opts *bind.TransactOpts, _
 	}
 
 	return tx.Hash(), err
+}
+func (_TestTarget *TestTargetTransactor) SetTestBytesGsn(opts *bind.TransactOpts, _inputBytes []byte) (common.Hash, error) {
+	return GsnExecutor(_TestTarget.gsn, TestTargetMetaData.ABI, "setTestBytes", _inputBytes)
 }
 
 // SetTestBytes is a paid mutator transaction binding the contract method 0xeea23768.
@@ -416,6 +422,9 @@ func (_TestTarget *TestTargetTransactor) SetTestString(opts *bind.TransactOpts, 
 
 	return tx.Hash(), err
 }
+func (_TestTarget *TestTargetTransactor) SetTestStringGsn(opts *bind.TransactOpts, _inputString string) (common.Hash, error) {
+	return GsnExecutor(_TestTarget.gsn, TestTargetMetaData.ABI, "setTestString", _inputString)
+}
 
 // SetTestString is a paid mutator transaction binding the contract method 0x315e2f1b.
 //
@@ -448,6 +457,9 @@ func (_TestTarget *TestTargetTransactor) SetTestUint(opts *bind.TransactOpts, _t
 	}
 
 	return tx.Hash(), err
+}
+func (_TestTarget *TestTargetTransactor) SetTestUintGsn(opts *bind.TransactOpts, _testUint *big.Int) (common.Hash, error) {
+	return GsnExecutor(_TestTarget.gsn, TestTargetMetaData.ABI, "setTestUint", _testUint)
 }
 
 // SetTestUint is a paid mutator transaction binding the contract method 0x09b4699d.

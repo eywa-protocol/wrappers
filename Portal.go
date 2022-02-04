@@ -875,6 +875,9 @@ func (_Portal *PortalTransactor) ApproveRepresentationRequest(opts *bind.Transac
 
 	return tx.Hash(), err
 }
+func (_Portal *PortalTransactor) ApproveRepresentationRequestGsn(opts *bind.TransactOpts, _rtoken common.Address) (common.Hash, error) {
+	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "approveRepresentationRequest", _rtoken)
+}
 
 // ApproveRepresentationRequest is a paid mutator transaction binding the contract method 0xeb6cca38.
 //
@@ -907,6 +910,9 @@ func (_Portal *PortalTransactor) ChangeBridge(opts *bind.TransactOpts, _bridge c
 	}
 
 	return tx.Hash(), err
+}
+func (_Portal *PortalTransactor) ChangeBridgeGsn(opts *bind.TransactOpts, _bridge common.Address) (common.Hash, error) {
+	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "changeBridge", _bridge)
 }
 
 // ChangeBridge is a paid mutator transaction binding the contract method 0x08774410.
@@ -941,6 +947,9 @@ func (_Portal *PortalTransactor) CreateRepresentationRequest(opts *bind.Transact
 
 	return tx.Hash(), err
 }
+func (_Portal *PortalTransactor) CreateRepresentationRequestGsn(opts *bind.TransactOpts, _rtoken common.Address) (common.Hash, error) {
+	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "createRepresentationRequest", _rtoken)
+}
 
 // CreateRepresentationRequest is a paid mutator transaction binding the contract method 0x99677c21.
 //
@@ -973,6 +982,9 @@ func (_Portal *PortalTransactor) EmergencyUnburnRequest(opts *bind.TransactOpts,
 	}
 
 	return tx.Hash(), err
+}
+func (_Portal *PortalTransactor) EmergencyUnburnRequestGsn(opts *bind.TransactOpts, _txID [32]byte, _receiveSide common.Address, _oppositeBridge common.Address, _chainId *big.Int) (common.Hash, error) {
+	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "emergencyUnburnRequest", _txID, _receiveSide, _oppositeBridge, _chainId)
 }
 
 // EmergencyUnburnRequest is a paid mutator transaction binding the contract method 0x7ac3a7ad.
@@ -1007,6 +1019,9 @@ func (_Portal *PortalTransactor) EmergencyUnburnRequestToSolana(opts *bind.Trans
 
 	return tx.Hash(), err
 }
+func (_Portal *PortalTransactor) EmergencyUnburnRequestToSolanaGsn(opts *bind.TransactOpts, _txID [32]byte, _pubkeys [][32]byte, _chainId *big.Int) (common.Hash, error) {
+	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "emergencyUnburnRequestToSolana", _txID, _pubkeys, _chainId)
+}
 
 // EmergencyUnburnRequestToSolana is a paid mutator transaction binding the contract method 0xa429bb07.
 //
@@ -1039,6 +1054,9 @@ func (_Portal *PortalTransactor) EmergencyUnsynthesize(opts *bind.TransactOpts, 
 	}
 
 	return tx.Hash(), err
+}
+func (_Portal *PortalTransactor) EmergencyUnsynthesizeGsn(opts *bind.TransactOpts, _txID [32]byte) (common.Hash, error) {
+	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "emergencyUnsynthesize", _txID)
 }
 
 // EmergencyUnsynthesize is a paid mutator transaction binding the contract method 0xfc895869.
@@ -1073,6 +1091,9 @@ func (_Portal *PortalTransactor) InitializeFunc(opts *bind.TransactOpts, _bridge
 
 	return tx.Hash(), err
 }
+func (_Portal *PortalTransactor) InitializeFuncGsn(opts *bind.TransactOpts, _bridge common.Address, _trustedForwarder common.Address) (common.Hash, error) {
+	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "initializeFunc", _bridge, _trustedForwarder)
+}
 
 // InitializeFunc is a paid mutator transaction binding the contract method 0x3410c15f.
 //
@@ -1105,6 +1126,9 @@ func (_Portal *PortalTransactor) RenounceOwnership(opts *bind.TransactOpts) (com
 	}
 
 	return tx.Hash(), err
+}
+func (_Portal *PortalTransactor) RenounceOwnershipGsn(opts *bind.TransactOpts) (common.Hash, error) {
+	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "renounceOwnership")
 }
 
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
@@ -1139,6 +1163,9 @@ func (_Portal *PortalTransactor) SetProxyCurve(opts *bind.TransactOpts, _proxy c
 
 	return tx.Hash(), err
 }
+func (_Portal *PortalTransactor) SetProxyCurveGsn(opts *bind.TransactOpts, _proxy common.Address) (common.Hash, error) {
+	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "setProxyCurve", _proxy)
+}
 
 // SetProxyCurve is a paid mutator transaction binding the contract method 0x286452f4.
 //
@@ -1171,6 +1198,9 @@ func (_Portal *PortalTransactor) SetTrustedForwarder(opts *bind.TransactOpts, _f
 	}
 
 	return tx.Hash(), err
+}
+func (_Portal *PortalTransactor) SetTrustedForwarderGsn(opts *bind.TransactOpts, _forwarder common.Address) (common.Hash, error) {
+	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "setTrustedForwarder", _forwarder)
 }
 
 // SetTrustedForwarder is a paid mutator transaction binding the contract method 0xda742228.
@@ -1205,6 +1235,9 @@ func (_Portal *PortalTransactor) Synthesize(opts *bind.TransactOpts, _token comm
 
 	return tx.Hash(), err
 }
+func (_Portal *PortalTransactor) SynthesizeGsn(opts *bind.TransactOpts, _token common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int) (common.Hash, error) {
+	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "synthesize", _token, _amount, _chain2address, _receiveSide, _oppositeBridge, _chainID)
+}
 
 // Synthesize is a paid mutator transaction binding the contract method 0x5bb8809f.
 //
@@ -1237,6 +1270,9 @@ func (_Portal *PortalTransactor) SynthesizeToSolana(opts *bind.TransactOpts, _to
 	}
 
 	return tx.Hash(), err
+}
+func (_Portal *PortalTransactor) SynthesizeToSolanaGsn(opts *bind.TransactOpts, _token common.Address, _amount *big.Int, _pubkeys [][32]byte, _txStateBump [1]byte, _chainId *big.Int) (common.Hash, error) {
+	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "synthesizeToSolana", _token, _amount, _pubkeys, _txStateBump, _chainId)
 }
 
 // SynthesizeToSolana is a paid mutator transaction binding the contract method 0x2c7eb5c0.
@@ -1271,6 +1307,9 @@ func (_Portal *PortalTransactor) SynthesizeWithPermit(opts *bind.TransactOpts, _
 
 	return tx.Hash(), err
 }
+func (_Portal *PortalTransactor) SynthesizeWithPermitGsn(opts *bind.TransactOpts, _approvalData []byte, _token common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int) (common.Hash, error) {
+	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "synthesizeWithPermit", _approvalData, _token, _amount, _chain2address, _receiveSide, _oppositeBridge, _chainID)
+}
 
 // SynthesizeWithPermit is a paid mutator transaction binding the contract method 0x9a1962fb.
 //
@@ -1303,6 +1342,9 @@ func (_Portal *PortalTransactor) SynthesizeBatchTransit(opts *bind.TransactOpts,
 	}
 
 	return tx.Hash(), err
+}
+func (_Portal *PortalTransactor) SynthesizeBatchTransitGsn(opts *bind.TransactOpts, _tokens []common.Address, _amounts []*big.Int, _synth_params PortalSynthParams, _selector [4]byte, _transit_data []byte, _permit_data []PortalPermitData) (common.Hash, error) {
+	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "synthesize_batch_transit", _tokens, _amounts, _synth_params, _selector, _transit_data, _permit_data)
 }
 
 // SynthesizeBatchTransit is a paid mutator transaction binding the contract method 0xfe4bc10f.
@@ -1337,6 +1379,9 @@ func (_Portal *PortalTransactor) SynthesizeTransit(opts *bind.TransactOpts, _tok
 
 	return tx.Hash(), err
 }
+func (_Portal *PortalTransactor) SynthesizeTransitGsn(opts *bind.TransactOpts, _token common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int, _out []byte) (common.Hash, error) {
+	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "synthesize_transit", _token, _amount, _chain2address, _receiveSide, _oppositeBridge, _chainID, _out)
+}
 
 // SynthesizeTransit is a paid mutator transaction binding the contract method 0x32f824ba.
 //
@@ -1370,6 +1415,9 @@ func (_Portal *PortalTransactor) TransferOwnership(opts *bind.TransactOpts, newO
 
 	return tx.Hash(), err
 }
+func (_Portal *PortalTransactor) TransferOwnershipGsn(opts *bind.TransactOpts, newOwner common.Address) (common.Hash, error) {
+	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "transferOwnership", newOwner)
+}
 
 // TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
 //
@@ -1402,6 +1450,9 @@ func (_Portal *PortalTransactor) Unsynthesize(opts *bind.TransactOpts, _txID [32
 	}
 
 	return tx.Hash(), err
+}
+func (_Portal *PortalTransactor) UnsynthesizeGsn(opts *bind.TransactOpts, _txID [32]byte, _token common.Address, _amount *big.Int, _to common.Address) (common.Hash, error) {
+	return GsnExecutor(_Portal.gsn, PortalMetaData.ABI, "unsynthesize", _txID, _token, _amount, _to)
 }
 
 // Unsynthesize is a paid mutator transaction binding the contract method 0xa6037a29.

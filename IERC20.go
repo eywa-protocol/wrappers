@@ -204,6 +204,9 @@ func (_IERC20 *IERC20Transactor) Name(opts *bind.TransactOpts) (common.Hash, err
 
 	return tx.Hash(), err
 }
+func (_IERC20 *IERC20Transactor) NameGsn(opts *bind.TransactOpts) (common.Hash, error) {
+	return GsnExecutor(_IERC20.gsn, IERC20MetaData.ABI, "name")
+}
 
 // Name is a paid mutator transaction binding the contract method 0x06fdde03.
 //
@@ -237,6 +240,9 @@ func (_IERC20 *IERC20Transactor) Permit(opts *bind.TransactOpts, owner common.Ad
 
 	return tx.Hash(), err
 }
+func (_IERC20 *IERC20Transactor) PermitGsn(opts *bind.TransactOpts, owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
+	return GsnExecutor(_IERC20.gsn, IERC20MetaData.ABI, "permit", owner, spender, value, deadline, v, r, s)
+}
 
 // Permit is a paid mutator transaction binding the contract method 0xd505accf.
 //
@@ -269,6 +275,9 @@ func (_IERC20 *IERC20Transactor) Symbol(opts *bind.TransactOpts) (common.Hash, e
 	}
 
 	return tx.Hash(), err
+}
+func (_IERC20 *IERC20Transactor) SymbolGsn(opts *bind.TransactOpts) (common.Hash, error) {
+	return GsnExecutor(_IERC20.gsn, IERC20MetaData.ABI, "symbol")
 }
 
 // Symbol is a paid mutator transaction binding the contract method 0x95d89b41.

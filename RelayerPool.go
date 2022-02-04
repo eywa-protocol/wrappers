@@ -770,12 +770,18 @@ func (_RelayerPool *RelayerPoolTransactor) DepositOverGsn(opts *bind.TransactOpt
 func (_RelayerPool *RelayerPoolSession) Deposit(_amount *big.Int) (common.Hash, error) {
 	return _RelayerPool.Contract.Deposit(&_RelayerPool.TransactOpts, _amount)
 }
+func (_RelayerPool *RelayerPoolSession) DepositOverGsn(_amount *big.Int) (common.Hash, error) {
+	return _RelayerPool.Contract.DepositOverGsn(&_RelayerPool.TransactOpts, _amount)
+}
 
 // Deposit is a paid mutator transaction binding the contract method 0xb6b55f25.
 //
 // Solidity: function deposit(uint256 _amount) returns()
 func (_RelayerPool *RelayerPoolTransactorSession) Deposit(_amount *big.Int) (common.Hash, error) {
 	return _RelayerPool.Contract.Deposit(&_RelayerPool.TransactOpts, _amount)
+}
+func (_RelayerPool *RelayerPoolTransactorSession) DepositOverGsn(_amount *big.Int) (common.Hash, error) {
+	return _RelayerPool.Contract.DepositOverGsn(&_RelayerPool.TransactOpts, _amount)
 }
 
 // HarvestMyReward is a paid mutator transaction binding the contract method 0x8363deb6.
@@ -806,12 +812,18 @@ func (_RelayerPool *RelayerPoolTransactor) HarvestMyRewardOverGsn(opts *bind.Tra
 func (_RelayerPool *RelayerPoolSession) HarvestMyReward() (common.Hash, error) {
 	return _RelayerPool.Contract.HarvestMyReward(&_RelayerPool.TransactOpts)
 }
+func (_RelayerPool *RelayerPoolSession) HarvestMyRewardOverGsn() (common.Hash, error) {
+	return _RelayerPool.Contract.HarvestMyRewardOverGsn(&_RelayerPool.TransactOpts)
+}
 
 // HarvestMyReward is a paid mutator transaction binding the contract method 0x8363deb6.
 //
 // Solidity: function harvestMyReward() returns()
 func (_RelayerPool *RelayerPoolTransactorSession) HarvestMyReward() (common.Hash, error) {
 	return _RelayerPool.Contract.HarvestMyReward(&_RelayerPool.TransactOpts)
+}
+func (_RelayerPool *RelayerPoolTransactorSession) HarvestMyRewardOverGsn() (common.Hash, error) {
+	return _RelayerPool.Contract.HarvestMyRewardOverGsn(&_RelayerPool.TransactOpts)
 }
 
 // HarvestPoolReward is a paid mutator transaction binding the contract method 0x8be9d5bf.
@@ -842,12 +854,18 @@ func (_RelayerPool *RelayerPoolTransactor) HarvestPoolRewardOverGsn(opts *bind.T
 func (_RelayerPool *RelayerPoolSession) HarvestPoolReward() (common.Hash, error) {
 	return _RelayerPool.Contract.HarvestPoolReward(&_RelayerPool.TransactOpts)
 }
+func (_RelayerPool *RelayerPoolSession) HarvestPoolRewardOverGsn() (common.Hash, error) {
+	return _RelayerPool.Contract.HarvestPoolRewardOverGsn(&_RelayerPool.TransactOpts)
+}
 
 // HarvestPoolReward is a paid mutator transaction binding the contract method 0x8be9d5bf.
 //
 // Solidity: function harvestPoolReward() returns()
 func (_RelayerPool *RelayerPoolTransactorSession) HarvestPoolReward() (common.Hash, error) {
 	return _RelayerPool.Contract.HarvestPoolReward(&_RelayerPool.TransactOpts)
+}
+func (_RelayerPool *RelayerPoolTransactorSession) HarvestPoolRewardOverGsn() (common.Hash, error) {
+	return _RelayerPool.Contract.HarvestPoolRewardOverGsn(&_RelayerPool.TransactOpts)
 }
 
 // SetEmissionAnnualRateNumerator is a paid mutator transaction binding the contract method 0xec51364e.
@@ -878,12 +896,18 @@ func (_RelayerPool *RelayerPoolTransactor) SetEmissionAnnualRateNumeratorOverGsn
 func (_RelayerPool *RelayerPoolSession) SetEmissionAnnualRateNumerator(_value *big.Int) (common.Hash, error) {
 	return _RelayerPool.Contract.SetEmissionAnnualRateNumerator(&_RelayerPool.TransactOpts, _value)
 }
+func (_RelayerPool *RelayerPoolSession) SetEmissionAnnualRateNumeratorOverGsn(_value *big.Int) (common.Hash, error) {
+	return _RelayerPool.Contract.SetEmissionAnnualRateNumeratorOverGsn(&_RelayerPool.TransactOpts, _value)
+}
 
 // SetEmissionAnnualRateNumerator is a paid mutator transaction binding the contract method 0xec51364e.
 //
 // Solidity: function setEmissionAnnualRateNumerator(uint256 _value) returns()
 func (_RelayerPool *RelayerPoolTransactorSession) SetEmissionAnnualRateNumerator(_value *big.Int) (common.Hash, error) {
 	return _RelayerPool.Contract.SetEmissionAnnualRateNumerator(&_RelayerPool.TransactOpts, _value)
+}
+func (_RelayerPool *RelayerPoolTransactorSession) SetEmissionAnnualRateNumeratorOverGsn(_value *big.Int) (common.Hash, error) {
+	return _RelayerPool.Contract.SetEmissionAnnualRateNumeratorOverGsn(&_RelayerPool.TransactOpts, _value)
 }
 
 // SetRelayerFeeNumerator is a paid mutator transaction binding the contract method 0x959ccfcb.
@@ -914,12 +938,18 @@ func (_RelayerPool *RelayerPoolTransactor) SetRelayerFeeNumeratorOverGsn(opts *b
 func (_RelayerPool *RelayerPoolSession) SetRelayerFeeNumerator(_value *big.Int) (common.Hash, error) {
 	return _RelayerPool.Contract.SetRelayerFeeNumerator(&_RelayerPool.TransactOpts, _value)
 }
+func (_RelayerPool *RelayerPoolSession) SetRelayerFeeNumeratorOverGsn(_value *big.Int) (common.Hash, error) {
+	return _RelayerPool.Contract.SetRelayerFeeNumeratorOverGsn(&_RelayerPool.TransactOpts, _value)
+}
 
 // SetRelayerFeeNumerator is a paid mutator transaction binding the contract method 0x959ccfcb.
 //
 // Solidity: function setRelayerFeeNumerator(uint256 _value) returns()
 func (_RelayerPool *RelayerPoolTransactorSession) SetRelayerFeeNumerator(_value *big.Int) (common.Hash, error) {
 	return _RelayerPool.Contract.SetRelayerFeeNumerator(&_RelayerPool.TransactOpts, _value)
+}
+func (_RelayerPool *RelayerPoolTransactorSession) SetRelayerFeeNumeratorOverGsn(_value *big.Int) (common.Hash, error) {
+	return _RelayerPool.Contract.SetRelayerFeeNumeratorOverGsn(&_RelayerPool.TransactOpts, _value)
 }
 
 // Withdraw is a paid mutator transaction binding the contract method 0x441a3e70.
@@ -950,12 +980,18 @@ func (_RelayerPool *RelayerPoolTransactor) WithdrawOverGsn(opts *bind.TransactOp
 func (_RelayerPool *RelayerPoolSession) Withdraw(_depositId *big.Int, _amount *big.Int) (common.Hash, error) {
 	return _RelayerPool.Contract.Withdraw(&_RelayerPool.TransactOpts, _depositId, _amount)
 }
+func (_RelayerPool *RelayerPoolSession) WithdrawOverGsn(_depositId *big.Int, _amount *big.Int) (common.Hash, error) {
+	return _RelayerPool.Contract.WithdrawOverGsn(&_RelayerPool.TransactOpts, _depositId, _amount)
+}
 
 // Withdraw is a paid mutator transaction binding the contract method 0x441a3e70.
 //
 // Solidity: function withdraw(uint256 _depositId, uint256 _amount) returns()
 func (_RelayerPool *RelayerPoolTransactorSession) Withdraw(_depositId *big.Int, _amount *big.Int) (common.Hash, error) {
 	return _RelayerPool.Contract.Withdraw(&_RelayerPool.TransactOpts, _depositId, _amount)
+}
+func (_RelayerPool *RelayerPoolTransactorSession) WithdrawOverGsn(_depositId *big.Int, _amount *big.Int) (common.Hash, error) {
+	return _RelayerPool.Contract.WithdrawOverGsn(&_RelayerPool.TransactOpts, _depositId, _amount)
 }
 
 // RelayerPoolDepositPutIterator is returned from FilterDepositPut and is used to iterate over the raw logs and unpacked data for DepositPut events raised by the RelayerPool contract.

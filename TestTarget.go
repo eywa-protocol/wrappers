@@ -360,12 +360,18 @@ func (_TestTarget *TestTargetTransactor) SetTestAddressOverGsn(opts *bind.Transa
 func (_TestTarget *TestTargetSession) SetTestAddress(_address common.Address) (common.Hash, error) {
 	return _TestTarget.Contract.SetTestAddress(&_TestTarget.TransactOpts, _address)
 }
+func (_TestTarget *TestTargetSession) SetTestAddressOverGsn(_address common.Address) (common.Hash, error) {
+	return _TestTarget.Contract.SetTestAddressOverGsn(&_TestTarget.TransactOpts, _address)
+}
 
 // SetTestAddress is a paid mutator transaction binding the contract method 0x584f0228.
 //
 // Solidity: function setTestAddress(address _address) returns(address)
 func (_TestTarget *TestTargetTransactorSession) SetTestAddress(_address common.Address) (common.Hash, error) {
 	return _TestTarget.Contract.SetTestAddress(&_TestTarget.TransactOpts, _address)
+}
+func (_TestTarget *TestTargetTransactorSession) SetTestAddressOverGsn(_address common.Address) (common.Hash, error) {
+	return _TestTarget.Contract.SetTestAddressOverGsn(&_TestTarget.TransactOpts, _address)
 }
 
 // SetTestBytes is a paid mutator transaction binding the contract method 0xeea23768.
@@ -396,12 +402,18 @@ func (_TestTarget *TestTargetTransactor) SetTestBytesOverGsn(opts *bind.Transact
 func (_TestTarget *TestTargetSession) SetTestBytes(_inputBytes []byte) (common.Hash, error) {
 	return _TestTarget.Contract.SetTestBytes(&_TestTarget.TransactOpts, _inputBytes)
 }
+func (_TestTarget *TestTargetSession) SetTestBytesOverGsn(_inputBytes []byte) (common.Hash, error) {
+	return _TestTarget.Contract.SetTestBytesOverGsn(&_TestTarget.TransactOpts, _inputBytes)
+}
 
 // SetTestBytes is a paid mutator transaction binding the contract method 0xeea23768.
 //
 // Solidity: function setTestBytes(bytes _inputBytes) returns()
 func (_TestTarget *TestTargetTransactorSession) SetTestBytes(_inputBytes []byte) (common.Hash, error) {
 	return _TestTarget.Contract.SetTestBytes(&_TestTarget.TransactOpts, _inputBytes)
+}
+func (_TestTarget *TestTargetTransactorSession) SetTestBytesOverGsn(_inputBytes []byte) (common.Hash, error) {
+	return _TestTarget.Contract.SetTestBytesOverGsn(&_TestTarget.TransactOpts, _inputBytes)
 }
 
 // SetTestString is a paid mutator transaction binding the contract method 0x315e2f1b.
@@ -432,12 +444,18 @@ func (_TestTarget *TestTargetTransactor) SetTestStringOverGsn(opts *bind.Transac
 func (_TestTarget *TestTargetSession) SetTestString(_inputString string) (common.Hash, error) {
 	return _TestTarget.Contract.SetTestString(&_TestTarget.TransactOpts, _inputString)
 }
+func (_TestTarget *TestTargetSession) SetTestStringOverGsn(_inputString string) (common.Hash, error) {
+	return _TestTarget.Contract.SetTestStringOverGsn(&_TestTarget.TransactOpts, _inputString)
+}
 
 // SetTestString is a paid mutator transaction binding the contract method 0x315e2f1b.
 //
 // Solidity: function setTestString(string _inputString) returns()
 func (_TestTarget *TestTargetTransactorSession) SetTestString(_inputString string) (common.Hash, error) {
 	return _TestTarget.Contract.SetTestString(&_TestTarget.TransactOpts, _inputString)
+}
+func (_TestTarget *TestTargetTransactorSession) SetTestStringOverGsn(_inputString string) (common.Hash, error) {
+	return _TestTarget.Contract.SetTestStringOverGsn(&_TestTarget.TransactOpts, _inputString)
 }
 
 // SetTestUint is a paid mutator transaction binding the contract method 0x09b4699d.
@@ -468,10 +486,16 @@ func (_TestTarget *TestTargetTransactor) SetTestUintOverGsn(opts *bind.TransactO
 func (_TestTarget *TestTargetSession) SetTestUint(_testUint *big.Int) (common.Hash, error) {
 	return _TestTarget.Contract.SetTestUint(&_TestTarget.TransactOpts, _testUint)
 }
+func (_TestTarget *TestTargetSession) SetTestUintOverGsn(_testUint *big.Int) (common.Hash, error) {
+	return _TestTarget.Contract.SetTestUintOverGsn(&_TestTarget.TransactOpts, _testUint)
+}
 
 // SetTestUint is a paid mutator transaction binding the contract method 0x09b4699d.
 //
 // Solidity: function setTestUint(uint256 _testUint) returns(uint256)
 func (_TestTarget *TestTargetTransactorSession) SetTestUint(_testUint *big.Int) (common.Hash, error) {
 	return _TestTarget.Contract.SetTestUint(&_TestTarget.TransactOpts, _testUint)
+}
+func (_TestTarget *TestTargetTransactorSession) SetTestUintOverGsn(_testUint *big.Int) (common.Hash, error) {
+	return _TestTarget.Contract.SetTestUintOverGsn(&_TestTarget.TransactOpts, _testUint)
 }

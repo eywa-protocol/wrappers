@@ -546,12 +546,18 @@ func (_MockDexPool *MockDexPoolTransactor) ReceiveRequestTestOverGsn(opts *bind.
 func (_MockDexPool *MockDexPoolSession) ReceiveRequestTest(_testData *big.Int, _reqId [32]byte) (common.Hash, error) {
 	return _MockDexPool.Contract.ReceiveRequestTest(&_MockDexPool.TransactOpts, _testData, _reqId)
 }
+func (_MockDexPool *MockDexPoolSession) ReceiveRequestTestOverGsn(_testData *big.Int, _reqId [32]byte) (common.Hash, error) {
+	return _MockDexPool.Contract.ReceiveRequestTestOverGsn(&_MockDexPool.TransactOpts, _testData, _reqId)
+}
 
 // ReceiveRequestTest is a paid mutator transaction binding the contract method 0xfaad85c8.
 //
 // Solidity: function receiveRequestTest(uint256 _testData, bytes32 _reqId) returns()
 func (_MockDexPool *MockDexPoolTransactorSession) ReceiveRequestTest(_testData *big.Int, _reqId [32]byte) (common.Hash, error) {
 	return _MockDexPool.Contract.ReceiveRequestTest(&_MockDexPool.TransactOpts, _testData, _reqId)
+}
+func (_MockDexPool *MockDexPoolTransactorSession) ReceiveRequestTestOverGsn(_testData *big.Int, _reqId [32]byte) (common.Hash, error) {
+	return _MockDexPool.Contract.ReceiveRequestTestOverGsn(&_MockDexPool.TransactOpts, _testData, _reqId)
 }
 
 // SendRequestTestV2 is a paid mutator transaction binding the contract method 0xf9ee520e.
@@ -582,12 +588,18 @@ func (_MockDexPool *MockDexPoolTransactor) SendRequestTestV2OverGsn(opts *bind.T
 func (_MockDexPool *MockDexPoolSession) SendRequestTestV2(testData_ *big.Int, secondPartPool common.Address, oppBridge common.Address, chainId *big.Int) (common.Hash, error) {
 	return _MockDexPool.Contract.SendRequestTestV2(&_MockDexPool.TransactOpts, testData_, secondPartPool, oppBridge, chainId)
 }
+func (_MockDexPool *MockDexPoolSession) SendRequestTestV2OverGsn(testData_ *big.Int, secondPartPool common.Address, oppBridge common.Address, chainId *big.Int) (common.Hash, error) {
+	return _MockDexPool.Contract.SendRequestTestV2OverGsn(&_MockDexPool.TransactOpts, testData_, secondPartPool, oppBridge, chainId)
+}
 
 // SendRequestTestV2 is a paid mutator transaction binding the contract method 0xf9ee520e.
 //
 // Solidity: function sendRequestTestV2(uint256 testData_, address secondPartPool, address oppBridge, uint256 chainId) returns()
 func (_MockDexPool *MockDexPoolTransactorSession) SendRequestTestV2(testData_ *big.Int, secondPartPool common.Address, oppBridge common.Address, chainId *big.Int) (common.Hash, error) {
 	return _MockDexPool.Contract.SendRequestTestV2(&_MockDexPool.TransactOpts, testData_, secondPartPool, oppBridge, chainId)
+}
+func (_MockDexPool *MockDexPoolTransactorSession) SendRequestTestV2OverGsn(testData_ *big.Int, secondPartPool common.Address, oppBridge common.Address, chainId *big.Int) (common.Hash, error) {
+	return _MockDexPool.Contract.SendRequestTestV2OverGsn(&_MockDexPool.TransactOpts, testData_, secondPartPool, oppBridge, chainId)
 }
 
 // SendTestRequestToSolana is a paid mutator transaction binding the contract method 0xf54ea76b.
@@ -618,12 +630,18 @@ func (_MockDexPool *MockDexPoolTransactor) SendTestRequestToSolanaOverGsn(opts *
 func (_MockDexPool *MockDexPoolSession) SendTestRequestToSolana(testStubPID_ [32]byte, solBridgePID_ [32]byte, dataAcc_ [32]byte, bridgePDASigner_ [32]byte, testData_ *big.Int, chainId *big.Int) (common.Hash, error) {
 	return _MockDexPool.Contract.SendTestRequestToSolana(&_MockDexPool.TransactOpts, testStubPID_, solBridgePID_, dataAcc_, bridgePDASigner_, testData_, chainId)
 }
+func (_MockDexPool *MockDexPoolSession) SendTestRequestToSolanaOverGsn(testStubPID_ [32]byte, solBridgePID_ [32]byte, dataAcc_ [32]byte, bridgePDASigner_ [32]byte, testData_ *big.Int, chainId *big.Int) (common.Hash, error) {
+	return _MockDexPool.Contract.SendTestRequestToSolanaOverGsn(&_MockDexPool.TransactOpts, testStubPID_, solBridgePID_, dataAcc_, bridgePDASigner_, testData_, chainId)
+}
 
 // SendTestRequestToSolana is a paid mutator transaction binding the contract method 0xf54ea76b.
 //
 // Solidity: function sendTestRequestToSolana(bytes32 testStubPID_, bytes32 solBridgePID_, bytes32 dataAcc_, bytes32 bridgePDASigner_, uint256 testData_, uint256 chainId) returns()
 func (_MockDexPool *MockDexPoolTransactorSession) SendTestRequestToSolana(testStubPID_ [32]byte, solBridgePID_ [32]byte, dataAcc_ [32]byte, bridgePDASigner_ [32]byte, testData_ *big.Int, chainId *big.Int) (common.Hash, error) {
 	return _MockDexPool.Contract.SendTestRequestToSolana(&_MockDexPool.TransactOpts, testStubPID_, solBridgePID_, dataAcc_, bridgePDASigner_, testData_, chainId)
+}
+func (_MockDexPool *MockDexPoolTransactorSession) SendTestRequestToSolanaOverGsn(testStubPID_ [32]byte, solBridgePID_ [32]byte, dataAcc_ [32]byte, bridgePDASigner_ [32]byte, testData_ *big.Int, chainId *big.Int) (common.Hash, error) {
+	return _MockDexPool.Contract.SendTestRequestToSolanaOverGsn(&_MockDexPool.TransactOpts, testStubPID_, solBridgePID_, dataAcc_, bridgePDASigner_, testData_, chainId)
 }
 
 // MockDexPoolRequestReceivedIterator is returned from FilterRequestReceived and is used to iterate over the raw logs and unpacked data for RequestReceived events raised by the MockDexPool contract.

@@ -953,12 +953,18 @@ func (_Synthesis *SynthesisTransactor) BurnSyntheticTokenOverGsn(opts *bind.Tran
 func (_Synthesis *SynthesisSession) BurnSyntheticToken(_stoken common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int) (common.Hash, error) {
 	return _Synthesis.Contract.BurnSyntheticToken(&_Synthesis.TransactOpts, _stoken, _amount, _chain2address, _receiveSide, _oppositeBridge, _chainID)
 }
+func (_Synthesis *SynthesisSession) BurnSyntheticTokenOverGsn(_stoken common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int) (common.Hash, error) {
+	return _Synthesis.Contract.BurnSyntheticTokenOverGsn(&_Synthesis.TransactOpts, _stoken, _amount, _chain2address, _receiveSide, _oppositeBridge, _chainID)
+}
 
 // BurnSyntheticToken is a paid mutator transaction binding the contract method 0x60341612.
 //
 // Solidity: function burnSyntheticToken(address _stoken, uint256 _amount, address _chain2address, address _receiveSide, address _oppositeBridge, uint256 _chainID) returns(bytes32 txID)
 func (_Synthesis *SynthesisTransactorSession) BurnSyntheticToken(_stoken common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int) (common.Hash, error) {
 	return _Synthesis.Contract.BurnSyntheticToken(&_Synthesis.TransactOpts, _stoken, _amount, _chain2address, _receiveSide, _oppositeBridge, _chainID)
+}
+func (_Synthesis *SynthesisTransactorSession) BurnSyntheticTokenOverGsn(_stoken common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int) (common.Hash, error) {
+	return _Synthesis.Contract.BurnSyntheticTokenOverGsn(&_Synthesis.TransactOpts, _stoken, _amount, _chain2address, _receiveSide, _oppositeBridge, _chainID)
 }
 
 // BurnSyntheticTokenToSolana is a paid mutator transaction binding the contract method 0x42a3f4f0.
@@ -989,12 +995,18 @@ func (_Synthesis *SynthesisTransactor) BurnSyntheticTokenToSolanaOverGsn(opts *b
 func (_Synthesis *SynthesisSession) BurnSyntheticTokenToSolana(_stoken common.Address, _pubkeys [][32]byte, _amount *big.Int, _chainId *big.Int) (common.Hash, error) {
 	return _Synthesis.Contract.BurnSyntheticTokenToSolana(&_Synthesis.TransactOpts, _stoken, _pubkeys, _amount, _chainId)
 }
+func (_Synthesis *SynthesisSession) BurnSyntheticTokenToSolanaOverGsn(_stoken common.Address, _pubkeys [][32]byte, _amount *big.Int, _chainId *big.Int) (common.Hash, error) {
+	return _Synthesis.Contract.BurnSyntheticTokenToSolanaOverGsn(&_Synthesis.TransactOpts, _stoken, _pubkeys, _amount, _chainId)
+}
 
 // BurnSyntheticTokenToSolana is a paid mutator transaction binding the contract method 0x42a3f4f0.
 //
 // Solidity: function burnSyntheticTokenToSolana(address _stoken, bytes32[] _pubkeys, uint256 _amount, uint256 _chainId) returns(bytes32 txID)
 func (_Synthesis *SynthesisTransactorSession) BurnSyntheticTokenToSolana(_stoken common.Address, _pubkeys [][32]byte, _amount *big.Int, _chainId *big.Int) (common.Hash, error) {
 	return _Synthesis.Contract.BurnSyntheticTokenToSolana(&_Synthesis.TransactOpts, _stoken, _pubkeys, _amount, _chainId)
+}
+func (_Synthesis *SynthesisTransactorSession) BurnSyntheticTokenToSolanaOverGsn(_stoken common.Address, _pubkeys [][32]byte, _amount *big.Int, _chainId *big.Int) (common.Hash, error) {
+	return _Synthesis.Contract.BurnSyntheticTokenToSolanaOverGsn(&_Synthesis.TransactOpts, _stoken, _pubkeys, _amount, _chainId)
 }
 
 // BurnSyntheticTokenTransit is a paid mutator transaction binding the contract method 0xe9a71481.
@@ -1025,12 +1037,18 @@ func (_Synthesis *SynthesisTransactor) BurnSyntheticTokenTransitOverGsn(opts *bi
 func (_Synthesis *SynthesisSession) BurnSyntheticTokenTransit(_stoken common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int, _out []byte) (common.Hash, error) {
 	return _Synthesis.Contract.BurnSyntheticTokenTransit(&_Synthesis.TransactOpts, _stoken, _amount, _chain2address, _receiveSide, _oppositeBridge, _chainID, _out)
 }
+func (_Synthesis *SynthesisSession) BurnSyntheticTokenTransitOverGsn(_stoken common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int, _out []byte) (common.Hash, error) {
+	return _Synthesis.Contract.BurnSyntheticTokenTransitOverGsn(&_Synthesis.TransactOpts, _stoken, _amount, _chain2address, _receiveSide, _oppositeBridge, _chainID, _out)
+}
 
 // BurnSyntheticTokenTransit is a paid mutator transaction binding the contract method 0xe9a71481.
 //
 // Solidity: function burnSyntheticToken_transit(address _stoken, uint256 _amount, address _chain2address, address _receiveSide, address _oppositeBridge, uint256 _chainID, bytes _out) returns(bytes32 txID)
 func (_Synthesis *SynthesisTransactorSession) BurnSyntheticTokenTransit(_stoken common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int, _out []byte) (common.Hash, error) {
 	return _Synthesis.Contract.BurnSyntheticTokenTransit(&_Synthesis.TransactOpts, _stoken, _amount, _chain2address, _receiveSide, _oppositeBridge, _chainID, _out)
+}
+func (_Synthesis *SynthesisTransactorSession) BurnSyntheticTokenTransitOverGsn(_stoken common.Address, _amount *big.Int, _chain2address common.Address, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int, _out []byte) (common.Hash, error) {
+	return _Synthesis.Contract.BurnSyntheticTokenTransitOverGsn(&_Synthesis.TransactOpts, _stoken, _amount, _chain2address, _receiveSide, _oppositeBridge, _chainID, _out)
 }
 
 // ChangeBridge is a paid mutator transaction binding the contract method 0x08774410.
@@ -1061,12 +1079,18 @@ func (_Synthesis *SynthesisTransactor) ChangeBridgeOverGsn(opts *bind.TransactOp
 func (_Synthesis *SynthesisSession) ChangeBridge(_bridge common.Address) (common.Hash, error) {
 	return _Synthesis.Contract.ChangeBridge(&_Synthesis.TransactOpts, _bridge)
 }
+func (_Synthesis *SynthesisSession) ChangeBridgeOverGsn(_bridge common.Address) (common.Hash, error) {
+	return _Synthesis.Contract.ChangeBridgeOverGsn(&_Synthesis.TransactOpts, _bridge)
+}
 
 // ChangeBridge is a paid mutator transaction binding the contract method 0x08774410.
 //
 // Solidity: function changeBridge(address _bridge) returns()
 func (_Synthesis *SynthesisTransactorSession) ChangeBridge(_bridge common.Address) (common.Hash, error) {
 	return _Synthesis.Contract.ChangeBridge(&_Synthesis.TransactOpts, _bridge)
+}
+func (_Synthesis *SynthesisTransactorSession) ChangeBridgeOverGsn(_bridge common.Address) (common.Hash, error) {
+	return _Synthesis.Contract.ChangeBridgeOverGsn(&_Synthesis.TransactOpts, _bridge)
 }
 
 // CreateRepresentation is a paid mutator transaction binding the contract method 0x104ccf9a.
@@ -1097,12 +1121,18 @@ func (_Synthesis *SynthesisTransactor) CreateRepresentationOverGsn(opts *bind.Tr
 func (_Synthesis *SynthesisSession) CreateRepresentation(_rtoken [32]byte, _name string, _symbol string) (common.Hash, error) {
 	return _Synthesis.Contract.CreateRepresentation(&_Synthesis.TransactOpts, _rtoken, _name, _symbol)
 }
+func (_Synthesis *SynthesisSession) CreateRepresentationOverGsn(_rtoken [32]byte, _name string, _symbol string) (common.Hash, error) {
+	return _Synthesis.Contract.CreateRepresentationOverGsn(&_Synthesis.TransactOpts, _rtoken, _name, _symbol)
+}
 
 // CreateRepresentation is a paid mutator transaction binding the contract method 0x104ccf9a.
 //
 // Solidity: function createRepresentation(bytes32 _rtoken, string _name, string _symbol) returns()
 func (_Synthesis *SynthesisTransactorSession) CreateRepresentation(_rtoken [32]byte, _name string, _symbol string) (common.Hash, error) {
 	return _Synthesis.Contract.CreateRepresentation(&_Synthesis.TransactOpts, _rtoken, _name, _symbol)
+}
+func (_Synthesis *SynthesisTransactorSession) CreateRepresentationOverGsn(_rtoken [32]byte, _name string, _symbol string) (common.Hash, error) {
+	return _Synthesis.Contract.CreateRepresentationOverGsn(&_Synthesis.TransactOpts, _rtoken, _name, _symbol)
 }
 
 // EmergencyUnburn is a paid mutator transaction binding the contract method 0xbb5f3cca.
@@ -1133,12 +1163,18 @@ func (_Synthesis *SynthesisTransactor) EmergencyUnburnOverGsn(opts *bind.Transac
 func (_Synthesis *SynthesisSession) EmergencyUnburn(_txID [32]byte) (common.Hash, error) {
 	return _Synthesis.Contract.EmergencyUnburn(&_Synthesis.TransactOpts, _txID)
 }
+func (_Synthesis *SynthesisSession) EmergencyUnburnOverGsn(_txID [32]byte) (common.Hash, error) {
+	return _Synthesis.Contract.EmergencyUnburnOverGsn(&_Synthesis.TransactOpts, _txID)
+}
 
 // EmergencyUnburn is a paid mutator transaction binding the contract method 0xbb5f3cca.
 //
 // Solidity: function emergencyUnburn(bytes32 _txID) returns()
 func (_Synthesis *SynthesisTransactorSession) EmergencyUnburn(_txID [32]byte) (common.Hash, error) {
 	return _Synthesis.Contract.EmergencyUnburn(&_Synthesis.TransactOpts, _txID)
+}
+func (_Synthesis *SynthesisTransactorSession) EmergencyUnburnOverGsn(_txID [32]byte) (common.Hash, error) {
+	return _Synthesis.Contract.EmergencyUnburnOverGsn(&_Synthesis.TransactOpts, _txID)
 }
 
 // EmergencyUnsyntesizeRequest is a paid mutator transaction binding the contract method 0x926ad0fe.
@@ -1169,12 +1205,18 @@ func (_Synthesis *SynthesisTransactor) EmergencyUnsyntesizeRequestOverGsn(opts *
 func (_Synthesis *SynthesisSession) EmergencyUnsyntesizeRequest(_txID [32]byte, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int) (common.Hash, error) {
 	return _Synthesis.Contract.EmergencyUnsyntesizeRequest(&_Synthesis.TransactOpts, _txID, _receiveSide, _oppositeBridge, _chainID)
 }
+func (_Synthesis *SynthesisSession) EmergencyUnsyntesizeRequestOverGsn(_txID [32]byte, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int) (common.Hash, error) {
+	return _Synthesis.Contract.EmergencyUnsyntesizeRequestOverGsn(&_Synthesis.TransactOpts, _txID, _receiveSide, _oppositeBridge, _chainID)
+}
 
 // EmergencyUnsyntesizeRequest is a paid mutator transaction binding the contract method 0x926ad0fe.
 //
 // Solidity: function emergencyUnsyntesizeRequest(bytes32 _txID, address _receiveSide, address _oppositeBridge, uint256 _chainID) returns()
 func (_Synthesis *SynthesisTransactorSession) EmergencyUnsyntesizeRequest(_txID [32]byte, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int) (common.Hash, error) {
 	return _Synthesis.Contract.EmergencyUnsyntesizeRequest(&_Synthesis.TransactOpts, _txID, _receiveSide, _oppositeBridge, _chainID)
+}
+func (_Synthesis *SynthesisTransactorSession) EmergencyUnsyntesizeRequestOverGsn(_txID [32]byte, _receiveSide common.Address, _oppositeBridge common.Address, _chainID *big.Int) (common.Hash, error) {
+	return _Synthesis.Contract.EmergencyUnsyntesizeRequestOverGsn(&_Synthesis.TransactOpts, _txID, _receiveSide, _oppositeBridge, _chainID)
 }
 
 // EmergencyUnsyntesizeRequestToSolana is a paid mutator transaction binding the contract method 0xfb47d165.
@@ -1205,12 +1247,18 @@ func (_Synthesis *SynthesisTransactor) EmergencyUnsyntesizeRequestToSolanaOverGs
 func (_Synthesis *SynthesisSession) EmergencyUnsyntesizeRequestToSolana(_pubkeys [][32]byte, _bumpSynthesizeRequest [1]byte, _chainId *big.Int) (common.Hash, error) {
 	return _Synthesis.Contract.EmergencyUnsyntesizeRequestToSolana(&_Synthesis.TransactOpts, _pubkeys, _bumpSynthesizeRequest, _chainId)
 }
+func (_Synthesis *SynthesisSession) EmergencyUnsyntesizeRequestToSolanaOverGsn(_pubkeys [][32]byte, _bumpSynthesizeRequest [1]byte, _chainId *big.Int) (common.Hash, error) {
+	return _Synthesis.Contract.EmergencyUnsyntesizeRequestToSolanaOverGsn(&_Synthesis.TransactOpts, _pubkeys, _bumpSynthesizeRequest, _chainId)
+}
 
 // EmergencyUnsyntesizeRequestToSolana is a paid mutator transaction binding the contract method 0xfb47d165.
 //
 // Solidity: function emergencyUnsyntesizeRequestToSolana(bytes32[] _pubkeys, bytes1 _bumpSynthesizeRequest, uint256 _chainId) returns()
 func (_Synthesis *SynthesisTransactorSession) EmergencyUnsyntesizeRequestToSolana(_pubkeys [][32]byte, _bumpSynthesizeRequest [1]byte, _chainId *big.Int) (common.Hash, error) {
 	return _Synthesis.Contract.EmergencyUnsyntesizeRequestToSolana(&_Synthesis.TransactOpts, _pubkeys, _bumpSynthesizeRequest, _chainId)
+}
+func (_Synthesis *SynthesisTransactorSession) EmergencyUnsyntesizeRequestToSolanaOverGsn(_pubkeys [][32]byte, _bumpSynthesizeRequest [1]byte, _chainId *big.Int) (common.Hash, error) {
+	return _Synthesis.Contract.EmergencyUnsyntesizeRequestToSolanaOverGsn(&_Synthesis.TransactOpts, _pubkeys, _bumpSynthesizeRequest, _chainId)
 }
 
 // InitializeFunc is a paid mutator transaction binding the contract method 0x3410c15f.
@@ -1241,12 +1289,18 @@ func (_Synthesis *SynthesisTransactor) InitializeFuncOverGsn(opts *bind.Transact
 func (_Synthesis *SynthesisSession) InitializeFunc(_bridge common.Address, _trustedForwarder common.Address) (common.Hash, error) {
 	return _Synthesis.Contract.InitializeFunc(&_Synthesis.TransactOpts, _bridge, _trustedForwarder)
 }
+func (_Synthesis *SynthesisSession) InitializeFuncOverGsn(_bridge common.Address, _trustedForwarder common.Address) (common.Hash, error) {
+	return _Synthesis.Contract.InitializeFuncOverGsn(&_Synthesis.TransactOpts, _bridge, _trustedForwarder)
+}
 
 // InitializeFunc is a paid mutator transaction binding the contract method 0x3410c15f.
 //
 // Solidity: function initializeFunc(address _bridge, address _trustedForwarder) returns()
 func (_Synthesis *SynthesisTransactorSession) InitializeFunc(_bridge common.Address, _trustedForwarder common.Address) (common.Hash, error) {
 	return _Synthesis.Contract.InitializeFunc(&_Synthesis.TransactOpts, _bridge, _trustedForwarder)
+}
+func (_Synthesis *SynthesisTransactorSession) InitializeFuncOverGsn(_bridge common.Address, _trustedForwarder common.Address) (common.Hash, error) {
+	return _Synthesis.Contract.InitializeFuncOverGsn(&_Synthesis.TransactOpts, _bridge, _trustedForwarder)
 }
 
 // MintSyntheticToken is a paid mutator transaction binding the contract method 0xd32a991e.
@@ -1277,12 +1331,18 @@ func (_Synthesis *SynthesisTransactor) MintSyntheticTokenOverGsn(opts *bind.Tran
 func (_Synthesis *SynthesisSession) MintSyntheticToken(_txID [32]byte, _tokenReal common.Address, _amount *big.Int, _to common.Address) (common.Hash, error) {
 	return _Synthesis.Contract.MintSyntheticToken(&_Synthesis.TransactOpts, _txID, _tokenReal, _amount, _to)
 }
+func (_Synthesis *SynthesisSession) MintSyntheticTokenOverGsn(_txID [32]byte, _tokenReal common.Address, _amount *big.Int, _to common.Address) (common.Hash, error) {
+	return _Synthesis.Contract.MintSyntheticTokenOverGsn(&_Synthesis.TransactOpts, _txID, _tokenReal, _amount, _to)
+}
 
 // MintSyntheticToken is a paid mutator transaction binding the contract method 0xd32a991e.
 //
 // Solidity: function mintSyntheticToken(bytes32 _txID, address _tokenReal, uint256 _amount, address _to) returns()
 func (_Synthesis *SynthesisTransactorSession) MintSyntheticToken(_txID [32]byte, _tokenReal common.Address, _amount *big.Int, _to common.Address) (common.Hash, error) {
 	return _Synthesis.Contract.MintSyntheticToken(&_Synthesis.TransactOpts, _txID, _tokenReal, _amount, _to)
+}
+func (_Synthesis *SynthesisTransactorSession) MintSyntheticTokenOverGsn(_txID [32]byte, _tokenReal common.Address, _amount *big.Int, _to common.Address) (common.Hash, error) {
+	return _Synthesis.Contract.MintSyntheticTokenOverGsn(&_Synthesis.TransactOpts, _txID, _tokenReal, _amount, _to)
 }
 
 // MintSyntheticTokenToSolana is a paid mutator transaction binding the contract method 0x0ead6192.
@@ -1313,12 +1373,18 @@ func (_Synthesis *SynthesisTransactor) MintSyntheticTokenToSolanaOverGsn(opts *b
 func (_Synthesis *SynthesisSession) MintSyntheticTokenToSolana(_txID [32]byte, _tokenReal [32]byte, _amount *big.Int, _to common.Address) (common.Hash, error) {
 	return _Synthesis.Contract.MintSyntheticTokenToSolana(&_Synthesis.TransactOpts, _txID, _tokenReal, _amount, _to)
 }
+func (_Synthesis *SynthesisSession) MintSyntheticTokenToSolanaOverGsn(_txID [32]byte, _tokenReal [32]byte, _amount *big.Int, _to common.Address) (common.Hash, error) {
+	return _Synthesis.Contract.MintSyntheticTokenToSolanaOverGsn(&_Synthesis.TransactOpts, _txID, _tokenReal, _amount, _to)
+}
 
 // MintSyntheticTokenToSolana is a paid mutator transaction binding the contract method 0x0ead6192.
 //
 // Solidity: function mintSyntheticTokenToSolana(bytes32 _txID, bytes32 _tokenReal, uint256 _amount, address _to) returns()
 func (_Synthesis *SynthesisTransactorSession) MintSyntheticTokenToSolana(_txID [32]byte, _tokenReal [32]byte, _amount *big.Int, _to common.Address) (common.Hash, error) {
 	return _Synthesis.Contract.MintSyntheticTokenToSolana(&_Synthesis.TransactOpts, _txID, _tokenReal, _amount, _to)
+}
+func (_Synthesis *SynthesisTransactorSession) MintSyntheticTokenToSolanaOverGsn(_txID [32]byte, _tokenReal [32]byte, _amount *big.Int, _to common.Address) (common.Hash, error) {
+	return _Synthesis.Contract.MintSyntheticTokenToSolanaOverGsn(&_Synthesis.TransactOpts, _txID, _tokenReal, _amount, _to)
 }
 
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
@@ -1349,12 +1415,18 @@ func (_Synthesis *SynthesisTransactor) RenounceOwnershipOverGsn(opts *bind.Trans
 func (_Synthesis *SynthesisSession) RenounceOwnership() (common.Hash, error) {
 	return _Synthesis.Contract.RenounceOwnership(&_Synthesis.TransactOpts)
 }
+func (_Synthesis *SynthesisSession) RenounceOwnershipOverGsn() (common.Hash, error) {
+	return _Synthesis.Contract.RenounceOwnershipOverGsn(&_Synthesis.TransactOpts)
+}
 
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
 //
 // Solidity: function renounceOwnership() returns()
 func (_Synthesis *SynthesisTransactorSession) RenounceOwnership() (common.Hash, error) {
 	return _Synthesis.Contract.RenounceOwnership(&_Synthesis.TransactOpts)
+}
+func (_Synthesis *SynthesisTransactorSession) RenounceOwnershipOverGsn() (common.Hash, error) {
+	return _Synthesis.Contract.RenounceOwnershipOverGsn(&_Synthesis.TransactOpts)
 }
 
 // SetProxyCurve is a paid mutator transaction binding the contract method 0x286452f4.
@@ -1385,12 +1457,18 @@ func (_Synthesis *SynthesisTransactor) SetProxyCurveOverGsn(opts *bind.TransactO
 func (_Synthesis *SynthesisSession) SetProxyCurve(_proxy common.Address) (common.Hash, error) {
 	return _Synthesis.Contract.SetProxyCurve(&_Synthesis.TransactOpts, _proxy)
 }
+func (_Synthesis *SynthesisSession) SetProxyCurveOverGsn(_proxy common.Address) (common.Hash, error) {
+	return _Synthesis.Contract.SetProxyCurveOverGsn(&_Synthesis.TransactOpts, _proxy)
+}
 
 // SetProxyCurve is a paid mutator transaction binding the contract method 0x286452f4.
 //
 // Solidity: function setProxyCurve(address _proxy) returns()
 func (_Synthesis *SynthesisTransactorSession) SetProxyCurve(_proxy common.Address) (common.Hash, error) {
 	return _Synthesis.Contract.SetProxyCurve(&_Synthesis.TransactOpts, _proxy)
+}
+func (_Synthesis *SynthesisTransactorSession) SetProxyCurveOverGsn(_proxy common.Address) (common.Hash, error) {
+	return _Synthesis.Contract.SetProxyCurveOverGsn(&_Synthesis.TransactOpts, _proxy)
 }
 
 // SetTrustedForwarder is a paid mutator transaction binding the contract method 0xda742228.
@@ -1421,12 +1499,18 @@ func (_Synthesis *SynthesisTransactor) SetTrustedForwarderOverGsn(opts *bind.Tra
 func (_Synthesis *SynthesisSession) SetTrustedForwarder(_forwarder common.Address) (common.Hash, error) {
 	return _Synthesis.Contract.SetTrustedForwarder(&_Synthesis.TransactOpts, _forwarder)
 }
+func (_Synthesis *SynthesisSession) SetTrustedForwarderOverGsn(_forwarder common.Address) (common.Hash, error) {
+	return _Synthesis.Contract.SetTrustedForwarderOverGsn(&_Synthesis.TransactOpts, _forwarder)
+}
 
 // SetTrustedForwarder is a paid mutator transaction binding the contract method 0xda742228.
 //
 // Solidity: function setTrustedForwarder(address _forwarder) returns()
 func (_Synthesis *SynthesisTransactorSession) SetTrustedForwarder(_forwarder common.Address) (common.Hash, error) {
 	return _Synthesis.Contract.SetTrustedForwarder(&_Synthesis.TransactOpts, _forwarder)
+}
+func (_Synthesis *SynthesisTransactorSession) SetTrustedForwarderOverGsn(_forwarder common.Address) (common.Hash, error) {
+	return _Synthesis.Contract.SetTrustedForwarderOverGsn(&_Synthesis.TransactOpts, _forwarder)
 }
 
 // TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
@@ -1457,12 +1541,18 @@ func (_Synthesis *SynthesisTransactor) TransferOwnershipOverGsn(opts *bind.Trans
 func (_Synthesis *SynthesisSession) TransferOwnership(newOwner common.Address) (common.Hash, error) {
 	return _Synthesis.Contract.TransferOwnership(&_Synthesis.TransactOpts, newOwner)
 }
+func (_Synthesis *SynthesisSession) TransferOwnershipOverGsn(newOwner common.Address) (common.Hash, error) {
+	return _Synthesis.Contract.TransferOwnershipOverGsn(&_Synthesis.TransactOpts, newOwner)
+}
 
 // TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
 //
 // Solidity: function transferOwnership(address newOwner) returns()
 func (_Synthesis *SynthesisTransactorSession) TransferOwnership(newOwner common.Address) (common.Hash, error) {
 	return _Synthesis.Contract.TransferOwnership(&_Synthesis.TransactOpts, newOwner)
+}
+func (_Synthesis *SynthesisTransactorSession) TransferOwnershipOverGsn(newOwner common.Address) (common.Hash, error) {
+	return _Synthesis.Contract.TransferOwnershipOverGsn(&_Synthesis.TransactOpts, newOwner)
 }
 
 // SynthesisBurnRequestIterator is returned from FilterBurnRequest and is used to iterate over the raw logs and unpacked data for BurnRequest events raised by the Synthesis contract.

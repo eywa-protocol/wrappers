@@ -27,6 +27,7 @@ var (
 	_ = common.Big1
 	_ = types.BloomLookup
 	_ = event.NewSubscription
+	_ = fmt.Errorf("")
 )
 
 // ERC20PermitMetaData contains all meta data concerning the ERC20Permit contract.

@@ -27,6 +27,7 @@ var (
 	_ = common.Big1
 	_ = types.BloomLookup
 	_ = event.NewSubscription
+	_ = fmt.Errorf("")
 )
 
 // MerkleTestMetaData contains all meta data concerning the MerkleTest contract.

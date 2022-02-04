@@ -438,18 +438,19 @@ func (_ERC20Permit *ERC20PermitCallerSession) TotalSupply() (*big.Int, error) {
 //
 // Solidity: function approve(address spender, uint256 amount) returns(bool)
 func (_ERC20Permit *ERC20PermitTransactor) Approve(opts *bind.TransactOpts, spender common.Address, amount *big.Int) (common.Hash, error) {
-	fmt.Printf("DBG: Wrapper run method = %s\n", "Approve")
-	if UseGsnFlag && _ERC20Permit.gsn != nil {
-		fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-		return GsnExecutor(_ERC20Permit.gsn, ERC20PermitMetaData.ABI, "approve", spender, amount)
+	//fmt.Printf("DBG: Wrapper run method = %s\n", "Approve")
+	//if UseGsnFlag && _ERC20Permit.gsn != nil {
+	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
+	//	return GsnExecutor(_ERC20Permit.gsn, ERC20PermitMetaData.ABI, "approve" , spender, amount)
+	//}
+
+	//fmt.Printf("DBG: GsnWrap: Direct call\n")
+	tx, err := _ERC20Permit.contract.Transact(opts, "approve", spender, amount)
+	if tx == nil {
+		return common.Hash{}, err
 	}
 
-	fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _ERC20Permit.contract.Transact(opts, "approve", spender, amount)
-	if tx != nil {
-		return tx.Hash(), err
-	}
-	return common.Hash{}, err
+	return tx.Hash(), err
 }
 
 // Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
@@ -470,18 +471,19 @@ func (_ERC20Permit *ERC20PermitTransactorSession) Approve(spender common.Address
 //
 // Solidity: function decreaseAllowance(address spender, uint256 subtractedValue) returns(bool)
 func (_ERC20Permit *ERC20PermitTransactor) DecreaseAllowance(opts *bind.TransactOpts, spender common.Address, subtractedValue *big.Int) (common.Hash, error) {
-	fmt.Printf("DBG: Wrapper run method = %s\n", "DecreaseAllowance")
-	if UseGsnFlag && _ERC20Permit.gsn != nil {
-		fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-		return GsnExecutor(_ERC20Permit.gsn, ERC20PermitMetaData.ABI, "decreaseAllowance", spender, subtractedValue)
+	//fmt.Printf("DBG: Wrapper run method = %s\n", "DecreaseAllowance")
+	//if UseGsnFlag && _ERC20Permit.gsn != nil {
+	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
+	//	return GsnExecutor(_ERC20Permit.gsn, ERC20PermitMetaData.ABI, "decreaseAllowance" , spender, subtractedValue)
+	//}
+
+	//fmt.Printf("DBG: GsnWrap: Direct call\n")
+	tx, err := _ERC20Permit.contract.Transact(opts, "decreaseAllowance", spender, subtractedValue)
+	if tx == nil {
+		return common.Hash{}, err
 	}
 
-	fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _ERC20Permit.contract.Transact(opts, "decreaseAllowance", spender, subtractedValue)
-	if tx != nil {
-		return tx.Hash(), err
-	}
-	return common.Hash{}, err
+	return tx.Hash(), err
 }
 
 // DecreaseAllowance is a paid mutator transaction binding the contract method 0xa457c2d7.
@@ -502,18 +504,19 @@ func (_ERC20Permit *ERC20PermitTransactorSession) DecreaseAllowance(spender comm
 //
 // Solidity: function increaseAllowance(address spender, uint256 addedValue) returns(bool)
 func (_ERC20Permit *ERC20PermitTransactor) IncreaseAllowance(opts *bind.TransactOpts, spender common.Address, addedValue *big.Int) (common.Hash, error) {
-	fmt.Printf("DBG: Wrapper run method = %s\n", "IncreaseAllowance")
-	if UseGsnFlag && _ERC20Permit.gsn != nil {
-		fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-		return GsnExecutor(_ERC20Permit.gsn, ERC20PermitMetaData.ABI, "increaseAllowance", spender, addedValue)
+	//fmt.Printf("DBG: Wrapper run method = %s\n", "IncreaseAllowance")
+	//if UseGsnFlag && _ERC20Permit.gsn != nil {
+	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
+	//	return GsnExecutor(_ERC20Permit.gsn, ERC20PermitMetaData.ABI, "increaseAllowance" , spender, addedValue)
+	//}
+
+	//fmt.Printf("DBG: GsnWrap: Direct call\n")
+	tx, err := _ERC20Permit.contract.Transact(opts, "increaseAllowance", spender, addedValue)
+	if tx == nil {
+		return common.Hash{}, err
 	}
 
-	fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _ERC20Permit.contract.Transact(opts, "increaseAllowance", spender, addedValue)
-	if tx != nil {
-		return tx.Hash(), err
-	}
-	return common.Hash{}, err
+	return tx.Hash(), err
 }
 
 // IncreaseAllowance is a paid mutator transaction binding the contract method 0x39509351.
@@ -534,18 +537,19 @@ func (_ERC20Permit *ERC20PermitTransactorSession) IncreaseAllowance(spender comm
 //
 // Solidity: function permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s) returns()
 func (_ERC20Permit *ERC20PermitTransactor) Permit(opts *bind.TransactOpts, owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
-	fmt.Printf("DBG: Wrapper run method = %s\n", "Permit")
-	if UseGsnFlag && _ERC20Permit.gsn != nil {
-		fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-		return GsnExecutor(_ERC20Permit.gsn, ERC20PermitMetaData.ABI, "permit", owner, spender, value, deadline, v, r, s)
+	//fmt.Printf("DBG: Wrapper run method = %s\n", "Permit")
+	//if UseGsnFlag && _ERC20Permit.gsn != nil {
+	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
+	//	return GsnExecutor(_ERC20Permit.gsn, ERC20PermitMetaData.ABI, "permit" , owner, spender, value, deadline, v, r, s)
+	//}
+
+	//fmt.Printf("DBG: GsnWrap: Direct call\n")
+	tx, err := _ERC20Permit.contract.Transact(opts, "permit", owner, spender, value, deadline, v, r, s)
+	if tx == nil {
+		return common.Hash{}, err
 	}
 
-	fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _ERC20Permit.contract.Transact(opts, "permit", owner, spender, value, deadline, v, r, s)
-	if tx != nil {
-		return tx.Hash(), err
-	}
-	return common.Hash{}, err
+	return tx.Hash(), err
 }
 
 // Permit is a paid mutator transaction binding the contract method 0xd505accf.
@@ -566,18 +570,19 @@ func (_ERC20Permit *ERC20PermitTransactorSession) Permit(owner common.Address, s
 //
 // Solidity: function transfer(address recipient, uint256 amount) returns(bool)
 func (_ERC20Permit *ERC20PermitTransactor) Transfer(opts *bind.TransactOpts, recipient common.Address, amount *big.Int) (common.Hash, error) {
-	fmt.Printf("DBG: Wrapper run method = %s\n", "Transfer")
-	if UseGsnFlag && _ERC20Permit.gsn != nil {
-		fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-		return GsnExecutor(_ERC20Permit.gsn, ERC20PermitMetaData.ABI, "transfer", recipient, amount)
+	//fmt.Printf("DBG: Wrapper run method = %s\n", "Transfer")
+	//if UseGsnFlag && _ERC20Permit.gsn != nil {
+	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
+	//	return GsnExecutor(_ERC20Permit.gsn, ERC20PermitMetaData.ABI, "transfer" , recipient, amount)
+	//}
+
+	//fmt.Printf("DBG: GsnWrap: Direct call\n")
+	tx, err := _ERC20Permit.contract.Transact(opts, "transfer", recipient, amount)
+	if tx == nil {
+		return common.Hash{}, err
 	}
 
-	fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _ERC20Permit.contract.Transact(opts, "transfer", recipient, amount)
-	if tx != nil {
-		return tx.Hash(), err
-	}
-	return common.Hash{}, err
+	return tx.Hash(), err
 }
 
 // Transfer is a paid mutator transaction binding the contract method 0xa9059cbb.
@@ -598,18 +603,19 @@ func (_ERC20Permit *ERC20PermitTransactorSession) Transfer(recipient common.Addr
 //
 // Solidity: function transferFrom(address sender, address recipient, uint256 amount) returns(bool)
 func (_ERC20Permit *ERC20PermitTransactor) TransferFrom(opts *bind.TransactOpts, sender common.Address, recipient common.Address, amount *big.Int) (common.Hash, error) {
-	fmt.Printf("DBG: Wrapper run method = %s\n", "TransferFrom")
-	if UseGsnFlag && _ERC20Permit.gsn != nil {
-		fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-		return GsnExecutor(_ERC20Permit.gsn, ERC20PermitMetaData.ABI, "transferFrom", sender, recipient, amount)
+	//fmt.Printf("DBG: Wrapper run method = %s\n", "TransferFrom")
+	//if UseGsnFlag && _ERC20Permit.gsn != nil {
+	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
+	//	return GsnExecutor(_ERC20Permit.gsn, ERC20PermitMetaData.ABI, "transferFrom" , sender, recipient, amount)
+	//}
+
+	//fmt.Printf("DBG: GsnWrap: Direct call\n")
+	tx, err := _ERC20Permit.contract.Transact(opts, "transferFrom", sender, recipient, amount)
+	if tx == nil {
+		return common.Hash{}, err
 	}
 
-	fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _ERC20Permit.contract.Transact(opts, "transferFrom", sender, recipient, amount)
-	if tx != nil {
-		return tx.Hash(), err
-	}
-	return common.Hash{}, err
+	return tx.Hash(), err
 }
 
 // TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.

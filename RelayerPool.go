@@ -746,18 +746,19 @@ func (_RelayerPool *RelayerPoolCallerSession) Vault() (common.Address, error) {
 //
 // Solidity: function deposit(uint256 _amount) returns()
 func (_RelayerPool *RelayerPoolTransactor) Deposit(opts *bind.TransactOpts, _amount *big.Int) (common.Hash, error) {
-	fmt.Printf("DBG: Wrapper run method = %s\n", "Deposit")
-	if UseGsnFlag && _RelayerPool.gsn != nil {
-		fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-		return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "deposit", _amount)
+	//fmt.Printf("DBG: Wrapper run method = %s\n", "Deposit")
+	//if UseGsnFlag && _RelayerPool.gsn != nil {
+	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
+	//	return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "deposit" , _amount)
+	//}
+
+	//fmt.Printf("DBG: GsnWrap: Direct call\n")
+	tx, err := _RelayerPool.contract.Transact(opts, "deposit", _amount)
+	if tx == nil {
+		return common.Hash{}, err
 	}
 
-	fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _RelayerPool.contract.Transact(opts, "deposit", _amount)
-	if tx != nil {
-		return tx.Hash(), err
-	}
-	return common.Hash{}, err
+	return tx.Hash(), err
 }
 
 // Deposit is a paid mutator transaction binding the contract method 0xb6b55f25.
@@ -778,18 +779,19 @@ func (_RelayerPool *RelayerPoolTransactorSession) Deposit(_amount *big.Int) (com
 //
 // Solidity: function harvestMyReward() returns()
 func (_RelayerPool *RelayerPoolTransactor) HarvestMyReward(opts *bind.TransactOpts) (common.Hash, error) {
-	fmt.Printf("DBG: Wrapper run method = %s\n", "HarvestMyReward")
-	if UseGsnFlag && _RelayerPool.gsn != nil {
-		fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-		return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "harvestMyReward")
+	//fmt.Printf("DBG: Wrapper run method = %s\n", "HarvestMyReward")
+	//if UseGsnFlag && _RelayerPool.gsn != nil {
+	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
+	//	return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "harvestMyReward" )
+	//}
+
+	//fmt.Printf("DBG: GsnWrap: Direct call\n")
+	tx, err := _RelayerPool.contract.Transact(opts, "harvestMyReward")
+	if tx == nil {
+		return common.Hash{}, err
 	}
 
-	fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _RelayerPool.contract.Transact(opts, "harvestMyReward")
-	if tx != nil {
-		return tx.Hash(), err
-	}
-	return common.Hash{}, err
+	return tx.Hash(), err
 }
 
 // HarvestMyReward is a paid mutator transaction binding the contract method 0x8363deb6.
@@ -810,18 +812,19 @@ func (_RelayerPool *RelayerPoolTransactorSession) HarvestMyReward() (common.Hash
 //
 // Solidity: function harvestPoolReward() returns()
 func (_RelayerPool *RelayerPoolTransactor) HarvestPoolReward(opts *bind.TransactOpts) (common.Hash, error) {
-	fmt.Printf("DBG: Wrapper run method = %s\n", "HarvestPoolReward")
-	if UseGsnFlag && _RelayerPool.gsn != nil {
-		fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-		return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "harvestPoolReward")
+	//fmt.Printf("DBG: Wrapper run method = %s\n", "HarvestPoolReward")
+	//if UseGsnFlag && _RelayerPool.gsn != nil {
+	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
+	//	return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "harvestPoolReward" )
+	//}
+
+	//fmt.Printf("DBG: GsnWrap: Direct call\n")
+	tx, err := _RelayerPool.contract.Transact(opts, "harvestPoolReward")
+	if tx == nil {
+		return common.Hash{}, err
 	}
 
-	fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _RelayerPool.contract.Transact(opts, "harvestPoolReward")
-	if tx != nil {
-		return tx.Hash(), err
-	}
-	return common.Hash{}, err
+	return tx.Hash(), err
 }
 
 // HarvestPoolReward is a paid mutator transaction binding the contract method 0x8be9d5bf.
@@ -842,18 +845,19 @@ func (_RelayerPool *RelayerPoolTransactorSession) HarvestPoolReward() (common.Ha
 //
 // Solidity: function setEmissionAnnualRateNumerator(uint256 _value) returns()
 func (_RelayerPool *RelayerPoolTransactor) SetEmissionAnnualRateNumerator(opts *bind.TransactOpts, _value *big.Int) (common.Hash, error) {
-	fmt.Printf("DBG: Wrapper run method = %s\n", "SetEmissionAnnualRateNumerator")
-	if UseGsnFlag && _RelayerPool.gsn != nil {
-		fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-		return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "setEmissionAnnualRateNumerator", _value)
+	//fmt.Printf("DBG: Wrapper run method = %s\n", "SetEmissionAnnualRateNumerator")
+	//if UseGsnFlag && _RelayerPool.gsn != nil {
+	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
+	//	return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "setEmissionAnnualRateNumerator" , _value)
+	//}
+
+	//fmt.Printf("DBG: GsnWrap: Direct call\n")
+	tx, err := _RelayerPool.contract.Transact(opts, "setEmissionAnnualRateNumerator", _value)
+	if tx == nil {
+		return common.Hash{}, err
 	}
 
-	fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _RelayerPool.contract.Transact(opts, "setEmissionAnnualRateNumerator", _value)
-	if tx != nil {
-		return tx.Hash(), err
-	}
-	return common.Hash{}, err
+	return tx.Hash(), err
 }
 
 // SetEmissionAnnualRateNumerator is a paid mutator transaction binding the contract method 0xec51364e.
@@ -874,18 +878,19 @@ func (_RelayerPool *RelayerPoolTransactorSession) SetEmissionAnnualRateNumerator
 //
 // Solidity: function setRelayerFeeNumerator(uint256 _value) returns()
 func (_RelayerPool *RelayerPoolTransactor) SetRelayerFeeNumerator(opts *bind.TransactOpts, _value *big.Int) (common.Hash, error) {
-	fmt.Printf("DBG: Wrapper run method = %s\n", "SetRelayerFeeNumerator")
-	if UseGsnFlag && _RelayerPool.gsn != nil {
-		fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-		return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "setRelayerFeeNumerator", _value)
+	//fmt.Printf("DBG: Wrapper run method = %s\n", "SetRelayerFeeNumerator")
+	//if UseGsnFlag && _RelayerPool.gsn != nil {
+	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
+	//	return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "setRelayerFeeNumerator" , _value)
+	//}
+
+	//fmt.Printf("DBG: GsnWrap: Direct call\n")
+	tx, err := _RelayerPool.contract.Transact(opts, "setRelayerFeeNumerator", _value)
+	if tx == nil {
+		return common.Hash{}, err
 	}
 
-	fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _RelayerPool.contract.Transact(opts, "setRelayerFeeNumerator", _value)
-	if tx != nil {
-		return tx.Hash(), err
-	}
-	return common.Hash{}, err
+	return tx.Hash(), err
 }
 
 // SetRelayerFeeNumerator is a paid mutator transaction binding the contract method 0x959ccfcb.
@@ -906,18 +911,19 @@ func (_RelayerPool *RelayerPoolTransactorSession) SetRelayerFeeNumerator(_value 
 //
 // Solidity: function withdraw(uint256 _depositId, uint256 _amount) returns()
 func (_RelayerPool *RelayerPoolTransactor) Withdraw(opts *bind.TransactOpts, _depositId *big.Int, _amount *big.Int) (common.Hash, error) {
-	fmt.Printf("DBG: Wrapper run method = %s\n", "Withdraw")
-	if UseGsnFlag && _RelayerPool.gsn != nil {
-		fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-		return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "withdraw", _depositId, _amount)
+	//fmt.Printf("DBG: Wrapper run method = %s\n", "Withdraw")
+	//if UseGsnFlag && _RelayerPool.gsn != nil {
+	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
+	//	return GsnExecutor(_RelayerPool.gsn, RelayerPoolMetaData.ABI, "withdraw" , _depositId, _amount)
+	//}
+
+	//fmt.Printf("DBG: GsnWrap: Direct call\n")
+	tx, err := _RelayerPool.contract.Transact(opts, "withdraw", _depositId, _amount)
+	if tx == nil {
+		return common.Hash{}, err
 	}
 
-	fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _RelayerPool.contract.Transact(opts, "withdraw", _depositId, _amount)
-	if tx != nil {
-		return tx.Hash(), err
-	}
-	return common.Hash{}, err
+	return tx.Hash(), err
 }
 
 // Withdraw is a paid mutator transaction binding the contract method 0x441a3e70.

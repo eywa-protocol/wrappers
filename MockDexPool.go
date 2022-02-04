@@ -522,18 +522,19 @@ func (_MockDexPool *MockDexPoolCallerSession) TestData() (*big.Int, error) {
 //
 // Solidity: function receiveRequestTest(uint256 _testData, bytes32 _reqId) returns()
 func (_MockDexPool *MockDexPoolTransactor) ReceiveRequestTest(opts *bind.TransactOpts, _testData *big.Int, _reqId [32]byte) (common.Hash, error) {
-	fmt.Printf("DBG: Wrapper run method = %s\n", "ReceiveRequestTest")
-	if UseGsnFlag && _MockDexPool.gsn != nil {
-		fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-		return GsnExecutor(_MockDexPool.gsn, MockDexPoolMetaData.ABI, "receiveRequestTest", _testData, _reqId)
+	//fmt.Printf("DBG: Wrapper run method = %s\n", "ReceiveRequestTest")
+	//if UseGsnFlag && _MockDexPool.gsn != nil {
+	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
+	//	return GsnExecutor(_MockDexPool.gsn, MockDexPoolMetaData.ABI, "receiveRequestTest" , _testData, _reqId)
+	//}
+
+	//fmt.Printf("DBG: GsnWrap: Direct call\n")
+	tx, err := _MockDexPool.contract.Transact(opts, "receiveRequestTest", _testData, _reqId)
+	if tx == nil {
+		return common.Hash{}, err
 	}
 
-	fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _MockDexPool.contract.Transact(opts, "receiveRequestTest", _testData, _reqId)
-	if tx != nil {
-		return tx.Hash(), err
-	}
-	return common.Hash{}, err
+	return tx.Hash(), err
 }
 
 // ReceiveRequestTest is a paid mutator transaction binding the contract method 0xfaad85c8.
@@ -554,18 +555,19 @@ func (_MockDexPool *MockDexPoolTransactorSession) ReceiveRequestTest(_testData *
 //
 // Solidity: function sendRequestTestV2(uint256 testData_, address secondPartPool, address oppBridge, uint256 chainId) returns()
 func (_MockDexPool *MockDexPoolTransactor) SendRequestTestV2(opts *bind.TransactOpts, testData_ *big.Int, secondPartPool common.Address, oppBridge common.Address, chainId *big.Int) (common.Hash, error) {
-	fmt.Printf("DBG: Wrapper run method = %s\n", "SendRequestTestV2")
-	if UseGsnFlag && _MockDexPool.gsn != nil {
-		fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-		return GsnExecutor(_MockDexPool.gsn, MockDexPoolMetaData.ABI, "sendRequestTestV2", testData_, secondPartPool, oppBridge, chainId)
+	//fmt.Printf("DBG: Wrapper run method = %s\n", "SendRequestTestV2")
+	//if UseGsnFlag && _MockDexPool.gsn != nil {
+	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
+	//	return GsnExecutor(_MockDexPool.gsn, MockDexPoolMetaData.ABI, "sendRequestTestV2" , testData_, secondPartPool, oppBridge, chainId)
+	//}
+
+	//fmt.Printf("DBG: GsnWrap: Direct call\n")
+	tx, err := _MockDexPool.contract.Transact(opts, "sendRequestTestV2", testData_, secondPartPool, oppBridge, chainId)
+	if tx == nil {
+		return common.Hash{}, err
 	}
 
-	fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _MockDexPool.contract.Transact(opts, "sendRequestTestV2", testData_, secondPartPool, oppBridge, chainId)
-	if tx != nil {
-		return tx.Hash(), err
-	}
-	return common.Hash{}, err
+	return tx.Hash(), err
 }
 
 // SendRequestTestV2 is a paid mutator transaction binding the contract method 0xf9ee520e.
@@ -586,18 +588,19 @@ func (_MockDexPool *MockDexPoolTransactorSession) SendRequestTestV2(testData_ *b
 //
 // Solidity: function sendTestRequestToSolana(bytes32 testStubPID_, bytes32 solBridgePID_, bytes32 dataAcc_, bytes32 bridgePDASigner_, uint256 testData_, uint256 chainId) returns()
 func (_MockDexPool *MockDexPoolTransactor) SendTestRequestToSolana(opts *bind.TransactOpts, testStubPID_ [32]byte, solBridgePID_ [32]byte, dataAcc_ [32]byte, bridgePDASigner_ [32]byte, testData_ *big.Int, chainId *big.Int) (common.Hash, error) {
-	fmt.Printf("DBG: Wrapper run method = %s\n", "SendTestRequestToSolana")
-	if UseGsnFlag && _MockDexPool.gsn != nil {
-		fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-		return GsnExecutor(_MockDexPool.gsn, MockDexPoolMetaData.ABI, "sendTestRequestToSolana", testStubPID_, solBridgePID_, dataAcc_, bridgePDASigner_, testData_, chainId)
+	//fmt.Printf("DBG: Wrapper run method = %s\n", "SendTestRequestToSolana")
+	//if UseGsnFlag && _MockDexPool.gsn != nil {
+	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
+	//	return GsnExecutor(_MockDexPool.gsn, MockDexPoolMetaData.ABI, "sendTestRequestToSolana" , testStubPID_, solBridgePID_, dataAcc_, bridgePDASigner_, testData_, chainId)
+	//}
+
+	//fmt.Printf("DBG: GsnWrap: Direct call\n")
+	tx, err := _MockDexPool.contract.Transact(opts, "sendTestRequestToSolana", testStubPID_, solBridgePID_, dataAcc_, bridgePDASigner_, testData_, chainId)
+	if tx == nil {
+		return common.Hash{}, err
 	}
 
-	fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _MockDexPool.contract.Transact(opts, "sendTestRequestToSolana", testStubPID_, solBridgePID_, dataAcc_, bridgePDASigner_, testData_, chainId)
-	if tx != nil {
-		return tx.Hash(), err
-	}
-	return common.Hash{}, err
+	return tx.Hash(), err
 }
 
 // SendTestRequestToSolana is a paid mutator transaction binding the contract method 0xf54ea76b.

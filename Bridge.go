@@ -616,20 +616,8 @@ func (_Bridge *BridgeCallerSession) VersionRecipient() (string, error) {
 // AddContractBind is a paid mutator transaction binding the contract method 0xe27ad9a5.
 //
 // Solidity: function addContractBind(bytes32 from, bytes32 oppositeBridge, bytes32 to) returns()
-func (_Bridge *BridgeTransactor) AddContractBind(opts *bind.TransactOpts, from [32]byte, oppositeBridge [32]byte, to [32]byte) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "AddContractBind")
-	//if UseGsnFlag && _Bridge.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "addContractBind" , from, oppositeBridge, to)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _Bridge.contract.Transact(opts, "addContractBind", from, oppositeBridge, to)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_Bridge *BridgeTransactor) AddContractBind(opts *bind.TransactOpts, from [32]byte, oppositeBridge [32]byte, to [32]byte) (*types.Transaction, error) {
+	return _Bridge.contract.Transact(opts, "addContractBind", from, oppositeBridge, to)
 }
 func (_Bridge *BridgeTransactor) AddContractBindOverGsn(opts *bind.TransactOpts, from [32]byte, oppositeBridge [32]byte, to [32]byte) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "addContractBind", from, oppositeBridge, to)
@@ -638,7 +626,7 @@ func (_Bridge *BridgeTransactor) AddContractBindOverGsn(opts *bind.TransactOpts,
 // AddContractBind is a paid mutator transaction binding the contract method 0xe27ad9a5.
 //
 // Solidity: function addContractBind(bytes32 from, bytes32 oppositeBridge, bytes32 to) returns()
-func (_Bridge *BridgeSession) AddContractBind(from [32]byte, oppositeBridge [32]byte, to [32]byte) (common.Hash, error) {
+func (_Bridge *BridgeSession) AddContractBind(from [32]byte, oppositeBridge [32]byte, to [32]byte) (*types.Transaction, error) {
 	return _Bridge.Contract.AddContractBind(&_Bridge.TransactOpts, from, oppositeBridge, to)
 }
 func (_Bridge *BridgeSession) AddContractBindOverGsn(from [32]byte, oppositeBridge [32]byte, to [32]byte) (common.Hash, error) {
@@ -648,7 +636,7 @@ func (_Bridge *BridgeSession) AddContractBindOverGsn(from [32]byte, oppositeBrid
 // AddContractBind is a paid mutator transaction binding the contract method 0xe27ad9a5.
 //
 // Solidity: function addContractBind(bytes32 from, bytes32 oppositeBridge, bytes32 to) returns()
-func (_Bridge *BridgeTransactorSession) AddContractBind(from [32]byte, oppositeBridge [32]byte, to [32]byte) (common.Hash, error) {
+func (_Bridge *BridgeTransactorSession) AddContractBind(from [32]byte, oppositeBridge [32]byte, to [32]byte) (*types.Transaction, error) {
 	return _Bridge.Contract.AddContractBind(&_Bridge.TransactOpts, from, oppositeBridge, to)
 }
 func (_Bridge *BridgeTransactorSession) AddContractBindOverGsn(from [32]byte, oppositeBridge [32]byte, to [32]byte) (common.Hash, error) {
@@ -658,20 +646,8 @@ func (_Bridge *BridgeTransactorSession) AddContractBindOverGsn(from [32]byte, op
 // DaoTransferOwnership is a paid mutator transaction binding the contract method 0xf2a0c8c0.
 //
 // Solidity: function daoTransferOwnership(address newDao) returns()
-func (_Bridge *BridgeTransactor) DaoTransferOwnership(opts *bind.TransactOpts, newDao common.Address) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "DaoTransferOwnership")
-	//if UseGsnFlag && _Bridge.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "daoTransferOwnership" , newDao)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _Bridge.contract.Transact(opts, "daoTransferOwnership", newDao)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_Bridge *BridgeTransactor) DaoTransferOwnership(opts *bind.TransactOpts, newDao common.Address) (*types.Transaction, error) {
+	return _Bridge.contract.Transact(opts, "daoTransferOwnership", newDao)
 }
 func (_Bridge *BridgeTransactor) DaoTransferOwnershipOverGsn(opts *bind.TransactOpts, newDao common.Address) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "daoTransferOwnership", newDao)
@@ -680,7 +656,7 @@ func (_Bridge *BridgeTransactor) DaoTransferOwnershipOverGsn(opts *bind.Transact
 // DaoTransferOwnership is a paid mutator transaction binding the contract method 0xf2a0c8c0.
 //
 // Solidity: function daoTransferOwnership(address newDao) returns()
-func (_Bridge *BridgeSession) DaoTransferOwnership(newDao common.Address) (common.Hash, error) {
+func (_Bridge *BridgeSession) DaoTransferOwnership(newDao common.Address) (*types.Transaction, error) {
 	return _Bridge.Contract.DaoTransferOwnership(&_Bridge.TransactOpts, newDao)
 }
 func (_Bridge *BridgeSession) DaoTransferOwnershipOverGsn(newDao common.Address) (common.Hash, error) {
@@ -690,7 +666,7 @@ func (_Bridge *BridgeSession) DaoTransferOwnershipOverGsn(newDao common.Address)
 // DaoTransferOwnership is a paid mutator transaction binding the contract method 0xf2a0c8c0.
 //
 // Solidity: function daoTransferOwnership(address newDao) returns()
-func (_Bridge *BridgeTransactorSession) DaoTransferOwnership(newDao common.Address) (common.Hash, error) {
+func (_Bridge *BridgeTransactorSession) DaoTransferOwnership(newDao common.Address) (*types.Transaction, error) {
 	return _Bridge.Contract.DaoTransferOwnership(&_Bridge.TransactOpts, newDao)
 }
 func (_Bridge *BridgeTransactorSession) DaoTransferOwnershipOverGsn(newDao common.Address) (common.Hash, error) {
@@ -700,20 +676,8 @@ func (_Bridge *BridgeTransactorSession) DaoTransferOwnershipOverGsn(newDao commo
 // DaoUpdateEpochRequest is a paid mutator transaction binding the contract method 0x46dec6cb.
 //
 // Solidity: function daoUpdateEpochRequest(bool resetEpoch) returns()
-func (_Bridge *BridgeTransactor) DaoUpdateEpochRequest(opts *bind.TransactOpts, resetEpoch bool) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "DaoUpdateEpochRequest")
-	//if UseGsnFlag && _Bridge.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "daoUpdateEpochRequest" , resetEpoch)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _Bridge.contract.Transact(opts, "daoUpdateEpochRequest", resetEpoch)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_Bridge *BridgeTransactor) DaoUpdateEpochRequest(opts *bind.TransactOpts, resetEpoch bool) (*types.Transaction, error) {
+	return _Bridge.contract.Transact(opts, "daoUpdateEpochRequest", resetEpoch)
 }
 func (_Bridge *BridgeTransactor) DaoUpdateEpochRequestOverGsn(opts *bind.TransactOpts, resetEpoch bool) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "daoUpdateEpochRequest", resetEpoch)
@@ -722,7 +686,7 @@ func (_Bridge *BridgeTransactor) DaoUpdateEpochRequestOverGsn(opts *bind.Transac
 // DaoUpdateEpochRequest is a paid mutator transaction binding the contract method 0x46dec6cb.
 //
 // Solidity: function daoUpdateEpochRequest(bool resetEpoch) returns()
-func (_Bridge *BridgeSession) DaoUpdateEpochRequest(resetEpoch bool) (common.Hash, error) {
+func (_Bridge *BridgeSession) DaoUpdateEpochRequest(resetEpoch bool) (*types.Transaction, error) {
 	return _Bridge.Contract.DaoUpdateEpochRequest(&_Bridge.TransactOpts, resetEpoch)
 }
 func (_Bridge *BridgeSession) DaoUpdateEpochRequestOverGsn(resetEpoch bool) (common.Hash, error) {
@@ -732,7 +696,7 @@ func (_Bridge *BridgeSession) DaoUpdateEpochRequestOverGsn(resetEpoch bool) (com
 // DaoUpdateEpochRequest is a paid mutator transaction binding the contract method 0x46dec6cb.
 //
 // Solidity: function daoUpdateEpochRequest(bool resetEpoch) returns()
-func (_Bridge *BridgeTransactorSession) DaoUpdateEpochRequest(resetEpoch bool) (common.Hash, error) {
+func (_Bridge *BridgeTransactorSession) DaoUpdateEpochRequest(resetEpoch bool) (*types.Transaction, error) {
 	return _Bridge.Contract.DaoUpdateEpochRequest(&_Bridge.TransactOpts, resetEpoch)
 }
 func (_Bridge *BridgeTransactorSession) DaoUpdateEpochRequestOverGsn(resetEpoch bool) (common.Hash, error) {
@@ -742,20 +706,8 @@ func (_Bridge *BridgeTransactorSession) DaoUpdateEpochRequestOverGsn(resetEpoch 
 // Initialize is a paid mutator transaction binding the contract method 0xc4d66de8.
 //
 // Solidity: function initialize(address forwarder) returns()
-func (_Bridge *BridgeTransactor) Initialize(opts *bind.TransactOpts, forwarder common.Address) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "Initialize")
-	//if UseGsnFlag && _Bridge.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "initialize" , forwarder)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _Bridge.contract.Transact(opts, "initialize", forwarder)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_Bridge *BridgeTransactor) Initialize(opts *bind.TransactOpts, forwarder common.Address) (*types.Transaction, error) {
+	return _Bridge.contract.Transact(opts, "initialize", forwarder)
 }
 func (_Bridge *BridgeTransactor) InitializeOverGsn(opts *bind.TransactOpts, forwarder common.Address) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "initialize", forwarder)
@@ -764,7 +716,7 @@ func (_Bridge *BridgeTransactor) InitializeOverGsn(opts *bind.TransactOpts, forw
 // Initialize is a paid mutator transaction binding the contract method 0xc4d66de8.
 //
 // Solidity: function initialize(address forwarder) returns()
-func (_Bridge *BridgeSession) Initialize(forwarder common.Address) (common.Hash, error) {
+func (_Bridge *BridgeSession) Initialize(forwarder common.Address) (*types.Transaction, error) {
 	return _Bridge.Contract.Initialize(&_Bridge.TransactOpts, forwarder)
 }
 func (_Bridge *BridgeSession) InitializeOverGsn(forwarder common.Address) (common.Hash, error) {
@@ -774,7 +726,7 @@ func (_Bridge *BridgeSession) InitializeOverGsn(forwarder common.Address) (commo
 // Initialize is a paid mutator transaction binding the contract method 0xc4d66de8.
 //
 // Solidity: function initialize(address forwarder) returns()
-func (_Bridge *BridgeTransactorSession) Initialize(forwarder common.Address) (common.Hash, error) {
+func (_Bridge *BridgeTransactorSession) Initialize(forwarder common.Address) (*types.Transaction, error) {
 	return _Bridge.Contract.Initialize(&_Bridge.TransactOpts, forwarder)
 }
 func (_Bridge *BridgeTransactorSession) InitializeOverGsn(forwarder common.Address) (common.Hash, error) {
@@ -784,20 +736,8 @@ func (_Bridge *BridgeTransactorSession) InitializeOverGsn(forwarder common.Addre
 // ReceiveRequestV2 is a paid mutator transaction binding the contract method 0xf3635fca.
 //
 // Solidity: function receiveRequestV2(bytes32 _reqId, bytes _sel, address _receiveSide, bytes32 _bridgeFrom, bytes _votersPubKey, bytes _votersSignature, uint256 _votersMask) returns()
-func (_Bridge *BridgeTransactor) ReceiveRequestV2(opts *bind.TransactOpts, _reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "ReceiveRequestV2")
-	//if UseGsnFlag && _Bridge.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "receiveRequestV2" , _reqId, _sel, _receiveSide, _bridgeFrom, _votersPubKey, _votersSignature, _votersMask)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _Bridge.contract.Transact(opts, "receiveRequestV2", _reqId, _sel, _receiveSide, _bridgeFrom, _votersPubKey, _votersSignature, _votersMask)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_Bridge *BridgeTransactor) ReceiveRequestV2(opts *bind.TransactOpts, _reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (*types.Transaction, error) {
+	return _Bridge.contract.Transact(opts, "receiveRequestV2", _reqId, _sel, _receiveSide, _bridgeFrom, _votersPubKey, _votersSignature, _votersMask)
 }
 func (_Bridge *BridgeTransactor) ReceiveRequestV2OverGsn(opts *bind.TransactOpts, _reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "receiveRequestV2", _reqId, _sel, _receiveSide, _bridgeFrom, _votersPubKey, _votersSignature, _votersMask)
@@ -806,7 +746,7 @@ func (_Bridge *BridgeTransactor) ReceiveRequestV2OverGsn(opts *bind.TransactOpts
 // ReceiveRequestV2 is a paid mutator transaction binding the contract method 0xf3635fca.
 //
 // Solidity: function receiveRequestV2(bytes32 _reqId, bytes _sel, address _receiveSide, bytes32 _bridgeFrom, bytes _votersPubKey, bytes _votersSignature, uint256 _votersMask) returns()
-func (_Bridge *BridgeSession) ReceiveRequestV2(_reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (common.Hash, error) {
+func (_Bridge *BridgeSession) ReceiveRequestV2(_reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (*types.Transaction, error) {
 	return _Bridge.Contract.ReceiveRequestV2(&_Bridge.TransactOpts, _reqId, _sel, _receiveSide, _bridgeFrom, _votersPubKey, _votersSignature, _votersMask)
 }
 func (_Bridge *BridgeSession) ReceiveRequestV2OverGsn(_reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (common.Hash, error) {
@@ -816,7 +756,7 @@ func (_Bridge *BridgeSession) ReceiveRequestV2OverGsn(_reqId [32]byte, _sel []by
 // ReceiveRequestV2 is a paid mutator transaction binding the contract method 0xf3635fca.
 //
 // Solidity: function receiveRequestV2(bytes32 _reqId, bytes _sel, address _receiveSide, bytes32 _bridgeFrom, bytes _votersPubKey, bytes _votersSignature, uint256 _votersMask) returns()
-func (_Bridge *BridgeTransactorSession) ReceiveRequestV2(_reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (common.Hash, error) {
+func (_Bridge *BridgeTransactorSession) ReceiveRequestV2(_reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (*types.Transaction, error) {
 	return _Bridge.Contract.ReceiveRequestV2(&_Bridge.TransactOpts, _reqId, _sel, _receiveSide, _bridgeFrom, _votersPubKey, _votersSignature, _votersMask)
 }
 func (_Bridge *BridgeTransactorSession) ReceiveRequestV2OverGsn(_reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (common.Hash, error) {
@@ -826,20 +766,8 @@ func (_Bridge *BridgeTransactorSession) ReceiveRequestV2OverGsn(_reqId [32]byte,
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
 //
 // Solidity: function renounceOwnership() returns()
-func (_Bridge *BridgeTransactor) RenounceOwnership(opts *bind.TransactOpts) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "RenounceOwnership")
-	//if UseGsnFlag && _Bridge.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "renounceOwnership" )
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _Bridge.contract.Transact(opts, "renounceOwnership")
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_Bridge *BridgeTransactor) RenounceOwnership(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Bridge.contract.Transact(opts, "renounceOwnership")
 }
 func (_Bridge *BridgeTransactor) RenounceOwnershipOverGsn(opts *bind.TransactOpts) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "renounceOwnership")
@@ -848,7 +776,7 @@ func (_Bridge *BridgeTransactor) RenounceOwnershipOverGsn(opts *bind.TransactOpt
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
 //
 // Solidity: function renounceOwnership() returns()
-func (_Bridge *BridgeSession) RenounceOwnership() (common.Hash, error) {
+func (_Bridge *BridgeSession) RenounceOwnership() (*types.Transaction, error) {
 	return _Bridge.Contract.RenounceOwnership(&_Bridge.TransactOpts)
 }
 func (_Bridge *BridgeSession) RenounceOwnershipOverGsn() (common.Hash, error) {
@@ -858,7 +786,7 @@ func (_Bridge *BridgeSession) RenounceOwnershipOverGsn() (common.Hash, error) {
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
 //
 // Solidity: function renounceOwnership() returns()
-func (_Bridge *BridgeTransactorSession) RenounceOwnership() (common.Hash, error) {
+func (_Bridge *BridgeTransactorSession) RenounceOwnership() (*types.Transaction, error) {
 	return _Bridge.Contract.RenounceOwnership(&_Bridge.TransactOpts)
 }
 func (_Bridge *BridgeTransactorSession) RenounceOwnershipOverGsn() (common.Hash, error) {
@@ -868,20 +796,8 @@ func (_Bridge *BridgeTransactorSession) RenounceOwnershipOverGsn() (common.Hash,
 // SetTrustedForwarder is a paid mutator transaction binding the contract method 0xda742228.
 //
 // Solidity: function setTrustedForwarder(address _forwarder) returns()
-func (_Bridge *BridgeTransactor) SetTrustedForwarder(opts *bind.TransactOpts, _forwarder common.Address) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "SetTrustedForwarder")
-	//if UseGsnFlag && _Bridge.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "setTrustedForwarder" , _forwarder)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _Bridge.contract.Transact(opts, "setTrustedForwarder", _forwarder)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_Bridge *BridgeTransactor) SetTrustedForwarder(opts *bind.TransactOpts, _forwarder common.Address) (*types.Transaction, error) {
+	return _Bridge.contract.Transact(opts, "setTrustedForwarder", _forwarder)
 }
 func (_Bridge *BridgeTransactor) SetTrustedForwarderOverGsn(opts *bind.TransactOpts, _forwarder common.Address) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "setTrustedForwarder", _forwarder)
@@ -890,7 +806,7 @@ func (_Bridge *BridgeTransactor) SetTrustedForwarderOverGsn(opts *bind.TransactO
 // SetTrustedForwarder is a paid mutator transaction binding the contract method 0xda742228.
 //
 // Solidity: function setTrustedForwarder(address _forwarder) returns()
-func (_Bridge *BridgeSession) SetTrustedForwarder(_forwarder common.Address) (common.Hash, error) {
+func (_Bridge *BridgeSession) SetTrustedForwarder(_forwarder common.Address) (*types.Transaction, error) {
 	return _Bridge.Contract.SetTrustedForwarder(&_Bridge.TransactOpts, _forwarder)
 }
 func (_Bridge *BridgeSession) SetTrustedForwarderOverGsn(_forwarder common.Address) (common.Hash, error) {
@@ -900,7 +816,7 @@ func (_Bridge *BridgeSession) SetTrustedForwarderOverGsn(_forwarder common.Addre
 // SetTrustedForwarder is a paid mutator transaction binding the contract method 0xda742228.
 //
 // Solidity: function setTrustedForwarder(address _forwarder) returns()
-func (_Bridge *BridgeTransactorSession) SetTrustedForwarder(_forwarder common.Address) (common.Hash, error) {
+func (_Bridge *BridgeTransactorSession) SetTrustedForwarder(_forwarder common.Address) (*types.Transaction, error) {
 	return _Bridge.Contract.SetTrustedForwarder(&_Bridge.TransactOpts, _forwarder)
 }
 func (_Bridge *BridgeTransactorSession) SetTrustedForwarderOverGsn(_forwarder common.Address) (common.Hash, error) {
@@ -910,20 +826,8 @@ func (_Bridge *BridgeTransactorSession) SetTrustedForwarderOverGsn(_forwarder co
 // TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
 //
 // Solidity: function transferOwnership(address newOwner) returns()
-func (_Bridge *BridgeTransactor) TransferOwnership(opts *bind.TransactOpts, newOwner common.Address) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "TransferOwnership")
-	//if UseGsnFlag && _Bridge.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "transferOwnership" , newOwner)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _Bridge.contract.Transact(opts, "transferOwnership", newOwner)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_Bridge *BridgeTransactor) TransferOwnership(opts *bind.TransactOpts, newOwner common.Address) (*types.Transaction, error) {
+	return _Bridge.contract.Transact(opts, "transferOwnership", newOwner)
 }
 func (_Bridge *BridgeTransactor) TransferOwnershipOverGsn(opts *bind.TransactOpts, newOwner common.Address) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "transferOwnership", newOwner)
@@ -932,7 +836,7 @@ func (_Bridge *BridgeTransactor) TransferOwnershipOverGsn(opts *bind.TransactOpt
 // TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
 //
 // Solidity: function transferOwnership(address newOwner) returns()
-func (_Bridge *BridgeSession) TransferOwnership(newOwner common.Address) (common.Hash, error) {
+func (_Bridge *BridgeSession) TransferOwnership(newOwner common.Address) (*types.Transaction, error) {
 	return _Bridge.Contract.TransferOwnership(&_Bridge.TransactOpts, newOwner)
 }
 func (_Bridge *BridgeSession) TransferOwnershipOverGsn(newOwner common.Address) (common.Hash, error) {
@@ -942,7 +846,7 @@ func (_Bridge *BridgeSession) TransferOwnershipOverGsn(newOwner common.Address) 
 // TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
 //
 // Solidity: function transferOwnership(address newOwner) returns()
-func (_Bridge *BridgeTransactorSession) TransferOwnership(newOwner common.Address) (common.Hash, error) {
+func (_Bridge *BridgeTransactorSession) TransferOwnership(newOwner common.Address) (*types.Transaction, error) {
 	return _Bridge.Contract.TransferOwnership(&_Bridge.TransactOpts, newOwner)
 }
 func (_Bridge *BridgeTransactorSession) TransferOwnershipOverGsn(newOwner common.Address) (common.Hash, error) {
@@ -952,20 +856,8 @@ func (_Bridge *BridgeTransactorSession) TransferOwnershipOverGsn(newOwner common
 // TransmitRequestV2 is a paid mutator transaction binding the contract method 0x329ef45f.
 //
 // Solidity: function transmitRequestV2(bytes _selector, address receiveSide, address oppositeBridge, uint256 chainId, bytes32 requestId, address sender, uint256 nonce) returns(bool)
-func (_Bridge *BridgeTransactor) TransmitRequestV2(opts *bind.TransactOpts, _selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "TransmitRequestV2")
-	//if UseGsnFlag && _Bridge.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "transmitRequestV2" , _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _Bridge.contract.Transact(opts, "transmitRequestV2", _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_Bridge *BridgeTransactor) TransmitRequestV2(opts *bind.TransactOpts, _selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (*types.Transaction, error) {
+	return _Bridge.contract.Transact(opts, "transmitRequestV2", _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
 }
 func (_Bridge *BridgeTransactor) TransmitRequestV2OverGsn(opts *bind.TransactOpts, _selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "transmitRequestV2", _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
@@ -974,7 +866,7 @@ func (_Bridge *BridgeTransactor) TransmitRequestV2OverGsn(opts *bind.TransactOpt
 // TransmitRequestV2 is a paid mutator transaction binding the contract method 0x329ef45f.
 //
 // Solidity: function transmitRequestV2(bytes _selector, address receiveSide, address oppositeBridge, uint256 chainId, bytes32 requestId, address sender, uint256 nonce) returns(bool)
-func (_Bridge *BridgeSession) TransmitRequestV2(_selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
+func (_Bridge *BridgeSession) TransmitRequestV2(_selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (*types.Transaction, error) {
 	return _Bridge.Contract.TransmitRequestV2(&_Bridge.TransactOpts, _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
 }
 func (_Bridge *BridgeSession) TransmitRequestV2OverGsn(_selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
@@ -984,7 +876,7 @@ func (_Bridge *BridgeSession) TransmitRequestV2OverGsn(_selector []byte, receive
 // TransmitRequestV2 is a paid mutator transaction binding the contract method 0x329ef45f.
 //
 // Solidity: function transmitRequestV2(bytes _selector, address receiveSide, address oppositeBridge, uint256 chainId, bytes32 requestId, address sender, uint256 nonce) returns(bool)
-func (_Bridge *BridgeTransactorSession) TransmitRequestV2(_selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
+func (_Bridge *BridgeTransactorSession) TransmitRequestV2(_selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (*types.Transaction, error) {
 	return _Bridge.Contract.TransmitRequestV2(&_Bridge.TransactOpts, _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
 }
 func (_Bridge *BridgeTransactorSession) TransmitRequestV2OverGsn(_selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
@@ -994,20 +886,8 @@ func (_Bridge *BridgeTransactorSession) TransmitRequestV2OverGsn(_selector []byt
 // TransmitRequestV2ToSolana is a paid mutator transaction binding the contract method 0x31b433f9.
 //
 // Solidity: function transmitRequestV2ToSolana(bytes _selector, bytes32 receiveSide, bytes32 oppositeBridge, uint256 chainId, bytes32 requestId, address sender, uint256 nonce) returns(bool)
-func (_Bridge *BridgeTransactor) TransmitRequestV2ToSolana(opts *bind.TransactOpts, _selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "TransmitRequestV2ToSolana")
-	//if UseGsnFlag && _Bridge.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "transmitRequestV2ToSolana" , _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _Bridge.contract.Transact(opts, "transmitRequestV2ToSolana", _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_Bridge *BridgeTransactor) TransmitRequestV2ToSolana(opts *bind.TransactOpts, _selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (*types.Transaction, error) {
+	return _Bridge.contract.Transact(opts, "transmitRequestV2ToSolana", _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
 }
 func (_Bridge *BridgeTransactor) TransmitRequestV2ToSolanaOverGsn(opts *bind.TransactOpts, _selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "transmitRequestV2ToSolana", _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
@@ -1016,7 +896,7 @@ func (_Bridge *BridgeTransactor) TransmitRequestV2ToSolanaOverGsn(opts *bind.Tra
 // TransmitRequestV2ToSolana is a paid mutator transaction binding the contract method 0x31b433f9.
 //
 // Solidity: function transmitRequestV2ToSolana(bytes _selector, bytes32 receiveSide, bytes32 oppositeBridge, uint256 chainId, bytes32 requestId, address sender, uint256 nonce) returns(bool)
-func (_Bridge *BridgeSession) TransmitRequestV2ToSolana(_selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
+func (_Bridge *BridgeSession) TransmitRequestV2ToSolana(_selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (*types.Transaction, error) {
 	return _Bridge.Contract.TransmitRequestV2ToSolana(&_Bridge.TransactOpts, _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
 }
 func (_Bridge *BridgeSession) TransmitRequestV2ToSolanaOverGsn(_selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
@@ -1026,7 +906,7 @@ func (_Bridge *BridgeSession) TransmitRequestV2ToSolanaOverGsn(_selector []byte,
 // TransmitRequestV2ToSolana is a paid mutator transaction binding the contract method 0x31b433f9.
 //
 // Solidity: function transmitRequestV2ToSolana(bytes _selector, bytes32 receiveSide, bytes32 oppositeBridge, uint256 chainId, bytes32 requestId, address sender, uint256 nonce) returns(bool)
-func (_Bridge *BridgeTransactorSession) TransmitRequestV2ToSolana(_selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
+func (_Bridge *BridgeTransactorSession) TransmitRequestV2ToSolana(_selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (*types.Transaction, error) {
 	return _Bridge.Contract.TransmitRequestV2ToSolana(&_Bridge.TransactOpts, _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
 }
 func (_Bridge *BridgeTransactorSession) TransmitRequestV2ToSolanaOverGsn(_selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
@@ -1036,20 +916,8 @@ func (_Bridge *BridgeTransactorSession) TransmitRequestV2ToSolanaOverGsn(_select
 // UpdateEpoch is a paid mutator transaction binding the contract method 0xbd4a5e90.
 //
 // Solidity: function updateEpoch(bytes _newKey, bytes _votersPubKey, bytes _votersSignature, uint256 _votersMask, uint8 _newEpochParticipantsNum, uint32 _newEpochNum) returns()
-func (_Bridge *BridgeTransactor) UpdateEpoch(opts *bind.TransactOpts, _newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "UpdateEpoch")
-	//if UseGsnFlag && _Bridge.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "updateEpoch" , _newKey, _votersPubKey, _votersSignature, _votersMask, _newEpochParticipantsNum, _newEpochNum)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _Bridge.contract.Transact(opts, "updateEpoch", _newKey, _votersPubKey, _votersSignature, _votersMask, _newEpochParticipantsNum, _newEpochNum)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_Bridge *BridgeTransactor) UpdateEpoch(opts *bind.TransactOpts, _newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (*types.Transaction, error) {
+	return _Bridge.contract.Transact(opts, "updateEpoch", _newKey, _votersPubKey, _votersSignature, _votersMask, _newEpochParticipantsNum, _newEpochNum)
 }
 func (_Bridge *BridgeTransactor) UpdateEpochOverGsn(opts *bind.TransactOpts, _newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (common.Hash, error) {
 	return GsnExecutor(_Bridge.gsn, BridgeMetaData.ABI, "updateEpoch", _newKey, _votersPubKey, _votersSignature, _votersMask, _newEpochParticipantsNum, _newEpochNum)
@@ -1058,7 +926,7 @@ func (_Bridge *BridgeTransactor) UpdateEpochOverGsn(opts *bind.TransactOpts, _ne
 // UpdateEpoch is a paid mutator transaction binding the contract method 0xbd4a5e90.
 //
 // Solidity: function updateEpoch(bytes _newKey, bytes _votersPubKey, bytes _votersSignature, uint256 _votersMask, uint8 _newEpochParticipantsNum, uint32 _newEpochNum) returns()
-func (_Bridge *BridgeSession) UpdateEpoch(_newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (common.Hash, error) {
+func (_Bridge *BridgeSession) UpdateEpoch(_newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (*types.Transaction, error) {
 	return _Bridge.Contract.UpdateEpoch(&_Bridge.TransactOpts, _newKey, _votersPubKey, _votersSignature, _votersMask, _newEpochParticipantsNum, _newEpochNum)
 }
 func (_Bridge *BridgeSession) UpdateEpochOverGsn(_newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (common.Hash, error) {
@@ -1068,7 +936,7 @@ func (_Bridge *BridgeSession) UpdateEpochOverGsn(_newKey []byte, _votersPubKey [
 // UpdateEpoch is a paid mutator transaction binding the contract method 0xbd4a5e90.
 //
 // Solidity: function updateEpoch(bytes _newKey, bytes _votersPubKey, bytes _votersSignature, uint256 _votersMask, uint8 _newEpochParticipantsNum, uint32 _newEpochNum) returns()
-func (_Bridge *BridgeTransactorSession) UpdateEpoch(_newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (common.Hash, error) {
+func (_Bridge *BridgeTransactorSession) UpdateEpoch(_newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (*types.Transaction, error) {
 	return _Bridge.Contract.UpdateEpoch(&_Bridge.TransactOpts, _newKey, _votersPubKey, _votersSignature, _votersMask, _newEpochParticipantsNum, _newEpochNum)
 }
 func (_Bridge *BridgeTransactorSession) UpdateEpochOverGsn(_newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (common.Hash, error) {

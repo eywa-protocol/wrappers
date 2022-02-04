@@ -988,20 +988,8 @@ func (_NodeRegistry *NodeRegistryCallerSession) VersionRecipient() (string, erro
 // AddContractBind is a paid mutator transaction binding the contract method 0xe27ad9a5.
 //
 // Solidity: function addContractBind(bytes32 from, bytes32 oppositeBridge, bytes32 to) returns()
-func (_NodeRegistry *NodeRegistryTransactor) AddContractBind(opts *bind.TransactOpts, from [32]byte, oppositeBridge [32]byte, to [32]byte) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "AddContractBind")
-	//if UseGsnFlag && _NodeRegistry.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "addContractBind" , from, oppositeBridge, to)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _NodeRegistry.contract.Transact(opts, "addContractBind", from, oppositeBridge, to)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_NodeRegistry *NodeRegistryTransactor) AddContractBind(opts *bind.TransactOpts, from [32]byte, oppositeBridge [32]byte, to [32]byte) (*types.Transaction, error) {
+	return _NodeRegistry.contract.Transact(opts, "addContractBind", from, oppositeBridge, to)
 }
 func (_NodeRegistry *NodeRegistryTransactor) AddContractBindOverGsn(opts *bind.TransactOpts, from [32]byte, oppositeBridge [32]byte, to [32]byte) (common.Hash, error) {
 	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "addContractBind", from, oppositeBridge, to)
@@ -1010,7 +998,7 @@ func (_NodeRegistry *NodeRegistryTransactor) AddContractBindOverGsn(opts *bind.T
 // AddContractBind is a paid mutator transaction binding the contract method 0xe27ad9a5.
 //
 // Solidity: function addContractBind(bytes32 from, bytes32 oppositeBridge, bytes32 to) returns()
-func (_NodeRegistry *NodeRegistrySession) AddContractBind(from [32]byte, oppositeBridge [32]byte, to [32]byte) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistrySession) AddContractBind(from [32]byte, oppositeBridge [32]byte, to [32]byte) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.AddContractBind(&_NodeRegistry.TransactOpts, from, oppositeBridge, to)
 }
 func (_NodeRegistry *NodeRegistrySession) AddContractBindOverGsn(from [32]byte, oppositeBridge [32]byte, to [32]byte) (common.Hash, error) {
@@ -1020,7 +1008,7 @@ func (_NodeRegistry *NodeRegistrySession) AddContractBindOverGsn(from [32]byte, 
 // AddContractBind is a paid mutator transaction binding the contract method 0xe27ad9a5.
 //
 // Solidity: function addContractBind(bytes32 from, bytes32 oppositeBridge, bytes32 to) returns()
-func (_NodeRegistry *NodeRegistryTransactorSession) AddContractBind(from [32]byte, oppositeBridge [32]byte, to [32]byte) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistryTransactorSession) AddContractBind(from [32]byte, oppositeBridge [32]byte, to [32]byte) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.AddContractBind(&_NodeRegistry.TransactOpts, from, oppositeBridge, to)
 }
 func (_NodeRegistry *NodeRegistryTransactorSession) AddContractBindOverGsn(from [32]byte, oppositeBridge [32]byte, to [32]byte) (common.Hash, error) {
@@ -1030,20 +1018,8 @@ func (_NodeRegistry *NodeRegistryTransactorSession) AddContractBindOverGsn(from 
 // CreateRelayer is a paid mutator transaction binding the contract method 0xcf9f47d8.
 //
 // Solidity: function createRelayer((address,address,string,bytes,uint256) _node, uint256 _deadline, uint8 _v, bytes32 _r, bytes32 _s) returns()
-func (_NodeRegistry *NodeRegistryTransactor) CreateRelayer(opts *bind.TransactOpts, _node NodeRegistryNode, _deadline *big.Int, _v uint8, _r [32]byte, _s [32]byte) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "CreateRelayer")
-	//if UseGsnFlag && _NodeRegistry.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "createRelayer" , _node, _deadline, _v, _r, _s)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _NodeRegistry.contract.Transact(opts, "createRelayer", _node, _deadline, _v, _r, _s)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_NodeRegistry *NodeRegistryTransactor) CreateRelayer(opts *bind.TransactOpts, _node NodeRegistryNode, _deadline *big.Int, _v uint8, _r [32]byte, _s [32]byte) (*types.Transaction, error) {
+	return _NodeRegistry.contract.Transact(opts, "createRelayer", _node, _deadline, _v, _r, _s)
 }
 func (_NodeRegistry *NodeRegistryTransactor) CreateRelayerOverGsn(opts *bind.TransactOpts, _node NodeRegistryNode, _deadline *big.Int, _v uint8, _r [32]byte, _s [32]byte) (common.Hash, error) {
 	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "createRelayer", _node, _deadline, _v, _r, _s)
@@ -1052,7 +1028,7 @@ func (_NodeRegistry *NodeRegistryTransactor) CreateRelayerOverGsn(opts *bind.Tra
 // CreateRelayer is a paid mutator transaction binding the contract method 0xcf9f47d8.
 //
 // Solidity: function createRelayer((address,address,string,bytes,uint256) _node, uint256 _deadline, uint8 _v, bytes32 _r, bytes32 _s) returns()
-func (_NodeRegistry *NodeRegistrySession) CreateRelayer(_node NodeRegistryNode, _deadline *big.Int, _v uint8, _r [32]byte, _s [32]byte) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistrySession) CreateRelayer(_node NodeRegistryNode, _deadline *big.Int, _v uint8, _r [32]byte, _s [32]byte) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.CreateRelayer(&_NodeRegistry.TransactOpts, _node, _deadline, _v, _r, _s)
 }
 func (_NodeRegistry *NodeRegistrySession) CreateRelayerOverGsn(_node NodeRegistryNode, _deadline *big.Int, _v uint8, _r [32]byte, _s [32]byte) (common.Hash, error) {
@@ -1062,7 +1038,7 @@ func (_NodeRegistry *NodeRegistrySession) CreateRelayerOverGsn(_node NodeRegistr
 // CreateRelayer is a paid mutator transaction binding the contract method 0xcf9f47d8.
 //
 // Solidity: function createRelayer((address,address,string,bytes,uint256) _node, uint256 _deadline, uint8 _v, bytes32 _r, bytes32 _s) returns()
-func (_NodeRegistry *NodeRegistryTransactorSession) CreateRelayer(_node NodeRegistryNode, _deadline *big.Int, _v uint8, _r [32]byte, _s [32]byte) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistryTransactorSession) CreateRelayer(_node NodeRegistryNode, _deadline *big.Int, _v uint8, _r [32]byte, _s [32]byte) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.CreateRelayer(&_NodeRegistry.TransactOpts, _node, _deadline, _v, _r, _s)
 }
 func (_NodeRegistry *NodeRegistryTransactorSession) CreateRelayerOverGsn(_node NodeRegistryNode, _deadline *big.Int, _v uint8, _r [32]byte, _s [32]byte) (common.Hash, error) {
@@ -1072,20 +1048,8 @@ func (_NodeRegistry *NodeRegistryTransactorSession) CreateRelayerOverGsn(_node N
 // DaoTransferOwnership is a paid mutator transaction binding the contract method 0xf2a0c8c0.
 //
 // Solidity: function daoTransferOwnership(address newDao) returns()
-func (_NodeRegistry *NodeRegistryTransactor) DaoTransferOwnership(opts *bind.TransactOpts, newDao common.Address) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "DaoTransferOwnership")
-	//if UseGsnFlag && _NodeRegistry.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "daoTransferOwnership" , newDao)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _NodeRegistry.contract.Transact(opts, "daoTransferOwnership", newDao)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_NodeRegistry *NodeRegistryTransactor) DaoTransferOwnership(opts *bind.TransactOpts, newDao common.Address) (*types.Transaction, error) {
+	return _NodeRegistry.contract.Transact(opts, "daoTransferOwnership", newDao)
 }
 func (_NodeRegistry *NodeRegistryTransactor) DaoTransferOwnershipOverGsn(opts *bind.TransactOpts, newDao common.Address) (common.Hash, error) {
 	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "daoTransferOwnership", newDao)
@@ -1094,7 +1058,7 @@ func (_NodeRegistry *NodeRegistryTransactor) DaoTransferOwnershipOverGsn(opts *b
 // DaoTransferOwnership is a paid mutator transaction binding the contract method 0xf2a0c8c0.
 //
 // Solidity: function daoTransferOwnership(address newDao) returns()
-func (_NodeRegistry *NodeRegistrySession) DaoTransferOwnership(newDao common.Address) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistrySession) DaoTransferOwnership(newDao common.Address) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.DaoTransferOwnership(&_NodeRegistry.TransactOpts, newDao)
 }
 func (_NodeRegistry *NodeRegistrySession) DaoTransferOwnershipOverGsn(newDao common.Address) (common.Hash, error) {
@@ -1104,7 +1068,7 @@ func (_NodeRegistry *NodeRegistrySession) DaoTransferOwnershipOverGsn(newDao com
 // DaoTransferOwnership is a paid mutator transaction binding the contract method 0xf2a0c8c0.
 //
 // Solidity: function daoTransferOwnership(address newDao) returns()
-func (_NodeRegistry *NodeRegistryTransactorSession) DaoTransferOwnership(newDao common.Address) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistryTransactorSession) DaoTransferOwnership(newDao common.Address) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.DaoTransferOwnership(&_NodeRegistry.TransactOpts, newDao)
 }
 func (_NodeRegistry *NodeRegistryTransactorSession) DaoTransferOwnershipOverGsn(newDao common.Address) (common.Hash, error) {
@@ -1114,20 +1078,8 @@ func (_NodeRegistry *NodeRegistryTransactorSession) DaoTransferOwnershipOverGsn(
 // DaoUpdateEpochRequest is a paid mutator transaction binding the contract method 0x46dec6cb.
 //
 // Solidity: function daoUpdateEpochRequest(bool resetEpoch) returns()
-func (_NodeRegistry *NodeRegistryTransactor) DaoUpdateEpochRequest(opts *bind.TransactOpts, resetEpoch bool) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "DaoUpdateEpochRequest")
-	//if UseGsnFlag && _NodeRegistry.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "daoUpdateEpochRequest" , resetEpoch)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _NodeRegistry.contract.Transact(opts, "daoUpdateEpochRequest", resetEpoch)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_NodeRegistry *NodeRegistryTransactor) DaoUpdateEpochRequest(opts *bind.TransactOpts, resetEpoch bool) (*types.Transaction, error) {
+	return _NodeRegistry.contract.Transact(opts, "daoUpdateEpochRequest", resetEpoch)
 }
 func (_NodeRegistry *NodeRegistryTransactor) DaoUpdateEpochRequestOverGsn(opts *bind.TransactOpts, resetEpoch bool) (common.Hash, error) {
 	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "daoUpdateEpochRequest", resetEpoch)
@@ -1136,7 +1088,7 @@ func (_NodeRegistry *NodeRegistryTransactor) DaoUpdateEpochRequestOverGsn(opts *
 // DaoUpdateEpochRequest is a paid mutator transaction binding the contract method 0x46dec6cb.
 //
 // Solidity: function daoUpdateEpochRequest(bool resetEpoch) returns()
-func (_NodeRegistry *NodeRegistrySession) DaoUpdateEpochRequest(resetEpoch bool) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistrySession) DaoUpdateEpochRequest(resetEpoch bool) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.DaoUpdateEpochRequest(&_NodeRegistry.TransactOpts, resetEpoch)
 }
 func (_NodeRegistry *NodeRegistrySession) DaoUpdateEpochRequestOverGsn(resetEpoch bool) (common.Hash, error) {
@@ -1146,7 +1098,7 @@ func (_NodeRegistry *NodeRegistrySession) DaoUpdateEpochRequestOverGsn(resetEpoc
 // DaoUpdateEpochRequest is a paid mutator transaction binding the contract method 0x46dec6cb.
 //
 // Solidity: function daoUpdateEpochRequest(bool resetEpoch) returns()
-func (_NodeRegistry *NodeRegistryTransactorSession) DaoUpdateEpochRequest(resetEpoch bool) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistryTransactorSession) DaoUpdateEpochRequest(resetEpoch bool) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.DaoUpdateEpochRequest(&_NodeRegistry.TransactOpts, resetEpoch)
 }
 func (_NodeRegistry *NodeRegistryTransactorSession) DaoUpdateEpochRequestOverGsn(resetEpoch bool) (common.Hash, error) {
@@ -1156,20 +1108,8 @@ func (_NodeRegistry *NodeRegistryTransactorSession) DaoUpdateEpochRequestOverGsn
 // Initialize is a paid mutator transaction binding the contract method 0xc4d66de8.
 //
 // Solidity: function initialize(address forwarder) returns()
-func (_NodeRegistry *NodeRegistryTransactor) Initialize(opts *bind.TransactOpts, forwarder common.Address) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "Initialize")
-	//if UseGsnFlag && _NodeRegistry.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "initialize" , forwarder)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _NodeRegistry.contract.Transact(opts, "initialize", forwarder)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_NodeRegistry *NodeRegistryTransactor) Initialize(opts *bind.TransactOpts, forwarder common.Address) (*types.Transaction, error) {
+	return _NodeRegistry.contract.Transact(opts, "initialize", forwarder)
 }
 func (_NodeRegistry *NodeRegistryTransactor) InitializeOverGsn(opts *bind.TransactOpts, forwarder common.Address) (common.Hash, error) {
 	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "initialize", forwarder)
@@ -1178,7 +1118,7 @@ func (_NodeRegistry *NodeRegistryTransactor) InitializeOverGsn(opts *bind.Transa
 // Initialize is a paid mutator transaction binding the contract method 0xc4d66de8.
 //
 // Solidity: function initialize(address forwarder) returns()
-func (_NodeRegistry *NodeRegistrySession) Initialize(forwarder common.Address) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistrySession) Initialize(forwarder common.Address) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.Initialize(&_NodeRegistry.TransactOpts, forwarder)
 }
 func (_NodeRegistry *NodeRegistrySession) InitializeOverGsn(forwarder common.Address) (common.Hash, error) {
@@ -1188,7 +1128,7 @@ func (_NodeRegistry *NodeRegistrySession) InitializeOverGsn(forwarder common.Add
 // Initialize is a paid mutator transaction binding the contract method 0xc4d66de8.
 //
 // Solidity: function initialize(address forwarder) returns()
-func (_NodeRegistry *NodeRegistryTransactorSession) Initialize(forwarder common.Address) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistryTransactorSession) Initialize(forwarder common.Address) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.Initialize(&_NodeRegistry.TransactOpts, forwarder)
 }
 func (_NodeRegistry *NodeRegistryTransactorSession) InitializeOverGsn(forwarder common.Address) (common.Hash, error) {
@@ -1198,20 +1138,8 @@ func (_NodeRegistry *NodeRegistryTransactorSession) InitializeOverGsn(forwarder 
 // Initialize2 is a paid mutator transaction binding the contract method 0x9434b989.
 //
 // Solidity: function initialize2(address _EYWA, address _forwarder) returns()
-func (_NodeRegistry *NodeRegistryTransactor) Initialize2(opts *bind.TransactOpts, _EYWA common.Address, _forwarder common.Address) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "Initialize2")
-	//if UseGsnFlag && _NodeRegistry.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "initialize2" , _EYWA, _forwarder)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _NodeRegistry.contract.Transact(opts, "initialize2", _EYWA, _forwarder)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_NodeRegistry *NodeRegistryTransactor) Initialize2(opts *bind.TransactOpts, _EYWA common.Address, _forwarder common.Address) (*types.Transaction, error) {
+	return _NodeRegistry.contract.Transact(opts, "initialize2", _EYWA, _forwarder)
 }
 func (_NodeRegistry *NodeRegistryTransactor) Initialize2OverGsn(opts *bind.TransactOpts, _EYWA common.Address, _forwarder common.Address) (common.Hash, error) {
 	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "initialize2", _EYWA, _forwarder)
@@ -1220,7 +1148,7 @@ func (_NodeRegistry *NodeRegistryTransactor) Initialize2OverGsn(opts *bind.Trans
 // Initialize2 is a paid mutator transaction binding the contract method 0x9434b989.
 //
 // Solidity: function initialize2(address _EYWA, address _forwarder) returns()
-func (_NodeRegistry *NodeRegistrySession) Initialize2(_EYWA common.Address, _forwarder common.Address) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistrySession) Initialize2(_EYWA common.Address, _forwarder common.Address) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.Initialize2(&_NodeRegistry.TransactOpts, _EYWA, _forwarder)
 }
 func (_NodeRegistry *NodeRegistrySession) Initialize2OverGsn(_EYWA common.Address, _forwarder common.Address) (common.Hash, error) {
@@ -1230,7 +1158,7 @@ func (_NodeRegistry *NodeRegistrySession) Initialize2OverGsn(_EYWA common.Addres
 // Initialize2 is a paid mutator transaction binding the contract method 0x9434b989.
 //
 // Solidity: function initialize2(address _EYWA, address _forwarder) returns()
-func (_NodeRegistry *NodeRegistryTransactorSession) Initialize2(_EYWA common.Address, _forwarder common.Address) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistryTransactorSession) Initialize2(_EYWA common.Address, _forwarder common.Address) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.Initialize2(&_NodeRegistry.TransactOpts, _EYWA, _forwarder)
 }
 func (_NodeRegistry *NodeRegistryTransactorSession) Initialize2OverGsn(_EYWA common.Address, _forwarder common.Address) (common.Hash, error) {
@@ -1240,20 +1168,8 @@ func (_NodeRegistry *NodeRegistryTransactorSession) Initialize2OverGsn(_EYWA com
 // ReceiveRequestV2 is a paid mutator transaction binding the contract method 0xf3635fca.
 //
 // Solidity: function receiveRequestV2(bytes32 _reqId, bytes _sel, address _receiveSide, bytes32 _bridgeFrom, bytes _votersPubKey, bytes _votersSignature, uint256 _votersMask) returns()
-func (_NodeRegistry *NodeRegistryTransactor) ReceiveRequestV2(opts *bind.TransactOpts, _reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "ReceiveRequestV2")
-	//if UseGsnFlag && _NodeRegistry.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "receiveRequestV2" , _reqId, _sel, _receiveSide, _bridgeFrom, _votersPubKey, _votersSignature, _votersMask)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _NodeRegistry.contract.Transact(opts, "receiveRequestV2", _reqId, _sel, _receiveSide, _bridgeFrom, _votersPubKey, _votersSignature, _votersMask)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_NodeRegistry *NodeRegistryTransactor) ReceiveRequestV2(opts *bind.TransactOpts, _reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (*types.Transaction, error) {
+	return _NodeRegistry.contract.Transact(opts, "receiveRequestV2", _reqId, _sel, _receiveSide, _bridgeFrom, _votersPubKey, _votersSignature, _votersMask)
 }
 func (_NodeRegistry *NodeRegistryTransactor) ReceiveRequestV2OverGsn(opts *bind.TransactOpts, _reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (common.Hash, error) {
 	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "receiveRequestV2", _reqId, _sel, _receiveSide, _bridgeFrom, _votersPubKey, _votersSignature, _votersMask)
@@ -1262,7 +1178,7 @@ func (_NodeRegistry *NodeRegistryTransactor) ReceiveRequestV2OverGsn(opts *bind.
 // ReceiveRequestV2 is a paid mutator transaction binding the contract method 0xf3635fca.
 //
 // Solidity: function receiveRequestV2(bytes32 _reqId, bytes _sel, address _receiveSide, bytes32 _bridgeFrom, bytes _votersPubKey, bytes _votersSignature, uint256 _votersMask) returns()
-func (_NodeRegistry *NodeRegistrySession) ReceiveRequestV2(_reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistrySession) ReceiveRequestV2(_reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.ReceiveRequestV2(&_NodeRegistry.TransactOpts, _reqId, _sel, _receiveSide, _bridgeFrom, _votersPubKey, _votersSignature, _votersMask)
 }
 func (_NodeRegistry *NodeRegistrySession) ReceiveRequestV2OverGsn(_reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (common.Hash, error) {
@@ -1272,7 +1188,7 @@ func (_NodeRegistry *NodeRegistrySession) ReceiveRequestV2OverGsn(_reqId [32]byt
 // ReceiveRequestV2 is a paid mutator transaction binding the contract method 0xf3635fca.
 //
 // Solidity: function receiveRequestV2(bytes32 _reqId, bytes _sel, address _receiveSide, bytes32 _bridgeFrom, bytes _votersPubKey, bytes _votersSignature, uint256 _votersMask) returns()
-func (_NodeRegistry *NodeRegistryTransactorSession) ReceiveRequestV2(_reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistryTransactorSession) ReceiveRequestV2(_reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.ReceiveRequestV2(&_NodeRegistry.TransactOpts, _reqId, _sel, _receiveSide, _bridgeFrom, _votersPubKey, _votersSignature, _votersMask)
 }
 func (_NodeRegistry *NodeRegistryTransactorSession) ReceiveRequestV2OverGsn(_reqId [32]byte, _sel []byte, _receiveSide common.Address, _bridgeFrom [32]byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int) (common.Hash, error) {
@@ -1282,20 +1198,8 @@ func (_NodeRegistry *NodeRegistryTransactorSession) ReceiveRequestV2OverGsn(_req
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
 //
 // Solidity: function renounceOwnership() returns()
-func (_NodeRegistry *NodeRegistryTransactor) RenounceOwnership(opts *bind.TransactOpts) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "RenounceOwnership")
-	//if UseGsnFlag && _NodeRegistry.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "renounceOwnership" )
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _NodeRegistry.contract.Transact(opts, "renounceOwnership")
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_NodeRegistry *NodeRegistryTransactor) RenounceOwnership(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _NodeRegistry.contract.Transact(opts, "renounceOwnership")
 }
 func (_NodeRegistry *NodeRegistryTransactor) RenounceOwnershipOverGsn(opts *bind.TransactOpts) (common.Hash, error) {
 	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "renounceOwnership")
@@ -1304,7 +1208,7 @@ func (_NodeRegistry *NodeRegistryTransactor) RenounceOwnershipOverGsn(opts *bind
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
 //
 // Solidity: function renounceOwnership() returns()
-func (_NodeRegistry *NodeRegistrySession) RenounceOwnership() (common.Hash, error) {
+func (_NodeRegistry *NodeRegistrySession) RenounceOwnership() (*types.Transaction, error) {
 	return _NodeRegistry.Contract.RenounceOwnership(&_NodeRegistry.TransactOpts)
 }
 func (_NodeRegistry *NodeRegistrySession) RenounceOwnershipOverGsn() (common.Hash, error) {
@@ -1314,7 +1218,7 @@ func (_NodeRegistry *NodeRegistrySession) RenounceOwnershipOverGsn() (common.Has
 // RenounceOwnership is a paid mutator transaction binding the contract method 0x715018a6.
 //
 // Solidity: function renounceOwnership() returns()
-func (_NodeRegistry *NodeRegistryTransactorSession) RenounceOwnership() (common.Hash, error) {
+func (_NodeRegistry *NodeRegistryTransactorSession) RenounceOwnership() (*types.Transaction, error) {
 	return _NodeRegistry.Contract.RenounceOwnership(&_NodeRegistry.TransactOpts)
 }
 func (_NodeRegistry *NodeRegistryTransactorSession) RenounceOwnershipOverGsn() (common.Hash, error) {
@@ -1324,20 +1228,8 @@ func (_NodeRegistry *NodeRegistryTransactorSession) RenounceOwnershipOverGsn() (
 // SetTrustedForwarder is a paid mutator transaction binding the contract method 0xda742228.
 //
 // Solidity: function setTrustedForwarder(address _forwarder) returns()
-func (_NodeRegistry *NodeRegistryTransactor) SetTrustedForwarder(opts *bind.TransactOpts, _forwarder common.Address) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "SetTrustedForwarder")
-	//if UseGsnFlag && _NodeRegistry.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "setTrustedForwarder" , _forwarder)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _NodeRegistry.contract.Transact(opts, "setTrustedForwarder", _forwarder)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_NodeRegistry *NodeRegistryTransactor) SetTrustedForwarder(opts *bind.TransactOpts, _forwarder common.Address) (*types.Transaction, error) {
+	return _NodeRegistry.contract.Transact(opts, "setTrustedForwarder", _forwarder)
 }
 func (_NodeRegistry *NodeRegistryTransactor) SetTrustedForwarderOverGsn(opts *bind.TransactOpts, _forwarder common.Address) (common.Hash, error) {
 	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "setTrustedForwarder", _forwarder)
@@ -1346,7 +1238,7 @@ func (_NodeRegistry *NodeRegistryTransactor) SetTrustedForwarderOverGsn(opts *bi
 // SetTrustedForwarder is a paid mutator transaction binding the contract method 0xda742228.
 //
 // Solidity: function setTrustedForwarder(address _forwarder) returns()
-func (_NodeRegistry *NodeRegistrySession) SetTrustedForwarder(_forwarder common.Address) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistrySession) SetTrustedForwarder(_forwarder common.Address) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.SetTrustedForwarder(&_NodeRegistry.TransactOpts, _forwarder)
 }
 func (_NodeRegistry *NodeRegistrySession) SetTrustedForwarderOverGsn(_forwarder common.Address) (common.Hash, error) {
@@ -1356,7 +1248,7 @@ func (_NodeRegistry *NodeRegistrySession) SetTrustedForwarderOverGsn(_forwarder 
 // SetTrustedForwarder is a paid mutator transaction binding the contract method 0xda742228.
 //
 // Solidity: function setTrustedForwarder(address _forwarder) returns()
-func (_NodeRegistry *NodeRegistryTransactorSession) SetTrustedForwarder(_forwarder common.Address) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistryTransactorSession) SetTrustedForwarder(_forwarder common.Address) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.SetTrustedForwarder(&_NodeRegistry.TransactOpts, _forwarder)
 }
 func (_NodeRegistry *NodeRegistryTransactorSession) SetTrustedForwarderOverGsn(_forwarder common.Address) (common.Hash, error) {
@@ -1366,20 +1258,8 @@ func (_NodeRegistry *NodeRegistryTransactorSession) SetTrustedForwarderOverGsn(_
 // TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
 //
 // Solidity: function transferOwnership(address newOwner) returns()
-func (_NodeRegistry *NodeRegistryTransactor) TransferOwnership(opts *bind.TransactOpts, newOwner common.Address) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "TransferOwnership")
-	//if UseGsnFlag && _NodeRegistry.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "transferOwnership" , newOwner)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _NodeRegistry.contract.Transact(opts, "transferOwnership", newOwner)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_NodeRegistry *NodeRegistryTransactor) TransferOwnership(opts *bind.TransactOpts, newOwner common.Address) (*types.Transaction, error) {
+	return _NodeRegistry.contract.Transact(opts, "transferOwnership", newOwner)
 }
 func (_NodeRegistry *NodeRegistryTransactor) TransferOwnershipOverGsn(opts *bind.TransactOpts, newOwner common.Address) (common.Hash, error) {
 	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "transferOwnership", newOwner)
@@ -1388,7 +1268,7 @@ func (_NodeRegistry *NodeRegistryTransactor) TransferOwnershipOverGsn(opts *bind
 // TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
 //
 // Solidity: function transferOwnership(address newOwner) returns()
-func (_NodeRegistry *NodeRegistrySession) TransferOwnership(newOwner common.Address) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistrySession) TransferOwnership(newOwner common.Address) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.TransferOwnership(&_NodeRegistry.TransactOpts, newOwner)
 }
 func (_NodeRegistry *NodeRegistrySession) TransferOwnershipOverGsn(newOwner common.Address) (common.Hash, error) {
@@ -1398,7 +1278,7 @@ func (_NodeRegistry *NodeRegistrySession) TransferOwnershipOverGsn(newOwner comm
 // TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
 //
 // Solidity: function transferOwnership(address newOwner) returns()
-func (_NodeRegistry *NodeRegistryTransactorSession) TransferOwnership(newOwner common.Address) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistryTransactorSession) TransferOwnership(newOwner common.Address) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.TransferOwnership(&_NodeRegistry.TransactOpts, newOwner)
 }
 func (_NodeRegistry *NodeRegistryTransactorSession) TransferOwnershipOverGsn(newOwner common.Address) (common.Hash, error) {
@@ -1408,20 +1288,8 @@ func (_NodeRegistry *NodeRegistryTransactorSession) TransferOwnershipOverGsn(new
 // TransmitRequestV2 is a paid mutator transaction binding the contract method 0x329ef45f.
 //
 // Solidity: function transmitRequestV2(bytes _selector, address receiveSide, address oppositeBridge, uint256 chainId, bytes32 requestId, address sender, uint256 nonce) returns(bool)
-func (_NodeRegistry *NodeRegistryTransactor) TransmitRequestV2(opts *bind.TransactOpts, _selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "TransmitRequestV2")
-	//if UseGsnFlag && _NodeRegistry.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "transmitRequestV2" , _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _NodeRegistry.contract.Transact(opts, "transmitRequestV2", _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_NodeRegistry *NodeRegistryTransactor) TransmitRequestV2(opts *bind.TransactOpts, _selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (*types.Transaction, error) {
+	return _NodeRegistry.contract.Transact(opts, "transmitRequestV2", _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
 }
 func (_NodeRegistry *NodeRegistryTransactor) TransmitRequestV2OverGsn(opts *bind.TransactOpts, _selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
 	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "transmitRequestV2", _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
@@ -1430,7 +1298,7 @@ func (_NodeRegistry *NodeRegistryTransactor) TransmitRequestV2OverGsn(opts *bind
 // TransmitRequestV2 is a paid mutator transaction binding the contract method 0x329ef45f.
 //
 // Solidity: function transmitRequestV2(bytes _selector, address receiveSide, address oppositeBridge, uint256 chainId, bytes32 requestId, address sender, uint256 nonce) returns(bool)
-func (_NodeRegistry *NodeRegistrySession) TransmitRequestV2(_selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistrySession) TransmitRequestV2(_selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.TransmitRequestV2(&_NodeRegistry.TransactOpts, _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
 }
 func (_NodeRegistry *NodeRegistrySession) TransmitRequestV2OverGsn(_selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
@@ -1440,7 +1308,7 @@ func (_NodeRegistry *NodeRegistrySession) TransmitRequestV2OverGsn(_selector []b
 // TransmitRequestV2 is a paid mutator transaction binding the contract method 0x329ef45f.
 //
 // Solidity: function transmitRequestV2(bytes _selector, address receiveSide, address oppositeBridge, uint256 chainId, bytes32 requestId, address sender, uint256 nonce) returns(bool)
-func (_NodeRegistry *NodeRegistryTransactorSession) TransmitRequestV2(_selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistryTransactorSession) TransmitRequestV2(_selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.TransmitRequestV2(&_NodeRegistry.TransactOpts, _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
 }
 func (_NodeRegistry *NodeRegistryTransactorSession) TransmitRequestV2OverGsn(_selector []byte, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
@@ -1450,20 +1318,8 @@ func (_NodeRegistry *NodeRegistryTransactorSession) TransmitRequestV2OverGsn(_se
 // TransmitRequestV2ToSolana is a paid mutator transaction binding the contract method 0x31b433f9.
 //
 // Solidity: function transmitRequestV2ToSolana(bytes _selector, bytes32 receiveSide, bytes32 oppositeBridge, uint256 chainId, bytes32 requestId, address sender, uint256 nonce) returns(bool)
-func (_NodeRegistry *NodeRegistryTransactor) TransmitRequestV2ToSolana(opts *bind.TransactOpts, _selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "TransmitRequestV2ToSolana")
-	//if UseGsnFlag && _NodeRegistry.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "transmitRequestV2ToSolana" , _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _NodeRegistry.contract.Transact(opts, "transmitRequestV2ToSolana", _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_NodeRegistry *NodeRegistryTransactor) TransmitRequestV2ToSolana(opts *bind.TransactOpts, _selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (*types.Transaction, error) {
+	return _NodeRegistry.contract.Transact(opts, "transmitRequestV2ToSolana", _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
 }
 func (_NodeRegistry *NodeRegistryTransactor) TransmitRequestV2ToSolanaOverGsn(opts *bind.TransactOpts, _selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
 	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "transmitRequestV2ToSolana", _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
@@ -1472,7 +1328,7 @@ func (_NodeRegistry *NodeRegistryTransactor) TransmitRequestV2ToSolanaOverGsn(op
 // TransmitRequestV2ToSolana is a paid mutator transaction binding the contract method 0x31b433f9.
 //
 // Solidity: function transmitRequestV2ToSolana(bytes _selector, bytes32 receiveSide, bytes32 oppositeBridge, uint256 chainId, bytes32 requestId, address sender, uint256 nonce) returns(bool)
-func (_NodeRegistry *NodeRegistrySession) TransmitRequestV2ToSolana(_selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistrySession) TransmitRequestV2ToSolana(_selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.TransmitRequestV2ToSolana(&_NodeRegistry.TransactOpts, _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
 }
 func (_NodeRegistry *NodeRegistrySession) TransmitRequestV2ToSolanaOverGsn(_selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
@@ -1482,7 +1338,7 @@ func (_NodeRegistry *NodeRegistrySession) TransmitRequestV2ToSolanaOverGsn(_sele
 // TransmitRequestV2ToSolana is a paid mutator transaction binding the contract method 0x31b433f9.
 //
 // Solidity: function transmitRequestV2ToSolana(bytes _selector, bytes32 receiveSide, bytes32 oppositeBridge, uint256 chainId, bytes32 requestId, address sender, uint256 nonce) returns(bool)
-func (_NodeRegistry *NodeRegistryTransactorSession) TransmitRequestV2ToSolana(_selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistryTransactorSession) TransmitRequestV2ToSolana(_selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.TransmitRequestV2ToSolana(&_NodeRegistry.TransactOpts, _selector, receiveSide, oppositeBridge, chainId, requestId, sender, nonce)
 }
 func (_NodeRegistry *NodeRegistryTransactorSession) TransmitRequestV2ToSolanaOverGsn(_selector []byte, receiveSide [32]byte, oppositeBridge [32]byte, chainId *big.Int, requestId [32]byte, sender common.Address, nonce *big.Int) (common.Hash, error) {
@@ -1492,20 +1348,8 @@ func (_NodeRegistry *NodeRegistryTransactorSession) TransmitRequestV2ToSolanaOve
 // UpdateEpoch is a paid mutator transaction binding the contract method 0xbd4a5e90.
 //
 // Solidity: function updateEpoch(bytes _newKey, bytes _votersPubKey, bytes _votersSignature, uint256 _votersMask, uint8 _newEpochParticipantsNum, uint32 _newEpochNum) returns()
-func (_NodeRegistry *NodeRegistryTransactor) UpdateEpoch(opts *bind.TransactOpts, _newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "UpdateEpoch")
-	//if UseGsnFlag && _NodeRegistry.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "updateEpoch" , _newKey, _votersPubKey, _votersSignature, _votersMask, _newEpochParticipantsNum, _newEpochNum)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _NodeRegistry.contract.Transact(opts, "updateEpoch", _newKey, _votersPubKey, _votersSignature, _votersMask, _newEpochParticipantsNum, _newEpochNum)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_NodeRegistry *NodeRegistryTransactor) UpdateEpoch(opts *bind.TransactOpts, _newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (*types.Transaction, error) {
+	return _NodeRegistry.contract.Transact(opts, "updateEpoch", _newKey, _votersPubKey, _votersSignature, _votersMask, _newEpochParticipantsNum, _newEpochNum)
 }
 func (_NodeRegistry *NodeRegistryTransactor) UpdateEpochOverGsn(opts *bind.TransactOpts, _newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (common.Hash, error) {
 	return GsnExecutor(_NodeRegistry.gsn, NodeRegistryMetaData.ABI, "updateEpoch", _newKey, _votersPubKey, _votersSignature, _votersMask, _newEpochParticipantsNum, _newEpochNum)
@@ -1514,7 +1358,7 @@ func (_NodeRegistry *NodeRegistryTransactor) UpdateEpochOverGsn(opts *bind.Trans
 // UpdateEpoch is a paid mutator transaction binding the contract method 0xbd4a5e90.
 //
 // Solidity: function updateEpoch(bytes _newKey, bytes _votersPubKey, bytes _votersSignature, uint256 _votersMask, uint8 _newEpochParticipantsNum, uint32 _newEpochNum) returns()
-func (_NodeRegistry *NodeRegistrySession) UpdateEpoch(_newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistrySession) UpdateEpoch(_newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.UpdateEpoch(&_NodeRegistry.TransactOpts, _newKey, _votersPubKey, _votersSignature, _votersMask, _newEpochParticipantsNum, _newEpochNum)
 }
 func (_NodeRegistry *NodeRegistrySession) UpdateEpochOverGsn(_newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (common.Hash, error) {
@@ -1524,7 +1368,7 @@ func (_NodeRegistry *NodeRegistrySession) UpdateEpochOverGsn(_newKey []byte, _vo
 // UpdateEpoch is a paid mutator transaction binding the contract method 0xbd4a5e90.
 //
 // Solidity: function updateEpoch(bytes _newKey, bytes _votersPubKey, bytes _votersSignature, uint256 _votersMask, uint8 _newEpochParticipantsNum, uint32 _newEpochNum) returns()
-func (_NodeRegistry *NodeRegistryTransactorSession) UpdateEpoch(_newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (common.Hash, error) {
+func (_NodeRegistry *NodeRegistryTransactorSession) UpdateEpoch(_newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (*types.Transaction, error) {
 	return _NodeRegistry.Contract.UpdateEpoch(&_NodeRegistry.TransactOpts, _newKey, _votersPubKey, _votersSignature, _votersMask, _newEpochParticipantsNum, _newEpochNum)
 }
 func (_NodeRegistry *NodeRegistryTransactorSession) UpdateEpochOverGsn(_newKey []byte, _votersPubKey []byte, _votersSignature []byte, _votersMask *big.Int, _newEpochParticipantsNum uint8, _newEpochNum uint32) (common.Hash, error) {

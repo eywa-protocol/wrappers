@@ -395,20 +395,8 @@ func (_Forwarder *ForwarderCallerSession) Verify(req IForwarderForwardRequest, d
 // Execute is a paid mutator transaction binding the contract method 0xcdf5735a.
 //
 // Solidity: function execute((address,address,uint256,uint256,uint256,bytes) req, bytes32 domainSeparator, bytes32 requestTypeHash, bytes suffixData, bytes sig) payable returns(bool success, bytes ret)
-func (_Forwarder *ForwarderTransactor) Execute(opts *bind.TransactOpts, req IForwarderForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "Execute")
-	//if UseGsnFlag && _Forwarder.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_Forwarder.gsn, ForwarderMetaData.ABI, "execute" , req, domainSeparator, requestTypeHash, suffixData, sig)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _Forwarder.contract.Transact(opts, "execute", req, domainSeparator, requestTypeHash, suffixData, sig)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_Forwarder *ForwarderTransactor) Execute(opts *bind.TransactOpts, req IForwarderForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (*types.Transaction, error) {
+	return _Forwarder.contract.Transact(opts, "execute", req, domainSeparator, requestTypeHash, suffixData, sig)
 }
 func (_Forwarder *ForwarderTransactor) ExecuteOverGsn(opts *bind.TransactOpts, req IForwarderForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (common.Hash, error) {
 	return GsnExecutor(_Forwarder.gsn, ForwarderMetaData.ABI, "execute", req, domainSeparator, requestTypeHash, suffixData, sig)
@@ -417,7 +405,7 @@ func (_Forwarder *ForwarderTransactor) ExecuteOverGsn(opts *bind.TransactOpts, r
 // Execute is a paid mutator transaction binding the contract method 0xcdf5735a.
 //
 // Solidity: function execute((address,address,uint256,uint256,uint256,bytes) req, bytes32 domainSeparator, bytes32 requestTypeHash, bytes suffixData, bytes sig) payable returns(bool success, bytes ret)
-func (_Forwarder *ForwarderSession) Execute(req IForwarderForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (common.Hash, error) {
+func (_Forwarder *ForwarderSession) Execute(req IForwarderForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (*types.Transaction, error) {
 	return _Forwarder.Contract.Execute(&_Forwarder.TransactOpts, req, domainSeparator, requestTypeHash, suffixData, sig)
 }
 func (_Forwarder *ForwarderSession) ExecuteOverGsn(req IForwarderForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (common.Hash, error) {
@@ -427,7 +415,7 @@ func (_Forwarder *ForwarderSession) ExecuteOverGsn(req IForwarderForwardRequest,
 // Execute is a paid mutator transaction binding the contract method 0xcdf5735a.
 //
 // Solidity: function execute((address,address,uint256,uint256,uint256,bytes) req, bytes32 domainSeparator, bytes32 requestTypeHash, bytes suffixData, bytes sig) payable returns(bool success, bytes ret)
-func (_Forwarder *ForwarderTransactorSession) Execute(req IForwarderForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (common.Hash, error) {
+func (_Forwarder *ForwarderTransactorSession) Execute(req IForwarderForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (*types.Transaction, error) {
 	return _Forwarder.Contract.Execute(&_Forwarder.TransactOpts, req, domainSeparator, requestTypeHash, suffixData, sig)
 }
 func (_Forwarder *ForwarderTransactorSession) ExecuteOverGsn(req IForwarderForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (common.Hash, error) {
@@ -437,20 +425,8 @@ func (_Forwarder *ForwarderTransactorSession) ExecuteOverGsn(req IForwarderForwa
 // Execute2 is a paid mutator transaction binding the contract method 0xf2662545.
 //
 // Solidity: function execute2((address,address,uint256,uint256,uint256,bytes) req) payable returns(bool, bytes)
-func (_Forwarder *ForwarderTransactor) Execute2(opts *bind.TransactOpts, req IForwarderForwardRequest) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "Execute2")
-	//if UseGsnFlag && _Forwarder.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_Forwarder.gsn, ForwarderMetaData.ABI, "execute2" , req)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _Forwarder.contract.Transact(opts, "execute2", req)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_Forwarder *ForwarderTransactor) Execute2(opts *bind.TransactOpts, req IForwarderForwardRequest) (*types.Transaction, error) {
+	return _Forwarder.contract.Transact(opts, "execute2", req)
 }
 func (_Forwarder *ForwarderTransactor) Execute2OverGsn(opts *bind.TransactOpts, req IForwarderForwardRequest) (common.Hash, error) {
 	return GsnExecutor(_Forwarder.gsn, ForwarderMetaData.ABI, "execute2", req)
@@ -459,7 +435,7 @@ func (_Forwarder *ForwarderTransactor) Execute2OverGsn(opts *bind.TransactOpts, 
 // Execute2 is a paid mutator transaction binding the contract method 0xf2662545.
 //
 // Solidity: function execute2((address,address,uint256,uint256,uint256,bytes) req) payable returns(bool, bytes)
-func (_Forwarder *ForwarderSession) Execute2(req IForwarderForwardRequest) (common.Hash, error) {
+func (_Forwarder *ForwarderSession) Execute2(req IForwarderForwardRequest) (*types.Transaction, error) {
 	return _Forwarder.Contract.Execute2(&_Forwarder.TransactOpts, req)
 }
 func (_Forwarder *ForwarderSession) Execute2OverGsn(req IForwarderForwardRequest) (common.Hash, error) {
@@ -469,7 +445,7 @@ func (_Forwarder *ForwarderSession) Execute2OverGsn(req IForwarderForwardRequest
 // Execute2 is a paid mutator transaction binding the contract method 0xf2662545.
 //
 // Solidity: function execute2((address,address,uint256,uint256,uint256,bytes) req) payable returns(bool, bytes)
-func (_Forwarder *ForwarderTransactorSession) Execute2(req IForwarderForwardRequest) (common.Hash, error) {
+func (_Forwarder *ForwarderTransactorSession) Execute2(req IForwarderForwardRequest) (*types.Transaction, error) {
 	return _Forwarder.Contract.Execute2(&_Forwarder.TransactOpts, req)
 }
 func (_Forwarder *ForwarderTransactorSession) Execute2OverGsn(req IForwarderForwardRequest) (common.Hash, error) {
@@ -479,20 +455,8 @@ func (_Forwarder *ForwarderTransactorSession) Execute2OverGsn(req IForwarderForw
 // ExecuteAssemblyForwarderRequest is a paid mutator transaction binding the contract method 0x6a66a1e2.
 //
 // Solidity: function executeAssemblyForwarderRequest((address,address,uint256,uint256,uint256,bytes) req) returns(bool, bytes)
-func (_Forwarder *ForwarderTransactor) ExecuteAssemblyForwarderRequest(opts *bind.TransactOpts, req IForwarderForwardRequest) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "ExecuteAssemblyForwarderRequest")
-	//if UseGsnFlag && _Forwarder.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_Forwarder.gsn, ForwarderMetaData.ABI, "executeAssemblyForwarderRequest" , req)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _Forwarder.contract.Transact(opts, "executeAssemblyForwarderRequest", req)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_Forwarder *ForwarderTransactor) ExecuteAssemblyForwarderRequest(opts *bind.TransactOpts, req IForwarderForwardRequest) (*types.Transaction, error) {
+	return _Forwarder.contract.Transact(opts, "executeAssemblyForwarderRequest", req)
 }
 func (_Forwarder *ForwarderTransactor) ExecuteAssemblyForwarderRequestOverGsn(opts *bind.TransactOpts, req IForwarderForwardRequest) (common.Hash, error) {
 	return GsnExecutor(_Forwarder.gsn, ForwarderMetaData.ABI, "executeAssemblyForwarderRequest", req)
@@ -501,7 +465,7 @@ func (_Forwarder *ForwarderTransactor) ExecuteAssemblyForwarderRequestOverGsn(op
 // ExecuteAssemblyForwarderRequest is a paid mutator transaction binding the contract method 0x6a66a1e2.
 //
 // Solidity: function executeAssemblyForwarderRequest((address,address,uint256,uint256,uint256,bytes) req) returns(bool, bytes)
-func (_Forwarder *ForwarderSession) ExecuteAssemblyForwarderRequest(req IForwarderForwardRequest) (common.Hash, error) {
+func (_Forwarder *ForwarderSession) ExecuteAssemblyForwarderRequest(req IForwarderForwardRequest) (*types.Transaction, error) {
 	return _Forwarder.Contract.ExecuteAssemblyForwarderRequest(&_Forwarder.TransactOpts, req)
 }
 func (_Forwarder *ForwarderSession) ExecuteAssemblyForwarderRequestOverGsn(req IForwarderForwardRequest) (common.Hash, error) {
@@ -511,7 +475,7 @@ func (_Forwarder *ForwarderSession) ExecuteAssemblyForwarderRequestOverGsn(req I
 // ExecuteAssemblyForwarderRequest is a paid mutator transaction binding the contract method 0x6a66a1e2.
 //
 // Solidity: function executeAssemblyForwarderRequest((address,address,uint256,uint256,uint256,bytes) req) returns(bool, bytes)
-func (_Forwarder *ForwarderTransactorSession) ExecuteAssemblyForwarderRequest(req IForwarderForwardRequest) (common.Hash, error) {
+func (_Forwarder *ForwarderTransactorSession) ExecuteAssemblyForwarderRequest(req IForwarderForwardRequest) (*types.Transaction, error) {
 	return _Forwarder.Contract.ExecuteAssemblyForwarderRequest(&_Forwarder.TransactOpts, req)
 }
 func (_Forwarder *ForwarderTransactorSession) ExecuteAssemblyForwarderRequestOverGsn(req IForwarderForwardRequest) (common.Hash, error) {
@@ -521,20 +485,8 @@ func (_Forwarder *ForwarderTransactorSession) ExecuteAssemblyForwarderRequestOve
 // RegisterRequestType is a paid mutator transaction binding the contract method 0xd9210be5.
 //
 // Solidity: function registerRequestType(string typeName, string typeSuffix) returns()
-func (_Forwarder *ForwarderTransactor) RegisterRequestType(opts *bind.TransactOpts, typeName string, typeSuffix string) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "RegisterRequestType")
-	//if UseGsnFlag && _Forwarder.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_Forwarder.gsn, ForwarderMetaData.ABI, "registerRequestType" , typeName, typeSuffix)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _Forwarder.contract.Transact(opts, "registerRequestType", typeName, typeSuffix)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_Forwarder *ForwarderTransactor) RegisterRequestType(opts *bind.TransactOpts, typeName string, typeSuffix string) (*types.Transaction, error) {
+	return _Forwarder.contract.Transact(opts, "registerRequestType", typeName, typeSuffix)
 }
 func (_Forwarder *ForwarderTransactor) RegisterRequestTypeOverGsn(opts *bind.TransactOpts, typeName string, typeSuffix string) (common.Hash, error) {
 	return GsnExecutor(_Forwarder.gsn, ForwarderMetaData.ABI, "registerRequestType", typeName, typeSuffix)
@@ -543,7 +495,7 @@ func (_Forwarder *ForwarderTransactor) RegisterRequestTypeOverGsn(opts *bind.Tra
 // RegisterRequestType is a paid mutator transaction binding the contract method 0xd9210be5.
 //
 // Solidity: function registerRequestType(string typeName, string typeSuffix) returns()
-func (_Forwarder *ForwarderSession) RegisterRequestType(typeName string, typeSuffix string) (common.Hash, error) {
+func (_Forwarder *ForwarderSession) RegisterRequestType(typeName string, typeSuffix string) (*types.Transaction, error) {
 	return _Forwarder.Contract.RegisterRequestType(&_Forwarder.TransactOpts, typeName, typeSuffix)
 }
 func (_Forwarder *ForwarderSession) RegisterRequestTypeOverGsn(typeName string, typeSuffix string) (common.Hash, error) {
@@ -553,7 +505,7 @@ func (_Forwarder *ForwarderSession) RegisterRequestTypeOverGsn(typeName string, 
 // RegisterRequestType is a paid mutator transaction binding the contract method 0xd9210be5.
 //
 // Solidity: function registerRequestType(string typeName, string typeSuffix) returns()
-func (_Forwarder *ForwarderTransactorSession) RegisterRequestType(typeName string, typeSuffix string) (common.Hash, error) {
+func (_Forwarder *ForwarderTransactorSession) RegisterRequestType(typeName string, typeSuffix string) (*types.Transaction, error) {
 	return _Forwarder.Contract.RegisterRequestType(&_Forwarder.TransactOpts, typeName, typeSuffix)
 }
 func (_Forwarder *ForwarderTransactorSession) RegisterRequestTypeOverGsn(typeName string, typeSuffix string) (common.Hash, error) {

@@ -459,20 +459,8 @@ func (_TestTokenPermit *TestTokenPermitCallerSession) TotalSupply() (*big.Int, e
 // Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 //
 // Solidity: function approve(address spender, uint256 amount) returns(bool)
-func (_TestTokenPermit *TestTokenPermitTransactor) Approve(opts *bind.TransactOpts, spender common.Address, amount *big.Int) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "Approve")
-	//if UseGsnFlag && _TestTokenPermit.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "approve" , spender, amount)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _TestTokenPermit.contract.Transact(opts, "approve", spender, amount)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_TestTokenPermit *TestTokenPermitTransactor) Approve(opts *bind.TransactOpts, spender common.Address, amount *big.Int) (*types.Transaction, error) {
+	return _TestTokenPermit.contract.Transact(opts, "approve", spender, amount)
 }
 func (_TestTokenPermit *TestTokenPermitTransactor) ApproveOverGsn(opts *bind.TransactOpts, spender common.Address, amount *big.Int) (common.Hash, error) {
 	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "approve", spender, amount)
@@ -481,7 +469,7 @@ func (_TestTokenPermit *TestTokenPermitTransactor) ApproveOverGsn(opts *bind.Tra
 // Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 //
 // Solidity: function approve(address spender, uint256 amount) returns(bool)
-func (_TestTokenPermit *TestTokenPermitSession) Approve(spender common.Address, amount *big.Int) (common.Hash, error) {
+func (_TestTokenPermit *TestTokenPermitSession) Approve(spender common.Address, amount *big.Int) (*types.Transaction, error) {
 	return _TestTokenPermit.Contract.Approve(&_TestTokenPermit.TransactOpts, spender, amount)
 }
 func (_TestTokenPermit *TestTokenPermitSession) ApproveOverGsn(spender common.Address, amount *big.Int) (common.Hash, error) {
@@ -491,7 +479,7 @@ func (_TestTokenPermit *TestTokenPermitSession) ApproveOverGsn(spender common.Ad
 // Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 //
 // Solidity: function approve(address spender, uint256 amount) returns(bool)
-func (_TestTokenPermit *TestTokenPermitTransactorSession) Approve(spender common.Address, amount *big.Int) (common.Hash, error) {
+func (_TestTokenPermit *TestTokenPermitTransactorSession) Approve(spender common.Address, amount *big.Int) (*types.Transaction, error) {
 	return _TestTokenPermit.Contract.Approve(&_TestTokenPermit.TransactOpts, spender, amount)
 }
 func (_TestTokenPermit *TestTokenPermitTransactorSession) ApproveOverGsn(spender common.Address, amount *big.Int) (common.Hash, error) {
@@ -501,20 +489,8 @@ func (_TestTokenPermit *TestTokenPermitTransactorSession) ApproveOverGsn(spender
 // Burn is a paid mutator transaction binding the contract method 0x9dc29fac.
 //
 // Solidity: function burn(address account, uint256 amount) returns()
-func (_TestTokenPermit *TestTokenPermitTransactor) Burn(opts *bind.TransactOpts, account common.Address, amount *big.Int) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "Burn")
-	//if UseGsnFlag && _TestTokenPermit.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "burn" , account, amount)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _TestTokenPermit.contract.Transact(opts, "burn", account, amount)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_TestTokenPermit *TestTokenPermitTransactor) Burn(opts *bind.TransactOpts, account common.Address, amount *big.Int) (*types.Transaction, error) {
+	return _TestTokenPermit.contract.Transact(opts, "burn", account, amount)
 }
 func (_TestTokenPermit *TestTokenPermitTransactor) BurnOverGsn(opts *bind.TransactOpts, account common.Address, amount *big.Int) (common.Hash, error) {
 	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "burn", account, amount)
@@ -523,7 +499,7 @@ func (_TestTokenPermit *TestTokenPermitTransactor) BurnOverGsn(opts *bind.Transa
 // Burn is a paid mutator transaction binding the contract method 0x9dc29fac.
 //
 // Solidity: function burn(address account, uint256 amount) returns()
-func (_TestTokenPermit *TestTokenPermitSession) Burn(account common.Address, amount *big.Int) (common.Hash, error) {
+func (_TestTokenPermit *TestTokenPermitSession) Burn(account common.Address, amount *big.Int) (*types.Transaction, error) {
 	return _TestTokenPermit.Contract.Burn(&_TestTokenPermit.TransactOpts, account, amount)
 }
 func (_TestTokenPermit *TestTokenPermitSession) BurnOverGsn(account common.Address, amount *big.Int) (common.Hash, error) {
@@ -533,7 +509,7 @@ func (_TestTokenPermit *TestTokenPermitSession) BurnOverGsn(account common.Addre
 // Burn is a paid mutator transaction binding the contract method 0x9dc29fac.
 //
 // Solidity: function burn(address account, uint256 amount) returns()
-func (_TestTokenPermit *TestTokenPermitTransactorSession) Burn(account common.Address, amount *big.Int) (common.Hash, error) {
+func (_TestTokenPermit *TestTokenPermitTransactorSession) Burn(account common.Address, amount *big.Int) (*types.Transaction, error) {
 	return _TestTokenPermit.Contract.Burn(&_TestTokenPermit.TransactOpts, account, amount)
 }
 func (_TestTokenPermit *TestTokenPermitTransactorSession) BurnOverGsn(account common.Address, amount *big.Int) (common.Hash, error) {
@@ -543,20 +519,8 @@ func (_TestTokenPermit *TestTokenPermitTransactorSession) BurnOverGsn(account co
 // BurnWithAllowanceDecrease is a paid mutator transaction binding the contract method 0xa918adf5.
 //
 // Solidity: function burnWithAllowanceDecrease(address account, address spender, uint256 amount) returns()
-func (_TestTokenPermit *TestTokenPermitTransactor) BurnWithAllowanceDecrease(opts *bind.TransactOpts, account common.Address, spender common.Address, amount *big.Int) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "BurnWithAllowanceDecrease")
-	//if UseGsnFlag && _TestTokenPermit.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "burnWithAllowanceDecrease" , account, spender, amount)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _TestTokenPermit.contract.Transact(opts, "burnWithAllowanceDecrease", account, spender, amount)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_TestTokenPermit *TestTokenPermitTransactor) BurnWithAllowanceDecrease(opts *bind.TransactOpts, account common.Address, spender common.Address, amount *big.Int) (*types.Transaction, error) {
+	return _TestTokenPermit.contract.Transact(opts, "burnWithAllowanceDecrease", account, spender, amount)
 }
 func (_TestTokenPermit *TestTokenPermitTransactor) BurnWithAllowanceDecreaseOverGsn(opts *bind.TransactOpts, account common.Address, spender common.Address, amount *big.Int) (common.Hash, error) {
 	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "burnWithAllowanceDecrease", account, spender, amount)
@@ -565,7 +529,7 @@ func (_TestTokenPermit *TestTokenPermitTransactor) BurnWithAllowanceDecreaseOver
 // BurnWithAllowanceDecrease is a paid mutator transaction binding the contract method 0xa918adf5.
 //
 // Solidity: function burnWithAllowanceDecrease(address account, address spender, uint256 amount) returns()
-func (_TestTokenPermit *TestTokenPermitSession) BurnWithAllowanceDecrease(account common.Address, spender common.Address, amount *big.Int) (common.Hash, error) {
+func (_TestTokenPermit *TestTokenPermitSession) BurnWithAllowanceDecrease(account common.Address, spender common.Address, amount *big.Int) (*types.Transaction, error) {
 	return _TestTokenPermit.Contract.BurnWithAllowanceDecrease(&_TestTokenPermit.TransactOpts, account, spender, amount)
 }
 func (_TestTokenPermit *TestTokenPermitSession) BurnWithAllowanceDecreaseOverGsn(account common.Address, spender common.Address, amount *big.Int) (common.Hash, error) {
@@ -575,7 +539,7 @@ func (_TestTokenPermit *TestTokenPermitSession) BurnWithAllowanceDecreaseOverGsn
 // BurnWithAllowanceDecrease is a paid mutator transaction binding the contract method 0xa918adf5.
 //
 // Solidity: function burnWithAllowanceDecrease(address account, address spender, uint256 amount) returns()
-func (_TestTokenPermit *TestTokenPermitTransactorSession) BurnWithAllowanceDecrease(account common.Address, spender common.Address, amount *big.Int) (common.Hash, error) {
+func (_TestTokenPermit *TestTokenPermitTransactorSession) BurnWithAllowanceDecrease(account common.Address, spender common.Address, amount *big.Int) (*types.Transaction, error) {
 	return _TestTokenPermit.Contract.BurnWithAllowanceDecrease(&_TestTokenPermit.TransactOpts, account, spender, amount)
 }
 func (_TestTokenPermit *TestTokenPermitTransactorSession) BurnWithAllowanceDecreaseOverGsn(account common.Address, spender common.Address, amount *big.Int) (common.Hash, error) {
@@ -585,20 +549,8 @@ func (_TestTokenPermit *TestTokenPermitTransactorSession) BurnWithAllowanceDecre
 // DecreaseAllowance is a paid mutator transaction binding the contract method 0xa457c2d7.
 //
 // Solidity: function decreaseAllowance(address spender, uint256 subtractedValue) returns(bool)
-func (_TestTokenPermit *TestTokenPermitTransactor) DecreaseAllowance(opts *bind.TransactOpts, spender common.Address, subtractedValue *big.Int) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "DecreaseAllowance")
-	//if UseGsnFlag && _TestTokenPermit.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "decreaseAllowance" , spender, subtractedValue)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _TestTokenPermit.contract.Transact(opts, "decreaseAllowance", spender, subtractedValue)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_TestTokenPermit *TestTokenPermitTransactor) DecreaseAllowance(opts *bind.TransactOpts, spender common.Address, subtractedValue *big.Int) (*types.Transaction, error) {
+	return _TestTokenPermit.contract.Transact(opts, "decreaseAllowance", spender, subtractedValue)
 }
 func (_TestTokenPermit *TestTokenPermitTransactor) DecreaseAllowanceOverGsn(opts *bind.TransactOpts, spender common.Address, subtractedValue *big.Int) (common.Hash, error) {
 	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "decreaseAllowance", spender, subtractedValue)
@@ -607,7 +559,7 @@ func (_TestTokenPermit *TestTokenPermitTransactor) DecreaseAllowanceOverGsn(opts
 // DecreaseAllowance is a paid mutator transaction binding the contract method 0xa457c2d7.
 //
 // Solidity: function decreaseAllowance(address spender, uint256 subtractedValue) returns(bool)
-func (_TestTokenPermit *TestTokenPermitSession) DecreaseAllowance(spender common.Address, subtractedValue *big.Int) (common.Hash, error) {
+func (_TestTokenPermit *TestTokenPermitSession) DecreaseAllowance(spender common.Address, subtractedValue *big.Int) (*types.Transaction, error) {
 	return _TestTokenPermit.Contract.DecreaseAllowance(&_TestTokenPermit.TransactOpts, spender, subtractedValue)
 }
 func (_TestTokenPermit *TestTokenPermitSession) DecreaseAllowanceOverGsn(spender common.Address, subtractedValue *big.Int) (common.Hash, error) {
@@ -617,7 +569,7 @@ func (_TestTokenPermit *TestTokenPermitSession) DecreaseAllowanceOverGsn(spender
 // DecreaseAllowance is a paid mutator transaction binding the contract method 0xa457c2d7.
 //
 // Solidity: function decreaseAllowance(address spender, uint256 subtractedValue) returns(bool)
-func (_TestTokenPermit *TestTokenPermitTransactorSession) DecreaseAllowance(spender common.Address, subtractedValue *big.Int) (common.Hash, error) {
+func (_TestTokenPermit *TestTokenPermitTransactorSession) DecreaseAllowance(spender common.Address, subtractedValue *big.Int) (*types.Transaction, error) {
 	return _TestTokenPermit.Contract.DecreaseAllowance(&_TestTokenPermit.TransactOpts, spender, subtractedValue)
 }
 func (_TestTokenPermit *TestTokenPermitTransactorSession) DecreaseAllowanceOverGsn(spender common.Address, subtractedValue *big.Int) (common.Hash, error) {
@@ -627,20 +579,8 @@ func (_TestTokenPermit *TestTokenPermitTransactorSession) DecreaseAllowanceOverG
 // IncreaseAllowance is a paid mutator transaction binding the contract method 0x39509351.
 //
 // Solidity: function increaseAllowance(address spender, uint256 addedValue) returns(bool)
-func (_TestTokenPermit *TestTokenPermitTransactor) IncreaseAllowance(opts *bind.TransactOpts, spender common.Address, addedValue *big.Int) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "IncreaseAllowance")
-	//if UseGsnFlag && _TestTokenPermit.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "increaseAllowance" , spender, addedValue)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _TestTokenPermit.contract.Transact(opts, "increaseAllowance", spender, addedValue)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_TestTokenPermit *TestTokenPermitTransactor) IncreaseAllowance(opts *bind.TransactOpts, spender common.Address, addedValue *big.Int) (*types.Transaction, error) {
+	return _TestTokenPermit.contract.Transact(opts, "increaseAllowance", spender, addedValue)
 }
 func (_TestTokenPermit *TestTokenPermitTransactor) IncreaseAllowanceOverGsn(opts *bind.TransactOpts, spender common.Address, addedValue *big.Int) (common.Hash, error) {
 	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "increaseAllowance", spender, addedValue)
@@ -649,7 +589,7 @@ func (_TestTokenPermit *TestTokenPermitTransactor) IncreaseAllowanceOverGsn(opts
 // IncreaseAllowance is a paid mutator transaction binding the contract method 0x39509351.
 //
 // Solidity: function increaseAllowance(address spender, uint256 addedValue) returns(bool)
-func (_TestTokenPermit *TestTokenPermitSession) IncreaseAllowance(spender common.Address, addedValue *big.Int) (common.Hash, error) {
+func (_TestTokenPermit *TestTokenPermitSession) IncreaseAllowance(spender common.Address, addedValue *big.Int) (*types.Transaction, error) {
 	return _TestTokenPermit.Contract.IncreaseAllowance(&_TestTokenPermit.TransactOpts, spender, addedValue)
 }
 func (_TestTokenPermit *TestTokenPermitSession) IncreaseAllowanceOverGsn(spender common.Address, addedValue *big.Int) (common.Hash, error) {
@@ -659,7 +599,7 @@ func (_TestTokenPermit *TestTokenPermitSession) IncreaseAllowanceOverGsn(spender
 // IncreaseAllowance is a paid mutator transaction binding the contract method 0x39509351.
 //
 // Solidity: function increaseAllowance(address spender, uint256 addedValue) returns(bool)
-func (_TestTokenPermit *TestTokenPermitTransactorSession) IncreaseAllowance(spender common.Address, addedValue *big.Int) (common.Hash, error) {
+func (_TestTokenPermit *TestTokenPermitTransactorSession) IncreaseAllowance(spender common.Address, addedValue *big.Int) (*types.Transaction, error) {
 	return _TestTokenPermit.Contract.IncreaseAllowance(&_TestTokenPermit.TransactOpts, spender, addedValue)
 }
 func (_TestTokenPermit *TestTokenPermitTransactorSession) IncreaseAllowanceOverGsn(spender common.Address, addedValue *big.Int) (common.Hash, error) {
@@ -669,20 +609,8 @@ func (_TestTokenPermit *TestTokenPermitTransactorSession) IncreaseAllowanceOverG
 // Mint is a paid mutator transaction binding the contract method 0x40c10f19.
 //
 // Solidity: function mint(address account, uint256 amount) returns()
-func (_TestTokenPermit *TestTokenPermitTransactor) Mint(opts *bind.TransactOpts, account common.Address, amount *big.Int) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "Mint")
-	//if UseGsnFlag && _TestTokenPermit.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "mint" , account, amount)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _TestTokenPermit.contract.Transact(opts, "mint", account, amount)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_TestTokenPermit *TestTokenPermitTransactor) Mint(opts *bind.TransactOpts, account common.Address, amount *big.Int) (*types.Transaction, error) {
+	return _TestTokenPermit.contract.Transact(opts, "mint", account, amount)
 }
 func (_TestTokenPermit *TestTokenPermitTransactor) MintOverGsn(opts *bind.TransactOpts, account common.Address, amount *big.Int) (common.Hash, error) {
 	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "mint", account, amount)
@@ -691,7 +619,7 @@ func (_TestTokenPermit *TestTokenPermitTransactor) MintOverGsn(opts *bind.Transa
 // Mint is a paid mutator transaction binding the contract method 0x40c10f19.
 //
 // Solidity: function mint(address account, uint256 amount) returns()
-func (_TestTokenPermit *TestTokenPermitSession) Mint(account common.Address, amount *big.Int) (common.Hash, error) {
+func (_TestTokenPermit *TestTokenPermitSession) Mint(account common.Address, amount *big.Int) (*types.Transaction, error) {
 	return _TestTokenPermit.Contract.Mint(&_TestTokenPermit.TransactOpts, account, amount)
 }
 func (_TestTokenPermit *TestTokenPermitSession) MintOverGsn(account common.Address, amount *big.Int) (common.Hash, error) {
@@ -701,7 +629,7 @@ func (_TestTokenPermit *TestTokenPermitSession) MintOverGsn(account common.Addre
 // Mint is a paid mutator transaction binding the contract method 0x40c10f19.
 //
 // Solidity: function mint(address account, uint256 amount) returns()
-func (_TestTokenPermit *TestTokenPermitTransactorSession) Mint(account common.Address, amount *big.Int) (common.Hash, error) {
+func (_TestTokenPermit *TestTokenPermitTransactorSession) Mint(account common.Address, amount *big.Int) (*types.Transaction, error) {
 	return _TestTokenPermit.Contract.Mint(&_TestTokenPermit.TransactOpts, account, amount)
 }
 func (_TestTokenPermit *TestTokenPermitTransactorSession) MintOverGsn(account common.Address, amount *big.Int) (common.Hash, error) {
@@ -711,20 +639,8 @@ func (_TestTokenPermit *TestTokenPermitTransactorSession) MintOverGsn(account co
 // MintWithAllowance is a paid mutator transaction binding the contract method 0x9be4e7b2.
 //
 // Solidity: function mintWithAllowance(address account, address spender, uint256 amount) returns()
-func (_TestTokenPermit *TestTokenPermitTransactor) MintWithAllowance(opts *bind.TransactOpts, account common.Address, spender common.Address, amount *big.Int) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "MintWithAllowance")
-	//if UseGsnFlag && _TestTokenPermit.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "mintWithAllowance" , account, spender, amount)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _TestTokenPermit.contract.Transact(opts, "mintWithAllowance", account, spender, amount)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_TestTokenPermit *TestTokenPermitTransactor) MintWithAllowance(opts *bind.TransactOpts, account common.Address, spender common.Address, amount *big.Int) (*types.Transaction, error) {
+	return _TestTokenPermit.contract.Transact(opts, "mintWithAllowance", account, spender, amount)
 }
 func (_TestTokenPermit *TestTokenPermitTransactor) MintWithAllowanceOverGsn(opts *bind.TransactOpts, account common.Address, spender common.Address, amount *big.Int) (common.Hash, error) {
 	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "mintWithAllowance", account, spender, amount)
@@ -733,7 +649,7 @@ func (_TestTokenPermit *TestTokenPermitTransactor) MintWithAllowanceOverGsn(opts
 // MintWithAllowance is a paid mutator transaction binding the contract method 0x9be4e7b2.
 //
 // Solidity: function mintWithAllowance(address account, address spender, uint256 amount) returns()
-func (_TestTokenPermit *TestTokenPermitSession) MintWithAllowance(account common.Address, spender common.Address, amount *big.Int) (common.Hash, error) {
+func (_TestTokenPermit *TestTokenPermitSession) MintWithAllowance(account common.Address, spender common.Address, amount *big.Int) (*types.Transaction, error) {
 	return _TestTokenPermit.Contract.MintWithAllowance(&_TestTokenPermit.TransactOpts, account, spender, amount)
 }
 func (_TestTokenPermit *TestTokenPermitSession) MintWithAllowanceOverGsn(account common.Address, spender common.Address, amount *big.Int) (common.Hash, error) {
@@ -743,7 +659,7 @@ func (_TestTokenPermit *TestTokenPermitSession) MintWithAllowanceOverGsn(account
 // MintWithAllowance is a paid mutator transaction binding the contract method 0x9be4e7b2.
 //
 // Solidity: function mintWithAllowance(address account, address spender, uint256 amount) returns()
-func (_TestTokenPermit *TestTokenPermitTransactorSession) MintWithAllowance(account common.Address, spender common.Address, amount *big.Int) (common.Hash, error) {
+func (_TestTokenPermit *TestTokenPermitTransactorSession) MintWithAllowance(account common.Address, spender common.Address, amount *big.Int) (*types.Transaction, error) {
 	return _TestTokenPermit.Contract.MintWithAllowance(&_TestTokenPermit.TransactOpts, account, spender, amount)
 }
 func (_TestTokenPermit *TestTokenPermitTransactorSession) MintWithAllowanceOverGsn(account common.Address, spender common.Address, amount *big.Int) (common.Hash, error) {
@@ -753,20 +669,8 @@ func (_TestTokenPermit *TestTokenPermitTransactorSession) MintWithAllowanceOverG
 // Permit is a paid mutator transaction binding the contract method 0xd505accf.
 //
 // Solidity: function permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s) returns()
-func (_TestTokenPermit *TestTokenPermitTransactor) Permit(opts *bind.TransactOpts, owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "Permit")
-	//if UseGsnFlag && _TestTokenPermit.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "permit" , owner, spender, value, deadline, v, r, s)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _TestTokenPermit.contract.Transact(opts, "permit", owner, spender, value, deadline, v, r, s)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_TestTokenPermit *TestTokenPermitTransactor) Permit(opts *bind.TransactOpts, owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (*types.Transaction, error) {
+	return _TestTokenPermit.contract.Transact(opts, "permit", owner, spender, value, deadline, v, r, s)
 }
 func (_TestTokenPermit *TestTokenPermitTransactor) PermitOverGsn(opts *bind.TransactOpts, owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
 	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "permit", owner, spender, value, deadline, v, r, s)
@@ -775,7 +679,7 @@ func (_TestTokenPermit *TestTokenPermitTransactor) PermitOverGsn(opts *bind.Tran
 // Permit is a paid mutator transaction binding the contract method 0xd505accf.
 //
 // Solidity: function permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s) returns()
-func (_TestTokenPermit *TestTokenPermitSession) Permit(owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
+func (_TestTokenPermit *TestTokenPermitSession) Permit(owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (*types.Transaction, error) {
 	return _TestTokenPermit.Contract.Permit(&_TestTokenPermit.TransactOpts, owner, spender, value, deadline, v, r, s)
 }
 func (_TestTokenPermit *TestTokenPermitSession) PermitOverGsn(owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
@@ -785,7 +689,7 @@ func (_TestTokenPermit *TestTokenPermitSession) PermitOverGsn(owner common.Addre
 // Permit is a paid mutator transaction binding the contract method 0xd505accf.
 //
 // Solidity: function permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s) returns()
-func (_TestTokenPermit *TestTokenPermitTransactorSession) Permit(owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
+func (_TestTokenPermit *TestTokenPermitTransactorSession) Permit(owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (*types.Transaction, error) {
 	return _TestTokenPermit.Contract.Permit(&_TestTokenPermit.TransactOpts, owner, spender, value, deadline, v, r, s)
 }
 func (_TestTokenPermit *TestTokenPermitTransactorSession) PermitOverGsn(owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
@@ -795,20 +699,8 @@ func (_TestTokenPermit *TestTokenPermitTransactorSession) PermitOverGsn(owner co
 // Transfer is a paid mutator transaction binding the contract method 0xa9059cbb.
 //
 // Solidity: function transfer(address recipient, uint256 amount) returns(bool)
-func (_TestTokenPermit *TestTokenPermitTransactor) Transfer(opts *bind.TransactOpts, recipient common.Address, amount *big.Int) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "Transfer")
-	//if UseGsnFlag && _TestTokenPermit.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "transfer" , recipient, amount)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _TestTokenPermit.contract.Transact(opts, "transfer", recipient, amount)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_TestTokenPermit *TestTokenPermitTransactor) Transfer(opts *bind.TransactOpts, recipient common.Address, amount *big.Int) (*types.Transaction, error) {
+	return _TestTokenPermit.contract.Transact(opts, "transfer", recipient, amount)
 }
 func (_TestTokenPermit *TestTokenPermitTransactor) TransferOverGsn(opts *bind.TransactOpts, recipient common.Address, amount *big.Int) (common.Hash, error) {
 	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "transfer", recipient, amount)
@@ -817,7 +709,7 @@ func (_TestTokenPermit *TestTokenPermitTransactor) TransferOverGsn(opts *bind.Tr
 // Transfer is a paid mutator transaction binding the contract method 0xa9059cbb.
 //
 // Solidity: function transfer(address recipient, uint256 amount) returns(bool)
-func (_TestTokenPermit *TestTokenPermitSession) Transfer(recipient common.Address, amount *big.Int) (common.Hash, error) {
+func (_TestTokenPermit *TestTokenPermitSession) Transfer(recipient common.Address, amount *big.Int) (*types.Transaction, error) {
 	return _TestTokenPermit.Contract.Transfer(&_TestTokenPermit.TransactOpts, recipient, amount)
 }
 func (_TestTokenPermit *TestTokenPermitSession) TransferOverGsn(recipient common.Address, amount *big.Int) (common.Hash, error) {
@@ -827,7 +719,7 @@ func (_TestTokenPermit *TestTokenPermitSession) TransferOverGsn(recipient common
 // Transfer is a paid mutator transaction binding the contract method 0xa9059cbb.
 //
 // Solidity: function transfer(address recipient, uint256 amount) returns(bool)
-func (_TestTokenPermit *TestTokenPermitTransactorSession) Transfer(recipient common.Address, amount *big.Int) (common.Hash, error) {
+func (_TestTokenPermit *TestTokenPermitTransactorSession) Transfer(recipient common.Address, amount *big.Int) (*types.Transaction, error) {
 	return _TestTokenPermit.Contract.Transfer(&_TestTokenPermit.TransactOpts, recipient, amount)
 }
 func (_TestTokenPermit *TestTokenPermitTransactorSession) TransferOverGsn(recipient common.Address, amount *big.Int) (common.Hash, error) {
@@ -837,20 +729,8 @@ func (_TestTokenPermit *TestTokenPermitTransactorSession) TransferOverGsn(recipi
 // TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.
 //
 // Solidity: function transferFrom(address sender, address recipient, uint256 amount) returns(bool)
-func (_TestTokenPermit *TestTokenPermitTransactor) TransferFrom(opts *bind.TransactOpts, sender common.Address, recipient common.Address, amount *big.Int) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "TransferFrom")
-	//if UseGsnFlag && _TestTokenPermit.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "transferFrom" , sender, recipient, amount)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _TestTokenPermit.contract.Transact(opts, "transferFrom", sender, recipient, amount)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_TestTokenPermit *TestTokenPermitTransactor) TransferFrom(opts *bind.TransactOpts, sender common.Address, recipient common.Address, amount *big.Int) (*types.Transaction, error) {
+	return _TestTokenPermit.contract.Transact(opts, "transferFrom", sender, recipient, amount)
 }
 func (_TestTokenPermit *TestTokenPermitTransactor) TransferFromOverGsn(opts *bind.TransactOpts, sender common.Address, recipient common.Address, amount *big.Int) (common.Hash, error) {
 	return GsnExecutor(_TestTokenPermit.gsn, TestTokenPermitMetaData.ABI, "transferFrom", sender, recipient, amount)
@@ -859,7 +739,7 @@ func (_TestTokenPermit *TestTokenPermitTransactor) TransferFromOverGsn(opts *bin
 // TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.
 //
 // Solidity: function transferFrom(address sender, address recipient, uint256 amount) returns(bool)
-func (_TestTokenPermit *TestTokenPermitSession) TransferFrom(sender common.Address, recipient common.Address, amount *big.Int) (common.Hash, error) {
+func (_TestTokenPermit *TestTokenPermitSession) TransferFrom(sender common.Address, recipient common.Address, amount *big.Int) (*types.Transaction, error) {
 	return _TestTokenPermit.Contract.TransferFrom(&_TestTokenPermit.TransactOpts, sender, recipient, amount)
 }
 func (_TestTokenPermit *TestTokenPermitSession) TransferFromOverGsn(sender common.Address, recipient common.Address, amount *big.Int) (common.Hash, error) {
@@ -869,7 +749,7 @@ func (_TestTokenPermit *TestTokenPermitSession) TransferFromOverGsn(sender commo
 // TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.
 //
 // Solidity: function transferFrom(address sender, address recipient, uint256 amount) returns(bool)
-func (_TestTokenPermit *TestTokenPermitTransactorSession) TransferFrom(sender common.Address, recipient common.Address, amount *big.Int) (common.Hash, error) {
+func (_TestTokenPermit *TestTokenPermitTransactorSession) TransferFrom(sender common.Address, recipient common.Address, amount *big.Int) (*types.Transaction, error) {
 	return _TestTokenPermit.Contract.TransferFrom(&_TestTokenPermit.TransactOpts, sender, recipient, amount)
 }
 func (_TestTokenPermit *TestTokenPermitTransactorSession) TransferFromOverGsn(sender common.Address, recipient common.Address, amount *big.Int) (common.Hash, error) {

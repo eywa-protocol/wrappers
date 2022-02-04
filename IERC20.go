@@ -189,20 +189,8 @@ func (_IERC20 *IERC20TransactorRaw) Transact(opts *bind.TransactOpts, method str
 // Name is a paid mutator transaction binding the contract method 0x06fdde03.
 //
 // Solidity: function name() returns(string)
-func (_IERC20 *IERC20Transactor) Name(opts *bind.TransactOpts) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "Name")
-	//if UseGsnFlag && _IERC20.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_IERC20.gsn, IERC20MetaData.ABI, "name" )
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _IERC20.contract.Transact(opts, "name")
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_IERC20 *IERC20Transactor) Name(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _IERC20.contract.Transact(opts, "name")
 }
 func (_IERC20 *IERC20Transactor) NameOverGsn(opts *bind.TransactOpts) (common.Hash, error) {
 	return GsnExecutor(_IERC20.gsn, IERC20MetaData.ABI, "name")
@@ -211,7 +199,7 @@ func (_IERC20 *IERC20Transactor) NameOverGsn(opts *bind.TransactOpts) (common.Ha
 // Name is a paid mutator transaction binding the contract method 0x06fdde03.
 //
 // Solidity: function name() returns(string)
-func (_IERC20 *IERC20Session) Name() (common.Hash, error) {
+func (_IERC20 *IERC20Session) Name() (*types.Transaction, error) {
 	return _IERC20.Contract.Name(&_IERC20.TransactOpts)
 }
 func (_IERC20 *IERC20Session) NameOverGsn() (common.Hash, error) {
@@ -221,7 +209,7 @@ func (_IERC20 *IERC20Session) NameOverGsn() (common.Hash, error) {
 // Name is a paid mutator transaction binding the contract method 0x06fdde03.
 //
 // Solidity: function name() returns(string)
-func (_IERC20 *IERC20TransactorSession) Name() (common.Hash, error) {
+func (_IERC20 *IERC20TransactorSession) Name() (*types.Transaction, error) {
 	return _IERC20.Contract.Name(&_IERC20.TransactOpts)
 }
 func (_IERC20 *IERC20TransactorSession) NameOverGsn() (common.Hash, error) {
@@ -231,20 +219,8 @@ func (_IERC20 *IERC20TransactorSession) NameOverGsn() (common.Hash, error) {
 // Permit is a paid mutator transaction binding the contract method 0xd505accf.
 //
 // Solidity: function permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s) returns()
-func (_IERC20 *IERC20Transactor) Permit(opts *bind.TransactOpts, owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "Permit")
-	//if UseGsnFlag && _IERC20.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_IERC20.gsn, IERC20MetaData.ABI, "permit" , owner, spender, value, deadline, v, r, s)
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _IERC20.contract.Transact(opts, "permit", owner, spender, value, deadline, v, r, s)
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_IERC20 *IERC20Transactor) Permit(opts *bind.TransactOpts, owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (*types.Transaction, error) {
+	return _IERC20.contract.Transact(opts, "permit", owner, spender, value, deadline, v, r, s)
 }
 func (_IERC20 *IERC20Transactor) PermitOverGsn(opts *bind.TransactOpts, owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
 	return GsnExecutor(_IERC20.gsn, IERC20MetaData.ABI, "permit", owner, spender, value, deadline, v, r, s)
@@ -253,7 +229,7 @@ func (_IERC20 *IERC20Transactor) PermitOverGsn(opts *bind.TransactOpts, owner co
 // Permit is a paid mutator transaction binding the contract method 0xd505accf.
 //
 // Solidity: function permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s) returns()
-func (_IERC20 *IERC20Session) Permit(owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
+func (_IERC20 *IERC20Session) Permit(owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (*types.Transaction, error) {
 	return _IERC20.Contract.Permit(&_IERC20.TransactOpts, owner, spender, value, deadline, v, r, s)
 }
 func (_IERC20 *IERC20Session) PermitOverGsn(owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
@@ -263,7 +239,7 @@ func (_IERC20 *IERC20Session) PermitOverGsn(owner common.Address, spender common
 // Permit is a paid mutator transaction binding the contract method 0xd505accf.
 //
 // Solidity: function permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s) returns()
-func (_IERC20 *IERC20TransactorSession) Permit(owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
+func (_IERC20 *IERC20TransactorSession) Permit(owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (*types.Transaction, error) {
 	return _IERC20.Contract.Permit(&_IERC20.TransactOpts, owner, spender, value, deadline, v, r, s)
 }
 func (_IERC20 *IERC20TransactorSession) PermitOverGsn(owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
@@ -273,20 +249,8 @@ func (_IERC20 *IERC20TransactorSession) PermitOverGsn(owner common.Address, spen
 // Symbol is a paid mutator transaction binding the contract method 0x95d89b41.
 //
 // Solidity: function symbol() returns(string)
-func (_IERC20 *IERC20Transactor) Symbol(opts *bind.TransactOpts) (common.Hash, error) {
-	//fmt.Printf("DBG: Wrapper run method = %s\n", "Symbol")
-	//if UseGsnFlag && _IERC20.gsn != nil {
-	//	fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-	//	return GsnExecutor(_IERC20.gsn, IERC20MetaData.ABI, "symbol" )
-	//}
-
-	//fmt.Printf("DBG: GsnWrap: Direct call\n")
-	tx, err := _IERC20.contract.Transact(opts, "symbol")
-	if tx == nil {
-		return common.Hash{}, err
-	}
-
-	return tx.Hash(), err
+func (_IERC20 *IERC20Transactor) Symbol(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _IERC20.contract.Transact(opts, "symbol")
 }
 func (_IERC20 *IERC20Transactor) SymbolOverGsn(opts *bind.TransactOpts) (common.Hash, error) {
 	return GsnExecutor(_IERC20.gsn, IERC20MetaData.ABI, "symbol")
@@ -295,7 +259,7 @@ func (_IERC20 *IERC20Transactor) SymbolOverGsn(opts *bind.TransactOpts) (common.
 // Symbol is a paid mutator transaction binding the contract method 0x95d89b41.
 //
 // Solidity: function symbol() returns(string)
-func (_IERC20 *IERC20Session) Symbol() (common.Hash, error) {
+func (_IERC20 *IERC20Session) Symbol() (*types.Transaction, error) {
 	return _IERC20.Contract.Symbol(&_IERC20.TransactOpts)
 }
 func (_IERC20 *IERC20Session) SymbolOverGsn() (common.Hash, error) {
@@ -305,7 +269,7 @@ func (_IERC20 *IERC20Session) SymbolOverGsn() (common.Hash, error) {
 // Symbol is a paid mutator transaction binding the contract method 0x95d89b41.
 //
 // Solidity: function symbol() returns(string)
-func (_IERC20 *IERC20TransactorSession) Symbol() (common.Hash, error) {
+func (_IERC20 *IERC20TransactorSession) Symbol() (*types.Transaction, error) {
 	return _IERC20.Contract.Symbol(&_IERC20.TransactOpts)
 }
 func (_IERC20 *IERC20TransactorSession) SymbolOverGsn() (common.Hash, error) {

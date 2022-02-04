@@ -251,20 +251,6 @@ func GsnExecutor(gsnParams *GsnCallOpts, abiSrc, methodName string, args ...inte
 	return gsnParams.GsnCaller.Execute(gsnParams.ChainId, *__req, __domainSeparatorHash, __reqTypeHash, nil, __typedDataSignature)
 }
 
-func GsnWrap(gsnOpts *GsnCallOpts, directCall func() (common.Hash, error), gsnCall func() (common.Hash, error)) (common.Hash, error) {
-	if UseGsnFlag && gsnOpts != nil && gsnCall != nil {
-		fmt.Printf("DBG: GsnWrap: Run gsn call\n")
-		return gsnCall()
-	}
-	if directCall == nil {
-		fmt.Printf("DBG: GsnWrap: ERROR: Direct call absent\n")
-		return common.Hash{}, errors.New("directCall method absent")
-	}
-
-	fmt.Printf("DBG: GsnWrap: Run direct call\n")
-	return directCall()
-}
-
 // Contract structs
 
 // IForwarderForwardRequest is an auto generated low-level Go binding around an user-defined struct.

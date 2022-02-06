@@ -4,6 +4,8 @@
 package wrappers
 
 import (
+	"errors"
+	"fmt"
 	"math/big"
 	"strings"
 
@@ -17,6 +19,7 @@ import (
 
 // Reference imports to suppress errors if they are not otherwise used.
 var (
+	_ = errors.New
 	_ = big.NewInt
 	_ = strings.NewReader
 	_ = ethereum.NotFound
@@ -24,22 +27,34 @@ var (
 	_ = common.Big1
 	_ = types.BloomLookup
 	_ = event.NewSubscription
+	_ = fmt.Errorf("")
 )
 
+// TestTargetMetaData contains all meta data concerning the TestTarget contract.
+var TestTargetMetaData = &bind.MetaData{
+	ABI: "[{\"inputs\":[],\"name\":\"bytesData\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"setTestAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_inputBytes\",\"type\":\"bytes\"}],\"name\":\"setTestBytes\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_inputString\",\"type\":\"string\"}],\"name\":\"setTestString\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_testUint\",\"type\":\"uint256\"}],\"name\":\"setTestUint\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"stringData\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"tesAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"testUint\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
+	Bin: "0x608060405234801561001057600080fd5b50610582806100206000396000f3fe608060405234801561001057600080fd5b50600436106100885760003560e01c8063656687001161005b5780636566870014610126578063b3a0eb7d1461013b578063e3850c3d14610143578063eea237681461014c57600080fd5b806309b4699d1461008d578063315e2f1b146100b65780634aec35ed146100cb578063584f0228146100f6575b600080fd5b6100a361009b36600461032f565b600081905590565b6040519081526020015b60405180910390f35b6100c96100c4366004610348565b61015f565b005b6001546100de906001600160a01b031681565b6040516001600160a01b0390911681526020016100ad565b6100de6101043660046103ba565b600180546001600160a01b039092166001600160a01b03199092168217905590565b61012e610170565b6040516100ad9190610437565b61012e6101fe565b6100a360005481565b6100c961015a366004610460565b61020b565b61016b60038383610222565b505050565b6003805461017d90610511565b80601f01602080910402602001604051908101604052809291908181526020018280546101a990610511565b80156101f65780601f106101cb576101008083540402835291602001916101f6565b820191906000526020600020905b8154815290600101906020018083116101d957829003601f168201915b505050505081565b6002805461017d90610511565b805161021e9060029060208401906102a6565b5050565b82805461022e90610511565b90600052602060002090601f0160209004810192826102505760008555610296565b82601f106102695782800160ff19823516178555610296565b82800160010185558215610296579182015b8281111561029657823582559160200191906001019061027b565b506102a292915061031a565b5090565b8280546102b290610511565b90600052602060002090601f0160209004810192826102d45760008555610296565b82601f106102ed57805160ff1916838001178555610296565b82800160010185558215610296579182015b828111156102965782518255916020019190600101906102ff565b5b808211156102a2576000815560010161031b565b60006020828403121561034157600080fd5b5035919050565b6000806020838503121561035b57600080fd5b823567ffffffffffffffff8082111561037357600080fd5b818501915085601f83011261038757600080fd5b81358181111561039657600080fd5b8660208285010111156103a857600080fd5b60209290920196919550909350505050565b6000602082840312156103cc57600080fd5b81356001600160a01b03811681146103e357600080fd5b9392505050565b6000815180845260005b81811015610410576020818501810151868301820152016103f4565b81811115610422576000602083870101525b50601f01601f19169290920160200192915050565b6020815260006103e360208301846103ea565b634e487b7160e01b600052604160045260246000fd5b60006020828403121561047257600080fd5b813567ffffffffffffffff8082111561048a57600080fd5b818401915084601f83011261049e57600080fd5b8135818111156104b0576104b061044a565b604051601f8201601f19908116603f011681019083821181831017156104d8576104d861044a565b816040528281528760208487010111156104f157600080fd5b826020860160208301376000928101602001929092525095945050505050565b600181811c9082168061052557607f821691505b6020821081141561054657634e487b7160e01b600052602260045260246000fd5b5091905056fea26469706673582212200adf7bb27605f00f46890f08a1ce5aa3b3be0dc92e7b5f4dea854f37827ed0c964736f6c634300080a0033",
+}
+
 // TestTargetABI is the input ABI used to generate the binding from.
-const TestTargetABI = "[{\"inputs\":[],\"name\":\"bytesData\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"setTestAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_inputBytes\",\"type\":\"bytes\"}],\"name\":\"setTestBytes\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_inputString\",\"type\":\"string\"}],\"name\":\"setTestString\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_testUint\",\"type\":\"uint256\"}],\"name\":\"setTestUint\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"stringData\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"tesAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"testUint\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]"
+// Deprecated: Use TestTargetMetaData.ABI instead.
+var TestTargetABI = TestTargetMetaData.ABI
 
 // TestTargetBin is the compiled bytecode used for deploying new contracts.
-var TestTargetBin = "0x608060405234801561001057600080fd5b50610582806100206000396000f3fe608060405234801561001057600080fd5b50600436106100885760003560e01c8063656687001161005b5780636566870014610126578063b3a0eb7d1461013b578063e3850c3d14610143578063eea237681461014c57600080fd5b806309b4699d1461008d578063315e2f1b146100b65780634aec35ed146100cb578063584f0228146100f6575b600080fd5b6100a361009b36600461032f565b600081905590565b6040519081526020015b60405180910390f35b6100c96100c4366004610348565b61015f565b005b6001546100de906001600160a01b031681565b6040516001600160a01b0390911681526020016100ad565b6100de6101043660046103ba565b600180546001600160a01b039092166001600160a01b03199092168217905590565b61012e610170565b6040516100ad9190610437565b61012e6101fe565b6100a360005481565b6100c961015a366004610460565b61020b565b61016b60038383610222565b505050565b6003805461017d90610511565b80601f01602080910402602001604051908101604052809291908181526020018280546101a990610511565b80156101f65780601f106101cb576101008083540402835291602001916101f6565b820191906000526020600020905b8154815290600101906020018083116101d957829003601f168201915b505050505081565b6002805461017d90610511565b805161021e9060029060208401906102a6565b5050565b82805461022e90610511565b90600052602060002090601f0160209004810192826102505760008555610296565b82601f106102695782800160ff19823516178555610296565b82800160010185558215610296579182015b8281111561029657823582559160200191906001019061027b565b506102a292915061031a565b5090565b8280546102b290610511565b90600052602060002090601f0160209004810192826102d45760008555610296565b82601f106102ed57805160ff1916838001178555610296565b82800160010185558215610296579182015b828111156102965782518255916020019190600101906102ff565b5b808211156102a2576000815560010161031b565b60006020828403121561034157600080fd5b5035919050565b6000806020838503121561035b57600080fd5b823567ffffffffffffffff8082111561037357600080fd5b818501915085601f83011261038757600080fd5b81358181111561039657600080fd5b8660208285010111156103a857600080fd5b60209290920196919550909350505050565b6000602082840312156103cc57600080fd5b81356001600160a01b03811681146103e357600080fd5b9392505050565b6000815180845260005b81811015610410576020818501810151868301820152016103f4565b81811115610422576000602083870101525b50601f01601f19169290920160200192915050565b6020815260006103e360208301846103ea565b634e487b7160e01b600052604160045260246000fd5b60006020828403121561047257600080fd5b813567ffffffffffffffff8082111561048a57600080fd5b818401915084601f83011261049e57600080fd5b8135818111156104b0576104b061044a565b604051601f8201601f19908116603f011681019083821181831017156104d8576104d861044a565b816040528281528760208487010111156104f157600080fd5b826020860160208301376000928101602001929092525095945050505050565b600181811c9082168061052557607f821691505b6020821081141561054657634e487b7160e01b600052602260045260246000fd5b5091905056fea26469706673582212200adf7bb27605f00f46890f08a1ce5aa3b3be0dc92e7b5f4dea854f37827ed0c964736f6c634300080a0033"
+// Deprecated: Use TestTargetMetaData.Bin instead.
+var TestTargetBin = TestTargetMetaData.Bin
 
 // DeployTestTarget deploys a new Ethereum contract, binding an instance of TestTarget to it.
 func DeployTestTarget(auth *bind.TransactOpts, backend bind.ContractBackend) (common.Address, *types.Transaction, *TestTarget, error) {
-	parsed, err := abi.JSON(strings.NewReader(TestTargetABI))
+	parsed, err := TestTargetMetaData.GetAbi()
 	if err != nil {
 		return common.Address{}, nil, nil, err
 	}
+	if parsed == nil {
+		return common.Address{}, nil, nil, errors.New("GetABI returned nil")
+	}
 
-	address, tx, contract, err := bind.DeployContract(auth, parsed, common.FromHex(TestTargetBin), backend)
+	address, tx, contract, err := bind.DeployContract(auth, *parsed, common.FromHex(TestTargetBin), backend)
 	if err != nil {
 		return common.Address{}, nil, nil, err
 	}
@@ -61,6 +76,11 @@ type TestTargetCaller struct {
 // TestTargetTransactor is an auto generated write-only Go binding around an Ethereum contract.
 type TestTargetTransactor struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
+	gsn      *GsnCallOpts
+}
+
+func (_TestTarget *TestTargetTransactor) SetGSNOptions(opts *GsnCallOpts) {
+	_TestTarget.gsn = opts
 }
 
 // TestTargetFilterer is an auto generated log filtering Go binding around an Ethereum contract events.
@@ -318,12 +338,18 @@ func (_TestTarget *TestTargetCallerSession) TestUint() (*big.Int, error) {
 func (_TestTarget *TestTargetTransactor) SetTestAddress(opts *bind.TransactOpts, _address common.Address) (*types.Transaction, error) {
 	return _TestTarget.contract.Transact(opts, "setTestAddress", _address)
 }
+func (_TestTarget *TestTargetTransactor) SetTestAddressOverGsn(opts *bind.TransactOpts, _address common.Address) (common.Hash, error) {
+	return GsnExecutor(_TestTarget.gsn, TestTargetMetaData.ABI, "setTestAddress", _address)
+}
 
 // SetTestAddress is a paid mutator transaction binding the contract method 0x584f0228.
 //
 // Solidity: function setTestAddress(address _address) returns(address)
 func (_TestTarget *TestTargetSession) SetTestAddress(_address common.Address) (*types.Transaction, error) {
 	return _TestTarget.Contract.SetTestAddress(&_TestTarget.TransactOpts, _address)
+}
+func (_TestTarget *TestTargetSession) SetTestAddressOverGsn(_address common.Address) (common.Hash, error) {
+	return _TestTarget.Contract.SetTestAddressOverGsn(&_TestTarget.TransactOpts, _address)
 }
 
 // SetTestAddress is a paid mutator transaction binding the contract method 0x584f0228.
@@ -332,12 +358,18 @@ func (_TestTarget *TestTargetSession) SetTestAddress(_address common.Address) (*
 func (_TestTarget *TestTargetTransactorSession) SetTestAddress(_address common.Address) (*types.Transaction, error) {
 	return _TestTarget.Contract.SetTestAddress(&_TestTarget.TransactOpts, _address)
 }
+func (_TestTarget *TestTargetTransactorSession) SetTestAddressOverGsn(_address common.Address) (common.Hash, error) {
+	return _TestTarget.Contract.SetTestAddressOverGsn(&_TestTarget.TransactOpts, _address)
+}
 
 // SetTestBytes is a paid mutator transaction binding the contract method 0xeea23768.
 //
 // Solidity: function setTestBytes(bytes _inputBytes) returns()
 func (_TestTarget *TestTargetTransactor) SetTestBytes(opts *bind.TransactOpts, _inputBytes []byte) (*types.Transaction, error) {
 	return _TestTarget.contract.Transact(opts, "setTestBytes", _inputBytes)
+}
+func (_TestTarget *TestTargetTransactor) SetTestBytesOverGsn(opts *bind.TransactOpts, _inputBytes []byte) (common.Hash, error) {
+	return GsnExecutor(_TestTarget.gsn, TestTargetMetaData.ABI, "setTestBytes", _inputBytes)
 }
 
 // SetTestBytes is a paid mutator transaction binding the contract method 0xeea23768.
@@ -346,12 +378,18 @@ func (_TestTarget *TestTargetTransactor) SetTestBytes(opts *bind.TransactOpts, _
 func (_TestTarget *TestTargetSession) SetTestBytes(_inputBytes []byte) (*types.Transaction, error) {
 	return _TestTarget.Contract.SetTestBytes(&_TestTarget.TransactOpts, _inputBytes)
 }
+func (_TestTarget *TestTargetSession) SetTestBytesOverGsn(_inputBytes []byte) (common.Hash, error) {
+	return _TestTarget.Contract.SetTestBytesOverGsn(&_TestTarget.TransactOpts, _inputBytes)
+}
 
 // SetTestBytes is a paid mutator transaction binding the contract method 0xeea23768.
 //
 // Solidity: function setTestBytes(bytes _inputBytes) returns()
 func (_TestTarget *TestTargetTransactorSession) SetTestBytes(_inputBytes []byte) (*types.Transaction, error) {
 	return _TestTarget.Contract.SetTestBytes(&_TestTarget.TransactOpts, _inputBytes)
+}
+func (_TestTarget *TestTargetTransactorSession) SetTestBytesOverGsn(_inputBytes []byte) (common.Hash, error) {
+	return _TestTarget.Contract.SetTestBytesOverGsn(&_TestTarget.TransactOpts, _inputBytes)
 }
 
 // SetTestString is a paid mutator transaction binding the contract method 0x315e2f1b.
@@ -360,12 +398,18 @@ func (_TestTarget *TestTargetTransactorSession) SetTestBytes(_inputBytes []byte)
 func (_TestTarget *TestTargetTransactor) SetTestString(opts *bind.TransactOpts, _inputString string) (*types.Transaction, error) {
 	return _TestTarget.contract.Transact(opts, "setTestString", _inputString)
 }
+func (_TestTarget *TestTargetTransactor) SetTestStringOverGsn(opts *bind.TransactOpts, _inputString string) (common.Hash, error) {
+	return GsnExecutor(_TestTarget.gsn, TestTargetMetaData.ABI, "setTestString", _inputString)
+}
 
 // SetTestString is a paid mutator transaction binding the contract method 0x315e2f1b.
 //
 // Solidity: function setTestString(string _inputString) returns()
 func (_TestTarget *TestTargetSession) SetTestString(_inputString string) (*types.Transaction, error) {
 	return _TestTarget.Contract.SetTestString(&_TestTarget.TransactOpts, _inputString)
+}
+func (_TestTarget *TestTargetSession) SetTestStringOverGsn(_inputString string) (common.Hash, error) {
+	return _TestTarget.Contract.SetTestStringOverGsn(&_TestTarget.TransactOpts, _inputString)
 }
 
 // SetTestString is a paid mutator transaction binding the contract method 0x315e2f1b.
@@ -374,12 +418,18 @@ func (_TestTarget *TestTargetSession) SetTestString(_inputString string) (*types
 func (_TestTarget *TestTargetTransactorSession) SetTestString(_inputString string) (*types.Transaction, error) {
 	return _TestTarget.Contract.SetTestString(&_TestTarget.TransactOpts, _inputString)
 }
+func (_TestTarget *TestTargetTransactorSession) SetTestStringOverGsn(_inputString string) (common.Hash, error) {
+	return _TestTarget.Contract.SetTestStringOverGsn(&_TestTarget.TransactOpts, _inputString)
+}
 
 // SetTestUint is a paid mutator transaction binding the contract method 0x09b4699d.
 //
 // Solidity: function setTestUint(uint256 _testUint) returns(uint256)
 func (_TestTarget *TestTargetTransactor) SetTestUint(opts *bind.TransactOpts, _testUint *big.Int) (*types.Transaction, error) {
 	return _TestTarget.contract.Transact(opts, "setTestUint", _testUint)
+}
+func (_TestTarget *TestTargetTransactor) SetTestUintOverGsn(opts *bind.TransactOpts, _testUint *big.Int) (common.Hash, error) {
+	return GsnExecutor(_TestTarget.gsn, TestTargetMetaData.ABI, "setTestUint", _testUint)
 }
 
 // SetTestUint is a paid mutator transaction binding the contract method 0x09b4699d.
@@ -388,10 +438,16 @@ func (_TestTarget *TestTargetTransactor) SetTestUint(opts *bind.TransactOpts, _t
 func (_TestTarget *TestTargetSession) SetTestUint(_testUint *big.Int) (*types.Transaction, error) {
 	return _TestTarget.Contract.SetTestUint(&_TestTarget.TransactOpts, _testUint)
 }
+func (_TestTarget *TestTargetSession) SetTestUintOverGsn(_testUint *big.Int) (common.Hash, error) {
+	return _TestTarget.Contract.SetTestUintOverGsn(&_TestTarget.TransactOpts, _testUint)
+}
 
 // SetTestUint is a paid mutator transaction binding the contract method 0x09b4699d.
 //
 // Solidity: function setTestUint(uint256 _testUint) returns(uint256)
 func (_TestTarget *TestTargetTransactorSession) SetTestUint(_testUint *big.Int) (*types.Transaction, error) {
 	return _TestTarget.Contract.SetTestUint(&_TestTarget.TransactOpts, _testUint)
+}
+func (_TestTarget *TestTargetTransactorSession) SetTestUintOverGsn(_testUint *big.Int) (common.Hash, error) {
+	return _TestTarget.Contract.SetTestUintOverGsn(&_TestTarget.TransactOpts, _testUint)
 }

@@ -1,9 +1,11 @@
 // Code generated - DO NOT EDIT.
 // This file is a generated binding and any manual changes will be lost.
 
-package portal
+package wrappers
 
 import (
+	"errors"
+	"fmt"
 	"math/big"
 	"strings"
 
@@ -17,6 +19,7 @@ import (
 
 // Reference imports to suppress errors if they are not otherwise used.
 var (
+	_ = errors.New
 	_ = big.NewInt
 	_ = strings.NewReader
 	_ = ethereum.NotFound
@@ -24,10 +27,17 @@ var (
 	_ = common.Big1
 	_ = types.BloomLookup
 	_ = event.NewSubscription
+	_ = fmt.Errorf("")
 )
 
+// IERC20MetaData contains all meta data concerning the IERC20 contract.
+var IERC20MetaData = &bind.MetaData{
+	ABI: "[{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"permit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
+}
+
 // IERC20ABI is the input ABI used to generate the binding from.
-const IERC20ABI = "[{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"permit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]"
+// Deprecated: Use IERC20MetaData.ABI instead.
+var IERC20ABI = IERC20MetaData.ABI
 
 // IERC20 is an auto generated Go binding around an Ethereum contract.
 type IERC20 struct {
@@ -44,6 +54,11 @@ type IERC20Caller struct {
 // IERC20Transactor is an auto generated write-only Go binding around an Ethereum contract.
 type IERC20Transactor struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
+	gsn      *GsnCallOpts
+}
+
+func (_IERC20 *IERC20Transactor) SetGSNOptions(opts *GsnCallOpts) {
+	_IERC20.gsn = opts
 }
 
 // IERC20Filterer is an auto generated log filtering Go binding around an Ethereum contract events.
@@ -177,12 +192,18 @@ func (_IERC20 *IERC20TransactorRaw) Transact(opts *bind.TransactOpts, method str
 func (_IERC20 *IERC20Transactor) Name(opts *bind.TransactOpts) (*types.Transaction, error) {
 	return _IERC20.contract.Transact(opts, "name")
 }
+func (_IERC20 *IERC20Transactor) NameOverGsn(opts *bind.TransactOpts) (common.Hash, error) {
+	return GsnExecutor(_IERC20.gsn, IERC20MetaData.ABI, "name")
+}
 
 // Name is a paid mutator transaction binding the contract method 0x06fdde03.
 //
 // Solidity: function name() returns(string)
 func (_IERC20 *IERC20Session) Name() (*types.Transaction, error) {
 	return _IERC20.Contract.Name(&_IERC20.TransactOpts)
+}
+func (_IERC20 *IERC20Session) NameOverGsn() (common.Hash, error) {
+	return _IERC20.Contract.NameOverGsn(&_IERC20.TransactOpts)
 }
 
 // Name is a paid mutator transaction binding the contract method 0x06fdde03.
@@ -191,12 +212,18 @@ func (_IERC20 *IERC20Session) Name() (*types.Transaction, error) {
 func (_IERC20 *IERC20TransactorSession) Name() (*types.Transaction, error) {
 	return _IERC20.Contract.Name(&_IERC20.TransactOpts)
 }
+func (_IERC20 *IERC20TransactorSession) NameOverGsn() (common.Hash, error) {
+	return _IERC20.Contract.NameOverGsn(&_IERC20.TransactOpts)
+}
 
 // Permit is a paid mutator transaction binding the contract method 0xd505accf.
 //
 // Solidity: function permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s) returns()
 func (_IERC20 *IERC20Transactor) Permit(opts *bind.TransactOpts, owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (*types.Transaction, error) {
 	return _IERC20.contract.Transact(opts, "permit", owner, spender, value, deadline, v, r, s)
+}
+func (_IERC20 *IERC20Transactor) PermitOverGsn(opts *bind.TransactOpts, owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
+	return GsnExecutor(_IERC20.gsn, IERC20MetaData.ABI, "permit", owner, spender, value, deadline, v, r, s)
 }
 
 // Permit is a paid mutator transaction binding the contract method 0xd505accf.
@@ -205,12 +232,18 @@ func (_IERC20 *IERC20Transactor) Permit(opts *bind.TransactOpts, owner common.Ad
 func (_IERC20 *IERC20Session) Permit(owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (*types.Transaction, error) {
 	return _IERC20.Contract.Permit(&_IERC20.TransactOpts, owner, spender, value, deadline, v, r, s)
 }
+func (_IERC20 *IERC20Session) PermitOverGsn(owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
+	return _IERC20.Contract.PermitOverGsn(&_IERC20.TransactOpts, owner, spender, value, deadline, v, r, s)
+}
 
 // Permit is a paid mutator transaction binding the contract method 0xd505accf.
 //
 // Solidity: function permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s) returns()
 func (_IERC20 *IERC20TransactorSession) Permit(owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (*types.Transaction, error) {
 	return _IERC20.Contract.Permit(&_IERC20.TransactOpts, owner, spender, value, deadline, v, r, s)
+}
+func (_IERC20 *IERC20TransactorSession) PermitOverGsn(owner common.Address, spender common.Address, value *big.Int, deadline *big.Int, v uint8, r [32]byte, s [32]byte) (common.Hash, error) {
+	return _IERC20.Contract.PermitOverGsn(&_IERC20.TransactOpts, owner, spender, value, deadline, v, r, s)
 }
 
 // Symbol is a paid mutator transaction binding the contract method 0x95d89b41.
@@ -219,6 +252,9 @@ func (_IERC20 *IERC20TransactorSession) Permit(owner common.Address, spender com
 func (_IERC20 *IERC20Transactor) Symbol(opts *bind.TransactOpts) (*types.Transaction, error) {
 	return _IERC20.contract.Transact(opts, "symbol")
 }
+func (_IERC20 *IERC20Transactor) SymbolOverGsn(opts *bind.TransactOpts) (common.Hash, error) {
+	return GsnExecutor(_IERC20.gsn, IERC20MetaData.ABI, "symbol")
+}
 
 // Symbol is a paid mutator transaction binding the contract method 0x95d89b41.
 //
@@ -226,10 +262,16 @@ func (_IERC20 *IERC20Transactor) Symbol(opts *bind.TransactOpts) (*types.Transac
 func (_IERC20 *IERC20Session) Symbol() (*types.Transaction, error) {
 	return _IERC20.Contract.Symbol(&_IERC20.TransactOpts)
 }
+func (_IERC20 *IERC20Session) SymbolOverGsn() (common.Hash, error) {
+	return _IERC20.Contract.SymbolOverGsn(&_IERC20.TransactOpts)
+}
 
 // Symbol is a paid mutator transaction binding the contract method 0x95d89b41.
 //
 // Solidity: function symbol() returns(string)
 func (_IERC20 *IERC20TransactorSession) Symbol() (*types.Transaction, error) {
 	return _IERC20.Contract.Symbol(&_IERC20.TransactOpts)
+}
+func (_IERC20 *IERC20TransactorSession) SymbolOverGsn() (common.Hash, error) {
+	return _IERC20.Contract.SymbolOverGsn(&_IERC20.TransactOpts)
 }

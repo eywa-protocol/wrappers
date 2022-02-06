@@ -1,4 +1,4 @@
-package gsn
+package wrappers
 
 import (
 	"crypto/ecdsa"
@@ -15,7 +15,6 @@ import (
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/signer/core"
-	"github.com/eywa-protocol/wrappers"
 )
 
 const (
@@ -34,9 +33,7 @@ func init() {
 	UseGsnFlag = v != ""
 }
 
-type BridgeFunc func(*CallOpts, ...interface{}) (common.Hash, error)
-
-type CallOpts struct {
+type GsnCallOpts struct {
 	GsnCaller       GsnCaller
 	ChainId         *big.Int
 	Signer          *ecdsa.PrivateKey
@@ -44,12 +41,12 @@ type CallOpts struct {
 }
 
 type GsnCaller interface {
-	GetForwarder(chainId *big.Int) (*wrappers.Forwarder, error)
+	GetForwarder(chainId *big.Int) (*Forwarder, error)
 	GetForwarderAddress(chainId *big.Int) (common.Address, error)
-	Execute(chainId *big.Int, req wrappers.IForwarderForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (common.Hash, error)
+	Execute(chainId *big.Int, req IForwarderForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (common.Hash, error)
 }
 
-func NewForwardRequestTypedData(req *wrappers.IForwarderForwardRequest, forwarderAddress, abiJson, methodName string, args ...interface{}) (*core.TypedData, error) {
+func NewForwardRequestTypedData(req *IForwarderForwardRequest, forwarderAddress, abiJson, methodName string, args ...interface{}) (*core.TypedData, error) {
 
 	contractAbi, err := abi.JSON(strings.NewReader(abiJson))
 	if err != nil {
@@ -65,8 +62,9 @@ func NewForwardRequestTypedData(req *wrappers.IForwarderForwardRequest, forwarde
 
 	return &core.TypedData{
 		Types: core.Types{
-			domainType: []core.Type{{
-				Name: "verifyingContract", Type: "address"}},
+			domainType: []core.Type{
+				{Name: "verifyingContract", Type: "address"},
+			},
 			forwardRequest: []core.Type{
 				{
 					Name: "from", Type: "address"},
@@ -184,7 +182,7 @@ func SignTypedData(key ecdsa.PrivateKey, addr common.MixedcaseAddress, typedData
 	return signature, req.Hash, nil
 }
 
-func Executor(gsnParams *CallOpts, abiSrc, methodName string, args ...interface{}) (txHash common.Hash, err error) {
+func GsnExecutor(gsnParams *GsnCallOpts, abiSrc, methodName string, args ...interface{}) (txHash common.Hash, err error) {
 	__contractABI, err := abi.JSON(strings.NewReader(abiSrc))
 	if err != nil {
 		return common.Hash{}, fmt.Errorf("could not parse ABI: %w", err)
@@ -212,7 +210,7 @@ func Executor(gsnParams *CallOpts, abiSrc, methodName string, args ...interface{
 		return
 	}
 
-	__req := &wrappers.IForwarderForwardRequest{
+	__req := &IForwarderForwardRequest{
 		From:  __signerAddress,
 		To:    gsnParams.ContractAddress,
 		Value: big.NewInt(0),
@@ -253,13 +251,64 @@ func Executor(gsnParams *CallOpts, abiSrc, methodName string, args ...interface{
 	return gsnParams.GsnCaller.Execute(gsnParams.ChainId, *__req, __domainSeparatorHash, __reqTypeHash, nil, __typedDataSignature)
 }
 
-func Wrap(directCall func() (common.Hash, error), gsnCall func() (common.Hash, error)) (common.Hash, error) {
-	if UseGsnFlag && gsnCall != nil {
-		return gsnCall()
-	}
-	if directCall == nil {
-		return common.Hash{}, errors.New("directCall method absent")
-	}
+// Contract structs
 
-	return directCall()
+// IForwarderForwardRequest is an auto generated low-level Go binding around an user-defined struct.
+type IForwarderForwardRequest struct {
+	From  common.Address
+	To    common.Address
+	Value *big.Int
+	Gas   *big.Int
+	Nonce *big.Int
+	Data  []byte
+}
+
+// NodeRegistryNode is an auto generated low-level Go binding around an user-defined struct.
+type NodeRegistryNode struct {
+	Owner     common.Address
+	Pool      common.Address
+	HostId    string
+	BlsPubKey []byte
+	NodeId    *big.Int
+}
+
+// PortalPermitData is an auto generated low-level Go binding around an user-defined struct.
+type PortalPermitData struct {
+	V          uint8
+	R          [32]byte
+	S          [32]byte
+	Deadline   *big.Int
+	ApproveMax bool
+}
+
+// PortalSynthParams is an auto generated low-level Go binding around an user-defined struct.
+type PortalSynthParams struct {
+	Chain2address  common.Address
+	ReceiveSide    common.Address
+	OppositeBridge common.Address
+	ChainID        *big.Int
+}
+
+// SolanaSerializeSolanaAccountMeta is an auto generated low-level Go binding around an user-defined struct.
+type SolanaSerializeSolanaAccountMeta struct {
+	Pubkey     [32]byte
+	IsSigner   bool
+	IsWritable bool
+}
+
+// SolanaSerializeSolanaStandaloneInstruction is an auto generated low-level Go binding around an user-defined struct.
+type SolanaSerializeSolanaStandaloneInstruction struct {
+	ProgramId [32]byte
+	Accounts  []SolanaSerializeSolanaAccountMeta
+	Data      []byte
+}
+
+// TestForwardForwardRequest is an auto generated low-level Go binding around an user-defined struct.
+type TestForwardForwardRequest struct {
+	From  common.Address
+	To    common.Address
+	Value *big.Int
+	Gas   *big.Int
+	Nonce *big.Int
+	Data  []byte
 }

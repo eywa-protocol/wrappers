@@ -7,8 +7,8 @@ import (
 	"math/big"
 
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/eywa-protocol/wrappers"
 
+	"github.com/eywa-protocol/wrappers"
 	"github.com/eywa-protocol/wrappers/gsn"
 )
 

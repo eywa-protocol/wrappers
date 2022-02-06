@@ -4,6 +4,7 @@
 package wrappers
 
 import (
+	"errors"
 	"math/big"
 	"strings"
 
@@ -17,6 +18,7 @@ import (
 
 // Reference imports to suppress errors if they are not otherwise used.
 var (
+	_ = errors.New
 	_ = big.NewInt
 	_ = strings.NewReader
 	_ = ethereum.NotFound
@@ -26,20 +28,35 @@ var (
 	_ = event.NewSubscription
 )
 
+/*
+
+ */
+
+// ErrorsMetaData contains all meta data concerning the Errors contract.
+var ErrorsMetaData = &bind.MetaData{
+	ABI: "[{\"inputs\":[],\"name\":\"DATA_INCONSISTENCY\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"DEPOSIT_IS_LOCKED\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"EMISSION_ANNUAL_RATE_IS_TOO_HIGH\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"EMISSION_ANNUAL_RATE_IS_TOO_LOW\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"FEE_IS_TOO_HIGH\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"FEE_IS_TOO_LOW\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"INSUFFICIENT_DEPOSIT\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"NOT_DEPOSIT_OWNER\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"SAME_VALUE\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ZERO_ADDRESS\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ZERO_PROFIT\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
+	Bin: "0x61036e61003a600b82828239805160001a60731461002d57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600436106100b35760003560e01c8063529186761161007b57806352918676146101c4578063538ba4f9146101f15780638e8af4f91461021c578063a57c37fc1461024f578063cba6fe231461028b578063da461352146102b557600080fd5b806312aad774146100b857806313a5e9db146100fe5780631646dec31461012757806325ce8936146101635780634b7767d414610194575b600080fd5b6100e8604051806040016040528060118152602001702727aa2fa222a827a9a4aa2fa7aba722a960791b81525081565b6040516100f591906102e3565b60405180910390f35b6100e86040518060400160405280600a81526020016953414d455f56414c554560b01b81525081565b6100e86040518060400160405280602081526020017f454d495353494f4e5f414e4e55414c5f524154455f49535f544f4f5f4849474881525081565b6100e860405180604001604052806012815260200171444154415f494e434f4e53495354454e435960701b81525081565b6100e86040518060400160405280601181526020017011115413d4d25517d254d7d313d0d2d151607a1b81525081565b6100e86040518060400160405280600e81526020016d4645455f49535f544f4f5f4c4f5760901b81525081565b6100e86040518060400160405280600c81526020016b5a45524f5f4144445245535360a01b81525081565b6100e860405180604001604052806014815260200173125394d551919250d251539517d1115413d4d25560621b81525081565b6100e86040518060400160405280601f81526020017f454d495353494f4e5f414e4e55414c5f524154455f49535f544f4f5f4c4f570081525081565b6100e86040518060400160405280600b81526020016a16915493d7d41493d1925560aa1b81525081565b6100e86040518060400160405280600f81526020016e08c8a8abe92a6bea89e9ebe90928e9608b1b81525081565b600060208083528351808285015260005b81811015610310578581018301518582016040015282016102f4565b81811115610322576000604083870101525b50601f01601f191692909201604001939250505056fea264697066735822122005017cdaedd9176cbcc2383675eabcf4f27b85da51a525945251221fb60eed7164736f6c634300080a0033",
+}
+
 // ErrorsABI is the input ABI used to generate the binding from.
-const ErrorsABI = "[{\"inputs\":[],\"name\":\"DATA_INCONSISTENCY\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"DEPOSIT_IS_LOCKED\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"EMISSION_ANNUAL_RATE_IS_TOO_HIGH\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"EMISSION_ANNUAL_RATE_IS_TOO_LOW\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"FEE_IS_TOO_HIGH\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"FEE_IS_TOO_LOW\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"INSUFFICIENT_DEPOSIT\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"NOT_DEPOSIT_OWNER\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"SAME_VALUE\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ZERO_ADDRESS\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ZERO_PROFIT\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]"
+// Deprecated: Use ErrorsMetaData.ABI instead.
+var ErrorsABI = ErrorsMetaData.ABI
 
 // ErrorsBin is the compiled bytecode used for deploying new contracts.
-var ErrorsBin = "0x61036e61003a600b82828239805160001a60731461002d57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600436106100b35760003560e01c8063529186761161007b57806352918676146101c4578063538ba4f9146101f15780638e8af4f91461021c578063a57c37fc1461024f578063cba6fe231461028b578063da461352146102b557600080fd5b806312aad774146100b857806313a5e9db146100fe5780631646dec31461012757806325ce8936146101635780634b7767d414610194575b600080fd5b6100e8604051806040016040528060118152602001702727aa2fa222a827a9a4aa2fa7aba722a960791b81525081565b6040516100f591906102e3565b60405180910390f35b6100e86040518060400160405280600a81526020016953414d455f56414c554560b01b81525081565b6100e86040518060400160405280602081526020017f454d495353494f4e5f414e4e55414c5f524154455f49535f544f4f5f4849474881525081565b6100e860405180604001604052806012815260200171444154415f494e434f4e53495354454e435960701b81525081565b6100e86040518060400160405280601181526020017011115413d4d25517d254d7d313d0d2d151607a1b81525081565b6100e86040518060400160405280600e81526020016d4645455f49535f544f4f5f4c4f5760901b81525081565b6100e86040518060400160405280600c81526020016b5a45524f5f4144445245535360a01b81525081565b6100e860405180604001604052806014815260200173125394d551919250d251539517d1115413d4d25560621b81525081565b6100e86040518060400160405280601f81526020017f454d495353494f4e5f414e4e55414c5f524154455f49535f544f4f5f4c4f570081525081565b6100e86040518060400160405280600b81526020016a16915493d7d41493d1925560aa1b81525081565b6100e86040518060400160405280600f81526020016e08c8a8abe92a6bea89e9ebe90928e9608b1b81525081565b600060208083528351808285015260005b81811015610310578581018301518582016040015282016102f4565b81811115610322576000604083870101525b50601f01601f191692909201604001939250505056fea264697066735822122005017cdaedd9176cbcc2383675eabcf4f27b85da51a525945251221fb60eed7164736f6c634300080a0033"
+// Deprecated: Use ErrorsMetaData.Bin instead.
+var ErrorsBin = ErrorsMetaData.Bin
 
 // DeployErrors deploys a new Ethereum contract, binding an instance of Errors to it.
 func DeployErrors(auth *bind.TransactOpts, backend bind.ContractBackend) (common.Address, *types.Transaction, *Errors, error) {
-	parsed, err := abi.JSON(strings.NewReader(ErrorsABI))
+	parsed, err := ErrorsMetaData.GetAbi()
 	if err != nil {
 		return common.Address{}, nil, nil, err
 	}
+	if parsed == nil {
+		return common.Address{}, nil, nil, errors.New("GetABI returned nil")
+	}
 
-	address, tx, contract, err := bind.DeployContract(auth, parsed, common.FromHex(ErrorsBin), backend)
+	address, tx, contract, err := bind.DeployContract(auth, *parsed, common.FromHex(ErrorsBin), backend)
 	if err != nil {
 		return common.Address{}, nil, nil, err
 	}

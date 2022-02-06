@@ -5,6 +5,7 @@ package wrappers
 
 import (
 	"errors"
+	"fmt"
 	"math/big"
 	"strings"
 
@@ -26,11 +27,8 @@ var (
 	_ = common.Big1
 	_ = types.BloomLookup
 	_ = event.NewSubscription
+	_ = fmt.Errorf("")
 )
-
-/*
-
- */
 
 // MerkleTestMetaData contains all meta data concerning the MerkleTest contract.
 var MerkleTestMetaData = &bind.MetaData{
@@ -78,6 +76,11 @@ type MerkleTestCaller struct {
 // MerkleTestTransactor is an auto generated write-only Go binding around an Ethereum contract.
 type MerkleTestTransactor struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
+	gsn      *GsnCallOpts
+}
+
+func (_MerkleTest *MerkleTestTransactor) SetGSNOptions(opts *GsnCallOpts) {
+	_MerkleTest.gsn = opts
 }
 
 // MerkleTestFilterer is an auto generated log filtering Go binding around an Ethereum contract events.

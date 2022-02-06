@@ -5,6 +5,7 @@ package wrappers
 
 import (
 	"errors"
+	"fmt"
 	"math/big"
 	"strings"
 
@@ -26,11 +27,8 @@ var (
 	_ = common.Big1
 	_ = types.BloomLookup
 	_ = event.NewSubscription
+	_ = fmt.Errorf("")
 )
-
-/*
-
- */
 
 // ErrorsMetaData contains all meta data concerning the Errors contract.
 var ErrorsMetaData = &bind.MetaData{
@@ -78,6 +76,11 @@ type ErrorsCaller struct {
 // ErrorsTransactor is an auto generated write-only Go binding around an Ethereum contract.
 type ErrorsTransactor struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
+	gsn      *GsnCallOpts
+}
+
+func (_Errors *ErrorsTransactor) SetGSNOptions(opts *GsnCallOpts) {
+	_Errors.gsn = opts
 }
 
 // ErrorsFilterer is an auto generated log filtering Go binding around an Ethereum contract events.

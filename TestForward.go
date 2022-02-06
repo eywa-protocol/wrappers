@@ -5,6 +5,7 @@ package wrappers
 
 import (
 	"errors"
+	"fmt"
 	"math/big"
 	"strings"
 
@@ -26,22 +27,8 @@ var (
 	_ = common.Big1
 	_ = types.BloomLookup
 	_ = event.NewSubscription
+	_ = fmt.Errorf("")
 )
-
-/*
-
-	// TestForwardForwardRequest is an auto generated low-level Go binding around an user-defined struct.
-	type TestForwardForwardRequest struct {
-
-	From common.Address
-	To common.Address
-	Value *big.Int
-	Gas *big.Int
-	Nonce *big.Int
-	Data []byte
-	}
-
-*/
 
 // TestForwardMetaData contains all meta data concerning the TestForward contract.
 var TestForwardMetaData = &bind.MetaData{
@@ -89,6 +76,11 @@ type TestForwardCaller struct {
 // TestForwardTransactor is an auto generated write-only Go binding around an Ethereum contract.
 type TestForwardTransactor struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
+	gsn      *GsnCallOpts
+}
+
+func (_TestForward *TestForwardTransactor) SetGSNOptions(opts *GsnCallOpts) {
+	_TestForward.gsn = opts
 }
 
 // TestForwardFilterer is an auto generated log filtering Go binding around an Ethereum contract events.
@@ -408,12 +400,18 @@ func (_TestForward *TestForwardCallerSession) VersionRecipient() (string, error)
 func (_TestForward *TestForwardTransactor) Foo(opts *bind.TransactOpts, _val *big.Int, _str string) (*types.Transaction, error) {
 	return _TestForward.contract.Transact(opts, "foo", _val, _str)
 }
+func (_TestForward *TestForwardTransactor) FooOverGsn(opts *bind.TransactOpts, _val *big.Int, _str string) (common.Hash, error) {
+	return GsnExecutor(_TestForward.gsn, TestForwardMetaData.ABI, "foo", _val, _str)
+}
 
 // Foo is a paid mutator transaction binding the contract method 0xc5d1c995.
 //
 // Solidity: function foo(uint256 _val, string _str) returns()
 func (_TestForward *TestForwardSession) Foo(_val *big.Int, _str string) (*types.Transaction, error) {
 	return _TestForward.Contract.Foo(&_TestForward.TransactOpts, _val, _str)
+}
+func (_TestForward *TestForwardSession) FooOverGsn(_val *big.Int, _str string) (common.Hash, error) {
+	return _TestForward.Contract.FooOverGsn(&_TestForward.TransactOpts, _val, _str)
 }
 
 // Foo is a paid mutator transaction binding the contract method 0xc5d1c995.
@@ -422,12 +420,18 @@ func (_TestForward *TestForwardSession) Foo(_val *big.Int, _str string) (*types.
 func (_TestForward *TestForwardTransactorSession) Foo(_val *big.Int, _str string) (*types.Transaction, error) {
 	return _TestForward.Contract.Foo(&_TestForward.TransactOpts, _val, _str)
 }
+func (_TestForward *TestForwardTransactorSession) FooOverGsn(_val *big.Int, _str string) (common.Hash, error) {
+	return _TestForward.Contract.FooOverGsn(&_TestForward.TransactOpts, _val, _str)
+}
 
 // TestExecute is a paid mutator transaction binding the contract method 0x323ccedb.
 //
 // Solidity: function testExecute((address,address,uint256,uint256,uint256,bytes) req, bytes32 domainSeparator, bytes32 requestTypeHash, bytes suffixData, bytes sig) payable returns(bool success, string ret)
 func (_TestForward *TestForwardTransactor) TestExecute(opts *bind.TransactOpts, req TestForwardForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (*types.Transaction, error) {
 	return _TestForward.contract.Transact(opts, "testExecute", req, domainSeparator, requestTypeHash, suffixData, sig)
+}
+func (_TestForward *TestForwardTransactor) TestExecuteOverGsn(opts *bind.TransactOpts, req TestForwardForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (common.Hash, error) {
+	return GsnExecutor(_TestForward.gsn, TestForwardMetaData.ABI, "testExecute", req, domainSeparator, requestTypeHash, suffixData, sig)
 }
 
 // TestExecute is a paid mutator transaction binding the contract method 0x323ccedb.
@@ -436,12 +440,18 @@ func (_TestForward *TestForwardTransactor) TestExecute(opts *bind.TransactOpts, 
 func (_TestForward *TestForwardSession) TestExecute(req TestForwardForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (*types.Transaction, error) {
 	return _TestForward.Contract.TestExecute(&_TestForward.TransactOpts, req, domainSeparator, requestTypeHash, suffixData, sig)
 }
+func (_TestForward *TestForwardSession) TestExecuteOverGsn(req TestForwardForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (common.Hash, error) {
+	return _TestForward.Contract.TestExecuteOverGsn(&_TestForward.TransactOpts, req, domainSeparator, requestTypeHash, suffixData, sig)
+}
 
 // TestExecute is a paid mutator transaction binding the contract method 0x323ccedb.
 //
 // Solidity: function testExecute((address,address,uint256,uint256,uint256,bytes) req, bytes32 domainSeparator, bytes32 requestTypeHash, bytes suffixData, bytes sig) payable returns(bool success, string ret)
 func (_TestForward *TestForwardTransactorSession) TestExecute(req TestForwardForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (*types.Transaction, error) {
 	return _TestForward.Contract.TestExecute(&_TestForward.TransactOpts, req, domainSeparator, requestTypeHash, suffixData, sig)
+}
+func (_TestForward *TestForwardTransactorSession) TestExecuteOverGsn(req TestForwardForwardRequest, domainSeparator [32]byte, requestTypeHash [32]byte, suffixData []byte, sig []byte) (common.Hash, error) {
+	return _TestForward.Contract.TestExecuteOverGsn(&_TestForward.TransactOpts, req, domainSeparator, requestTypeHash, suffixData, sig)
 }
 
 // TestForwardFooCalledIterator is returned from FilterFooCalled and is used to iterate over the raw logs and unpacked data for FooCalled events raised by the TestForward contract.

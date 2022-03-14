@@ -32,8 +32,8 @@ var (
 
 // BlockTestMetaData contains all meta data concerning the BlockTest contract.
 var BlockTestMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"chainId\",\"type\":\"uint64\"},{\"internalType\":\"bytes32\",\"name\":\"prevBlockHash\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"epochBlockHash\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"transactionsRoot\",\"type\":\"bytes32\"},{\"internalType\":\"uint64\",\"name\":\"sourceHeigh\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"height\",\"type\":\"uint64\"}],\"name\":\"blockHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"bridge\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"requestId\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"selector\",\"type\":\"bytes\"},{\"internalType\":\"address\",\"name\":\"receiveSide\",\"type\":\"address\"}],\"name\":\"oracleRequestTest\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"bridge\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"requestId\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"selector\",\"type\":\"bytes\"},{\"internalType\":\"bytes32\",\"name\":\"oppositeBridge\",\"type\":\"bytes32\"}],\"name\":\"oracleRequestTestSolana\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}]",
-	Bin: "0x608060405234801561001057600080fd5b50610472806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80635e7eea6914610046578063732a56a41461006b578063b6785f3c1461007e575b600080fd5b610059610054366004610226565b610091565b60405190815260200160405180910390f35b61005961007936600461029e565b610112565b61005961008c366004610314565b6101c0565b6000600286868686866040516020016100ae959493929190610383565b60408051601f19818403018152908290526100c8916103a5565b602060405180830381855afa1580156100e5573d6000803e3d6000fd5b5050506040513d601f19601f8201168201806040525081019061010891906103e0565b9695505050505050565b6040516001600160c01b031960c088811b8216602084015260288301889052604883018790526068830186905284811b8216608884015283901b16609082015260009060029060980160408051601f1981840301815290829052610175916103a5565b602060405180830381855afa158015610192573d6000803e3d6000fd5b5050506040513d601f19601f820116820180604052508101906101b591906103e0565b979650505050505050565b6000600286868686866040516020016100ae9594939291906103f9565b60008083601f8401126101ef57600080fd5b50813567ffffffffffffffff81111561020757600080fd5b60208301915083602082850101111561021f57600080fd5b9250929050565b60008060008060006080868803121561023e57600080fd5b8535945060208601359350604086013567ffffffffffffffff81111561026357600080fd5b61026f888289016101dd565b96999598509660600135949350505050565b803567ffffffffffffffff8116811461029957600080fd5b919050565b60008060008060008060c087890312156102b757600080fd5b6102c087610281565b95506020870135945060408701359350606087013592506102e360808801610281565b91506102f160a08801610281565b90509295509295509295565b80356001600160a01b038116811461029957600080fd5b60008060008060006080868803121561032c57600080fd5b610335866102fd565b945060208601359350604086013567ffffffffffffffff81111561035857600080fd5b610364888289016101dd565b90945092506103779050606087016102fd565b90509295509295909350565b8581528460208201528284604083013760409201918201526060019392505050565b6000825160005b818110156103c657602081860181015185830152016103ac565b818111156103d5576000828501525b509190910192915050565b6000602082840312156103f257600080fd5b5051919050565b60006bffffffffffffffffffffffff19808860601b1683528660148401528486603485013760609390931b9092169201603481019290925250604801939250505056fea2646970667358221220244187d2acfa0e29568777b3ae3c98dd63dc00008230a07509375a8c0f1a9d1664736f6c634300080a0033",
+	ABI: "[{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"chainId\",\"type\":\"uint64\"},{\"internalType\":\"bytes32\",\"name\":\"prevBlockHash\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"epochBlockHash\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"transactionsRoot\",\"type\":\"bytes32\"},{\"internalType\":\"uint64\",\"name\":\"sourceHeigh\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"height\",\"type\":\"uint64\"}],\"name\":\"blockHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_data\",\"type\":\"bytes\"}],\"name\":\"blockHeaderRawDataTest\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"allBlockHash\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"blockTxHash\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}]",
+	Bin: "0x608060405234801561001057600080fd5b50610410806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c8063732a56a41461003b578063845d481e14610061575b600080fd5b61004e61004936600461027b565b610089565b6040519081526020015b60405180910390f35b61007461006f3660046102da565b610137565b60408051928352602083019190915201610058565b6040516001600160c01b031960c088811b8216602084015260288301889052604883018790526068830186905284811b8216608884015283901b16609082015260009060029060980160408051601f19818403018152908290526100ec9161034c565b602060405180830381855afa158015610109573d6000803e3d6000fd5b5050506040513d601f19601f8201168201806040525081019061012c9190610387565b979650505050505050565b6000806002848460405160200161014f9291906103a0565b60408051601f19818403018152908290526101699161034c565b602060405180830381855afa158015610186573d6000803e3d6000fd5b5050506040513d601f19601f820116820180604052508101906101a99190610387565b91506101f66101bc6068604886886103b0565b8080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152506101ff92505050565b90509250929050565b600081516020146102565760405162461bcd60e51b815260206004820152601760248201527f6279746573206c656e677468206973206e6f742033322e000000000000000000604482015260640160405180910390fd5b506020015190565b803567ffffffffffffffff8116811461027657600080fd5b919050565b60008060008060008060c0878903121561029457600080fd5b61029d8761025e565b95506020870135945060408701359350606087013592506102c06080880161025e565b91506102ce60a0880161025e565b90509295509295509295565b600080602083850312156102ed57600080fd5b823567ffffffffffffffff8082111561030557600080fd5b818501915085601f83011261031957600080fd5b81358181111561032857600080fd5b86602082850101111561033a57600080fd5b60209290920196919550909350505050565b6000825160005b8181101561036d5760208186018101518583015201610353565b8181111561037c576000828501525b509190910192915050565b60006020828403121561039957600080fd5b5051919050565b8183823760009101908152919050565b600080858511156103c057600080fd5b838611156103cd57600080fd5b505082019391909203915056fea26469706673582212201fe96e69cacbda1fb92db7799563aad720e0a54993a30f15f3d4907ecd9a769b64736f6c634300080a0033",
 }
 
 // BlockTestABI is the input ABI used to generate the binding from.
@@ -239,64 +239,47 @@ func (_BlockTest *BlockTestCallerSession) BlockHash(chainId uint64, prevBlockHas
 	return _BlockTest.Contract.BlockHash(&_BlockTest.CallOpts, chainId, prevBlockHash, epochBlockHash, transactionsRoot, sourceHeigh, height)
 }
 
-// OracleRequestTest is a free data retrieval call binding the contract method 0xb6785f3c.
+// BlockHeaderRawDataTest is a free data retrieval call binding the contract method 0x845d481e.
 //
-// Solidity: function oracleRequestTest(address bridge, bytes32 requestId, bytes selector, address receiveSide) pure returns(bytes32)
-func (_BlockTest *BlockTestCaller) OracleRequestTest(opts *bind.CallOpts, bridge common.Address, requestId [32]byte, selector []byte, receiveSide common.Address) ([32]byte, error) {
+// Solidity: function blockHeaderRawDataTest(bytes _data) pure returns(bytes32 allBlockHash, bytes32 blockTxHash)
+func (_BlockTest *BlockTestCaller) BlockHeaderRawDataTest(opts *bind.CallOpts, _data []byte) (struct {
+	AllBlockHash [32]byte
+	BlockTxHash  [32]byte
+}, error) {
 	var out []interface{}
-	err := _BlockTest.contract.Call(opts, &out, "oracleRequestTest", bridge, requestId, selector, receiveSide)
+	err := _BlockTest.contract.Call(opts, &out, "blockHeaderRawDataTest", _data)
 
+	outstruct := new(struct {
+		AllBlockHash [32]byte
+		BlockTxHash  [32]byte
+	})
 	if err != nil {
-		return *new([32]byte), err
+		return *outstruct, err
 	}
 
-	out0 := *abi.ConvertType(out[0], new([32]byte)).(*[32]byte)
+	outstruct.AllBlockHash = *abi.ConvertType(out[0], new([32]byte)).(*[32]byte)
+	outstruct.BlockTxHash = *abi.ConvertType(out[1], new([32]byte)).(*[32]byte)
 
-	return out0, err
-
-}
-
-// OracleRequestTest is a free data retrieval call binding the contract method 0xb6785f3c.
-//
-// Solidity: function oracleRequestTest(address bridge, bytes32 requestId, bytes selector, address receiveSide) pure returns(bytes32)
-func (_BlockTest *BlockTestSession) OracleRequestTest(bridge common.Address, requestId [32]byte, selector []byte, receiveSide common.Address) ([32]byte, error) {
-	return _BlockTest.Contract.OracleRequestTest(&_BlockTest.CallOpts, bridge, requestId, selector, receiveSide)
-}
-
-// OracleRequestTest is a free data retrieval call binding the contract method 0xb6785f3c.
-//
-// Solidity: function oracleRequestTest(address bridge, bytes32 requestId, bytes selector, address receiveSide) pure returns(bytes32)
-func (_BlockTest *BlockTestCallerSession) OracleRequestTest(bridge common.Address, requestId [32]byte, selector []byte, receiveSide common.Address) ([32]byte, error) {
-	return _BlockTest.Contract.OracleRequestTest(&_BlockTest.CallOpts, bridge, requestId, selector, receiveSide)
-}
-
-// OracleRequestTestSolana is a free data retrieval call binding the contract method 0x5e7eea69.
-//
-// Solidity: function oracleRequestTestSolana(bytes32 bridge, bytes32 requestId, bytes selector, bytes32 oppositeBridge) pure returns(bytes32)
-func (_BlockTest *BlockTestCaller) OracleRequestTestSolana(opts *bind.CallOpts, bridge [32]byte, requestId [32]byte, selector []byte, oppositeBridge [32]byte) ([32]byte, error) {
-	var out []interface{}
-	err := _BlockTest.contract.Call(opts, &out, "oracleRequestTestSolana", bridge, requestId, selector, oppositeBridge)
-
-	if err != nil {
-		return *new([32]byte), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new([32]byte)).(*[32]byte)
-
-	return out0, err
+	return *outstruct, err
 
 }
 
-// OracleRequestTestSolana is a free data retrieval call binding the contract method 0x5e7eea69.
+// BlockHeaderRawDataTest is a free data retrieval call binding the contract method 0x845d481e.
 //
-// Solidity: function oracleRequestTestSolana(bytes32 bridge, bytes32 requestId, bytes selector, bytes32 oppositeBridge) pure returns(bytes32)
-func (_BlockTest *BlockTestSession) OracleRequestTestSolana(bridge [32]byte, requestId [32]byte, selector []byte, oppositeBridge [32]byte) ([32]byte, error) {
-	return _BlockTest.Contract.OracleRequestTestSolana(&_BlockTest.CallOpts, bridge, requestId, selector, oppositeBridge)
+// Solidity: function blockHeaderRawDataTest(bytes _data) pure returns(bytes32 allBlockHash, bytes32 blockTxHash)
+func (_BlockTest *BlockTestSession) BlockHeaderRawDataTest(_data []byte) (struct {
+	AllBlockHash [32]byte
+	BlockTxHash  [32]byte
+}, error) {
+	return _BlockTest.Contract.BlockHeaderRawDataTest(&_BlockTest.CallOpts, _data)
 }
 
-// OracleRequestTestSolana is a free data retrieval call binding the contract method 0x5e7eea69.
+// BlockHeaderRawDataTest is a free data retrieval call binding the contract method 0x845d481e.
 //
-// Solidity: function oracleRequestTestSolana(bytes32 bridge, bytes32 requestId, bytes selector, bytes32 oppositeBridge) pure returns(bytes32)
-func (_BlockTest *BlockTestCallerSession) OracleRequestTestSolana(bridge [32]byte, requestId [32]byte, selector []byte, oppositeBridge [32]byte) ([32]byte, error) {
-	return _BlockTest.Contract.OracleRequestTestSolana(&_BlockTest.CallOpts, bridge, requestId, selector, oppositeBridge)
+// Solidity: function blockHeaderRawDataTest(bytes _data) pure returns(bytes32 allBlockHash, bytes32 blockTxHash)
+func (_BlockTest *BlockTestCallerSession) BlockHeaderRawDataTest(_data []byte) (struct {
+	AllBlockHash [32]byte
+	BlockTxHash  [32]byte
+}, error) {
+	return _BlockTest.Contract.BlockHeaderRawDataTest(&_BlockTest.CallOpts, _data)
 }

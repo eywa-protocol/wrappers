@@ -272,21 +272,12 @@ type NodeRegistryNode struct {
 	NodeId    *big.Int
 }
 
-// PortalPermitData is an auto generated low-level Go binding around an user-defined struct.
-type PortalPermitData struct {
-	V          uint8
-	R          [32]byte
-	S          [32]byte
-	Deadline   *big.Int
-	ApproveMax bool
-}
-
 // PortalSynthParams is an auto generated low-level Go binding around an user-defined struct.
 type PortalSynthParams struct {
-	Chain2address  common.Address
+	To             common.Address
 	ReceiveSide    common.Address
 	OppositeBridge common.Address
-	ChainID        *big.Int
+	ChainId        *big.Int
 }
 
 // SolanaSerializeSolanaAccountMeta is an auto generated low-level Go binding around an user-defined struct.
@@ -301,6 +292,13 @@ type SolanaSerializeSolanaStandaloneInstruction struct {
 	ProgramId [32]byte
 	Accounts  []SolanaSerializeSolanaAccountMeta
 	Data      []byte
+}
+
+// SynthesisSynthParams is an auto generated low-level Go binding around an user-defined struct.
+type SynthesisSynthParams struct {
+	ReceiveSide    common.Address
+	OppositeBridge common.Address
+	ChainId        *big.Int
 }
 
 // TestForwardForwardRequest is an auto generated low-level Go binding around an user-defined struct.

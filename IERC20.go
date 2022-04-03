@@ -32,7 +32,7 @@ var (
 
 // IERC20MetaData contains all meta data concerning the IERC20 contract.
 var IERC20MetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"permit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
+	ABI: "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"permit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
 }
 
 // IERC20ABI is the input ABI used to generate the binding from.
@@ -184,6 +184,36 @@ func (_IERC20 *IERC20TransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Tr
 // Transact invokes the (paid) contract method with params as input values.
 func (_IERC20 *IERC20TransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
 	return _IERC20.Contract.contract.Transact(opts, method, params...)
+}
+
+// BalanceOf is a paid mutator transaction binding the contract method 0x70a08231.
+//
+// Solidity: function balanceOf(address user) returns(uint256)
+func (_IERC20 *IERC20Transactor) BalanceOf(opts *bind.TransactOpts, user common.Address) (*types.Transaction, error) {
+	return _IERC20.contract.Transact(opts, "balanceOf", user)
+}
+func (_IERC20 *IERC20Transactor) BalanceOfOverGsn(opts *bind.TransactOpts, user common.Address) (common.Hash, error) {
+	return GsnExecutor(_IERC20.gsn, IERC20MetaData.ABI, "balanceOf", user)
+}
+
+// BalanceOf is a paid mutator transaction binding the contract method 0x70a08231.
+//
+// Solidity: function balanceOf(address user) returns(uint256)
+func (_IERC20 *IERC20Session) BalanceOf(user common.Address) (*types.Transaction, error) {
+	return _IERC20.Contract.BalanceOf(&_IERC20.TransactOpts, user)
+}
+func (_IERC20 *IERC20Session) BalanceOfOverGsn(user common.Address) (common.Hash, error) {
+	return _IERC20.Contract.BalanceOfOverGsn(&_IERC20.TransactOpts, user)
+}
+
+// BalanceOf is a paid mutator transaction binding the contract method 0x70a08231.
+//
+// Solidity: function balanceOf(address user) returns(uint256)
+func (_IERC20 *IERC20TransactorSession) BalanceOf(user common.Address) (*types.Transaction, error) {
+	return _IERC20.Contract.BalanceOf(&_IERC20.TransactOpts, user)
+}
+func (_IERC20 *IERC20TransactorSession) BalanceOfOverGsn(user common.Address) (common.Hash, error) {
+	return _IERC20.Contract.BalanceOfOverGsn(&_IERC20.TransactOpts, user)
 }
 
 // Name is a paid mutator transaction binding the contract method 0x06fdde03.

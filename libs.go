@@ -253,6 +253,59 @@ func GsnExecutor(gsnParams *GsnCallOpts, abiSrc, methodName string, args ...inte
 
 // Contract structs
 
+// ICurveProxyMetaExchangeParams is an auto generated low-level Go binding around an user-defined struct.
+type ICurveProxyMetaExchangeParams struct {
+	Add                   common.Address
+	Exchange              common.Address
+	Remove                common.Address
+	ExpectedMinMintAmount *big.Int
+	I                     *big.Int
+	J                     *big.Int
+	ExpectedMinDy         *big.Int
+	X                     *big.Int
+	ExpectedMinAmount     *big.Int
+	To                    common.Address
+	Chain2address         common.Address
+	ReceiveSide           common.Address
+	OppositeBridge        common.Address
+	ChainId               *big.Int
+	InitialBridge         common.Address
+	InitialChainID        *big.Int
+}
+
+// ICurveProxyMetaMintEUSD is an auto generated low-level Go binding around an user-defined struct.
+type ICurveProxyMetaMintEUSD struct {
+	AddAtCrosschainPool    common.Address
+	ExpectedMinMintAmountC *big.Int
+	LpIndex                *big.Int
+	AddAtHubPool           common.Address
+	ExpectedMinMintAmountH *big.Int
+	To                     common.Address
+	InitialBridge          common.Address
+	InitialChainID         *big.Int
+}
+
+// ICurveProxyMetaRedeemEUSD is an auto generated low-level Go binding around an user-defined struct.
+type ICurveProxyMetaRedeemEUSD struct {
+	RemoveAtCrosschainPool common.Address
+	X                      *big.Int
+	ExpectedMinAmountC     *big.Int
+	RemoveAtHubPool        common.Address
+	TokenAmountH           *big.Int
+	Y                      *big.Int
+	ExpectedMinAmountH     *big.Int
+	To                     common.Address
+}
+
+// ICurveProxyPermitData is an auto generated low-level Go binding around an user-defined struct.
+type ICurveProxyPermitData struct {
+	V          uint8
+	R          [32]byte
+	S          [32]byte
+	Deadline   *big.Int
+	ApproveMax bool
+}
+
 // IForwarderForwardRequest is an auto generated low-level Go binding around an user-defined struct.
 type IForwarderForwardRequest struct {
 	From  common.Address
@@ -261,6 +314,30 @@ type IForwarderForwardRequest struct {
 	Gas   *big.Int
 	Nonce *big.Int
 	Data  []byte
+}
+
+// IPortalPermitData is an auto generated low-level Go binding around an user-defined struct.
+type IPortalPermitData struct {
+	V          uint8
+	R          [32]byte
+	S          [32]byte
+	Deadline   *big.Int
+	ApproveMax bool
+}
+
+// IPortalSynthParams is an auto generated low-level Go binding around an user-defined struct.
+type IPortalSynthParams struct {
+	To             common.Address
+	ReceiveSide    common.Address
+	OppositeBridge common.Address
+	ChainId        *big.Int
+}
+
+// ISynthesisSynthParams is an auto generated low-level Go binding around an user-defined struct.
+type ISynthesisSynthParams struct {
+	ReceiveSide    common.Address
+	OppositeBridge common.Address
+	ChainId        *big.Int
 }
 
 // NodeRegistryNode is an auto generated low-level Go binding around an user-defined struct.
@@ -278,6 +355,15 @@ type PortalSynthParams struct {
 	ReceiveSide    common.Address
 	OppositeBridge common.Address
 	ChainId        *big.Int
+}
+
+// RouterDelegatedCallReceipt is an auto generated low-level Go binding around an user-defined struct.
+type RouterDelegatedCallReceipt struct {
+	ExecutionPrice *big.Int
+	Deadline       *big.Int
+	V              [2]uint8
+	R              [2][32]byte
+	S              [2][32]byte
 }
 
 // SolanaSerializeSolanaAccountMeta is an auto generated low-level Go binding around an user-defined struct.

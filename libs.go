@@ -327,10 +327,15 @@ type IPortalPermitData struct {
 
 // IPortalSynthParams is an auto generated low-level Go binding around an user-defined struct.
 type IPortalSynthParams struct {
-	To             common.Address
 	ReceiveSide    common.Address
 	OppositeBridge common.Address
 	ChainId        *big.Int
+}
+
+// IPortalTransitData is an auto generated low-level Go binding around an user-defined struct.
+type IPortalTransitData struct {
+	Selector [4]byte
+	Data     []byte
 }
 
 // ISynthesisSynthParams is an auto generated low-level Go binding around an user-defined struct.
@@ -351,19 +356,24 @@ type NodeRegistryNode struct {
 
 // PortalSynthParams is an auto generated low-level Go binding around an user-defined struct.
 type PortalSynthParams struct {
-	To             common.Address
 	ReceiveSide    common.Address
 	OppositeBridge common.Address
 	ChainId        *big.Int
+}
+
+// PortalTransitData is an auto generated low-level Go binding around an user-defined struct.
+type PortalTransitData struct {
+	Selector [4]byte
+	Data     []byte
 }
 
 // RouterDelegatedCallReceipt is an auto generated low-level Go binding around an user-defined struct.
 type RouterDelegatedCallReceipt struct {
 	ExecutionPrice *big.Int
 	Deadline       *big.Int
-	V              [2]uint8
-	R              [2][32]byte
-	S              [2][32]byte
+	V              uint8
+	R              [32]byte
+	S              [32]byte
 }
 
 // SolanaSerializeSolanaAccountMeta is an auto generated low-level Go binding around an user-defined struct.

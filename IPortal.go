@@ -32,7 +32,7 @@ var (
 
 // IPortalMetaData contains all meta data concerning the IPortal contract.
 var IPortalMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"txID\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"receiveSide\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"oppositeBridge\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"emergencyUnburnRequest\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"txID\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"bytes32[]\",\"name\":\"pubkeys\",\"type\":\"bytes32[]\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"name\":\"emergencyUnburnRequestToSolana\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"receiveSide\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"oppositeBridge\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"internalType\":\"structIPortal.SynthParams\",\"name\":\"params\",\"type\":\"tuple\"}],\"name\":\"synthesize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"token\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"amount\",\"type\":\"uint256[]\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"receiveSide\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"oppositeBridge\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"internalType\":\"structIPortal.SynthParams\",\"name\":\"synthparams\",\"type\":\"tuple\"},{\"internalType\":\"bytes4\",\"name\":\"selector\",\"type\":\"bytes4\"},{\"internalType\":\"bytes\",\"name\":\"transitData\",\"type\":\"bytes\"},{\"components\":[{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"approveMax\",\"type\":\"bool\"}],\"internalType\":\"structIPortal.PermitData[]\",\"name\":\"permitData\",\"type\":\"tuple[]\"}],\"name\":\"synthesizeBatchWithDataTransit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"bytes32[]\",\"name\":\"pubkeys\",\"type\":\"bytes32[]\"},{\"internalType\":\"bytes1\",\"name\":\"txStateBump\",\"type\":\"bytes1\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"name\":\"synthesizeToSolana\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"approveMax\",\"type\":\"bool\"}],\"internalType\":\"structIPortal.PermitData\",\"name\":\"permitData\",\"type\":\"tuple\"},{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"receiveSide\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"oppositeBridge\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"name\":\"synthesizeWithPermit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
+	ABI: "[{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"txID\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"receiveSide\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"oppositeBridge\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"emergencyUnburnRequest\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"txID\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"bytes32[]\",\"name\":\"pubkeys\",\"type\":\"bytes32[]\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"name\":\"emergencyUnburnRequestToSolana\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"receiveSide\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"oppositeBridge\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"internalType\":\"structIPortal.SynthParams\",\"name\":\"params\",\"type\":\"tuple\"}],\"name\":\"synthesize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"token\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"amount\",\"type\":\"uint256[]\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"receiveSide\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"oppositeBridge\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"internalType\":\"structIPortal.SynthParams\",\"name\":\"synthParams\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"bytes4\",\"name\":\"selector\",\"type\":\"bytes4\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"structIPortal.TransitData\",\"name\":\"transitData\",\"type\":\"tuple\"}],\"name\":\"synthesizeBatchWithDataTransit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"bytes32[]\",\"name\":\"pubkeys\",\"type\":\"bytes32[]\"},{\"internalType\":\"bytes1\",\"name\":\"txStateBump\",\"type\":\"bytes1\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"name\":\"synthesizeToSolana\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"approveMax\",\"type\":\"bool\"}],\"internalType\":\"structIPortal.PermitData\",\"name\":\"permitData\",\"type\":\"tuple\"},{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"receiveSide\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"oppositeBridge\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"name\":\"synthesizeWithPermit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
 }
 
 // IPortalABI is the input ABI used to generate the binding from.
@@ -246,64 +246,64 @@ func (_IPortal *IPortalTransactorSession) EmergencyUnburnRequestToSolanaOverGsn(
 	return _IPortal.Contract.EmergencyUnburnRequestToSolanaOverGsn(&_IPortal.TransactOpts, txID, from, pubkeys, chainId)
 }
 
-// Synthesize is a paid mutator transaction binding the contract method 0x294fe4f8.
+// Synthesize is a paid mutator transaction binding the contract method 0xf55090da.
 //
-// Solidity: function synthesize(address token, uint256 amount, address from, (address,address,address,uint256) params) returns()
-func (_IPortal *IPortalTransactor) Synthesize(opts *bind.TransactOpts, token common.Address, amount *big.Int, from common.Address, params IPortalSynthParams) (*types.Transaction, error) {
-	return _IPortal.contract.Transact(opts, "synthesize", token, amount, from, params)
+// Solidity: function synthesize(address token, uint256 amount, address from, address to, (address,address,uint256) params) returns()
+func (_IPortal *IPortalTransactor) Synthesize(opts *bind.TransactOpts, token common.Address, amount *big.Int, from common.Address, to common.Address, params IPortalSynthParams) (*types.Transaction, error) {
+	return _IPortal.contract.Transact(opts, "synthesize", token, amount, from, to, params)
 }
-func (_IPortal *IPortalTransactor) SynthesizeOverGsn(opts *bind.TransactOpts, token common.Address, amount *big.Int, from common.Address, params IPortalSynthParams) (common.Hash, error) {
-	return GsnExecutor(_IPortal.gsn, IPortalMetaData.ABI, "synthesize", token, amount, from, params)
+func (_IPortal *IPortalTransactor) SynthesizeOverGsn(opts *bind.TransactOpts, token common.Address, amount *big.Int, from common.Address, to common.Address, params IPortalSynthParams) (common.Hash, error) {
+	return GsnExecutor(_IPortal.gsn, IPortalMetaData.ABI, "synthesize", token, amount, from, to, params)
 }
 
-// Synthesize is a paid mutator transaction binding the contract method 0x294fe4f8.
+// Synthesize is a paid mutator transaction binding the contract method 0xf55090da.
 //
-// Solidity: function synthesize(address token, uint256 amount, address from, (address,address,address,uint256) params) returns()
-func (_IPortal *IPortalSession) Synthesize(token common.Address, amount *big.Int, from common.Address, params IPortalSynthParams) (*types.Transaction, error) {
-	return _IPortal.Contract.Synthesize(&_IPortal.TransactOpts, token, amount, from, params)
+// Solidity: function synthesize(address token, uint256 amount, address from, address to, (address,address,uint256) params) returns()
+func (_IPortal *IPortalSession) Synthesize(token common.Address, amount *big.Int, from common.Address, to common.Address, params IPortalSynthParams) (*types.Transaction, error) {
+	return _IPortal.Contract.Synthesize(&_IPortal.TransactOpts, token, amount, from, to, params)
 }
-func (_IPortal *IPortalSession) SynthesizeOverGsn(token common.Address, amount *big.Int, from common.Address, params IPortalSynthParams) (common.Hash, error) {
-	return _IPortal.Contract.SynthesizeOverGsn(&_IPortal.TransactOpts, token, amount, from, params)
+func (_IPortal *IPortalSession) SynthesizeOverGsn(token common.Address, amount *big.Int, from common.Address, to common.Address, params IPortalSynthParams) (common.Hash, error) {
+	return _IPortal.Contract.SynthesizeOverGsn(&_IPortal.TransactOpts, token, amount, from, to, params)
 }
 
-// Synthesize is a paid mutator transaction binding the contract method 0x294fe4f8.
+// Synthesize is a paid mutator transaction binding the contract method 0xf55090da.
 //
-// Solidity: function synthesize(address token, uint256 amount, address from, (address,address,address,uint256) params) returns()
-func (_IPortal *IPortalTransactorSession) Synthesize(token common.Address, amount *big.Int, from common.Address, params IPortalSynthParams) (*types.Transaction, error) {
-	return _IPortal.Contract.Synthesize(&_IPortal.TransactOpts, token, amount, from, params)
+// Solidity: function synthesize(address token, uint256 amount, address from, address to, (address,address,uint256) params) returns()
+func (_IPortal *IPortalTransactorSession) Synthesize(token common.Address, amount *big.Int, from common.Address, to common.Address, params IPortalSynthParams) (*types.Transaction, error) {
+	return _IPortal.Contract.Synthesize(&_IPortal.TransactOpts, token, amount, from, to, params)
 }
-func (_IPortal *IPortalTransactorSession) SynthesizeOverGsn(token common.Address, amount *big.Int, from common.Address, params IPortalSynthParams) (common.Hash, error) {
-	return _IPortal.Contract.SynthesizeOverGsn(&_IPortal.TransactOpts, token, amount, from, params)
+func (_IPortal *IPortalTransactorSession) SynthesizeOverGsn(token common.Address, amount *big.Int, from common.Address, to common.Address, params IPortalSynthParams) (common.Hash, error) {
+	return _IPortal.Contract.SynthesizeOverGsn(&_IPortal.TransactOpts, token, amount, from, to, params)
 }
 
-// SynthesizeBatchWithDataTransit is a paid mutator transaction binding the contract method 0xb505d370.
+// SynthesizeBatchWithDataTransit is a paid mutator transaction binding the contract method 0x2a3a615b.
 //
-// Solidity: function synthesizeBatchWithDataTransit(address[] token, uint256[] amount, address from, (address,address,address,uint256) synthparams, bytes4 selector, bytes transitData, (uint8,bytes32,bytes32,uint256,bool)[] permitData) returns()
-func (_IPortal *IPortalTransactor) SynthesizeBatchWithDataTransit(opts *bind.TransactOpts, token []common.Address, amount []*big.Int, from common.Address, synthparams IPortalSynthParams, selector [4]byte, transitData []byte, permitData []IPortalPermitData) (*types.Transaction, error) {
-	return _IPortal.contract.Transact(opts, "synthesizeBatchWithDataTransit", token, amount, from, synthparams, selector, transitData, permitData)
+// Solidity: function synthesizeBatchWithDataTransit(address[] token, uint256[] amount, address from, address to, (address,address,uint256) synthParams, (bytes4,bytes) transitData) returns()
+func (_IPortal *IPortalTransactor) SynthesizeBatchWithDataTransit(opts *bind.TransactOpts, token []common.Address, amount []*big.Int, from common.Address, to common.Address, synthParams IPortalSynthParams, transitData IPortalTransitData) (*types.Transaction, error) {
+	return _IPortal.contract.Transact(opts, "synthesizeBatchWithDataTransit", token, amount, from, to, synthParams, transitData)
 }
-func (_IPortal *IPortalTransactor) SynthesizeBatchWithDataTransitOverGsn(opts *bind.TransactOpts, token []common.Address, amount []*big.Int, from common.Address, synthparams IPortalSynthParams, selector [4]byte, transitData []byte, permitData []IPortalPermitData) (common.Hash, error) {
-	return GsnExecutor(_IPortal.gsn, IPortalMetaData.ABI, "synthesizeBatchWithDataTransit", token, amount, from, synthparams, selector, transitData, permitData)
+func (_IPortal *IPortalTransactor) SynthesizeBatchWithDataTransitOverGsn(opts *bind.TransactOpts, token []common.Address, amount []*big.Int, from common.Address, to common.Address, synthParams IPortalSynthParams, transitData IPortalTransitData) (common.Hash, error) {
+	return GsnExecutor(_IPortal.gsn, IPortalMetaData.ABI, "synthesizeBatchWithDataTransit", token, amount, from, to, synthParams, transitData)
 }
 
-// SynthesizeBatchWithDataTransit is a paid mutator transaction binding the contract method 0xb505d370.
+// SynthesizeBatchWithDataTransit is a paid mutator transaction binding the contract method 0x2a3a615b.
 //
-// Solidity: function synthesizeBatchWithDataTransit(address[] token, uint256[] amount, address from, (address,address,address,uint256) synthparams, bytes4 selector, bytes transitData, (uint8,bytes32,bytes32,uint256,bool)[] permitData) returns()
-func (_IPortal *IPortalSession) SynthesizeBatchWithDataTransit(token []common.Address, amount []*big.Int, from common.Address, synthparams IPortalSynthParams, selector [4]byte, transitData []byte, permitData []IPortalPermitData) (*types.Transaction, error) {
-	return _IPortal.Contract.SynthesizeBatchWithDataTransit(&_IPortal.TransactOpts, token, amount, from, synthparams, selector, transitData, permitData)
+// Solidity: function synthesizeBatchWithDataTransit(address[] token, uint256[] amount, address from, address to, (address,address,uint256) synthParams, (bytes4,bytes) transitData) returns()
+func (_IPortal *IPortalSession) SynthesizeBatchWithDataTransit(token []common.Address, amount []*big.Int, from common.Address, to common.Address, synthParams IPortalSynthParams, transitData IPortalTransitData) (*types.Transaction, error) {
+	return _IPortal.Contract.SynthesizeBatchWithDataTransit(&_IPortal.TransactOpts, token, amount, from, to, synthParams, transitData)
 }
-func (_IPortal *IPortalSession) SynthesizeBatchWithDataTransitOverGsn(token []common.Address, amount []*big.Int, from common.Address, synthparams IPortalSynthParams, selector [4]byte, transitData []byte, permitData []IPortalPermitData) (common.Hash, error) {
-	return _IPortal.Contract.SynthesizeBatchWithDataTransitOverGsn(&_IPortal.TransactOpts, token, amount, from, synthparams, selector, transitData, permitData)
+func (_IPortal *IPortalSession) SynthesizeBatchWithDataTransitOverGsn(token []common.Address, amount []*big.Int, from common.Address, to common.Address, synthParams IPortalSynthParams, transitData IPortalTransitData) (common.Hash, error) {
+	return _IPortal.Contract.SynthesizeBatchWithDataTransitOverGsn(&_IPortal.TransactOpts, token, amount, from, to, synthParams, transitData)
 }
 
-// SynthesizeBatchWithDataTransit is a paid mutator transaction binding the contract method 0xb505d370.
+// SynthesizeBatchWithDataTransit is a paid mutator transaction binding the contract method 0x2a3a615b.
 //
-// Solidity: function synthesizeBatchWithDataTransit(address[] token, uint256[] amount, address from, (address,address,address,uint256) synthparams, bytes4 selector, bytes transitData, (uint8,bytes32,bytes32,uint256,bool)[] permitData) returns()
-func (_IPortal *IPortalTransactorSession) SynthesizeBatchWithDataTransit(token []common.Address, amount []*big.Int, from common.Address, synthparams IPortalSynthParams, selector [4]byte, transitData []byte, permitData []IPortalPermitData) (*types.Transaction, error) {
-	return _IPortal.Contract.SynthesizeBatchWithDataTransit(&_IPortal.TransactOpts, token, amount, from, synthparams, selector, transitData, permitData)
+// Solidity: function synthesizeBatchWithDataTransit(address[] token, uint256[] amount, address from, address to, (address,address,uint256) synthParams, (bytes4,bytes) transitData) returns()
+func (_IPortal *IPortalTransactorSession) SynthesizeBatchWithDataTransit(token []common.Address, amount []*big.Int, from common.Address, to common.Address, synthParams IPortalSynthParams, transitData IPortalTransitData) (*types.Transaction, error) {
+	return _IPortal.Contract.SynthesizeBatchWithDataTransit(&_IPortal.TransactOpts, token, amount, from, to, synthParams, transitData)
 }
-func (_IPortal *IPortalTransactorSession) SynthesizeBatchWithDataTransitOverGsn(token []common.Address, amount []*big.Int, from common.Address, synthparams IPortalSynthParams, selector [4]byte, transitData []byte, permitData []IPortalPermitData) (common.Hash, error) {
-	return _IPortal.Contract.SynthesizeBatchWithDataTransitOverGsn(&_IPortal.TransactOpts, token, amount, from, synthparams, selector, transitData, permitData)
+func (_IPortal *IPortalTransactorSession) SynthesizeBatchWithDataTransitOverGsn(token []common.Address, amount []*big.Int, from common.Address, to common.Address, synthParams IPortalSynthParams, transitData IPortalTransitData) (common.Hash, error) {
+	return _IPortal.Contract.SynthesizeBatchWithDataTransitOverGsn(&_IPortal.TransactOpts, token, amount, from, to, synthParams, transitData)
 }
 
 // SynthesizeToSolana is a paid mutator transaction binding the contract method 0xac5de43c.

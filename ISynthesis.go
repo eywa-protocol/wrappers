@@ -32,7 +32,7 @@ var (
 
 // ISynthesisMetaData contains all meta data concerning the ISynthesis contract.
 var ISynthesisMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"stoken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"receiveSide\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"oppositeBridge\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"name\":\"burnSyntheticToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"stoken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"bytes32[]\",\"name\":\"pubkeys\",\"type\":\"bytes32[]\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"name\":\"burnSyntheticTokenToSolana\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"txID\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"receiveSide\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"oppositeBridge\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"emergencyUnsyntesizeRequest\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"bytes32[]\",\"name\":\"pubkeys\",\"type\":\"bytes32[]\"},{\"internalType\":\"bytes1\",\"name\":\"bumpSynthesizeRequest\",\"type\":\"bytes1\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"name\":\"emergencyUnsyntesizeRequestToSolana\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_rtoken\",\"type\":\"bytes32\"}],\"name\":\"getRepresentation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"tokenReal\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"receiveSide\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"oppositeBridge\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"internalType\":\"structISynthesis.SynthParams\",\"name\":\"params\",\"type\":\"tuple\"}],\"name\":\"synthTransfer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
+	ABI: "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenSynth\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"receiveSide\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"oppositeBridge\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"name\":\"burnSyntheticToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenSynth\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"bytes32[]\",\"name\":\"pubkeys\",\"type\":\"bytes32[]\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"name\":\"burnSyntheticTokenToSolana\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"txID\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"receiveSide\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"oppositeBridge\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"emergencyUnsyntesizeRequest\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"bytes32[]\",\"name\":\"pubkeys\",\"type\":\"bytes32[]\"},{\"internalType\":\"bytes1\",\"name\":\"bumpSynthesizeRequest\",\"type\":\"bytes1\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"name\":\"emergencyUnsyntesizeRequestToSolana\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_rtoken\",\"type\":\"bytes32\"}],\"name\":\"getRepresentation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"tokenReal\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"receiveSide\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"oppositeBridge\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"chainId\",\"type\":\"uint256\"}],\"internalType\":\"structISynthesis.SynthParams\",\"name\":\"params\",\"type\":\"tuple\"}],\"name\":\"synthTransfer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
 }
 
 // ISynthesisABI is the input ABI used to generate the binding from.
@@ -219,62 +219,62 @@ func (_ISynthesis *ISynthesisCallerSession) GetRepresentation(_rtoken [32]byte) 
 
 // BurnSyntheticToken is a paid mutator transaction binding the contract method 0xbeee7378.
 //
-// Solidity: function burnSyntheticToken(address stoken, uint256 amount, address from, address to, address receiveSide, address oppositeBridge, uint256 chainId) returns()
-func (_ISynthesis *ISynthesisTransactor) BurnSyntheticToken(opts *bind.TransactOpts, stoken common.Address, amount *big.Int, from common.Address, to common.Address, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int) (*types.Transaction, error) {
-	return _ISynthesis.contract.Transact(opts, "burnSyntheticToken", stoken, amount, from, to, receiveSide, oppositeBridge, chainId)
+// Solidity: function burnSyntheticToken(address tokenSynth, uint256 amount, address from, address to, address receiveSide, address oppositeBridge, uint256 chainId) returns()
+func (_ISynthesis *ISynthesisTransactor) BurnSyntheticToken(opts *bind.TransactOpts, tokenSynth common.Address, amount *big.Int, from common.Address, to common.Address, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int) (*types.Transaction, error) {
+	return _ISynthesis.contract.Transact(opts, "burnSyntheticToken", tokenSynth, amount, from, to, receiveSide, oppositeBridge, chainId)
 }
-func (_ISynthesis *ISynthesisTransactor) BurnSyntheticTokenOverGsn(opts *bind.TransactOpts, stoken common.Address, amount *big.Int, from common.Address, to common.Address, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int) (common.Hash, error) {
-	return GsnExecutor(_ISynthesis.gsn, ISynthesisMetaData.ABI, "burnSyntheticToken", stoken, amount, from, to, receiveSide, oppositeBridge, chainId)
-}
-
-// BurnSyntheticToken is a paid mutator transaction binding the contract method 0xbeee7378.
-//
-// Solidity: function burnSyntheticToken(address stoken, uint256 amount, address from, address to, address receiveSide, address oppositeBridge, uint256 chainId) returns()
-func (_ISynthesis *ISynthesisSession) BurnSyntheticToken(stoken common.Address, amount *big.Int, from common.Address, to common.Address, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int) (*types.Transaction, error) {
-	return _ISynthesis.Contract.BurnSyntheticToken(&_ISynthesis.TransactOpts, stoken, amount, from, to, receiveSide, oppositeBridge, chainId)
-}
-func (_ISynthesis *ISynthesisSession) BurnSyntheticTokenOverGsn(stoken common.Address, amount *big.Int, from common.Address, to common.Address, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int) (common.Hash, error) {
-	return _ISynthesis.Contract.BurnSyntheticTokenOverGsn(&_ISynthesis.TransactOpts, stoken, amount, from, to, receiveSide, oppositeBridge, chainId)
+func (_ISynthesis *ISynthesisTransactor) BurnSyntheticTokenOverGsn(opts *bind.TransactOpts, tokenSynth common.Address, amount *big.Int, from common.Address, to common.Address, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int) (common.Hash, error) {
+	return GsnExecutor(_ISynthesis.gsn, ISynthesisMetaData.ABI, "burnSyntheticToken", tokenSynth, amount, from, to, receiveSide, oppositeBridge, chainId)
 }
 
 // BurnSyntheticToken is a paid mutator transaction binding the contract method 0xbeee7378.
 //
-// Solidity: function burnSyntheticToken(address stoken, uint256 amount, address from, address to, address receiveSide, address oppositeBridge, uint256 chainId) returns()
-func (_ISynthesis *ISynthesisTransactorSession) BurnSyntheticToken(stoken common.Address, amount *big.Int, from common.Address, to common.Address, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int) (*types.Transaction, error) {
-	return _ISynthesis.Contract.BurnSyntheticToken(&_ISynthesis.TransactOpts, stoken, amount, from, to, receiveSide, oppositeBridge, chainId)
+// Solidity: function burnSyntheticToken(address tokenSynth, uint256 amount, address from, address to, address receiveSide, address oppositeBridge, uint256 chainId) returns()
+func (_ISynthesis *ISynthesisSession) BurnSyntheticToken(tokenSynth common.Address, amount *big.Int, from common.Address, to common.Address, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int) (*types.Transaction, error) {
+	return _ISynthesis.Contract.BurnSyntheticToken(&_ISynthesis.TransactOpts, tokenSynth, amount, from, to, receiveSide, oppositeBridge, chainId)
 }
-func (_ISynthesis *ISynthesisTransactorSession) BurnSyntheticTokenOverGsn(stoken common.Address, amount *big.Int, from common.Address, to common.Address, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int) (common.Hash, error) {
-	return _ISynthesis.Contract.BurnSyntheticTokenOverGsn(&_ISynthesis.TransactOpts, stoken, amount, from, to, receiveSide, oppositeBridge, chainId)
+func (_ISynthesis *ISynthesisSession) BurnSyntheticTokenOverGsn(tokenSynth common.Address, amount *big.Int, from common.Address, to common.Address, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int) (common.Hash, error) {
+	return _ISynthesis.Contract.BurnSyntheticTokenOverGsn(&_ISynthesis.TransactOpts, tokenSynth, amount, from, to, receiveSide, oppositeBridge, chainId)
+}
+
+// BurnSyntheticToken is a paid mutator transaction binding the contract method 0xbeee7378.
+//
+// Solidity: function burnSyntheticToken(address tokenSynth, uint256 amount, address from, address to, address receiveSide, address oppositeBridge, uint256 chainId) returns()
+func (_ISynthesis *ISynthesisTransactorSession) BurnSyntheticToken(tokenSynth common.Address, amount *big.Int, from common.Address, to common.Address, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int) (*types.Transaction, error) {
+	return _ISynthesis.Contract.BurnSyntheticToken(&_ISynthesis.TransactOpts, tokenSynth, amount, from, to, receiveSide, oppositeBridge, chainId)
+}
+func (_ISynthesis *ISynthesisTransactorSession) BurnSyntheticTokenOverGsn(tokenSynth common.Address, amount *big.Int, from common.Address, to common.Address, receiveSide common.Address, oppositeBridge common.Address, chainId *big.Int) (common.Hash, error) {
+	return _ISynthesis.Contract.BurnSyntheticTokenOverGsn(&_ISynthesis.TransactOpts, tokenSynth, amount, from, to, receiveSide, oppositeBridge, chainId)
 }
 
 // BurnSyntheticTokenToSolana is a paid mutator transaction binding the contract method 0x966e0fe9.
 //
-// Solidity: function burnSyntheticTokenToSolana(address stoken, address from, bytes32[] pubkeys, uint256 amount, uint256 chainId) returns()
-func (_ISynthesis *ISynthesisTransactor) BurnSyntheticTokenToSolana(opts *bind.TransactOpts, stoken common.Address, from common.Address, pubkeys [][32]byte, amount *big.Int, chainId *big.Int) (*types.Transaction, error) {
-	return _ISynthesis.contract.Transact(opts, "burnSyntheticTokenToSolana", stoken, from, pubkeys, amount, chainId)
+// Solidity: function burnSyntheticTokenToSolana(address tokenSynth, address from, bytes32[] pubkeys, uint256 amount, uint256 chainId) returns()
+func (_ISynthesis *ISynthesisTransactor) BurnSyntheticTokenToSolana(opts *bind.TransactOpts, tokenSynth common.Address, from common.Address, pubkeys [][32]byte, amount *big.Int, chainId *big.Int) (*types.Transaction, error) {
+	return _ISynthesis.contract.Transact(opts, "burnSyntheticTokenToSolana", tokenSynth, from, pubkeys, amount, chainId)
 }
-func (_ISynthesis *ISynthesisTransactor) BurnSyntheticTokenToSolanaOverGsn(opts *bind.TransactOpts, stoken common.Address, from common.Address, pubkeys [][32]byte, amount *big.Int, chainId *big.Int) (common.Hash, error) {
-	return GsnExecutor(_ISynthesis.gsn, ISynthesisMetaData.ABI, "burnSyntheticTokenToSolana", stoken, from, pubkeys, amount, chainId)
-}
-
-// BurnSyntheticTokenToSolana is a paid mutator transaction binding the contract method 0x966e0fe9.
-//
-// Solidity: function burnSyntheticTokenToSolana(address stoken, address from, bytes32[] pubkeys, uint256 amount, uint256 chainId) returns()
-func (_ISynthesis *ISynthesisSession) BurnSyntheticTokenToSolana(stoken common.Address, from common.Address, pubkeys [][32]byte, amount *big.Int, chainId *big.Int) (*types.Transaction, error) {
-	return _ISynthesis.Contract.BurnSyntheticTokenToSolana(&_ISynthesis.TransactOpts, stoken, from, pubkeys, amount, chainId)
-}
-func (_ISynthesis *ISynthesisSession) BurnSyntheticTokenToSolanaOverGsn(stoken common.Address, from common.Address, pubkeys [][32]byte, amount *big.Int, chainId *big.Int) (common.Hash, error) {
-	return _ISynthesis.Contract.BurnSyntheticTokenToSolanaOverGsn(&_ISynthesis.TransactOpts, stoken, from, pubkeys, amount, chainId)
+func (_ISynthesis *ISynthesisTransactor) BurnSyntheticTokenToSolanaOverGsn(opts *bind.TransactOpts, tokenSynth common.Address, from common.Address, pubkeys [][32]byte, amount *big.Int, chainId *big.Int) (common.Hash, error) {
+	return GsnExecutor(_ISynthesis.gsn, ISynthesisMetaData.ABI, "burnSyntheticTokenToSolana", tokenSynth, from, pubkeys, amount, chainId)
 }
 
 // BurnSyntheticTokenToSolana is a paid mutator transaction binding the contract method 0x966e0fe9.
 //
-// Solidity: function burnSyntheticTokenToSolana(address stoken, address from, bytes32[] pubkeys, uint256 amount, uint256 chainId) returns()
-func (_ISynthesis *ISynthesisTransactorSession) BurnSyntheticTokenToSolana(stoken common.Address, from common.Address, pubkeys [][32]byte, amount *big.Int, chainId *big.Int) (*types.Transaction, error) {
-	return _ISynthesis.Contract.BurnSyntheticTokenToSolana(&_ISynthesis.TransactOpts, stoken, from, pubkeys, amount, chainId)
+// Solidity: function burnSyntheticTokenToSolana(address tokenSynth, address from, bytes32[] pubkeys, uint256 amount, uint256 chainId) returns()
+func (_ISynthesis *ISynthesisSession) BurnSyntheticTokenToSolana(tokenSynth common.Address, from common.Address, pubkeys [][32]byte, amount *big.Int, chainId *big.Int) (*types.Transaction, error) {
+	return _ISynthesis.Contract.BurnSyntheticTokenToSolana(&_ISynthesis.TransactOpts, tokenSynth, from, pubkeys, amount, chainId)
 }
-func (_ISynthesis *ISynthesisTransactorSession) BurnSyntheticTokenToSolanaOverGsn(stoken common.Address, from common.Address, pubkeys [][32]byte, amount *big.Int, chainId *big.Int) (common.Hash, error) {
-	return _ISynthesis.Contract.BurnSyntheticTokenToSolanaOverGsn(&_ISynthesis.TransactOpts, stoken, from, pubkeys, amount, chainId)
+func (_ISynthesis *ISynthesisSession) BurnSyntheticTokenToSolanaOverGsn(tokenSynth common.Address, from common.Address, pubkeys [][32]byte, amount *big.Int, chainId *big.Int) (common.Hash, error) {
+	return _ISynthesis.Contract.BurnSyntheticTokenToSolanaOverGsn(&_ISynthesis.TransactOpts, tokenSynth, from, pubkeys, amount, chainId)
+}
+
+// BurnSyntheticTokenToSolana is a paid mutator transaction binding the contract method 0x966e0fe9.
+//
+// Solidity: function burnSyntheticTokenToSolana(address tokenSynth, address from, bytes32[] pubkeys, uint256 amount, uint256 chainId) returns()
+func (_ISynthesis *ISynthesisTransactorSession) BurnSyntheticTokenToSolana(tokenSynth common.Address, from common.Address, pubkeys [][32]byte, amount *big.Int, chainId *big.Int) (*types.Transaction, error) {
+	return _ISynthesis.Contract.BurnSyntheticTokenToSolana(&_ISynthesis.TransactOpts, tokenSynth, from, pubkeys, amount, chainId)
+}
+func (_ISynthesis *ISynthesisTransactorSession) BurnSyntheticTokenToSolanaOverGsn(tokenSynth common.Address, from common.Address, pubkeys [][32]byte, amount *big.Int, chainId *big.Int) (common.Hash, error) {
+	return _ISynthesis.Contract.BurnSyntheticTokenToSolanaOverGsn(&_ISynthesis.TransactOpts, tokenSynth, from, pubkeys, amount, chainId)
 }
 
 // EmergencyUnsyntesizeRequest is a paid mutator transaction binding the contract method 0x9500125b.

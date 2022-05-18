@@ -336,10 +336,13 @@ type IPortalSynthParams struct {
 	ChainId        *big.Int
 }
 
-// IPortalTransitData is an auto generated low-level Go binding around an user-defined struct.
-type IPortalTransitData struct {
-	Selector [4]byte
-	Data     []byte
+// ISynthesisPermitData is an auto generated low-level Go binding around an user-defined struct.
+type ISynthesisPermitData struct {
+	V          uint8
+	R          [32]byte
+	S          [32]byte
+	Deadline   *big.Int
+	ApproveMax bool
 }
 
 // ISynthesisSynthParams is an auto generated low-level Go binding around an user-defined struct.
@@ -363,12 +366,6 @@ type PortalSynthParams struct {
 	ReceiveSide    common.Address
 	OppositeBridge common.Address
 	ChainId        *big.Int
-}
-
-// PortalTransitData is an auto generated low-level Go binding around an user-defined struct.
-type PortalTransitData struct {
-	Selector [4]byte
-	Data     []byte
 }
 
 // RouterDelegatedCallReceipt is an auto generated low-level Go binding around an user-defined struct.
